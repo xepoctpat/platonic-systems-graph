@@ -1267,11 +1267,11 @@ edges:
 
   - from: mesopotamian
     to: mythology
-    type: gold
-    directed: true
-    strength: 0.6
+    type: cyan
+    directed: false
+    strength: 0.55
     versions: [V5]
-    note: Holding membership only — replace once Mesopotamian religion is surveyed.
+    note: Peer to the coarse mythology hub, not a member of a leftover bag.
 
   - from: egyptian-religion
     to: mythology
@@ -1456,3 +1456,1211 @@ edges:
     strength: 0.85
     versions: [V4]
     note: System-to-principle interior.
+
+  - from: paleolithic-image
+    to: blombos-mark
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Geometric mark is the floor of the image-and-mark practice.
+
+  - from: paleolithic-image
+    to: lion-man
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: "Hybrid ivory being is the first sculpted other-than-human person we can name."
+
+  - from: blombos-mark
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: "Same slot only: a difference that can be stored. Not language and not Forms."
+
+  - from: ppn-ritual
+    to: paleolithic-image
+    type: orange
+    directed: false
+    strength: 0.6
+    versions: []
+    note: Image plus a special place, millennia apart and in different media.
+
+  - from: ppn-ritual
+    to: gobekli-tepe
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Göbekli is the flagship PPN enclosure with carved T-pillars.
+
+  - from: lepenski-vir
+    to: lepenski-fish-image
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Fish-human sandstone figures are the culture’s readable image-slot.
+
+  - from: lepenski-fish-image
+    to: lion-man
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two hybrids of human and animal. Ivory Ice Age versus Iron Gates stone.
+
+  - from: lepenski-vir
+    to: ppn-ritual
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Planned special buildings without text. Different region and later.
+
+  - from: vinca
+    to: vinca-signs
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Incised signs belong to the Vinča craft package.
+
+  - from: vinca-signs
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: Repeatable signs without a deciphered language.
+
+  - from: vinca
+    to: lepenski-vir
+    type: orange
+    directed: false
+    strength: 0.5
+    versions: []
+    note: Same river, later farming tells after Iron Gates forager-farmer mix. Not identity.
+
+  - from: nabta-playa
+    to: ordered-time
+    type: cyan
+    directed: false
+    strength: 0.5
+    versions: []
+    note: Seasonal or solstice stone mark versus numbered celestial time. Same slot, thinner.
+
+  - from: mythology
+    to: paleolithic-image
+    type: orange
+    directed: false
+    strength: 0.4
+    versions: [V5]
+    note: Holding hub only so the preliterate track can sit on V5 laterals.
+
+  - from: mesopotamian
+    to: nammu
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Sumerian primeval sea is interior to the system.
+
+  - from: mesopotamian
+    to: enki
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Enki is the Sumerian world-order craftsman.
+
+  - from: mesopotamian
+    to: marduk
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Marduk is the Babylonian combat-craftsman of Enūma Eliš.
+
+  - from: nammu
+    to: anu
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Primeval sea bears sky (and earth) in the Sumerian prologue.
+
+  - from: enlil
+    to: anu
+    type: red
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Enlil separates An from Ki; the cut that opens a world.
+
+  - from: enlil
+    to: symmetry-breaking
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Same slot as Zeus’s division and physical symmetry breaking.
+
+  - from: enlil
+    to: zeus-division
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two narrative cuts that make duality and space.
+
+  - from: nammu
+    to: receptacle
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Water as nurse-given before form, not as slain matter.
+
+  - from: nammu
+    to: tohu-vavohu
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Formless water before speech or separation.
+
+  - from: tiamat
+    to: nammu
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: []
+    note: "Two first waters: Sumerian nurse-sea versus Babylonian slain dragon."
+
+  - from: tiamat
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: []
+    note: "Nurse versus corpse: chōra receives form; Tiamat is cut into heaven and earth."
+
+  - from: tiamat
+    to: tohu-vavohu
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Salt-deep and biblical tehom as sibling unordered waters.
+
+  - from: tiamat
+    to: kenoma
+    type: magenta
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Slain body becomes the world, not a prison for sparks. Weak.
+
+  - from: marduk
+    to: tiamat
+    type: red
+    directed: true
+    strength: 1.0
+    versions: []
+    note: Combat creation; order by killing the first water.
+
+  - from: marduk
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: []
+    note: "Persuades necessity versus slays the deep. Same craftsman slot, opposite method."
+
+  - from: enki
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Wisdom-craftsman who assigns offices without making the world from a corpse.
+
+  - from: enki
+    to: marduk
+    type: gold
+    directed: true
+    strength: 0.7
+    versions: []
+    note: Ea fathers and precedes Marduk; Sumerian craftsman behind the Babylonian king.
+
+  - from: enki
+    to: divine-me
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Enki keeps and distributes the me.
+
+  - from: divine-me
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Offices as transferable constraints.
+
+  - from: divine-me
+    to: intelligible-paradigm
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Inventory of what a complete world must include, without a Living Creature.
+
+  - from: divine-me
+    to: vinca-signs
+    type: cyan
+    directed: false
+    strength: 0.4
+    versions: []
+    note: Repeatable marks versus named offices. Same information slot, different grain.
+
+  - from: marduk
+    to: tablet-of-destinies
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Marduk seizes the tablet and wears the right to decree.
+
+  - from: tablet-of-destinies
+    to: divine-me
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Two Mesopotamian names for portable cosmic authority.
+
+  - from: tablet-of-destinies
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Fate as an object that can change hands.
+
+  - from: mesopotamian
+    to: biblical-religion
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: [V4]
+    note: Enūma Eliš and Genesis share watery beginning and ordered speech; not identity.
+
+  - from: mesopotamian
+    to: egyptian-religion
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: [V4]
+    note: Two early written craftsman-and-order systems.
+
+  - from: egyptian-religion
+    to: nun
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Nun is the Heliopolitan first water.
+
+  - from: egyptian-religion
+    to: atum
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Atum is the self-created first of Heliopolis.
+
+  - from: egyptian-religion
+    to: osiris
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Osiris cycle is the native fall-and-gathering myth.
+
+  - from: egyptian-religion
+    to: amun
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Amun is the Theban hidden summit.
+
+  - from: nun
+    to: atum
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Atum rises from Nun onto the benben.
+
+  - from: nun
+    to: nammu
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Two nurse-seas. Neither is slain to make the world.
+
+  - from: nun
+    to: tiamat
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Infinite water that remains versus water that is cut into cosmos.
+
+  - from: nun
+    to: receptacle
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Given in which a first form can stand.
+
+  - from: nun
+    to: tohu-vavohu
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Dark water before speech.
+
+  - from: atum
+    to: ptah
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: "Two Egyptian craftsmen: self-generated mound versus heart-and-tongue."
+
+  - from: atum
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: First intellect-like creator, without a separate paradigm he looks to.
+
+  - from: atum
+    to: re
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Atum-Re fusion; first light and daily sun share a body.
+
+  - from: re
+    to: maat
+    type: green
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Daily return of the sun re-establishes measure.
+
+  - from: re
+    to: ordered-time
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Numbered cycle of day and night versus celestial periods as image of eternity.
+
+  - from: seth
+    to: osiris
+    type: red
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Dismemberment; isfet cuts the king.
+
+  - from: isis
+    to: osiris
+    type: green
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Gathering of pieces; return without leaving the cosmos.
+
+  - from: osiris
+    to: orphic-dionysus
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Two sparagmos-and-return gods. Native to different systems.
+
+  - from: osiris
+    to: shevirah
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Breaking then repair. Weak; shevirah is vessels, not a murdered king.
+
+  - from: seth
+    to: maat
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Isfet versus Ma'at. Disorder as a will, not leftover chōra.
+
+  - from: seth
+    to: zoroastrian-dualism
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Hostile will inside a cosmos that still has one order-norm. Not two first principles.
+
+  - from: thoth
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Writing and the weighing of the heart as cosmic record.
+
+  - from: thoth
+    to: divine-me
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: Measure and office. Speech that keeps the world countable.
+
+  - from: thoth
+    to: ptah
+    type: orange
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Tongue of creation and scribe of measure.
+
+  - from: amun
+    to: the-good
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V11]
+    note: Hidden source of gods and order. Not beyond being in Republic’s sense.
+
+  - from: amun
+    to: ein-sof
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V11]
+    note: Two hidden summits. Amun still has temples and a craftsman beside him.
+
+  - from: amun
+    to: atum
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Hidden Theban first versus self-shown Heliopolitan first.
+
+  - from: isis
+    to: eros
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Binding love that gathers. Weak; Isis is rite and magic, not the Symposium ladder.
+
+  - from: atum
+    to: shu
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Atum produces the first pair.
+
+  - from: atum
+    to: tefnut
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Atum produces the first pair.
+
+  - from: shu
+    to: geb
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Shu and Tefnut bear earth and sky.
+
+  - from: shu
+    to: nut
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Shu and Tefnut bear earth and sky.
+
+  - from: shu
+    to: enlil
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Air that holds sky off earth versus Enlil’s separation of An and Ki.
+
+  - from: nut
+    to: anu
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two skies. Nut is a vault that swallows the sun; An is high god.
+
+  - from: geb
+    to: nut
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Earth and sky as the pair that bears the Osiris generation.
+
+  - from: geb
+    to: osiris
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Ennead descent.
+
+  - from: nut
+    to: osiris
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Ennead descent.
+
+  - from: nut
+    to: isis
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Ennead descent.
+
+  - from: nut
+    to: seth
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Ennead descent.
+
+  - from: nut
+    to: nephthys
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Ennead descent.
+
+  - from: nephthys
+    to: isis
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Mourning sisters who gather Osiris.
+
+  - from: nephthys
+    to: osiris
+    type: green
+    directed: true
+    strength: 0.7
+    versions: []
+    note: Helps the reconstitution.
+
+  - from: canaanite
+    to: el-canaanite
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: El is the Ugaritic summit.
+
+  - from: canaanite
+    to: baal
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The Baal Cycle is the system’s main readable action.
+
+  - from: canaanite
+    to: kothar
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Kothar is the native craftsman of weapons and palace.
+
+  - from: canaanite
+    to: biblical-religion
+    type: orange
+    directed: false
+    strength: 0.9
+    versions: [V4]
+    note: Shared West Semitic furniture; biblical texts argue with Baal, not copy him.
+
+  - from: el-canaanite
+    to: baal
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: El grants kingship; Baal runs the weather-world.
+
+  - from: el-canaanite
+    to: anu
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Two high gods who sit above the fighting younger god.
+
+  - from: el-canaanite
+    to: genesis-creator
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Shared name-slot El. Not identity with Israel’s speaker.
+
+  - from: yam
+    to: baal
+    type: red
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Sea challenges kingship; Baal binds him with Kothar’s maces.
+
+  - from: mot
+    to: baal
+    type: red
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Death swallows Baal.
+
+  - from: anat
+    to: mot
+    type: red
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Anat cuts Mot so Baal can return.
+
+  - from: anat
+    to: baal
+    type: green
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Return of the storm-king.
+
+  - from: yam
+    to: tiamat
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Two combat-seas. Yam is bound; Tiamat is made into the world.
+
+  - from: yam
+    to: nun
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Opponent-sea versus remaining first water.
+
+  - from: yam
+    to: tohu-vavohu
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Sea/deep as the thing speech or a storm-god has to master.
+
+  - from: mot
+    to: seth
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Two death-dealing wills inside a cosmos that still has a high god.
+
+  - from: mot
+    to: fallen-time
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Death as a season Baal enters. Weak.
+
+  - from: baal
+    to: osiris
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Two kings who die and return; Baal to rain, Osiris to the West.
+
+  - from: baal
+    to: re
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Daily or seasonal return of a weather/light god. Thin.
+
+  - from: anat
+    to: isis
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two gatherers. Anat hacks Death; Isis reassembles a body.
+
+  - from: kothar
+    to: ptah
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Two artisan gods of tools and houses.
+
+  - from: kothar
+    to: enki
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Craft and cunning in service of a younger king-god.
+
+  - from: kothar
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Makes weapons and a palace, not the cosmos from a model.
+
+  - from: baal
+    to: genesis-creator
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: [V4]
+    note: Cloud-Rider slot Israel claims for YHWH against Baal.
+
+  - from: vedic
+    to: hinduism
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Historical derivation. Ṛgvedic corpus funds later Hinduism; they are not one node.
+
+  - from: vedic
+    to: rta
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Ṛta is the Vedic order-name.
+
+  - from: vedic
+    to: indra
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Indra is the hymn-major king of this corpus.
+
+  - from: vedic
+    to: vedic-purusha
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Puruṣasūkta is the native body-cosmos hymn.
+
+  - from: rta
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Two names for order that must be kept.
+
+  - from: rta
+    to: varuna
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Varuṇa guards ṛta.
+
+  - from: indra
+    to: vrtra
+    type: red
+    directed: true
+    strength: 1.0
+    versions: []
+    note: Splits the obstructor and releases the waters.
+
+  - from: indra
+    to: baal
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Two storm-kings who defeat a water-opponent.
+
+  - from: indra
+    to: marduk
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Combat against a water-dragon. Indra does not build the world from the corpse.
+
+  - from: vrtra
+    to: yam
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Two water-opponents bound or split by a storm-king.
+
+  - from: vrtra
+    to: tiamat
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Dragon of the waters. Vṛtra pens them; Tiamat becomes the world.
+
+  - from: vedic-purusha
+    to: tiamat
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Cosmos from a body. Sacrifice versus combat.
+
+  - from: vedic-purusha
+    to: orphic-dionysus
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Two dismembered divine bodies that found a world or a people.
+
+  - from: vedic-purusha
+    to: purusha-prakriti
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: []
+    note: "Hymn-person who is cut versus Sāṃkhya witness who does not make."
+
+  - from: prajapati
+    to: atum
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Self-emitting first creator. Heat and speech versus mound in Nun.
+
+  - from: prajapati
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: Makes living kinds. No separate paradigm.
+
+  - from: tvastr
+    to: kothar
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Two smiths of weapons and forms.
+
+  - from: tvastr
+    to: ptah
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Artisan of bodies and tools.
+
+  - from: tvastr
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Shapes beings and the vajra, not the whole cosmos from a model.
+
+  - from: agni
+    to: thoth
+    type: cyan
+    directed: false
+    strength: 0.5
+    versions: []
+    note: Messenger and go-between. Weak; Agni is fire, Thoth is writing.
+
+  - from: soma
+    to: indra
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Soma is pressed for Indra.
+
+  - from: surya
+    to: re
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Two suns. Sūrya rides ṛta; Re dies and is rowed.
+
+  - from: surya
+    to: rta
+    type: green
+    directed: true
+    strength: 0.75
+    versions: []
+    note: The sun keeps to the ṛta-path.
+
+  - from: dyaus
+    to: anu
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two sky-fathers.
+
+  - from: dyaus
+    to: nut
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: Sky as parent, not as vault that swallows the sun.
+
+  - from: prithivi
+    to: geb
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Two earths paired with a sky.
+
+  - from: dyaus
+    to: prithivi
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Sky-earth pair of the hymns.
+
+  - from: varuna
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Guardian of rightness versus the name of rightness itself.
+
+  - from: vedic
+    to: zoroastrianism
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Shared Indo-Iranian furniture (asura/ahura, ṛta/asha). Not identity.
+
+  - from: zoroastrianism
+    to: ahura-mazda
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Mazda is the Gathic summit.
+
+  - from: zoroastrianism
+    to: zurvan
+    type: gold
+    directed: true
+    strength: 0.7
+    versions: []
+    note: Zurvan is a later overlay, still interior to the stream.
+
+  - from: ahura-mazda
+    to: asha
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Mazda chooses and founds asha.
+
+  - from: ahura-mazda
+    to: amesha-spentas
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The heptad extends Mazda’s wisdom.
+
+  - from: ahura-mazda
+    to: angra-mainyu
+    type: magenta
+    directed: false
+    strength: 0.95
+    versions: []
+    note: Twin or opposed mainyus. Named poles of zoroastrian-dualism.
+
+  - from: angra-mainyu
+    to: druj
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: The opposing spirit chooses the Lie.
+
+  - from: asha
+    to: druj
+    type: magenta
+    directed: false
+    strength: 1.0
+    versions: []
+    note: Order/truth versus lie. The Gathic choice.
+
+  - from: asha
+    to: rta
+    type: cyan
+    directed: false
+    strength: 0.95
+    versions: []
+    note: Cognate Indo-Iranian order-names.
+
+  - from: asha
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Three names for order that must be kept (asha, ṛta, Ma'at).
+
+  - from: zoroastrian-dualism
+    to: ahura-mazda
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: The pair-node and its good pole.
+
+  - from: zoroastrian-dualism
+    to: angra-mainyu
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: The pair-node and its opposing pole.
+
+  - from: angra-mainyu
+    to: seth
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two hostile wills. Seth is inside a Ma'at-cosmos; Angra claims a first pole.
+
+  - from: ahura-mazda
+    to: the-good
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V11]
+    note: Summit of wisdom and asha. Not beyond being, and has an opposing will.
+
+  - from: ahura-mazda
+    to: genesis-creator
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Uncreated good creator. Mazda has a rival spirit Genesis classically does not.
+
+  - from: amesha-spentas
+    to: sefirot
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: Structured aspects of the divine. Heptad versus ten; weak.
+
+  - from: zurvan
+    to: ahura-mazda
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: "Zurvanite reading: Time bears the good twin."
+
+  - from: zurvan
+    to: angra-mainyu
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: "Zurvanite reading: Time bears the destructive twin."
+
+  - from: zurvan
+    to: ordered-time
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V9]
+    note: Time as parent of good and evil versus time as image of eternity.
+
+  - from: zurvan
+    to: fallen-time
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: [V9]
+    note: Infinite time that can birth a fall. Thin.

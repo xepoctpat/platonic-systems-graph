@@ -15,6 +15,7 @@ No backend, no database, no build step.
 │   ├── edges.yaml            # typed relations
 │   └── versions.md           # what each diagram was for
 ├── analysis/                 # NetworkX → stdout
+├── tools/serve.py            # local viewer on 127.0.0.1:8765
 ├── viewer/                   # 2D inspector (HTML + CSS + JS)
 ├── .grok/skills/             # repo-scoped Grok skills
 ├── requirements.txt
@@ -79,13 +80,15 @@ High-betweenness nodes and mixed green/red cycles are **candidates** for an orga
 
 ## Viewer
 
-Static files: `viewer/index.html`, `viewer/css/styles.css`, `viewer/js/app.js`. Browsers block `file://` fetches, so serve the **repository root** on a free high port (avoid 8000 / 3000 / 5000 / 8080):
+Static files: `viewer/index.html`, `viewer/css/styles.css`, `viewer/js/app.js`. Browsers block `file://` fetches. From the repo root:
 
 ```powershell
-python -m http.server 8765
+python tools/serve.py          # start (no-op if already up)
+python tools/serve.py check
+python tools/serve.py stop
 ```
 
-Open <http://localhost:8765/viewer/>.
+Then open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080.
 
 - Node colour = cluster; system nodes are larger than principles.
 - Filter by kind, cluster, and edge type.
@@ -97,9 +100,9 @@ Keep CSS and JS out of the HTML.
 
 ## Extending
 
-1. Research the cluster from sources (`/cluster-research`).
-2. Add nodes and edges (`/add-entry`). Prefer laterals and collisions.
-3. Re-run analysis (`/organic-spine`) and refresh the viewer.
+1. Web survey one tradition or slot (`/researcher`). Walks `data/research-queue.yaml` from the earliest sourced cosmology unless you name a target. Small batches, sources first.
+2. Encode accepted nodes (`/add-entry`). Prefer laterals and collisions.
+3. Re-run analysis (`/organic-spine`) and keep the viewer up (`/viewer-server`).
 4. Holding nodes (`mythology`, some system stubs) exist so laterals have a landing site. Replace them when the interior is surveyed.
 
 One node per functionally distinct system or principle, not one node per author.

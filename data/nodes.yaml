@@ -66,8 +66,11 @@ nodes:
     kind: system
     cluster: egyptian
     description: >
-      Memphite craftsman theology and Ma'at as a peer order-system.
-    refs: ["Memphite Theology"]
+      Several temple cosmogonies in one peer system, not one ladder. Memphis
+      (Ptah by heart and tongue), Heliopolis (Nun, Atum, Re), Thebes (Amun
+      hidden), plus the Osiris cycle of cut and gathering. Ma'at is the order
+      that must be kept. The rest of the pantheon is not encoded.
+    refs: ["Memphite Theology (Shabaka Stone)", "Pyramid Texts", "Heliopolitan Ennead"]
 
   - id: gnosticism
     label: "Gnosticism"
@@ -101,9 +104,18 @@ nodes:
     kind: system
     cluster: hindu
     description: >
-      A holding system-node for Brahman, Sāṃkhya, and later Vedānta until those
-      interiors are surveyed separately. V5 lateral hub.
+      Later umbrella for Upaniṣadic Brahman, Sāṃkhya, and Purāṇic strands.
+      The Ṛgvedic corpus is its own system node (`vedic`), not collapsed here.
     refs: ["Upaniṣads", "Sāṃkhya-kārikā"]
+
+  - id: vedic
+    label: "Vedic religion"
+    kind: system
+    cluster: vedic
+    description: >
+      Ṛgvedic hymn corpus as a peer system. Storm-king, fire-priest, soma,
+      ṛta, and the Puruṣa hymn. Not later Hinduism and not every named deva.
+    refs: ["Ṛgveda", "Macdonell, Vedic Mythology"]
 
   - id: jungian-psychology
     label: "Jungian psychology"
@@ -128,8 +140,10 @@ nodes:
     kind: system
     cluster: mesopotamian
     description: >
-      Sumerian / Babylonian cosmic-order peer (Anunnaki, me). Interior pending.
-    refs: ["placeholder pending cluster survey"]
+      Sumerian world-order (Enki, me, An–Ki split) and Babylonian Enūma Eliš
+      (Marduk, Tiamat) as a peer system. First readable cosmogony on the queue.
+      Not a Platonic stage and not exhausted by the flood story.
+    refs: ["ETCSL 1.1.3 Enki and the World Order", "Lambert 2013, Babylonian Creation Myths"]
 
   - id: mythology
     label: "Mythology (holding)"
@@ -233,8 +247,63 @@ nodes:
     kind: system
     cluster: zoroastrian
     description: >
-      Dual first wills as a peer collision with single-source plus necessity.
-    refs: ["Gathas"]
+      Gathic choice of asha against druj; later cosmic fight of Ahura Mazda
+      and Angra Mainyu; Zurvanite infinite time as a later overlay. Twin of
+      the Vedic stream, not a Platonic footnote.
+    refs: ["Gathas", "Younger Avesta", "Pahlavi Zurvan texts"]
+
+  - id: canaanite
+    label: "Canaanite religion"
+    kind: system
+    cluster: canaanite
+    description: >
+      Late Bronze Ugaritic corpus as a peer, not a biblical footnote. El sits
+      above; Baal fights Yam and Mot; Kothar builds weapons and palace. Small
+      readable cycle (KTU 1.1–1.6). Keret and Aqhat stay out.
+    refs: ["Baal Cycle KTU 1.1–1.6", "Smith, The Ugaritic Baal Cycle"]
+
+  - id: paleolithic-image
+    label: "Palaeolithic image"
+    kind: system
+    cluster: preliterate
+    description: >
+      Upper Palaeolithic practice of composed images (Chauvet, Lascaux, Swabian
+      ivory). A long habit of putting animals and hybrids in special places.
+      Not a readable pantheon. Includes earlier African geometric marks as the
+      floor of mark-making.
+    refs: ["Geneste, From Chauvet to Lascaux", "Henshilwood et al. on Blombos ochre"]
+
+  - id: ppn-ritual
+    label: "PPN monumental ritual"
+    kind: system
+    cluster: preliterate
+    description: >
+      Pre-Pottery Neolithic stone enclosures in south-east Anatolia (Göbekli Tepe,
+      Karahan Tepe, Taş Tepeler), c. 9600–7000 BCE. Oldest large ritual or communal
+      stone architecture we can point at. No texts. Temple versus house is open.
+    refs: ["Schmidt on Göbekli Tepe", "Banning 2011, Current Anthropology"]
+
+  - id: lepenski-vir
+    label: "Lepenski Vir"
+    kind: system
+    cluster: preliterate
+    description: >
+      Iron Gates Danube culture (eastern Serbia / Romanian bank), Mesolithic into
+      Early Neolithic. Trapezoid houses facing the river, hearth at centre,
+      sandstone fish-human sculptures. Older and different from Vinča. Later
+      layer is Starčevo pottery, not Vinča interiors.
+    refs: ["Bonsall et al. on Iron Gates chronology", "National Museum of Serbia, Lepenski Vir collection"]
+
+  - id: vinca
+    label: "Vinča culture"
+    kind: system
+    cluster: preliterate
+    description: >
+      Central Balkan Late Neolithic–Chalcolithic, c. 5400–4500 BCE. Type site
+      Vinča-Belo Brdo on the Danube below Belgrade. Farming tells, burnished
+      pottery, clay figurines, incised signs, early copper. This is the pottery
+      and figurine package, not Lepenski Vir’s stone river-images.
+    refs: ["Vinča-Belo Brdo radiocarbon syntheses (2009, 2016)", "Vasić excavations"]
 
   # ---- principles (operators, events, slots) ----
   - id: alchemical-opus
@@ -841,3 +910,514 @@ nodes:
       Contrast with Plato’s single Good plus a *non-evil* necessity: here the
       opposing pole is itself a will, not a receptacle.
     refs: ["Gathas", "later Avestan / Pahlavi"]
+
+  - id: ahura-mazda
+    label: "Ahura Mazda"
+    kind: principle
+    cluster: zoroastrian
+    role: attractor
+    description: >
+      Lord of Wisdom. Uncreated source of asha and of the Amesha Spentas.
+      In the Gathas more ethical summit than a combat craftsman; later the
+      good pole of a cosmic war.
+    refs: ["Gathas", "Yasna"]
+
+  - id: angra-mainyu
+    label: "Angra Mainyu"
+    kind: principle
+    cluster: zoroastrian
+    role: positive-feedback
+    description: >
+      Destructive / opposing spirit. Chooses druj. In later texts a coeval
+      or near-coeval will against Mazda. Not leftover chōra.
+    refs: ["Gathas (twin mainyus)", "later Avestan / Pahlavi"]
+
+  - id: asha
+    label: "Asha"
+    kind: principle
+    cluster: zoroastrian
+    role: clock
+    description: >
+      Truth, rightness, cosmic order. Cognate of Vedic ṛta. The path that
+      must be chosen and kept.
+    refs: ["Gathas", "Asha Vahishta in Younger Avesta"]
+
+  - id: druj
+    label: "Druj"
+    kind: principle
+    cluster: zoroastrian
+    role: noise
+    description: >
+      The Lie: distortion, chaos, falsehood. Opposite of asha. Ethical and
+      cosmic, not a slain sea.
+    refs: ["Gathas"]
+
+  - id: amesha-spentas
+    label: "Amesha Spentas"
+    kind: principle
+    cluster: zoroastrian
+    role: model
+    description: >
+      Heptad of undying aspects of Mazda (Vohu Manah, Asha Vahishta, and
+      the rest). One node for the set, not seven. Later archangel-like;
+      in the Gathas still facets of Wisdom.
+    refs: ["Yasna Haptanghaiti", "Younger Avesta"]
+
+  - id: zurvan
+    label: "Zurvan"
+    kind: principle
+    cluster: zoroastrian
+    role: clock
+    description: >
+      Infinite Time in later Zurvanite reading: parent of the twins Ohrmazd
+      and Ahriman. Time as the highest, not as a moving image of eternity.
+    refs: ["Pahlavi Zurvan mythology"]
+
+  - id: blombos-mark
+    label: "Blombos mark"
+    kind: principle
+    cluster: preliterate
+    role: information
+    description: >
+      Deliberate geometric incisions and ochre drawing at Blombos Cave (South
+      Africa), c. 100–73 ka. Cross-hatch and related patterns. Not language.
+      Salvageable slot: a mark that is made on purpose and can carry difference.
+    refs: ["Henshilwood et al. 2002/2009", "Henshilwood et al. 2018 Nature (73 ka drawing)"]
+
+  - id: lion-man
+    label: "Lion-man"
+    kind: principle
+    cluster: preliterate
+    description: >
+      Löwenmensch of Hohlenstein-Stadel: mammoth-ivory being with a cave-lion
+      head and a human stance, c. 40–35 ka. Oldest confirmed sculpture of a
+      thing that does not exist in nature. Salvageable slot: hybrid / other-than-
+      human person. Ivory, not stone.
+    refs: ["Ulm Museum / UNESCO Swabian Jura", "British Museum, The Lion Man"]
+
+  - id: gobekli-tepe
+    label: "Göbekli Tepe"
+    kind: principle
+    cluster: preliterate
+    description: >
+      Flagship PPN enclosure complex in SE Anatolia, c. 9600–8000 BCE. T-pillars
+      carved as abstracted bodies with animal reliefs. First large stone imagery
+      we can date. Sanctuary versus settlement still argued.
+    refs: ["Klaus Schmidt", "Banning 2011", "Dietrich et al. 2019 PLOS ONE"]
+
+  - id: lepenski-fish-image
+    label: "Lepenski fish-human"
+    kind: principle
+    cluster: preliterate
+    description: >
+      Sandstone sculptures from Lepenski Vir with human faces and fish traits,
+      set at house hearths, peak c. 6300–6000 BCE. Europe’s earliest monumental
+      stone figures. Salvageable slot: river-being; hybrid like the Lion-man,
+      carved in stone, later, and tied to the house.
+    refs: ["National Museum of Serbia", "Radovanović, The Iron Gates Mesolithic"]
+
+  - id: nabta-playa
+    label: "Nabta Playa"
+    kind: principle
+    cluster: preliterate
+    role: clock
+    description: >
+      Saharan stone setting in southern Egypt. Occupation from c. 7500 BCE; the
+      small calendar circle is often dated later (5th–4th millennium). Seasonal
+      or solstice mark, not a cosmogony. Time/sky slot only.
+    refs: ["McKim Malville et al. on Nabta Playa", "Astronomy.com summary 2020"]
+
+  - id: vinca-signs
+    label: "Vinča signs"
+    kind: principle
+    cluster: preliterate
+    role: information
+    description: >
+      Recurring incised signs on Vinča pottery and figurines. Household notation
+      or potters’ marks, not a deciphered language and not older Sumerian
+      writing. Salvageable slot: a repeatable sign-set without a readable myth.
+    refs: ["Starović 2005, Documenta Praehistorica", "Vinča symbols (standard archaeological caution)"]
+
+  - id: nammu
+    label: "Nammu"
+    kind: principle
+    cluster: mesopotamian
+    role: noise
+    description: >
+      Sumerian primeval sea who bears An and Ki. Water as the given before
+      sky and earth are two. Nurse-like, not a slain chaos-dragon.
+    refs: ["Gilgamesh, Enkidu, and the Netherworld prologue", "Kramer, Sumerian Mythology"]
+
+  - id: anu
+    label: "An / Anu"
+    kind: principle
+    cluster: mesopotamian
+    role: attractor
+    description: >
+      Sky and high god. Occupies a summit slot without being a craftsman and
+      without being beyond being. Authority more than intellect.
+    refs: ["Enūma Eliš", "Sumerian temple hymns"]
+
+  - id: enlil
+    label: "Enlil"
+    kind: principle
+    cluster: mesopotamian
+    role: symmetry-breaking
+    description: >
+      Separates An from Ki so a habitable interval exists. Kingship and
+      weather sit here. The cut, not the model.
+    refs: ["Gilgamesh, Enkidu, and the Netherworld", "Enlil in the E-kur"]
+
+  - id: enki
+    label: "Enki / Ea"
+    kind: principle
+    cluster: mesopotamian
+    role: controller
+    description: >
+      Wisdom, Abzu, crafts, and the assigning of cosmic offices. Closest
+      Sumerian occupant of a craftsman slot. In Enūma Eliš he slays Apsu
+      before Marduk slays Tiamat.
+    refs: ["ETCSL 1.1.3 Enki and the World Order", "Enūma Eliš tablets I–II"]
+
+  - id: divine-me
+    label: "Me"
+    kind: principle
+    cluster: mesopotamian
+    role: model
+    description: >
+      The me: transferable divine powers that structure cosmos, craft, and
+      city. Offices that can be gathered, stolen, and bestowed. Forms-as-
+      functions, not a living intelligible animal.
+    refs: ["ETCSL 1.1.3", "Inana and Enki (me list)"]
+
+  - id: tiamat
+    label: "Tiamat"
+    kind: principle
+    cluster: mesopotamian
+    role: noise
+    description: >
+      Salt-water chaos in Enūma Eliš. Slain by Marduk; heavens and earth cut
+      from her body. Matter as corpse of a defeated first being, not a nurse.
+    refs: ["Enūma Eliš tablets IV–V", "Lambert 2013"]
+
+  - id: marduk
+    label: "Marduk"
+    kind: principle
+    cluster: mesopotamian
+    role: controller
+    description: >
+      Babylon’s champion in Enūma Eliš. Builds the world from Tiamat, assigns
+      offices, takes the Tablet of Destinies. Craftsman by combat, recited at
+      Akitu as yearly re-seizure of order.
+    refs: ["Enūma Eliš", "Akitu ritual context"]
+
+  - id: tablet-of-destinies
+    label: "Tablet of Destinies"
+    kind: principle
+    cluster: mesopotamian
+    role: information
+    description: >
+      Object that confers the right to decree fate. Taken from Qingu and worn
+      by Marduk. Legitimacy as a portable constraint, not a Form contemplated.
+    refs: ["Enūma Eliš tablet IV", "Anzû myth (parallel tablet)"]
+
+  - id: nun
+    label: "Nun"
+    kind: principle
+    cluster: egyptian
+    role: noise
+    description: >
+      Infinite dark water before anything stands. Atum rises from it. Nurse-sea,
+      not a slain dragon and not a prison.
+    refs: ["Pyramid Texts", "Heliopolitan cosmogony"]
+
+  - id: atum
+    label: "Atum"
+    kind: principle
+    cluster: egyptian
+    role: controller
+    description: >
+      Self-created first of Heliopolis. Stands on the benben mound in Nun and
+      produces the first pair (Shu, Tefnut). Summit and craftsman in one body;
+      later fused with Re. Not encoded as the whole Ennead.
+    refs: ["Pyramid Texts", "Heliopolitan Ennead"]
+
+  - id: re
+    label: "Re"
+    kind: principle
+    cluster: egyptian
+    role: clock
+    description: >
+      Sun as daily death and rebirth. Night barque, dawn return. Time as a cycle
+      that must be rowed, not a moving image of eternity.
+    refs: ["Amduat", "solar hymns"]
+
+  - id: osiris
+    label: "Osiris"
+    kind: principle
+    cluster: egyptian
+    description: >
+      Murdered and dismembered king, gathered and made the first mummy. Fall
+      then reconstitution inside this world; the dead king remains lord of the
+      West, not an escapee. Horus as living successor stays in the myth, not
+      as a separate node.
+    refs: ["Pyramid Texts", "Plutarch, De Iside (late narrative)"]
+
+  - id: isis
+    label: "Isis"
+    kind: principle
+    cluster: egyptian
+    role: negative-feedback
+    description: >
+      Gathers the scattered pieces and forces life back long enough for a
+      successor. Return operator of the Osiris cycle.
+    refs: ["Pyramid Texts", "Osiris myth"]
+
+  - id: seth
+    label: "Seth"
+    kind: principle
+    cluster: egyptian
+    role: positive-feedback
+    description: >
+      Killer and usurper; isfet against Ma'at. Disorder as a will inside the
+      cosmos, not a first water to be cut into sky and earth.
+    refs: ["Osiris myth", "isfet / Ma'at theology"]
+
+  - id: thoth
+    label: "Thoth"
+    kind: principle
+    cluster: egyptian
+    role: model
+    description: >
+      Writing, moon, measure, and the weighing of the heart. Speech and record
+      as cosmic offices. Helps reassemble Osiris.
+    refs: ["Book of the Dead spell 125", "Hermopolitan associations"]
+
+  - id: amun
+    label: "Amun"
+    kind: principle
+    cluster: egyptian
+    role: attractor
+    description: >
+      The Hidden of Thebes. Summit by withdrawal of name, later Amun-Re.
+      Intensifies transcendence without condemning the craftsman.
+    refs: ["New Kingdom Amun theology", "Leiden hymns"]
+
+  - id: shu
+    label: "Shu"
+    kind: principle
+    cluster: egyptian
+    role: symmetry-breaking
+    description: >
+      Air. Born of Atum with Tefnut; holds Nut (sky) off Geb (earth). The
+      Heliopolitan cut that opens a world. Ennead actor, not a leftover god.
+    refs: ["Pyramid Texts", "Heliopolitan Ennead"]
+
+  - id: tefnut
+    label: "Tefnut"
+    kind: principle
+    cluster: egyptian
+    description: >
+      Moisture. Twin of Shu, first pair from Atum. Ennead actor.
+    refs: ["Pyramid Texts", "Heliopolitan Ennead"]
+
+  - id: geb
+    label: "Geb"
+    kind: principle
+    cluster: egyptian
+    description: >
+      Earth. Lies under Nut; father of the Osiris generation. Ennead actor.
+    refs: ["Pyramid Texts", "Heliopolitan Ennead"]
+
+  - id: nut
+    label: "Nut"
+    kind: principle
+    cluster: egyptian
+    description: >
+      Sky vault arched over Geb. Swallows and births the sun. Ennead actor.
+    refs: ["Pyramid Texts", "Heliopolitan Ennead"]
+
+  - id: nephthys
+    label: "Nephthys"
+    kind: principle
+    cluster: egyptian
+    description: >
+      Sister of Isis; mourns and helps gather Osiris. Last of the nine of
+      Heliopolis. Ennead actor.
+    refs: ["Pyramid Texts", "Osiris myth"]
+
+  - id: rta
+    label: "Ṛta"
+    kind: principle
+    cluster: vedic
+    role: clock
+    description: >
+      Vedic rightness of the cosmos: the path of sun, sacrifice, and speech.
+      Order that is kept, not a person. Closest peer to Ma'at.
+    refs: ["Ṛgveda", "Macdonell, Vedic Mythology"]
+
+  - id: vedic-purusha
+    label: "Puruṣa (Puruṣasūkta)"
+    kind: principle
+    cluster: vedic
+    description: >
+      Cosmic person of Ṛgveda 10.90, dismembered in sacrifice so the world
+      and the varṇas are made. Cosmos from a body, like Tiamat, but as offering
+      not combat. Not the Sāṃkhya witness (`purusha-prakriti`).
+    refs: ["Ṛgveda 10.90"]
+
+  - id: prajapati
+    label: "Prajāpati"
+    kind: principle
+    cluster: vedic
+    role: controller
+    description: >
+      Lord of creatures. Late-Vedic / Brāhmaṇa creator who emits the world.
+      Craftsman-adjacent, often by heat and speech, not by looking to Forms.
+    refs: ["Ṛgveda 10.121 (hints)", "Brāhmaṇa Prajāpati myths"]
+
+  - id: indra
+    label: "Indra"
+    kind: principle
+    cluster: vedic
+    role: governor
+    description: >
+      Storm-king of the Ṛgveda (most hymns). Slays Vṛtra, releases the waters.
+      King of gods in this corpus, not a hidden summit.
+    refs: ["Ṛgveda Indra hymns", "Vṛtra-killing"]
+
+  - id: vrtra
+    label: "Vṛtra"
+    kind: principle
+    cluster: vedic
+    role: noise
+    description: >
+      Obstructor, serpent-dragon who pens the waters. Indra splits him.
+      Combat-water, sibling of Yam and Tiamat.
+    refs: ["Ṛgveda 1.32"]
+
+  - id: agni
+    label: "Agni"
+    kind: principle
+    cluster: vedic
+    description: >
+      Sacrificial fire, priest, and messenger between men and gods. Second
+      in hymn-count. Mouth of the offering, not a craftsman of the cosmos.
+    refs: ["Ṛgveda Agni hymns"]
+
+  - id: soma
+    label: "Soma"
+    kind: principle
+    cluster: vedic
+    description: >
+      Plant, drink, and god. Pressed and offered, especially to Indra.
+      Ritual substance that is also a deity.
+    refs: ["Ṛgveda maṇḍala 9"]
+
+  - id: varuna
+    label: "Varuṇa"
+    kind: principle
+    cluster: vedic
+    description: >
+      Guardian of ṛta, oaths, and the waters. Often paired with Mitra (not
+      a separate node). Asura of bonds, not a slain sea.
+    refs: ["Ṛgveda Varuṇa hymns"]
+
+  - id: surya
+    label: "Sūrya"
+    kind: principle
+    cluster: vedic
+    role: clock
+    description: >
+      Sun that travels the ṛta-path. Daily light, not a dying-and-rowed Re
+      and not Timaean numbered heavens.
+    refs: ["Ṛgveda Sūrya / Savitṛ hymns"]
+
+  - id: tvastr
+    label: "Tvaṣṭṛ"
+    kind: principle
+    cluster: vedic
+    role: controller
+    description: >
+      Divine smith. Shapes forms, the vajra, and living beings. Vedic
+      craftsman of tools and bodies, not of the whole cosmos from a model.
+    refs: ["Ṛgveda Tvaṣṭṛ passages"]
+
+  - id: dyaus
+    label: "Dyaus"
+    kind: principle
+    cluster: vedic
+    description: >
+      Sky father, often with Pṛthivī. Cognate with Zeus/Jupiter as a name,
+      not as the later Olympian king. Summit-as-sky.
+    refs: ["Ṛgveda Dyaus-Pṛthivī hymns"]
+
+  - id: prithivi
+    label: "Pṛthivī"
+    kind: principle
+    cluster: vedic
+    description: >
+      Earth mother, pair of Dyaus. Broad earth, not chōra and not Geb’s
+      Ennead genealogy.
+    refs: ["Ṛgveda Dyaus-Pṛthivī hymns"]
+
+  - id: el-canaanite
+    label: "El"
+    kind: principle
+    cluster: canaanite
+    role: attractor
+    description: >
+      Aged high god of Ugarit. Father of gods, bull, cosmic mountain. Sovereign
+      who grants kingship rather than fighting Yam himself. Summit slot; not
+      Israel’s El as a node.
+    refs: ["Baal Cycle", "KTU 1.1–1.6"]
+
+  - id: yam
+    label: "Yam"
+    kind: principle
+    cluster: canaanite
+    role: noise
+    description: >
+      Sea and river (Nahar). Baal’s first opponent. Chaos-water that can be
+      defeated and bound, not cut into heaven and earth.
+    refs: ["KTU 1.2", "Smith, The Ugaritic Baal Cycle"]
+
+  - id: baal
+    label: "Baal"
+    kind: principle
+    cluster: canaanite
+    role: governor
+    description: >
+      Storm, rain, Cloud-Rider. Defeats Yam, dies into Mot, returns. King under
+      El, not the highest. Seasonal death-and-return, not escape from the cosmos.
+    refs: ["KTU 1.1–1.6", "Baal Cycle"]
+
+  - id: mot
+    label: "Mot"
+    kind: principle
+    cluster: canaanite
+    role: prison
+    description: >
+      Death. Swallows Baal; a lip to earth and a lip to heaven. Fall as a god,
+      not as a first water.
+    refs: ["KTU 1.4–1.6"]
+
+  - id: anat
+    label: "Anat"
+    kind: principle
+    cluster: canaanite
+    role: negative-feedback
+    description: >
+      Warrior sister of Baal. Hunts Mot and helps the return. Gathering by
+      violence, not by weaving pieces like Isis.
+    refs: ["KTU 1.6"]
+
+  - id: kothar
+    label: "Kothar-wa-Khasis"
+    kind: principle
+    cluster: canaanite
+    role: controller
+    description: >
+      Divine craftsman. Makes Baal’s maces against Yam and builds Baal’s palace.
+      Artisan of tools and house, not of the cosmos from a corpse.
+    refs: ["KTU 1.2", "KTU 1.4"]

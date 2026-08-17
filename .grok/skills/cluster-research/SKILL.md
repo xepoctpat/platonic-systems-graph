@@ -29,5 +29,6 @@ Naming nodes is source work. The JPGs in `diagrams/` are illustrations. Do not t
 5. Link first to peers — magenta collision, cyan isomorphism, orange hybrid. A gold edge to a Platonic node is allowed only as real genealogy, and is never required.
 6. Mark unfinished interiors (`refs` containing “pending” or “survey”) instead of inventing structure.
 7. Apply `/add-entry` to write the YAML.
+8. `/viewer-server` if the inspector should show the new nodes.
 
-If the user names no tradition, propose the next stub that is most connected on V5 laterals and least surveyed (Sufism, Mesopotamian, Norse, Theosophy interiors).
+For a web-backed historical or present-day sweep, use `/researcher` instead of inventing from memory. If the user names no tradition, propose the next stub that is most connected and least surveyed (Sufism, Mesopotamian, Norse, Theosophy interiors).

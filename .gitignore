@@ -56,6 +56,8 @@ $RECYCLE.BIN/
 # Local / generated artifacts (keep YAML as source of truth)
 viewer/graph.json
 analysis/__pycache__/
+tools/__pycache__/
+.viewer-serve.pid
 
 # Environment / secrets (none expected; keep the habit)
 .env

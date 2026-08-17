@@ -1,0 +1,311 @@
+# =============================================================================
+# research-queue.yaml — what /researcher walks
+# =============================================================================
+#
+# Not a spine. A survey order. Earliest *sourced* cosmologies first
+# (written Near East, 3rd millennium BCE). Prehistory is out of scope
+# until a documentable system appears.
+#
+# status:
+#   empty     no system node yet
+#   stub      system node exists; interior not surveyed
+#   partial   some principles; more work allowed
+#   surveyed  good enough; leave unless expanding a slot
+#
+# /researcher, if given no target, takes the earliest empty or stub item.
+# One item per pass.
+# =============================================================================
+
+floor: >
+  Earliest *readable* cosmologies are late 4th / 3rd millennium BCE Mesopotamia
+  and Old Kingdom Egypt. Older than that is archaeological: sites and images,
+  not texts. Those can be nodes only as practices or places (enclosure, image,
+  sky-mark), never as reconstructed gods. Paleolithic “shamanism” is a modern
+  reading, not a sourced system.
+
+items:
+
+  # ---- older than writing (archaeological; no readable cosmology) ----
+  - id: paleolithic-image
+    era: "c. 37,000–15,000 BP (marks from c. 100–73 ka)"
+    status: partial
+    cluster: preliterate
+    note: >
+      Chauvet, Lascaux, Altamira et al. Image + cave as a long practice.
+      Not a pantheon. One system node at most; not one node per cave.
+
+  - id: ppn-ritual
+    era: "c. 9600–7000 BCE"
+    status: partial
+    cluster: preliterate
+    note: >
+      Pre-Pottery Neolithic monumental sites (Göbekli Tepe, Karahan Tepe,
+      Taş Tepeler). Oldest large ritual/communal stone architecture we have.
+      No texts. Temple vs house is disputed.
+
+  - id: nabta-playa
+    era: "occupation c. 7500 BCE; stone circle often cited c. 5000–4000 BCE"
+    status: stub
+    cluster: preliterate
+    note: Saharan sky-mark / seasonal circle. Time slot only. Not a cosmogony.
+
+  - id: lepenski-vir
+    era: "c. 9500–5500 BCE; peak sculpture/houses c. 6300–6000"
+    status: partial
+    cluster: preliterate
+    note: >
+      Iron Gates Danube (eastern Serbia / Romanian bank). Mesolithic to
+      Early Neolithic. Trapezoid houses, fish-human sandstone sculptures.
+      Not the Vinča pottery-figurine package. ~135 km downstream of
+      Vinča-Belo Brdo; older; later layer is Starčevo, then Vinča is a
+      different culture upstream.
+
+  - id: vinca
+    era: "c. 5400–4500 BCE"
+    status: partial
+    cluster: preliterate
+    note: >
+      Central Balkan Neolithic (type site Vinča-Belo Brdo on the Danube
+      below Belgrade; range includes Serbia, Romania, Bulgaria). This is
+      the pottery + clay-figurine culture. Incised signs, not a readable
+      script. Older than cuneiform, younger than Lepenski Vir and Göbekli.
+
+  # ---- earliest written Near East ----
+  - id: mesopotamian
+    era: "c. 3200–500 BCE"
+    status: partial
+    cluster: mesopotamian
+    note: >
+      Sumerian order (Nammu, An, Enlil, Enki, me) and Enūma Eliš (Tiamat,
+      Marduk, Tablet of Destinies) encoded. Flood / Atrahasis, Inana, netherworld
+      still out.
+
+  - id: egyptian-religion
+    era: "c. 3000–300 BCE"
+    status: partial
+    cluster: egyptian
+    note: >
+      Heliopolitan Ennead now complete (Atum, Shu, Tefnut, Geb, Nut, Osiris,
+      Isis, Seth, Nephthys) plus Nun, Re, Ptah, Ma'at, Thoth, Amun. Not nomes,
+      Aten, or Book of the Dead as a separate system.
+
+  - id: canaanite
+    era: "c. 1400–1000 BCE"
+    status: partial
+    cluster: canaanite
+    note: >
+      Baal Cycle encoded: El, Yam, Baal, Mot, Anat, Kothar. Keret, Aqhat,
+      Asherah, Dagan out.
+
+  # ---- Iran / Levant / South Asia / East Asia (early) ----
+  - id: vedic
+    era: "c. 1500–500 BCE"
+    status: partial
+    cluster: vedic
+    note: >
+      Ṛgvedic core encoded: Ṛta, Puruṣa, Prajāpati, Indra, Vṛtra, Agni, Soma,
+      Varuṇa, Sūrya, Tvaṣṭṛ, Dyaus, Pṛthivī. Out: Aśvins, Maruts, Uṣas, Mitra
+      as a separate node, Viṣṇu, Rudra (next increment or Purāṇic pass).
+
+  - id: zoroastrianism
+    era: "c. 1200–300 BCE"
+    status: partial
+    cluster: zoroastrian
+    note: >
+      Ahura Mazda, Angra Mainyu, asha, druj, Amesha Spentas (as a set),
+      Zurvan. Not every yazata or daeva.
+
+  - id: biblical-religion
+    era: "c. 1000–200 BCE"
+    status: partial
+    cluster: biblical
+    note: Genesis creator and tohu exist. Missing wisdom, merkabah precursors, exile-time.
+
+  - id: early-china
+    era: "c. 1200–200 BCE"
+    status: empty
+    cluster: chinese
+    note: Shang/Zhou, Yijing, Dao, Tian. No nodes yet.
+
+  # ---- Hellenic ----
+  - id: orphism
+    era: "c. 600–300 BCE"
+    status: stub
+    cluster: orphic
+    note: Dionysus principle only.
+
+  - id: pythagorean
+    era: "c. 530–300 BCE"
+    status: empty
+    cluster: pythagorean
+    note: Number as cosmos. Peer to later mathematicals, not a Platonic stage.
+
+  - id: platonism
+    era: "c. 380 BCE–"
+    status: partial
+    cluster: platonic
+    note: Seeded. Do not re-spine it. Expand only for missing local episodes.
+
+  - id: aristotelianism
+    era: "c. 350 BCE–"
+    status: empty
+    cluster: scientific
+    note: Unmoved mover exists as a principle; no system node.
+
+  - id: stoicism
+    era: "c. 300 BCE–200 CE"
+    status: empty
+    cluster: scientific
+    note: Stoic logos exists as a principle; no system node.
+
+  - id: mystery-religions
+    era: "c. 600 BCE–400 CE"
+    status: stub
+    cluster: hellenic-mystery
+    note: Ascent principle only. Eleusis / Isis / Mithras interiors pending.
+
+  # ---- Hellenistic / late antique collisions ----
+  - id: hermeticism
+    era: "c. 100–400 CE"
+    status: partial
+    cluster: hermetic
+    note: Hermetic nous exists.
+
+  - id: gnosticism
+    era: "c. 100–400 CE"
+    status: partial
+    cluster: gnostic
+    note: Collision pair seeded. Sethian vs Valentinian still collapsed.
+
+  - id: mandaeism
+    era: "c. 200 CE–"
+    status: empty
+    cluster: mandaean
+    note: Living Gnostic-adjacent baptismal system. Distinct from Sethian corpus.
+
+  - id: manichaeism
+    era: "c. 240–1000 CE"
+    status: empty
+    cluster: manichaean
+    note: Major dualist collision. Do not fold into gnosticism.
+
+  - id: neoplatonism
+    era: "c. 250–600 CE"
+    status: partial
+    cluster: neoplatonic
+    note: One / Nous / Soul / theurgy exist.
+
+  - id: merkavah
+    era: "c. 100–700 CE"
+    status: empty
+    cluster: jewish-mystical
+    note: Hekhalot / chariot ascent. Precursor peer to Kabbalah, not a stage of it.
+
+  # ---- medieval ----
+  - id: christianity
+    era: "c. 50 CE–"
+    status: partial
+    cluster: christian
+    note: Logos and incarnation exist. Missing apophatic / Palamite / Eckhart strands.
+
+  - id: islamic-philosophy
+    era: "c. 800–1200"
+    status: empty
+    cluster: islamic
+    note: Falsafa / kalām / Ishrāq. Peer to both Plato and Aristotle receptions.
+
+  - id: sufism
+    era: "c. 800 CE–"
+    status: stub
+    cluster: sufi
+    note: System stub only. V5 landing site.
+
+  - id: kabbalah
+    era: "c. 1200–1700"
+    status: partial
+    cluster: kabbalistic
+    note: Ein Sof / sefirot / shevirah / tikkun exist. Merkavah not yet linked.
+
+  - id: scholasticism
+    era: "c. 1100–1400"
+    status: empty
+    cluster: christian
+    note: Only if it occupies a slot the incarnation/Logos nodes do not.
+
+  # ---- early modern / occult revival ----
+  - id: renaissance-platonism
+    era: "c. 1460–1600"
+    status: empty
+    cluster: platonic
+    note: Ficino / Pico as a hybrid system, not more Plato stages.
+
+  - id: alchemy
+    era: "c. 200–1700"
+    status: partial
+    cluster: alchemical
+    note: Opus exists.
+
+  - id: theosophy
+    era: "1875–"
+    status: stub
+    cluster: theosophical
+    note: V5 hub. Interior pending.
+
+  - id: perennialism
+    era: "1920–"
+    status: empty
+    cluster: perennialist
+    note: Guénon / Schuon as a modern hybrid, not a summit.
+
+  - id: jungian-psychology
+    era: "1912–"
+    status: stub
+    cluster: jungian
+    note: System exists; archetypes/individuation not yet principles.
+
+  # ---- modern science as peers ----
+  - id: physics
+    era: "c. 1600–"
+    status: partial
+    cluster: scientific
+    note: Symmetry-breaking linked. Cosmology not split out yet.
+
+  - id: process-thought
+    era: "1929–"
+    status: empty
+    cluster: scientific
+    note: Whitehead principle exists; no system node.
+
+  - id: systems-theory
+    era: "1948–"
+    status: partial
+    cluster: scientific
+
+  - id: information-theory
+    era: "1948–"
+    status: partial
+    cluster: scientific
+
+  - id: complexity-science
+    era: "1970–"
+    status: partial
+    cluster: scientific
+
+  # ---- parallel peers (not “later”) ----
+  - id: norse-myth
+    era: "oral / c. 800–1300 CE texts"
+    status: stub
+    cluster: norse
+    note: System stub. Völuspá cosmogony / Ragnarök not encoded.
+
+  - id: mesoamerican
+    era: "c. 1000 BCE–1500 CE"
+    status: empty
+    cluster: mesoamerican
+    note: Maya / Mexica cosmogony. Peer, not a late add-on.
+
+  - id: west-african
+    era: "documentable from oral + early modern sources"
+    status: empty
+    cluster: west-african
+    note: e.g. Yoruba. Only when sourced; no decorative node.

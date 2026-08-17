@@ -26,7 +26,7 @@ python analysis/feedback.py
 3. Treat **communities** as a proposed grouping. Compare to the `cluster` field — disagreement is interesting.
 4. Treat **mixed green/red cycles** as places a cosmos can both run down and return. Recurring nodes on those cycles are spine candidates.
 5. Use `python analysis/paths.py A B` for named collisions (`platonism`/`gnosticism`, `demiurge`/`gnostic-demiurge`, etc.).
-6. Do not start a server unless asked. If you must open the viewer: `python -m http.server 8765` from the repo root.
+6. `/viewer-server` so the inspector is up (http://127.0.0.1:8765/viewer/).
 
 ## What not to do
 
