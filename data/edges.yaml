@@ -1,0 +1,1185 @@
+# =============================================================================
+# edges.yaml — single source of truth for typed relationships
+# =============================================================================
+#
+# Schema
+#   from, to    node ids (see nodes.yaml)
+#   type        gold | cyan | magenta | green | red | orange
+#   directed    true  = constitutive / causal / ascent-descent arrow
+#               false = symmetric map (isomorphism, contrast, hybrid)
+#   strength    0.0–1.0  (keep high: this file is the *strongest* links only)
+#   versions    which of V1–V11 the edge is drawn from
+#   note        one-sentence rationale
+#
+# Type language (matches the diagrams)
+#   gold     direct rooting — higher → lower on the spine, or a later
+#            system rooted in a Platonic node
+#   cyan     isomorphism — same slot, not the same thing
+#   magenta  contrast / inversion — same slot, opposite valuation
+#   green    return / integration / negative feedback
+#   red      fall / positive feedback / shattering
+#   orange   hybrid / lateral — cross-domain mix that does not go via the spine
+#
+# Direction convention
+#   gold, red : source acts on, constitutes, or destabilises target
+#   green     : source returns toward / restores target
+#   cyan, magenta, orange : undirected (from/to is only a stable writing order)
+# =============================================================================
+
+edges:
+
+  # ===========================================================================
+  # V1 — Core Platonic spine
+  # ===========================================================================
+
+  - from: the-good
+    to: intelligible-paradigm
+    type: gold
+    directed: true
+    strength: 1.0
+    versions: [V1]
+    note: Forms have being and intelligibility from the Good (Republic 509b).
+
+  - from: the-good
+    to: demiurge
+    type: gold
+    directed: true
+    strength: 1.0
+    versions: [V1, V7]
+    note: The craftsman is good and without jealousy; his agency is rooted in the Good.
+
+  - from: intelligible-paradigm
+    to: demiurge
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V1]
+    note: The Demiurge looks to the eternal Living Creature as the model of his work.
+
+  - from: demiurge
+    to: world-soul
+    type: gold
+    directed: true
+    strength: 1.0
+    versions: [V1, V6]
+    note: The craftsman blends and stretches the World Soul as the cosmos’s governor.
+
+  - from: world-soul
+    to: ordered-time
+    type: gold
+    directed: true
+    strength: 1.0
+    versions: [V1, V9]
+    note: Time is generated with the heavens so the soul’s revolutions can number them.
+
+  - from: demiurge
+    to: receptacle
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V1, V8]
+    note: Nous persuades necessity and impresses order on chōra as far as possible.
+
+  - from: receptacle
+    to: becoming
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V1, V8]
+    note: Particulars appear in the Receptacle as in a nurse or seat.
+
+  - from: demiurge
+    to: becoming
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V1]
+    note: The craftsman and the younger gods copy living kinds into the world-body.
+
+  - from: intelligible-paradigm
+    to: becoming
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V1]
+    note: The generated cosmos is an image of the complete Living Creature.
+
+  - from: becoming
+    to: eros
+    type: green
+    directed: true
+    strength: 0.9
+    versions: [V1, V10]
+    note: Eros arises in the between of lack and plenty, in mortal becoming.
+
+  - from: eros
+    to: the-good
+    type: green
+    directed: true
+    strength: 1.0
+    versions: [V1, V6, V10]
+    note: The ladder of beauty returns the soul toward the Good as attractor.
+
+  - from: eros
+    to: intelligible-paradigm
+    type: green
+    directed: true
+    strength: 0.85
+    versions: [V1, V10]
+    note: Intermediate erotic steps are the Forms / the sea of beauty.
+
+  - from: ordered-time
+    to: intelligible-paradigm
+    type: green
+    directed: true
+    strength: 0.8
+    versions: [V1, V9]
+    note: Celestial periods imitate the abiding life of the paradigm.
+
+  - from: world-soul
+    to: demiurge
+    type: green
+    directed: true
+    strength: 0.75
+    versions: [V1, V6]
+    note: The soul is made to circle the Same and look up toward nous.
+
+  - from: receptacle
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.8
+    versions: [V1, V6, V8]
+    note: The wandering cause remains as residual disorder in generated things.
+
+  - from: statesman-cycle
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.85
+    versions: [V1, V6, V9]
+    note: When the steersman lets go, the world runs down on stored motion.
+
+  - from: statesman-cycle
+    to: ordered-time
+    type: red
+    directed: true
+    strength: 0.8
+    versions: [V1, V9]
+    note: Cosmic reversal turns the clock against its previous numbering.
+
+  - from: the-good
+    to: becoming
+    type: green
+    directed: true
+    strength: 0.7
+    versions: [V1, V6]
+    note: The Good also acts as a pull on the lowest stage (final cause / attractor).
+
+  # ===========================================================================
+  # V2 — Mystical & occult (rooting, isomorphism, return, fall)
+  # ===========================================================================
+
+  - from: the-good
+    to: plotinus-one
+    type: gold
+    directed: true
+    strength: 1.0
+    versions: [V2, V11]
+    note: Plotinus’s One is the direct philosophical intensification of the Good.
+
+  - from: intelligible-paradigm
+    to: nous-neoplatonic
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V2]
+    note: Neoplatonic Nous absorbs the Timaean paradigm as intellect-identical-with-Forms.
+
+  - from: demiurge
+    to: nous-neoplatonic
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V2, V7]
+    note: The craftsman is fused into Nous rather than left as a separate artisan.
+
+  - from: world-soul
+    to: psyche-neoplatonic
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V2]
+    note: The third hypostasis is the World Soul rewritten as procession that can forget.
+
+  - from: demiurge
+    to: hermetic-nous
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V2]
+    note: Poimandres inherits a craftsman-intellect still looking toward a higher nous.
+
+  - from: demiurge
+    to: chaldean-oracles
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: [V2]
+    note: The Oracles keep a Father/Intellect craftsman grammar inside middle Platonism.
+
+  - from: eros
+    to: theurgy
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: [V2, V10]
+    note: Theurgy operationalises erotic return as ritual rather than as dialectic alone.
+
+  - from: psyche-neoplatonic
+    to: nous-neoplatonic
+    type: green
+    directed: true
+    strength: 0.9
+    versions: [V2, V6]
+    note: Epistrophē of soul toward intellect.
+
+  - from: nous-neoplatonic
+    to: plotinus-one
+    type: green
+    directed: true
+    strength: 0.95
+    versions: [V2, V11]
+    note: Intellect reverts upon the One from which it proceeded.
+
+  - from: theurgy
+    to: plotinus-one
+    type: green
+    directed: true
+    strength: 0.85
+    versions: [V2, V6]
+    note: Iamblichean work claims to complete the return the soul cannot finish by thought.
+
+  - from: theurgy
+    to: the-good
+    type: green
+    directed: true
+    strength: 0.7
+    versions: [V2, V10]
+    note: Late-antique ritual still aims at the Platonic summit, not at exit from being.
+
+  - from: intelligible-paradigm
+    to: pleroma
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V2, V5]
+    note: Fullness of aeons occupies the paradigm slot — a complete divine inventory.
+
+  - from: the-good
+    to: ein-sof
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V2, V11]
+    note: Ein Sof occupies the beyond-predication summit without being the Republic’s Good.
+
+  - from: intelligible-paradigm
+    to: sefirot
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V2, V5]
+    note: The sefirotic tree is the most diagrammable later isomorphism of structured procession.
+
+  - from: hermetic-nous
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V2]
+    note: Hermetic nous is craftsman and inner god at once — same slot, mixed soteriology.
+
+  - from: tikkun
+    to: eros
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V2, V5, V10]
+    note: Repair of the vessels and erotic ascent are parallel return operators.
+
+  - from: alchemical-opus
+    to: eros
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V2, V5]
+    note: Solve et coagula is erotic return enacted on elemental bodies.
+
+  - from: shevirah
+    to: sophia-fall
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: [V2, V5]
+    note: "Two canonical shatterings: vessels that cannot hold the influx / an aeon that overreaches."
+
+  - from: gnostic-unknown-father
+    to: pleroma
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V2, V11]
+    note: The aeonic fullness is generated from the Unknown Father / Bythos.
+
+  - from: pleroma
+    to: sophia-fall
+    type: red
+    directed: true
+    strength: 0.95
+    versions: [V2, V7]
+    note: Unauthorized emanation or aeonic passion opens deficiency inside fullness.
+
+  - from: sophia-fall
+    to: gnostic-demiurge
+    type: red
+    directed: true
+    strength: 1.0
+    versions: [V2, V7]
+    note: The fall produces the ignorant craftsman who will fabricate this world.
+
+  - from: sophia-fall
+    to: kenoma
+    type: red
+    directed: true
+    strength: 0.95
+    versions: [V2, V8]
+    note: The same passion opens the emptiness in which sparks will be trapped.
+
+  - from: gnostic-demiurge
+    to: kenoma
+    type: red
+    directed: true
+    strength: 1.0
+    versions: [V2, V7, V8]
+    note: Ialdabaoth fabricates the spheres as a prison, not as a living image.
+
+  - from: sefirot
+    to: shevirah
+    type: red
+    directed: true
+    strength: 0.95
+    versions: [V2]
+    note: The lower vessels break under the influx they cannot contain.
+
+  - from: shevirah
+    to: kenoma
+    type: red
+    directed: true
+    strength: 0.7
+    versions: [V2, V8]
+    note: Shards and husks are the Kabbalistic near-neighbour of Gnostic emptiness.
+
+  - from: tikkun
+    to: sefirot
+    type: green
+    directed: true
+    strength: 0.95
+    versions: [V2, V6]
+    note: Repair re-integrates the broken measures of divine life.
+
+  - from: tikkun
+    to: ein-sof
+    type: green
+    directed: true
+    strength: 0.8
+    versions: [V2, V11]
+    note: Restoration is oriented toward the Infinite, not toward exit from being.
+
+  - from: alchemical-opus
+    to: intelligible-paradigm
+    type: green
+    directed: true
+    strength: 0.7
+    versions: [V2]
+    note: Rubedo claims to return the work to a perfected formal image.
+
+  - from: escape-gnosis
+    to: gnostic-unknown-father
+    type: green
+    directed: true
+    strength: 0.9
+    versions: [V2, V10, V11]
+    note: Exit-gnosis returns the spark to the unknown summit, not to a well-made cosmos.
+
+  - from: escape-gnosis
+    to: pleroma
+    type: green
+    directed: true
+    strength: 0.85
+    versions: [V2, V10]
+    note: The first destination of escape is fullness, past the archontic spheres.
+
+  - from: escape-gnosis
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.85
+    versions: [V2, V10]
+    note: The same soteriology treats becoming as what must be left, not healed.
+
+  # ===========================================================================
+  # V3 — Scientific & philosophical
+  # ===========================================================================
+
+  - from: the-good
+    to: aristotle-unmoved-mover
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V3, V11]
+    note: The mover that moves as beloved inherits Good-as-attractor.
+
+  - from: the-good
+    to: attractor
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V3, V6]
+    note: Dynamical attractors are the stripped mathematical name of the Good’s pull.
+
+  - from: world-soul
+    to: stoic-logos
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V3]
+    note: Stoic logos is the World Soul made wholly immanent and fiery.
+
+  - from: world-soul
+    to: cybernetic-feedback
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V3, V6]
+    note: Homeostasis is the control-theoretic reading of a self-moving cosmic soul.
+
+  - from: demiurge
+    to: negentropy
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V3, V6]
+    note: Local export of entropy is Demiurgic persuasion under another name.
+
+  - from: receptacle
+    to: entropy
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V3, V6, V8]
+    note: The wandering cause is the Timaean ancestor of unconstrained equipartition.
+
+  - from: intelligible-paradigm
+    to: information
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: [V3]
+    note: Forms-as-constraints become information as reduction of possibility space.
+
+  - from: eros
+    to: hegel-geist
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: [V3, V10]
+    note: Geist maximises erotic / epistrophic return as historical dialectic.
+
+  - from: becoming
+    to: whitehead-process
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: [V3]
+    note: Process philosophy promotes becoming from last stage to the general category.
+
+  - from: the-good
+    to: attractor
+    type: cyan
+    directed: false
+    strength: 0.95
+    versions: [V3, V6]
+    note: Same basin-of-attraction slot; the attractor has no ethical loading.
+
+  - from: receptacle
+    to: entropy
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: [V3, V6]
+    note: Noise / wandering cause ≅ thermodynamic dissolution of constraint.
+
+  - from: demiurge
+    to: negentropy
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V3, V6]
+    note: Craftsman-as-orderer ≅ local maintenance of free energy and form.
+
+  - from: intelligible-paradigm
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V3]
+    note: Living intelligible animal ≅ specification / constraint (same slot, colder ontology).
+
+  - from: world-soul
+    to: self-organization
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V3, V6]
+    note: Immanent binding without a separate nous is the self-organization reading.
+
+  - from: demiurge
+    to: symmetry-breaking
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V3, V6]
+    note: Imposing definite triangles on chōra ≅ selecting an ordered state from symmetry.
+
+  - from: eros
+    to: cybernetic-feedback
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V3, V6, V10]
+    note: Cosmic love is negative feedback — error relative to the Good is reduced.
+
+  - from: stoic-logos
+    to: world-soul
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V3]
+    note: Same governor slot; Stoic logos refuses a separate paradigm above the world.
+
+  - from: spinoza-deus
+    to: the-good
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V3, V11]
+    note: One immanent substance occupies the summit slot by absorbing every lower stage.
+
+  - from: whitehead-process
+    to: becoming
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V3]
+    note: Actual occasions generalise Timaean genesis into the basic metaphysical unit.
+
+  - from: whitehead-process
+    to: receptacle
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V3, V8]
+    note: The extensive continuum is a modern rewrite of chōra.
+
+  - from: kant-noumenon
+    to: intelligible-paradigm
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V3]
+    note: The model-slot inverted — the ground is what we precisely cannot know.
+
+  - from: aristotle-unmoved-mover
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V3, V7]
+    note: Final cause that does not look to a separate model or persuade a receptacle.
+
+  - from: self-organization
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V3, V6, V7]
+    note: Order without an external craftsman — the strongest scientific inversion of V7.
+
+  - from: spinoza-deus
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V3, V7]
+    note: Immanent necessity leaves no work for a craftsman and no leftover chōra.
+
+  - from: entropy
+    to: negentropy
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V3, V6]
+    note: The scientific form of fall versus return.
+
+  - from: entropy
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.85
+    versions: [V3, V6]
+    note: Uncompensated entropy dissolves the generated order of particulars.
+
+  - from: entropy
+    to: ordered-time
+    type: red
+    directed: true
+    strength: 0.75
+    versions: [V3, V6, V9]
+    note: Heat-death / run-down is fallen time in thermodynamic language.
+
+  - from: statesman-cycle
+    to: entropy
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V3, V6, V9]
+    note: Plato’s native run-down myth is already a proto-entropic story.
+
+  - from: negentropy
+    to: becoming
+    type: green
+    directed: true
+    strength: 0.85
+    versions: [V3, V6]
+    note: Living (and cosmic) order is locally maintained against the second law.
+
+  - from: cybernetic-feedback
+    to: attractor
+    type: green
+    directed: true
+    strength: 0.8
+    versions: [V3, V6]
+    note: Negative feedback drives the plant toward the set-point / basin.
+
+  - from: hegel-geist
+    to: the-good
+    type: green
+    directed: true
+    strength: 0.75
+    versions: [V3, V10]
+    note: Absolute knowing is return of spirit to its ground — a historicised Good.
+
+  - from: symmetry-breaking
+    to: receptacle
+    type: gold
+    directed: true
+    strength: 0.7
+    versions: [V3, V6]
+    note: A definite ordered state is cut out of an under-determined possibility space.
+
+  # ===========================================================================
+  # V4 — Religious & mythological
+  # ===========================================================================
+
+  - from: demiurge
+    to: ptah
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4, V7]
+    note: Memphite craftsman-by-heart-and-tongue occupies the Demiurge slot independently.
+
+  - from: the-good
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V4]
+    note: Ma'at is order-as-norm, maintained rather than beyond being.
+
+  - from: ordered-time
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4, V9]
+    note: Right measure of cosmos and kingship ≅ numbered celestial time.
+
+  - from: demiurge
+    to: genesis-creator
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4, V7]
+    note: Speaker who sees that it is good occupies the craftsman slot.
+
+  - from: demiurge
+    to: genesis-creator
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V4, V7, V8]
+    note: Creatio (classically) without a coeval receptacle versus persuasion of chōra.
+
+  - from: receptacle
+    to: tohu-vavohu
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: [V4, V8]
+    note: Formless-and-void / tehom is the nearest biblical analogue of chōra.
+
+  - from: demiurge
+    to: christian-logos
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V4, V5]
+    note: Patristic reception reads the Timaean craftsman through John 1.
+
+  - from: intelligible-paradigm
+    to: christian-logos
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: [V4]
+    note: The Word also absorbs the paradigm — things were made *through* him.
+
+  - from: christian-logos
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4, V5]
+    note: Same craftsman-intellect slot, now internal to a triune summit.
+
+  - from: incarnation
+    to: world-soul
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V4, V5]
+    note: Divine life stretched through a body — analogous, not identical, to psychic ensouling.
+
+  - from: incarnation
+    to: becoming
+    type: green
+    directed: true
+    strength: 0.9
+    versions: [V4, V8, V10]
+    note: The divine term enters becoming rather than extracting sparks from it.
+
+  - from: orphic-dionysus
+    to: world-soul
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V4, V5]
+    note: Dismembered-and-reconstituted god ≅ soul as what can be scattered and gathered.
+
+  - from: orphic-dionysus
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.85
+    versions: [V4, V8]
+    note: Sparagmos is the Hellenic red event — divine body shattered into matter.
+
+  - from: orphic-dionysus
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V4, V8]
+    note: Soma-sēma (body as tomb) versus chōra as nurse of the same particulars.
+
+  - from: eros
+    to: mystery-ascent
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4, V10]
+    note: Eleusinian-type vision is erotic return without a full Timaean hierarchy.
+
+  - from: mystery-ascent
+    to: the-good
+    type: green
+    directed: true
+    strength: 0.75
+    versions: [V4, V10]
+    note: The mysteries claim a changed standing toward the highest, via rite not dialectic.
+
+  - from: the-good
+    to: brahman
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: [V4, V11]
+    note: Nirguṇa Brahman occupies the summit slot without a craftsman looking to Forms.
+
+  - from: intelligible-paradigm
+    to: purusha-prakriti
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V4]
+    note: Purusha as witness-consciousness is a distant analogue of the paradigm / nous.
+
+  - from: receptacle
+    to: purusha-prakriti
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V4, V8]
+    note: Prakriti as productive nature occupies the receptacle slot without being persuaded.
+
+  - from: the-good
+    to: sunyata
+    type: magenta
+    directed: false
+    strength: 0.95
+    versions: [V4, V11]
+    note: Emptiness occupies the summit by refusing source-of-Forms and craftsman alike.
+
+  - from: zoroastrian-dualism
+    to: the-good
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V4, V11]
+    note: Two first wills versus one Good plus a non-evil necessity.
+
+  - from: zoroastrian-dualism
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V4, V8]
+    note: The opposing pole is itself a hostile principle, not chōra.
+
+  - from: maat
+    to: ordered-time
+    type: green
+    directed: true
+    strength: 0.75
+    versions: [V4, V6, V9]
+    note: Ma'at is order that must be continually re-established — religious negentropy.
+
+  - from: tohu-vavohu
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.7
+    versions: [V4, V8]
+    note: Residual formlessness remains the threat that speech / separation had to master.
+
+  # ===========================================================================
+  # V5 — Cross-domain lateral interplay
+  # ===========================================================================
+
+  - from: christian-logos
+    to: hermetic-nous
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: [V5]
+    note: Logos family — Word and Hermetic nous as hybrid craftsman-revealers.
+
+  - from: christian-logos
+    to: stoic-logos
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: [V5]
+    note: Logos family — immanent reason and Johannine Word share a name and a slot.
+
+  - from: hermetic-nous
+    to: stoic-logos
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: [V5]
+    note: Logos family — pneumatic / noetic fire as both structure and revealer.
+
+  - from: tikkun
+    to: alchemical-opus
+    type: orange
+    directed: false
+    strength: 0.9
+    versions: [V5, V10]
+    note: Restoration family — repair of vessels and the opus as sibling return-works.
+
+  - from: tikkun
+    to: theurgy
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: [V5, V10]
+    note: Restoration family — ritual work that claims to finish what thought cannot.
+
+  - from: alchemical-opus
+    to: theurgy
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: [V5]
+    note: Restoration family — material and theurgic techniques of return.
+
+  - from: incarnation
+    to: theurgy
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: [V5, V10]
+    note: Hybrid of divine descent and ritual ascent — opposite vectors, same medium (body).
+
+  - from: incarnation
+    to: eros
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V5, V10]
+    note: Love that comes down versus love that climbs — complementary, not identical.
+
+  - from: shevirah
+    to: orphic-dionysus
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: [V5, V8]
+    note: Fall family — breaking of vessels and sparagmos as sibling shatterings.
+
+  - from: entropy
+    to: kenoma
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: [V5, V6, V8]
+    note: Fall family — scientific dissolution and Gnostic emptiness as sibling deficits.
+
+  - from: entropy
+    to: tohu-vavohu
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: [V5, V8]
+    note: Fall family — equipartition and formless void as sibling unordered givens.
+
+  - from: plotinus-one
+    to: ein-sof
+    type: orange
+    directed: false
+    strength: 0.9
+    versions: [V5, V11]
+    note: Summit family — two apophatic infinities in historical conversation.
+
+  - from: plotinus-one
+    to: brahman
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: [V5, V11]
+    note: Summit family — One and Brahman compared as beyond-attribute sources.
+
+  - from: ein-sof
+    to: brahman
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: [V5, V11]
+    note: Summit family — Infinite and nirguṇa as laterally paired absences of predicate.
+
+  - from: gnostic-unknown-father
+    to: ein-sof
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: [V5, V11]
+    note: Summit family — both hidden; only one is the father of a condemned craftsman.
+
+  - from: kenoma
+    to: tohu-vavohu
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V5, V8]
+    note: Two religious names for the unordered below, later readable as prison or as raw given.
+
+  # ===========================================================================
+  # V6 — extra cybernetic dynamics (most V6 edges already cited above)
+  # ===========================================================================
+
+  - from: statesman-cycle
+    to: cybernetic-feedback
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V6, V9]
+    note: Letting-go of the helm is loss of negative feedback — control theory as myth.
+
+  - from: ordered-time
+    to: cybernetic-feedback
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V6, V9]
+    note: Numbered celestial periods function as the system’s reference trajectory.
+
+  - from: becoming
+    to: cybernetic-feedback
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V6]
+    note: Particulars are the plant whose outputs the World Soul / Eros must correct.
+
+  # ===========================================================================
+  # V7 — Plato’s Demiurge vs Gnostic Demiurge
+  # ===========================================================================
+
+  - from: demiurge
+    to: gnostic-demiurge
+    type: magenta
+    directed: false
+    strength: 1.0
+    versions: [V7]
+    note: Same craftsman slot, inverted sign — benevolent looker-to-the-model vs ignorant archon.
+
+  - from: gnostic-unknown-father
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V7, V11]
+    note: Gnostic theology splits the Good from the craftsman so the latter can be condemned.
+
+  - from: gnostic-demiurge
+    to: fallen-time
+    type: red
+    directed: true
+    strength: 0.8
+    versions: [V7, V9]
+    note: The archontic heavens are clocks of exile, not images of eternity.
+
+  # ===========================================================================
+  # V8 — Matter as Receptacle vs Prison
+  # ===========================================================================
+
+  - from: receptacle
+    to: kenoma
+    type: magenta
+    directed: false
+    strength: 1.0
+    versions: [V8]
+    note: Nurse / space / necessary condition versus emptiness that imprisons sparks.
+
+  - from: kenoma
+    to: becoming
+    type: red
+    directed: true
+    strength: 0.9
+    versions: [V8, V10]
+    note: On the prison reading, particulars are captivity, not images.
+
+  # ===========================================================================
+  # V9 — Ordered Time vs Fallen Time
+  # ===========================================================================
+
+  - from: ordered-time
+    to: fallen-time
+    type: magenta
+    directed: false
+    strength: 1.0
+    versions: [V9]
+    note: Moving image of eternity versus exile-time, irreversible loss, apocalyptic waiting.
+
+  - from: statesman-cycle
+    to: fallen-time
+    type: red
+    directed: true
+    strength: 0.9
+    versions: [V9, V6]
+    note: Plato already owns a fallen-time episode — the world forgotten by its steersman.
+
+  - from: fallen-time
+    to: entropy
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V9, V6]
+    note: Exile-time and thermodynamic run-down occupy the same degraded-clock slot.
+
+  # ===========================================================================
+  # V10 — Cosmic Love vs Escape Gnosis
+  # ===========================================================================
+
+  - from: eros
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 1.0
+    versions: [V10]
+    note: Bind-and-return the cosmos versus wake-and-leave it.
+
+  - from: incarnation
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V10, V4]
+    note: Divine descent into flesh versus extraction of light from flesh.
+
+  # ===========================================================================
+  # V11 — Status of the Highest Principle
+  # ===========================================================================
+
+  - from: the-good
+    to: gnostic-unknown-father
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: Both sit above the craftsman; only one remains the source of a good cosmos.
+
+  - from: the-good
+    to: gnostic-unknown-father
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V11, V7]
+    note: Source-of-intelligibility versus a Father defined by being unknown to this world.
+
+  - from: the-good
+    to: genesis-creator
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V11, V4]
+    note: Beyond-being Good versus a personal speaker who is already a who.
+
+  - from: plotinus-one
+    to: the-good
+    type: cyan
+    directed: false
+    strength: 0.95
+    versions: [V11, V2]
+    note: Closest later identity-claim on the summit — still not quite Republic VI.
+
+  - from: sunyata
+    to: gnostic-unknown-father
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V11]
+    note: Weak analogy only — both withdraw predication; emptiness is not a Father.

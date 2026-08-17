@@ -1,0 +1,63 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyo
+
+# Packaging / install
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Test / type / lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Local / generated artifacts (keep YAML as source of truth)
+viewer/graph.json
+analysis/__pycache__/
+
+# Environment / secrets (none expected; keep the habit)
+.env
+.env.*
+!.env.example
