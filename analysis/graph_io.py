@@ -15,7 +15,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 EDGE_TYPES = ("gold", "cyan", "magenta", "green", "red", "orange")
-DOMAINS = ("platonic", "mystical", "scientific", "religious")
+KINDS = ("system", "principle")
+LATERAL_TYPES = ("orange", "cyan")
 
 
 def _read_yaml(name: str) -> dict:
@@ -34,6 +35,9 @@ def load_nodes() -> list[dict]:
     nodes = data.get("nodes")
     if not isinstance(nodes, list):
         raise ValueError("nodes.yaml must contain a top-level 'nodes' list")
+    bad = [n.get("id") for n in nodes if n.get("kind") not in KINDS or not n.get("cluster")]
+    if bad:
+        raise ValueError(f"nodes missing kind/cluster: {bad}")
     return nodes
 
 

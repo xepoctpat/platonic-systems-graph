@@ -17,15 +17,15 @@ from graph_io import as_simple_digraph, banner, build_multigraph, label_of
 
 # (from, to, why we care)
 DEFAULT_QUERIES = [
-    ("the-good", "becoming", "V1 descent along the spine"),
-    ("becoming", "the-good", "V1 / V10 erotic return"),
-    ("demiurge", "gnostic-demiurge", "V7 craftsman tension"),
-    ("receptacle", "kenoma", "V8 matter tension"),
-    ("ordered-time", "fallen-time", "V9 time tension"),
+    ("platonism", "gnosticism", "system-level collision"),
+    ("demiurge", "gnostic-demiurge", "V7 craftsman collision"),
+    ("receptacle", "kenoma", "V8 matter collision"),
+    ("ordered-time", "fallen-time", "V9 time collision"),
     ("eros", "escape-gnosis", "V10 love vs exit"),
-    ("the-good", "sunyata", "V11 summit tension"),
-    ("tikkun", "the-good", "V5 restoration family back to the spine"),
-    ("entropy", "the-good", "V6 red pole toward the attractor"),
+    ("the-good", "sunyata", "V11 summit collision"),
+    ("kabbalah", "physics", "V5 lateral"),
+    ("jungian-psychology", "gnosticism", "V5 hybrid"),
+    ("age-of-exile", "eros", "Platonic exile to return (local, not a spine)"),
 ]
 
 
@@ -103,7 +103,7 @@ def main(argv: list[str] | None = None) -> None:
     multi = build_multigraph()
     G = as_simple_digraph(multi)
 
-    banner("Platonic Systems Graph — paths")
+    banner("Systems graph — paths")
     print("Simple digraph; undirected edges were expanded both ways.\n")
 
     if len(argv) >= 2:

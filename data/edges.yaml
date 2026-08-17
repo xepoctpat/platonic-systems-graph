@@ -7,30 +7,23 @@
 #   type        gold | cyan | magenta | green | red | orange
 #   directed    true  = constitutive / causal / ascent-descent arrow
 #               false = symmetric map (isomorphism, contrast, hybrid)
-#   strength    0.0–1.0  (keep high: this file is the *strongest* links only)
-#   versions    which of V1–V11 the edge is drawn from
+#   strength    0.0–1.0
+#   versions    optional diagram tags (V1–V11). Illustrative, not required.
 #   note        one-sentence rationale
 #
-# Type language (matches the diagrams)
-#   gold     direct rooting — higher → lower on the spine, or a later
-#            system rooted in a Platonic node
+# Type language
+#   gold     constitutive or genealogical dependence (source → dependent).
+#            Not reserved for “descends from Plato.”
 #   cyan     isomorphism — same slot, not the same thing
 #   magenta  contrast / inversion — same slot, opposite valuation
 #   green    return / integration / negative feedback
 #   red      fall / positive feedback / shattering
-#   orange   hybrid / lateral — cross-domain mix that does not go via the spine
+#   orange   hybrid / lateral — peer mixing; the V5 growth pattern
 #
-# Direction convention
-#   gold, red : source acts on, constitutes, or destabilises target
-#   green     : source returns toward / restores target
-#   cyan, magenta, orange : undirected (from/to is only a stable writing order)
+# Prefer laterals and collisions. A new edge does not need a Platonic end.
 # =============================================================================
 
 edges:
-
-  # ===========================================================================
-  # V1 — Core Platonic spine
-  # ===========================================================================
 
   - from: the-good
     to: intelligible-paradigm
@@ -175,10 +168,6 @@ edges:
     strength: 0.7
     versions: [V1, V6]
     note: The Good also acts as a pull on the lowest stage (final cause / attractor).
-
-  # ===========================================================================
-  # V2 — Mystical & occult (rooting, isomorphism, return, fall)
-  # ===========================================================================
 
   - from: the-good
     to: plotinus-one
@@ -427,10 +416,6 @@ edges:
     strength: 0.85
     versions: [V2, V10]
     note: The same soteriology treats becoming as what must be left, not healed.
-
-  # ===========================================================================
-  # V3 — Scientific & philosophical
-  # ===========================================================================
 
   - from: the-good
     to: aristotle-unmoved-mover
@@ -688,10 +673,6 @@ edges:
     versions: [V3, V6]
     note: A definite ordered state is cut out of an under-determined possibility space.
 
-  # ===========================================================================
-  # V4 — Religious & mythological
-  # ===========================================================================
-
   - from: demiurge
     to: ptah
     type: cyan
@@ -884,10 +865,6 @@ edges:
     versions: [V4, V8]
     note: Residual formlessness remains the threat that speech / separation had to master.
 
-  # ===========================================================================
-  # V5 — Cross-domain lateral interplay
-  # ===========================================================================
-
   - from: christian-logos
     to: hermetic-nous
     type: orange
@@ -1016,10 +993,6 @@ edges:
     versions: [V5, V8]
     note: Two religious names for the unordered below, later readable as prison or as raw given.
 
-  # ===========================================================================
-  # V6 — extra cybernetic dynamics (most V6 edges already cited above)
-  # ===========================================================================
-
   - from: statesman-cycle
     to: cybernetic-feedback
     type: magenta
@@ -1043,10 +1016,6 @@ edges:
     strength: 0.65
     versions: [V6]
     note: Particulars are the plant whose outputs the World Soul / Eros must correct.
-
-  # ===========================================================================
-  # V7 — Plato’s Demiurge vs Gnostic Demiurge
-  # ===========================================================================
 
   - from: demiurge
     to: gnostic-demiurge
@@ -1072,10 +1041,6 @@ edges:
     versions: [V7, V9]
     note: The archontic heavens are clocks of exile, not images of eternity.
 
-  # ===========================================================================
-  # V8 — Matter as Receptacle vs Prison
-  # ===========================================================================
-
   - from: receptacle
     to: kenoma
     type: magenta
@@ -1091,10 +1056,6 @@ edges:
     strength: 0.9
     versions: [V8, V10]
     note: On the prison reading, particulars are captivity, not images.
-
-  # ===========================================================================
-  # V9 — Ordered Time vs Fallen Time
-  # ===========================================================================
 
   - from: ordered-time
     to: fallen-time
@@ -1120,10 +1081,6 @@ edges:
     versions: [V9, V6]
     note: Exile-time and thermodynamic run-down occupy the same degraded-clock slot.
 
-  # ===========================================================================
-  # V10 — Cosmic Love vs Escape Gnosis
-  # ===========================================================================
-
   - from: eros
     to: escape-gnosis
     type: magenta
@@ -1139,10 +1096,6 @@ edges:
     strength: 0.9
     versions: [V10, V4]
     note: Divine descent into flesh versus extraction of light from flesh.
-
-  # ===========================================================================
-  # V11 — Status of the Highest Principle
-  # ===========================================================================
 
   - from: the-good
     to: gnostic-unknown-father
@@ -1183,3 +1136,323 @@ edges:
     strength: 0.65
     versions: [V11]
     note: Weak analogy only — both withdraw predication; emptiness is not a Father.
+
+  - from: platonism
+    to: gnosticism
+    type: magenta
+    directed: false
+    strength: 1.0
+    versions: [V7, V8, V10, V11]
+    note: Peer collision of two systems that occupy the same slots with opposite valuation.
+
+  - from: platonism
+    to: neoplatonism
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: [V2]
+    note: Historical derivation — not a rank. Neoplatonism funds itself from Platonic texts.
+
+  - from: kabbalah
+    to: physics
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V5]
+    note: "V5 lateral: structured cascade / emanation isomorphic to a law-like field hierarchy."
+
+  - from: neoplatonism
+    to: systems-theory
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V5]
+    note: "V5 lateral: procession/return isomorphic to holons, levels, feedback."
+
+  - from: hermeticism
+    to: complexity-science
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V5]
+    note: "V5 lateral: as-above-so-below isomorphic to nested dynamics."
+
+  - from: alchemy
+    to: theosophy
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V5]
+    note: "V5 lateral: opus language absorbed into modern theosophical synthesis."
+
+  - from: jungian-psychology
+    to: gnosticism
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: [V5]
+    note: "V5 hybrid: archetypal reading of Gnostic myth (Aion, Seven Sermons)."
+
+  - from: jungian-psychology
+    to: theosophy
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V5]
+    note: "V5 hybrid: shared modern esoteric-psychological milieu."
+
+  - from: theosophy
+    to: hinduism
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: [V5]
+    note: "V5 hybrid: theosophy borrows Vedantic / Puranic furniture."
+
+  - from: theosophy
+    to: mythology
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: [V5]
+    note: "V5 hybrid: comparative myth as theosophical method."
+
+  - from: theosophy
+    to: sufism
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V5]
+    note: "V5 hybrid: theosophy's perennialist uptake of Sufi material."
+
+  - from: gnosticism
+    to: hinduism
+    type: orange
+    directed: false
+    strength: 0.65
+    versions: [V5]
+    note: "V5 hybrid: spark/atman and matter/maya comparisons. Weak until surveyed."
+
+  - from: gnosticism
+    to: christianity
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V5]
+    note: "V5 isomorphism: shared Christian-adjacent furniture, opposite cosmos-valuation."
+
+  - from: hinduism
+    to: mythology
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V5]
+    note: "V5 lateral: Hindu narrative systems sit in the coarse mythology hub."
+
+  - from: sufism
+    to: mythology
+    type: orange
+    directed: false
+    strength: 0.55
+    versions: [V5]
+    note: V5 hybrid via the theosophical hub; direct link is weak pending survey.
+
+  - from: norse-myth
+    to: mythology
+    type: gold
+    directed: true
+    strength: 0.6
+    versions: [V5]
+    note: Holding membership only — replace once Norse is surveyed on its own terms.
+
+  - from: mesopotamian
+    to: mythology
+    type: gold
+    directed: true
+    strength: 0.6
+    versions: [V5]
+    note: Holding membership only — replace once Mesopotamian religion is surveyed.
+
+  - from: egyptian-religion
+    to: mythology
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V5]
+    note: V5 / V4 extra-Hellenic myth peer.
+
+  - from: christianity
+    to: hermeticism
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V5]
+    note: Logos family at system grain (already present at principle grain).
+
+  - from: systems-theory
+    to: complexity-science
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: [V3, V5]
+    note: "Scientific interior hybrid: feedback systems and complexity share methods."
+
+  - from: physics
+    to: complexity-science
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V3]
+    note: "Scientific interior: symmetry breaking and emergence."
+
+  - from: information-theory
+    to: physics
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: [V3]
+    note: Entropy sits in both inventories.
+
+  - from: systems-theory
+    to: cybernetic-feedback
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V3, V6]
+    note: "System-to-principle: cybernetics is the control core of systems theory."
+
+  - from: physics
+    to: symmetry-breaking
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V3]
+    note: System-to-principle interior of physics.
+
+  - from: information-theory
+    to: information
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: [V3]
+    note: System-to-principle interior.
+
+  - from: jungian-psychology
+    to: mystery-ascent
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V3, V5]
+    note: Individuation isomorphic to mystery pattern; weak until Jung cluster is surveyed.
+
+  - from: world-soul
+    to: golden-age-cronus
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: [V1]
+    note: "Guided epoch: living cosmos under the steersman."
+
+  - from: golden-age-cronus
+    to: spherical-humans
+    type: gold
+    directed: true
+    strength: 0.7
+    versions: [V1]
+    note: Wholeness of the first humans in the abundant epoch.
+
+  - from: spherical-humans
+    to: zeus-division
+    type: red
+    directed: true
+    strength: 0.9
+    versions: [V1]
+    note: "The cut: original whole is split; lack enters."
+
+  - from: zeus-division
+    to: age-of-exile
+    type: red
+    directed: true
+    strength: 0.9
+    versions: [V1]
+    note: After the cut, wandering and longing.
+
+  - from: age-of-exile
+    to: eros
+    type: green
+    directed: true
+    strength: 0.85
+    versions: [V1, V10]
+    note: Exile is the condition in which eros arises as return.
+
+  - from: zeus-division
+    to: symmetry-breaking
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V3, V6]
+    note: "Same slot: a more symmetric whole is cut into a particular ordered state."
+
+  - from: age-of-exile
+    to: fallen-time
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V9]
+    note: Platonic exile vs Gnostic exile-time — related, not identical.
+
+  - from: golden-age-cronus
+    to: ordered-time
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V1, V9]
+    note: Cronus epoch as a local name for ordered, guided time.
+
+  - from: buddhism
+    to: sunyata
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4, V11]
+    note: System-to-principle interior; Buddhism is not exhausted by emptiness.
+
+  - from: hinduism
+    to: brahman
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V4, V11]
+    note: System-to-principle interior pending a fuller Hindu survey.
+
+  - from: biblical-religion
+    to: genesis-creator
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4]
+    note: System-to-principle interior.
+
+  - from: mystery-religions
+    to: mystery-ascent
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4]
+    note: System-to-principle interior.
+
+  - from: orphism
+    to: orphic-dionysus
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4]
+    note: System-to-principle interior.
+
+  - from: zoroastrianism
+    to: zoroastrian-dualism
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V4]
+    note: System-to-principle interior.

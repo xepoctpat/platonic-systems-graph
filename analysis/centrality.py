@@ -1,9 +1,9 @@
-"""Centrality of nodes in the Platonic systems graph.
+"""Centrality of nodes.
 
 Reports degree, weighted degree, betweenness, and PageRank on the
 simple directed projection (undirected edges count both ways).
-High-centrality nodes are the research hubs — usually the Good,
-the Demiurge, the World Soul, Eros, and a few later summits.
+High-betweenness nodes are candidate hinges of an organic spine —
+do not assume they will be Platonic.
 """
 
 from __future__ import annotations
@@ -57,12 +57,11 @@ def _rank(scores: dict, n: int) -> list[tuple[str, float]]:
 def _print_rank(G, title: str, scores: dict) -> None:
     print(f"\n{title}")
     print("-" * len(title))
-    print(f"{'#':>3}  {'id':<28} {'domain':<12} {'stage':<6} {'score':>8}")
+    print(f"{'#':>3}  {'id':<28} {'kind':<10} {'cluster':<16} {'score':>8}")
     for i, (nid, score) in enumerate(_rank(scores, TOP_N), start=1):
-        domain = G.nodes[nid].get("domain", "")
-        stage = G.nodes[nid].get("stage", "")
-        stage_s = str(stage) if stage != "" else "—"
-        print(f"{i:3d}  {nid:<28} {domain:<12} {stage_s:<6} {score:8.4f}")
+        kind = G.nodes[nid].get("kind", "")
+        cluster = G.nodes[nid].get("cluster", "")
+        print(f"{i:3d}  {nid:<28} {kind:<10} {cluster:<16} {score:8.4f}")
 
 
 def main() -> None:
@@ -70,7 +69,7 @@ def main() -> None:
     G = as_simple_digraph(multi)
     n, m = G.number_of_nodes(), G.number_of_edges()
 
-    banner("Platonic Systems Graph — centrality")
+    banner("Systems graph — centrality")
     print(f"Simple digraph: {n} nodes, {m} directed edges "
           f"(from {multi.number_of_edges()} typed multi-edges).")
     print(f"Showing top {TOP_N}.")
@@ -93,7 +92,7 @@ def main() -> None:
     _print_rank(G, "Betweenness (undirected)", betweenness)
     _print_rank(G, "PageRank (directed, weighted)", pagerank)
 
-    print("\nHighest-betweenness bridges (likely cross-domain hinges):")
+    print("\nHighest-betweenness bridges (candidate organic hinges):")
     for nid, score in _rank(betweenness, 5):
         print(f"  {label_of(G, nid):<28} {nid:<28} {score:.4f}")
 

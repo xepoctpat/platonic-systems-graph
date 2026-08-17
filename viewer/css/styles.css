@@ -5,10 +5,6 @@
   --muted: #9a9284;
   --line: #2c2c2c;
   --gold: #c9a227;
-  --platonic: #e0b84e;
-  --mystical: #9b6bdb;
-  --scientific: #5b8def;
-  --religious: #3fa36a;
   --cyan: #3ec1d3;
   --magenta: #d4539b;
   --green: #3fa36a;
@@ -16,9 +12,7 @@
   --orange: #d47a2c;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html,
 body {
@@ -32,9 +26,9 @@ body {
 header {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
-  align-items: flex-start;
-  padding: 12px 16px;
+  gap: 10px 20px;
+  align-items: center;
+  padding: 10px 16px;
   border-bottom: 1px solid var(--line);
   background: var(--panel);
 }
@@ -43,7 +37,6 @@ header h1 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
 header p {
@@ -52,15 +45,40 @@ header p {
   font-size: 12px;
 }
 
-.brand {
-  min-width: 220px;
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
+}
+
+.search-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+#search {
+  background: #111;
+  color: var(--ink);
+  border: 1px solid #444;
+  padding: 5px 8px;
+  min-width: 14em;
+  font: inherit;
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px 28px;
-  flex: 1;
+  gap: 10px 16px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #191919;
+  max-height: 28vh;
+  overflow: auto;
 }
 
 fieldset {
@@ -77,13 +95,28 @@ legend {
   text-transform: uppercase;
 }
 
-label {
+.cluster-box { flex: 1; min-width: 16em; }
+
+#cluster-filters,
+#kind-filters,
+#type-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+label.check {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-right: 10px;
+  gap: 5px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .swatch {
@@ -91,54 +124,33 @@ label {
   height: 9px;
   border-radius: 50%;
   display: inline-block;
-}
-
-.swatch-platonic { background: var(--platonic); }
-.swatch-mystical { background: var(--mystical); }
-.swatch-scientific { background: var(--scientific); }
-.swatch-religious { background: var(--religious); }
-.swatch-gold { background: var(--gold); }
-.swatch-cyan { background: var(--cyan); }
-.swatch-magenta { background: var(--magenta); }
-.swatch-green { background: var(--green); }
-.swatch-red { background: var(--red); }
-.swatch-orange { background: var(--orange); }
-
-.actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  background: #888;
 }
 
 button {
   background: #2a2a2a;
   color: var(--ink);
   border: 1px solid #444;
-  padding: 6px 10px;
+  padding: 5px 9px;
   cursor: pointer;
   font: inherit;
   font-size: 12px;
 }
 
-button:hover {
-  border-color: var(--gold);
-}
+button:hover { border-color: var(--gold); }
+button.active { border-color: var(--orange); color: #fff; }
 
 #status {
   color: var(--muted);
   font-size: 12px;
-  min-width: 8em;
 }
 
 #wrap {
   display: flex;
-  height: calc(100% - 86px);
+  height: calc(100% - 168px);
 }
 
-#cy {
-  flex: 1;
-  min-width: 0;
-}
+#cy { flex: 1; min-width: 0; }
 
 aside {
   width: 320px;
@@ -149,37 +161,10 @@ aside {
   overflow: auto;
 }
 
-aside h2 {
-  margin: 0 0 8px;
-  font-size: 15px;
-}
-
-aside .meta {
-  color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-aside p {
-  margin: 0 0 10px;
-}
-
-aside .refs {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.empty {
-  color: var(--muted);
-}
-
-.err {
-  color: #e07070;
-  padding: 24px;
-  max-width: 40em;
-}
-
-code {
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 12px;
-}
+aside h2 { margin: 0 0 8px; font-size: 15px; }
+aside .meta { color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+aside p { margin: 0 0 10px; }
+aside .refs { color: var(--muted); font-size: 12px; }
+.empty { color: var(--muted); }
+.err { color: #e07070; padding: 24px; max-width: 40em; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }

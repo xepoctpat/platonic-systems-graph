@@ -1,6 +1,6 @@
 # Diagram versions (V1–V11)
 
-Short index of the eleven source diagrams. Edges in `edges.yaml` cite these keys in their `versions` field. Files live in `diagrams/`.
+Illustrative boards, not the law of the graph. Edges may cite these keys; they are not required. V5 is the only board that grows the field as peers (laterals) instead of hanging everything on a Platonic ladder. Files live in `diagrams/`.
 
 | Version | File |
 |---|---|

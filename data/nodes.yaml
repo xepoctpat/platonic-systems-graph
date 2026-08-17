@@ -5,256 +5,450 @@
 # Schema
 #   id           kebab-case key (stable; referenced by edges.yaml)
 #   label        display name
-#   domain       platonic | mystical | scientific | religious
-#   stage        1–7 on the core Timaean spine only (omit otherwise)
-#   role         optional systems-theoretic function
-#   description  short research note (not a treatise)
+#   kind         system | principle
+#                  system    = a tradition or field treated as a peer
+#                  principle = a distinct operator, god, event, or slot
+#   cluster      peer group (not a rank). Examples: platonic, gnostic,
+#                hermetic, neoplatonic, kabbalistic, scientific, …
+#   role         optional functional hint (governor, noise, …) — not a spine index
+#   description  short research note
 #   refs         optional textual citations
 #
-# Domains follow the V2 / V3 / V4 split. The Platonic spine (V1) is its own
-# domain so it can be filtered as the backbone. Eros and the Statesman cycle
-# sit in `platonic` but are not numbered stages: they are operators on the spine.
+# There is no privileged stage field and no required attachment to Plato.
+# Clusters are labels for filtering. An organic spine, if any, is an output
+# of analysis (betweenness, communities, return/fall cycles), not a schema rule.
 #
-# Keep this file coarse. Add a node only when it occupies a distinct slot in
-# the diagrams (a principle, a later system, or a critical-tension pole).
+# Optional later: axes: {name: score} for a semantic 2D placement.
+# Do not invent axis scores until a named cut exists.
 # =============================================================================
 
 nodes:
 
-  # ---------------------------------------------------------------------------
-  # V1 — Core Platonic spine
-  # ---------------------------------------------------------------------------
-
-  - id: the-good
-    label: The Good
-    domain: platonic
-    stage: 1
-    role: attractor
+  # ---- systems (peer traditions / fields) ----
+  - id: alchemy
+    label: "Alchemy"
+    kind: system
+    cluster: alchemical
     description: >
-      Highest principle of the Republic, epekeina tēs ousias — beyond being —
-      source of intelligibility and of the being of the Forms. In the Timaean
-      system it is the final cause the Demiurge consults when he looks to what
-      is best. Cybernetically: the reference attractor of the whole hierarchy.
-    refs: ["Republic 508e–509b", "Timaeus 29e–30a"]
+      The opus as a material return path. V5 places it laterally toward Theosophy
+      rather than only as a Platonic descendant.
+    refs: ["Emerald Tablet"]
 
-  - id: intelligible-paradigm
-    label: Intelligible Paradigm
-    domain: platonic
-    stage: 2
-    role: model
+  - id: biblical-religion
+    label: "Biblical religion"
+    kind: system
+    cluster: biblical
     description: >
-      The eternal Living Creature (autozōon) that contains all intelligible
-      living things — the paradeigma the Demiurge looks to. Not a craftsman
-      and not yet a world: the formal inventory of what a complete cosmos
-      must include.
-    refs: ["Timaeus 28a–29a", "Timaeus 30c–31b"]
+      Genesis speech-creation and tohu as a peer, not a Timaean footnote.
+    refs: ["Genesis 1"]
 
-  - id: demiurge
-    label: Demiurge
-    domain: platonic
-    stage: 3
+  - id: buddhism
+    label: "Buddhism"
+    kind: system
+    cluster: buddhist
+    description: >
+      Peer system that often refuses the craftsman and the Good-as-source. Śūnyatā
+      is the first principle-level occupant; the system is not exhausted by that
+      node.
+    refs: ["Mūlamadhyamakakārikā"]
+
+  - id: christianity
+    label: "Christianity"
+    kind: system
+    cluster: christian
+    description: >
+      Johannine / patristic stream as a peer: Logos, incarnation, and a personal
+      creator. Cyan-cousin of Gnosticism; not a Platonic stage.
+    refs: ["John 1", "Nicene reception"]
+
+  - id: egyptian-religion
+    label: "Egyptian religion"
+    kind: system
+    cluster: egyptian
+    description: >
+      Memphite craftsman theology and Ma'at as a peer order-system.
+    refs: ["Memphite Theology"]
+
+  - id: gnosticism
+    label: "Gnosticism"
+    kind: system
+    cluster: gnostic
+    description: >
+      Sethian / Valentinian and related systems as a colliding peer, not a fallen
+      derivative. Same slots as Platonism (craftsman, matter, time, ascent, summit)
+      with inverted valuation.
+    refs: ["Apocryphon of John", "Hypostasis of the Archons"]
+
+  - id: mystery-religions
+    label: "Mystery religions"
+    kind: system
+    cluster: hellenic-mystery
+    description: >
+      Eleusinian-type ascent as a peer rite-path, not a Platonic stage.
+    refs: ["Homeric Hymn to Demeter"]
+
+  - id: hermeticism
+    label: "Hermeticism"
+    kind: system
+    cluster: hermetic
+    description: >
+      Corpus Hermeticum / Asclepius as a hybrid stream: sometimes a benevolent
+      craftsman-intellect, sometimes an escape from the spheres.
+    refs: ["CH I (Poimandres)", "Asclepius"]
+
+  - id: hinduism
+    label: "Hinduism"
+    kind: system
+    cluster: hindu
+    description: >
+      A holding system-node for Brahman, Sāṃkhya, and later Vedānta until those
+      interiors are surveyed separately. V5 lateral hub.
+    refs: ["Upaniṣads", "Sāṃkhya-kārikā"]
+
+  - id: jungian-psychology
+    label: "Jungian psychology"
+    kind: system
+    cluster: jungian
+    description: >
+      Archetypes and individuation as a peer. V5 hybrid toward Gnosticism and
+      Theosophy — a lateral, not a Platonic stage.
+    refs: ["Jung, Aion; Psychology and Alchemy"]
+
+  - id: kabbalah
+    label: "Kabbalah"
+    kind: system
+    cluster: kabbalistic
+    description: >
+      Jewish theosophy as a peer emanation system (Ein Sof, sefirot, shevirah,
+      tikkun). Lateral to physics in V5 as a structured cascade.
+    refs: ["Zohar", "Lurianic writings"]
+
+  - id: mesopotamian
+    label: "Mesopotamian religion"
+    kind: system
+    cluster: mesopotamian
+    description: >
+      Sumerian / Babylonian cosmic-order peer (Anunnaki, me). Interior pending.
+    refs: ["placeholder pending cluster survey"]
+
+  - id: mythology
+    label: "Mythology (holding)"
+    kind: system
+    cluster: mythic
+    description: >
+      V5’s coarse ‘Mythology’ hub. Holding node until extra-Hellenic myth systems
+      are surveyed on their own terms. Do not treat as a spine.
+    refs: ["V5 holding node"]
+
+  - id: neoplatonism
+    label: "Neoplatonism"
+    kind: system
+    cluster: neoplatonic
+    description: >
+      Plotinus through Iamblichus / Proclus: procession and return, closer to Plato
+      on the craftsman than Gnosticism is, but the One is intensified beyond the
+      Republic’s Good.
+    refs: ["Enneads", "Iamblichus, De Mysteriis"]
+
+  - id: norse-myth
+    label: "Norse myth"
+    kind: system
+    cluster: norse
+    description: >
+      V4/V5 extra-Hellenic myth peer (Yggdrasil, Ragnarök, fate). Interior pending.
+    refs: ["Poetic Edda (survey pending)"]
+
+  - id: orphism
+    label: "Orphism"
+    kind: system
+    cluster: orphic
+    description: >
+      Hellenic dismemberment-and-return as a peer fall/return system.
+    refs: ["Orphic fragments"]
+
+  - id: platonism
+    label: "Platonism"
+    kind: system
+    cluster: platonic
+    description: >
+      The Platonic tradition as a peer system, not a privileged axis. Entry on-ramp
+      for craftsman, soul, ordered time, receptacle, and eros. Does not
+      automatically root every other node.
+    refs: ["Timaeus", "Statesman", "Symposium", "Republic VI–VII"]
+
+  - id: complexity-science
+    label: "Complexity science"
+    kind: system
+    cluster: scientific
+    description: >
+      Emergence, nonlinearity, self-organization as a peer system. V5 cyan to
+      Hermeticism.
+    refs: ["Prigogine", "Kauffman"]
+
+  - id: information-theory
+    label: "Information theory"
+    kind: system
+    cluster: scientific
+    description: >
+      Entropy, coding, constraint as a peer system.
+    refs: ["Shannon", "Bateson"]
+
+  - id: physics
+    label: "Physics"
+    kind: system
+    cluster: scientific
+    description: >
+      Laws, fields, symmetry breaking as a peer system. V5 cyan to Kabbalah as
+      structured cascade, not as Platonic descent.
+    refs: ["modern physics (placeholder pending survey)"]
+
+  - id: systems-theory
+    label: "Systems theory"
+    kind: system
+    cluster: scientific
+    description: >
+      Holons, boundaries, feedback as a peer system. V5 cyan to Neoplatonism.
+    refs: ["Bertalanffy", "Wiener"]
+
+  - id: sufism
+    label: "Sufism"
+    kind: system
+    cluster: sufi
+    description: >
+      Islamic mystical stream as a V5 peer. Interior not yet surveyed; node exists
+      so laterals have a place to land.
+    refs: ["placeholder pending cluster survey"]
+
+  - id: theosophy
+    label: "Theosophy"
+    kind: system
+    cluster: theosophical
+    description: >
+      Blavatsky / later theosophy as a modern hybrid hub on V5: alchemy, Jung,
+      Hinduism, mythology, Sufism.
+    refs: ["Blavatsky, The Secret Doctrine (survey pending)"]
+
+  - id: zoroastrianism
+    label: "Zoroastrianism"
+    kind: system
+    cluster: zoroastrian
+    description: >
+      Dual first wills as a peer collision with single-source plus necessity.
+    refs: ["Gathas"]
+
+  # ---- principles (operators, events, slots) ----
+  - id: alchemical-opus
+    label: "Alchemical Opus"
+    kind: principle
+    cluster: alchemical
+    role: negative-feedback
+    description: >
+      Solve et coagula as a materialised return path: nigredo (fall/dissolve)
+      through albedo to rubedo (integration). Hybrid of Timaean elemental work and
+      erotic / theurgic ascent, enacted on bodies.
+    refs: ["Emerald Tablet", "later Western opus literature"]
+
+  - id: genesis-creator
+    label: "Genesis Creator"
+    kind: principle
+    cluster: biblical
     role: controller
     description: >
-      Divine craftsman / nous. Good, without jealousy, who brings order out
-      of visible disorder by looking to the eternal model and persuading
-      necessity as far as possible. Not the highest principle; an intellect
-      that serves the Good.
-    refs: ["Timaeus 28a–30a", "Timaeus 47e–48a"]
+      God who speaks heavens and earth into being, separates, and sees that it is
+      good. Craftsman-adjacent, but classically read as creating without a coeval
+      receptacle (the V4 / V11 tension with Timaeus).
+    refs: ["Genesis 1"]
 
-  - id: world-soul
-    label: World Soul
-    domain: platonic
-    stage: 4
-    role: governor
-    description: >
-      Intermediate, self-moving soul blended from Being, Same, and Other,
-      stretched through the cosmic body. Binds intellect to becoming and
-      carries the two circles that underwrite celestial order. Cybernetically:
-      the homeostat of the cosmos.
-    refs: ["Timaeus 34b–36d"]
-
-  - id: ordered-time
-    label: Ordered Time
-    domain: platonic
-    stage: 5
-    role: clock
-    description: >
-      Time as the moving image of eternity, generated together with the
-      heavens so that the World Soul’s numerable revolutions can imitate
-      the abiding life of the paradigm. Includes the celestial gods as
-      visible time-keepers.
-    refs: ["Timaeus 37c–39e"]
-
-  - id: receptacle
-    label: Receptacle
-    domain: platonic
-    stage: 6
+  - id: tohu-vavohu
+    label: "Tohu va-Bohu"
+    kind: principle
+    cluster: biblical
     role: noise
     description: >
-      Chōra: the third kind — space, nurse, and seat of becoming. Together
-      with anankē (necessity) and the wandering cause, it is the condition
-      that receives form without itself being a Form. Not evil; resistant.
-    refs: ["Timaeus 48a–53b"]
+      Formless-and-void of Genesis 1:2, with the deep (tehom). Functional analogue
+      of chōra / necessity — the unordered given that speech then articulates — and,
+      in later receptions, a door toward kenoma readings.
+    refs: ["Genesis 1:2"]
 
-  - id: becoming
-    label: Becoming
-    domain: platonic
-    stage: 7
-    role: plant
-    description: >
-      The generated cosmos and the mortal living things copied into the
-      Receptacle: body, particulars, the realm of genesis. Output of the
-      Demiurgic operation; starting point of erotic ascent.
-    refs: ["Timaeus 27d–28a", "Timaeus 41a–42e"]
-
-  - id: eros
-    label: Eros
-    domain: platonic
-    role: negative-feedback
-    description: >
-      Not a stage but the return operator. Symposium: daimōn in the between,
-      binding mortal to immortal along the ladder of beauty. Timaeus: philia
-      among the elements that keeps the body of the world from dissolving.
-      Green by default — cosmic love as integrative feedback.
-    refs: ["Symposium 202d–212a", "Timaeus 32b–c"]
-
-  - id: statesman-cycle
-    label: Statesman Cycle
-    domain: platonic
-    role: regime-switch
-    description: >
-      Myth of the two cosmic epochs (Statesman 269c–274e). When the divine
-      steersman holds the helm the world is guided; when he lets go it runs
-      on its own stored motion and gradually forgets. Native Platonic account
-      of run-down, reversal, and re-seizure of control.
-    refs: ["Statesman 269c–274e"]
-
-  # ---------------------------------------------------------------------------
-  # V2 — Mystical & occult
-  # ---------------------------------------------------------------------------
-
-  - id: plotinus-one
-    label: Plotinus’s One
-    domain: mystical
+  - id: sunyata
+    label: "Śūnyatā"
+    kind: principle
+    cluster: buddhist
     role: attractor
     description: >
-      First hypostasis, beyond nous and beyond being. Direct philosophical
-      intensification of the Platonic Good, now made the explicit source of
-      procession (proodos) and the term of reversion (epistrophē).
-    refs: ["Enneads VI.9", "Enneads V.1"]
+      Emptiness of inherent existence. Occupies the summit slot by refusing the
+      slot: no Good that is a source of Forms, no craftsman, no
+      receptacle-as-third-kind. Strongest V11 magenta on the religious side.
+    refs: ["Mūlamadhyamakakārikā", "Prajñāpāramitā"]
 
-  - id: nous-neoplatonic
-    label: Neoplatonic Nous
-    domain: mystical
-    role: model
+  - id: christian-logos
+    label: "Johannine Logos"
+    kind: principle
+    cluster: christian
+    role: controller
     description: >
-      Second hypostasis: intellect identical with the intelligible. Fuses
-      the Timaean paradigm and the Demiurge into a single self-thinking
-      cosmos of Forms.
-    refs: ["Enneads V.1", "Enneads V.9"]
+      Word who was with God and was God, through whom all things were made. Fuses
+      paradigm, craftsman, and (in later doctrine) the Good’s self- expression.
+      Principal V4 / V5 hybrid on the religious side.
+    refs: ["John 1:1–18"]
 
-  - id: psyche-neoplatonic
-    label: Neoplatonic Soul
-    domain: mystical
-    role: governor
+  - id: incarnation
+    label: "Incarnation"
+    kind: principle
+    cluster: christian
+    role: hybrid
     description: >
-      Third hypostasis, looking up to Nous and down into nature. World Soul
-      rewritten as a procession that can forget and must turn back.
-    refs: ["Enneads IV.3", "Enneads IV.8"]
+      The Logos becoming flesh. Opposite vector to escape-gnosis: the divine term
+      *enters* becoming rather than extracting sparks from it. Orange / green
+      depending on whether one stresses hybridity or return.
+    refs: ["John 1:14", "Nicene reception"]
 
-  - id: theurgy
-    label: Theurgy
-    domain: mystical
-    role: negative-feedback
+  - id: maat
+    label: "Ma'at"
+    kind: principle
+    cluster: egyptian
+    role: clock
     description: >
-      Iamblichean / Chaldean ritual work that claims to return the soul by
-      divine action rather than by contemplation alone. Operational green
-      path on the late-antique spine.
-    refs: ["Iamblichus, De Mysteriis"]
+      Egyptian order, truth, and right measure that gods and kings must continually
+      re-establish. Religious name for ordered time plus the Good-as-norm — order as
+      something *maintained*, not once-for-all.
+    refs: ["Egyptian wisdom literature; temple theology"]
 
-  - id: chaldean-oracles
-    label: Chaldean Oracles
-    domain: mystical
+  - id: ptah
+    label: "Ptah"
+    kind: principle
+    cluster: egyptian
+    role: controller
     description: >
-      Middle-Platonic hexameter revelation: Father, Dynamis, Intellect, and
-      Hecate as world-womb. Principal native source for later theurgy and a
-      craftsman-intellect still loyal to a higher Father.
-    refs: ["Chaldean Oracles (ed. des Places)"]
+      Memphite craftsman-god who brings the world forth by heart and tongue.
+      Pre-Platonic and extra-Hellenic occupant of the Demiurge slot: a divine
+      artisan whose organ is intelligent speech.
+    refs: ["Memphite Theology (Shabaka Stone)"]
 
-  - id: hermetic-nous
-    label: Hermetic Nous
-    domain: mystical
+  - id: escape-gnosis
+    label: "Escape Gnosis"
+    kind: principle
+    cluster: gnostic
+    role: exit
     description: >
-      Poimandres / Corpus Hermeticum: nous as both revealer and inner god,
-      with a craftsman-intellect and a cosmos that can be either temple or
-      trap depending on the tractate. Hybrid of Timaean craftsman and
-      ascent-gnosis.
-    refs: ["CH I (Poimandres)", "CH XI"]
+      Soteriology whose end is *exit* from the cosmos — awakening, passwords through
+      the spheres, return of the spark — rather than integration of becoming into
+      the Good. The V10 pole against cosmic Eros.
+    refs: ["Gospel of Thomas 42 (motif)", "Pistis Sophia (ascent)"]
 
-  - id: gnostic-unknown-father
-    label: Unknown Father
-    domain: mystical
-    role: attractor
+  - id: fallen-time
+    label: "Fallen Time"
+    kind: principle
+    cluster: gnostic
+    role: clock
     description: >
-      Bythos / Invisible Spirit / Forefather of Sethian and Valentinian
-      systems. A highest principle defined by *unknowability* to the
-      craftsman of this world. Cyan-cousin and magenta-rival of the Good
-      (V11).
-    refs: ["Apocryphon of John", "Valentinian speculation"]
-
-  - id: pleroma
-    label: Pleroma
-    domain: mystical
-    role: model
-    description: >
-      Fullness of aeons generated from the Unknown Father. Structural analogue
-      of the intelligible paradigm — a complete divine inventory — but
-      sealed off from the cosmos the archons will make.
-    refs: ["Apocryphon of John", "Gospel of Truth"]
-
-  - id: sophia-fall
-    label: Sophia’s Fall
-    domain: mystical
-    role: positive-feedback
-    description: >
-      The aeonic passion or unauthorized emanation that produces deficiency.
-      Native Gnostic account of how fullness becomes lack; the red trigger
-      for both kenoma and the Gnostic demiurge.
-    refs: ["Apocryphon of John", "Valentinian Sophia myth"]
+      Time as exile, irreversible loss, or apocalyptic waiting — the V9 pole against
+      Timaean ordered time. Covers Gnostic sojourn in the spheres, later
+      fall-narratives, and the Statesman world running down once the steersman has
+      let go.
+    refs: ["Gnostic ascent tractates", "Statesman 273c–e (run-down)"]
 
   - id: gnostic-demiurge
-    label: Gnostic Demiurge
-    domain: mystical
+    label: "Gnostic Demiurge"
+    kind: principle
+    cluster: gnostic
     role: controller
     description: >
       Ialdabaoth / Saklas / archontic craftsman. Makes the heavens and the
-      psychic-material world, claims to be the only god, and does not know
-      the Pleroma. Occupies the *same functional slot* as Plato’s Demiurge
-      with inverted moral sign (V7).
+      psychic-material world, claims to be the only god, and does not know the
+      Pleroma. Occupies the *same functional slot* as Plato’s Demiurge with inverted
+      moral sign (V7).
     refs: ["Apocryphon of John", "Hypostasis of the Archons"]
 
+  - id: gnostic-unknown-father
+    label: "Unknown Father"
+    kind: principle
+    cluster: gnostic
+    role: attractor
+    description: >
+      Bythos / Invisible Spirit / Forefather of Sethian and Valentinian systems. A
+      highest principle defined by *unknowability* to the craftsman of this world.
+      Cyan-cousin and magenta-rival of the Good (V11).
+    refs: ["Apocryphon of John", "Valentinian speculation"]
+
   - id: kenoma
-    label: Kenoma
-    domain: mystical
+    label: "Kenoma"
+    kind: principle
+    cluster: gnostic
     role: prison
     description: >
-      Emptiness / deficiency: matter and the cosmic spheres as a prison for
-      sparks of pleromatic light. The V8 pole against chōra-as-nurse.
+      Emptiness / deficiency: matter and the cosmic spheres as a prison for sparks
+      of pleromatic light. The V8 pole against chōra-as-nurse.
     refs: ["Valentinian sources", "Apocryphon of John"]
 
-  - id: escape-gnosis
-    label: Escape Gnosis
-    domain: mystical
-    role: exit
+  - id: pleroma
+    label: "Pleroma"
+    kind: principle
+    cluster: gnostic
+    role: model
     description: >
-      Soteriology whose end is *exit* from the cosmos — awakening, passwords
-      through the spheres, return of the spark — rather than integration of
-      becoming into the Good. The V10 pole against cosmic Eros.
-    refs: ["Gospel of Thomas 42 (motif)", "Pistis Sophia (ascent)"]
+      Fullness of aeons generated from the Unknown Father. Structural analogue of
+      the intelligible paradigm — a complete divine inventory — but sealed off from
+      the cosmos the archons will make.
+    refs: ["Apocryphon of John", "Gospel of Truth"]
+
+  - id: sophia-fall
+    label: "Sophia’s Fall"
+    kind: principle
+    cluster: gnostic
+    role: positive-feedback
+    description: >
+      The aeonic passion or unauthorized emanation that produces deficiency. Native
+      Gnostic account of how fullness becomes lack; the red trigger for both kenoma
+      and the Gnostic demiurge.
+    refs: ["Apocryphon of John", "Valentinian Sophia myth"]
+
+  - id: mystery-ascent
+    label: "Mystery Ascent"
+    kind: principle
+    cluster: hellenic-mystery
+    role: negative-feedback
+    description: >
+      Eleusinian and related mystery patterns: descent, vision, and a changed
+      standing toward death. Religious green path parallel to Symposium eros,
+      without a full Timaean cosmology.
+    refs: ["Homeric Hymn to Demeter", "later mystery testimonia"]
+
+  - id: hermetic-nous
+    label: "Hermetic Nous"
+    kind: principle
+    cluster: hermetic
+    description: >
+      Poimandres / Corpus Hermeticum: nous as both revealer and inner god, with a
+      craftsman-intellect and a cosmos that can be either temple or trap depending
+      on the tractate. Hybrid of Timaean craftsman and ascent-gnosis.
+    refs: ["CH I (Poimandres)", "CH XI"]
+
+  - id: brahman
+    label: "Brahman"
+    kind: principle
+    cluster: hindu
+    role: attractor
+    description: >
+      Ultimate in Upaniṣadic / Vedāntic thought, especially nirguṇa.
+      Highest-principle analogue (V11): closer to the One / Ein Sof than to a
+      craftsman, and typically without a Demiurge who looks to Forms.
+    refs: ["Bṛhadāraṇyaka, Chāndogya", "later Vedānta"]
+
+  - id: purusha-prakriti
+    label: "Purusha–Prakriti"
+    kind: principle
+    cluster: hindu
+    description: >
+      Sāṃkhya pair: witnessing consciousness and productive nature. Lateral
+      isomorphism of paradigm / receptacle *without* a craftsman between them —
+      nature evolves; purusha does not make.
+    refs: ["Sāṃkhya-kārikā"]
 
   - id: ein-sof
-    label: Ein Sof
-    domain: mystical
+    label: "Ein Sof"
+    kind: principle
+    cluster: kabbalistic
     role: attractor
     description: >
       The Infinite of Kabbalah, beyond sefirotic predication. Highest-principle
@@ -263,308 +457,387 @@ nodes:
     refs: ["Zohar", "Lurianic writings"]
 
   - id: sefirot
-    label: Sefirot
-    domain: mystical
+    label: "Sefirot"
+    kind: principle
+    cluster: kabbalistic
     role: model
     description: >
-      Ten emanated measures of divine life. Hierarchical, inter-converting,
-      and diagrammable — the most explicit later isomorphism of a procession
-      from a hidden summit into a structured pleroma.
+      Ten emanated measures of divine life. Hierarchical, inter-converting, and
+      diagrammable — the most explicit later isomorphism of a procession from a
+      hidden summit into a structured pleroma.
     refs: ["Sefer Yetzirah", "Zohar"]
 
   - id: shevirah
-    label: Shevirah
-    domain: mystical
+    label: "Shevirah"
+    kind: principle
+    cluster: kabbalistic
     role: positive-feedback
     description: >
-      Lurianic breaking of the vessels: the lower sefirot cannot hold the
-      influx, shards and husks result. Canonical red event — shattering as
-      the condition of a world that then needs repair.
+      Lurianic breaking of the vessels: the lower sefirot cannot hold the influx,
+      shards and husks result. Canonical red event — shattering as the condition of
+      a world that then needs repair.
     refs: ["Luria / Vital, Etz Hayim"]
 
   - id: tikkun
-    label: Tikkun
-    domain: mystical
+    label: "Tikkun"
+    kind: principle
+    cluster: kabbalistic
     role: negative-feedback
     description: >
-      Restoration and repair of the broken vessels, including human ritual
-      and ethical work. Canonical green return on the Kabbalistic side;
-      lateral kin of Eros, theurgy, and the alchemical opus (V5).
+      Restoration and repair of the broken vessels, including human ritual and
+      ethical work. Canonical green return on the Kabbalistic side; lateral kin of
+      Eros, theurgy, and the alchemical opus (V5).
     refs: ["Luria / Vital, Etz Hayim"]
 
-  - id: alchemical-opus
-    label: Alchemical Opus
-    domain: mystical
+  - id: chaldean-oracles
+    label: "Chaldean Oracles"
+    kind: principle
+    cluster: neoplatonic
+    description: >
+      Middle-Platonic hexameter revelation: Father, Dynamis, Intellect, and Hecate
+      as world-womb. Principal native source for later theurgy and a
+      craftsman-intellect still loyal to a higher Father.
+    refs: ["Chaldean Oracles (ed. des Places)"]
+
+  - id: nous-neoplatonic
+    label: "Neoplatonic Nous"
+    kind: principle
+    cluster: neoplatonic
+    role: model
+    description: >
+      Second hypostasis: intellect identical with the intelligible. Fuses the
+      Timaean paradigm and the Demiurge into a single self-thinking cosmos of Forms.
+    refs: ["Enneads V.1", "Enneads V.9"]
+
+  - id: plotinus-one
+    label: "Plotinus’s One"
+    kind: principle
+    cluster: neoplatonic
+    role: attractor
+    description: >
+      First hypostasis, beyond nous and beyond being. Direct philosophical
+      intensification of the Platonic Good, now made the explicit source of
+      procession (proodos) and the term of reversion (epistrophē).
+    refs: ["Enneads VI.9", "Enneads V.1"]
+
+  - id: psyche-neoplatonic
+    label: "Neoplatonic Soul"
+    kind: principle
+    cluster: neoplatonic
+    role: governor
+    description: >
+      Third hypostasis, looking up to Nous and down into nature. World Soul
+      rewritten as a procession that can forget and must turn back.
+    refs: ["Enneads IV.3", "Enneads IV.8"]
+
+  - id: theurgy
+    label: "Theurgy"
+    kind: principle
+    cluster: neoplatonic
     role: negative-feedback
     description: >
-      Solve et coagula as a materialised return path: nigredo (fall/dissolve)
-      through albedo to rubedo (integration). Hybrid of Timaean elemental
-      work and erotic / theurgic ascent, enacted on bodies.
-    refs: ["Emerald Tablet", "later Western opus literature"]
+      Iamblichean / Chaldean ritual work that claims to return the soul by divine
+      action rather than by contemplation alone. Operational green path on the
+      late-antique spine.
+    refs: ["Iamblichus, De Mysteriis"]
 
-  # ---------------------------------------------------------------------------
-  # V3 — Scientific & philosophical
-  # ---------------------------------------------------------------------------
+  - id: orphic-dionysus
+    label: "Orphic Dionysus"
+    kind: principle
+    cluster: orphic
+    description: >
+      Zagreus dismembered by the Titans and reconstituted. Native Hellenic myth of
+      sparagmos and return — red then green — and a source for the soma-sēma reading
+      that V8 sets against the Receptacle.
+    refs: ["Orphic fragments (Kern / Bernabé)"]
+
+  - id: age-of-exile
+    label: "Age of exile"
+    kind: principle
+    cluster: platonic
+    description: >
+      Longing and fragmentation after the cut. Platonic exile episode; collides
+      with, but is not identical to, Gnostic fallen time.
+    refs: ["Symposium 191a–d", "Statesman 273c–e"]
+
+  - id: becoming
+    label: "Becoming"
+    kind: principle
+    cluster: platonic
+    role: plant
+    description: >
+      The generated cosmos and the mortal living things copied into the Receptacle:
+      body, particulars, the realm of genesis. Output of the Demiurgic operation;
+      starting point of erotic ascent.
+    refs: ["Timaeus 27d–28a", "Timaeus 41a–42e"]
+
+  - id: demiurge
+    label: "Demiurge"
+    kind: principle
+    cluster: platonic
+    role: controller
+    description: >
+      Divine craftsman / nous. Good, without jealousy, who brings order out of
+      visible disorder by looking to the eternal model and persuading necessity as
+      far as possible. Not the highest principle; an intellect that serves the Good.
+    refs: ["Timaeus 28a–30a", "Timaeus 47e–48a"]
+
+  - id: eros
+    label: "Eros"
+    kind: principle
+    cluster: platonic
+    role: negative-feedback
+    description: >
+      Not a stage but the return operator. Symposium: daimōn in the between, binding
+      mortal to immortal along the ladder of beauty. Timaeus: philia among the
+      elements that keeps the body of the world from dissolving. Green by default —
+      cosmic love as integrative feedback.
+    refs: ["Symposium 202d–212a", "Timaeus 32b–c"]
+
+  - id: golden-age-cronus
+    label: "Golden Age of Cronus"
+    kind: principle
+    cluster: platonic
+    role: regime
+    description: >
+      Statesman / Hesiodic abundance under the steersman. A Platonic narrative
+      episode, not stage 3 of a universal spine.
+    refs: ["Statesman 271c–272d"]
+
+  - id: intelligible-paradigm
+    label: "Intelligible Paradigm"
+    kind: principle
+    cluster: platonic
+    role: model
+    description: >
+      The eternal Living Creature (autozōon) that contains all intelligible living
+      things — the paradeigma the Demiurge looks to. Not a craftsman and not yet a
+      world: the formal inventory of what a complete cosmos must include.
+    refs: ["Timaeus 28a–29a", "Timaeus 30c–31b"]
+
+  - id: ordered-time
+    label: "Ordered Time"
+    kind: principle
+    cluster: platonic
+    role: clock
+    description: >
+      Time as the moving image of eternity, generated together with the heavens so
+      that the World Soul’s numerable revolutions can imitate the abiding life of
+      the paradigm. Includes the celestial gods as visible time-keepers.
+    refs: ["Timaeus 37c–39e"]
+
+  - id: receptacle
+    label: "Receptacle"
+    kind: principle
+    cluster: platonic
+    role: noise
+    description: >
+      Chōra: the third kind — space, nurse, and seat of becoming. Together with
+      anankē (necessity) and the wandering cause, it is the condition that receives
+      form without itself being a Form. Not evil; resistant.
+    refs: ["Timaeus 48a–53b"]
+
+  - id: spherical-humans
+    label: "Primal spherical humans"
+    kind: principle
+    cluster: platonic
+    description: >
+      Aristophanes’ whole, spherical beings in the Symposium. Local myth of original
+      sufficiency, not a metaphysical hypostasis.
+    refs: ["Symposium 189c–193d"]
+
+  - id: statesman-cycle
+    label: "Statesman Cycle"
+    kind: principle
+    cluster: platonic
+    role: regime-switch
+    description: >
+      Myth of the two cosmic epochs (Statesman 269c–274e). When the divine steersman
+      holds the helm the world is guided; when he lets go it runs on its own stored
+      motion and gradually forgets. Native Platonic account of run-down, reversal,
+      and re-seizure of control.
+    refs: ["Statesman 269c–274e"]
+
+  - id: the-good
+    label: "The Good"
+    kind: principle
+    cluster: platonic
+    role: attractor
+    description: >
+      Highest principle of the Republic, epekeina tēs ousias — beyond being — source
+      of intelligibility and of the being of the Forms. In the Timaean system it is
+      the final cause the Demiurge consults when he looks to what is best.
+      Cybernetically: the reference attractor of the whole hierarchy.
+    refs: ["Republic 508e–509b", "Timaeus 29e–30a"]
+
+  - id: world-soul
+    label: "World Soul"
+    kind: principle
+    cluster: platonic
+    role: governor
+    description: >
+      Intermediate, self-moving soul blended from Being, Same, and Other, stretched
+      through the cosmic body. Binds intellect to becoming and carries the two
+      circles that underwrite celestial order. Cybernetically: the homeostat of the
+      cosmos.
+    refs: ["Timaeus 34b–36d"]
+
+  - id: zeus-division
+    label: "Zeus’s division"
+    kind: principle
+    cluster: platonic
+    role: symmetry-breaking
+    description: >
+      The cut that introduces duality and lack. Platonic narrative of symmetry
+      breaking; peer to scientific symmetry-breaking, not its cause.
+    refs: ["Symposium 190c–191a", "Statesman (Zeus epoch)"]
 
   - id: aristotle-unmoved-mover
-    label: Unmoved Mover
-    domain: scientific
+    label: "Unmoved Mover"
+    kind: principle
+    cluster: scientific
     role: attractor
     description: >
       Aristotle’s god as final cause that moves as beloved. Inherits the
-      Good-as-attractor while rejecting separate Forms and a craftsman who
-      looks to a model. Gold + magenta at once.
+      Good-as-attractor while rejecting separate Forms and a craftsman who looks to
+      a model. Gold + magenta at once.
     refs: ["Metaphysics Λ", "Physics VIII"]
 
-  - id: stoic-logos
-    label: Stoic Logos
-    domain: scientific
-    role: governor
-    description: >
-      Immanent fiery reason that structures and recurs through the cosmos
-      (including ekpyrōsis). World Soul stripped of a separate paradigm and
-      made identical with the world’s active principle.
-    refs: ["SVF fragments", "Marcus Aurelius, Meditations"]
-
-  - id: spinoza-deus
-    label: Spinoza’s Deus sive Natura
-    domain: scientific
-    description: >
-      One substance, immanent cause of itself. Absorbs Good, paradigm, and
-      world into a single geometric necessity. Isomorphic as monism; contrast
-      as the refusal of a craftsman and of a beyond-being.
-    refs: ["Ethics I"]
-
-  - id: kant-noumenon
-    label: Kantian Noumenon
-    domain: scientific
-    role: model
-    description: >
-      Thing-in-itself as the thought of a ground we cannot know. Occupies
-      the paradigm slot epistemically inverted: the model is no longer the
-      most knowable, but the limit of knowledge (V3, V11-adjacent).
-    refs: ["Critique of Pure Reason, A235–260 / B294–315"]
-
-  - id: hegel-geist
-    label: Hegelian Geist
-    domain: scientific
-    role: negative-feedback
-    description: >
-      Spirit that externalises and returns to itself. Philosophical
-      maximisation of Platonic epistrophē / erotic return, now as historical
-      dialectic rather than as ascent of a single soul.
-    refs: ["Phenomenology of Spirit", "Science of Logic"]
-
-  - id: whitehead-process
-    label: Whiteheadian Process
-    domain: scientific
-    role: plant
-    description: >
-      Actual occasions, prehension, and a God who is both primordial and
-      consequent. Becoming promoted from last stage to the general category;
-      the Receptacle rewritten as extensive continuum.
-    refs: ["Process and Reality"]
-
-  - id: entropy
-    label: Entropy
-    domain: scientific
-    role: positive-feedback
-    description: >
-      Thermodynamic (and, loosely, informational) tendency toward
-      equipartition and loss of free energy / constraint. Scientific name
-      for the wandering cause when it is not persuaded — V6’s red arrow.
-    refs: ["Clausius", "2nd law"]
-
-  - id: negentropy
-    label: Negentropy
-    domain: scientific
-    role: negative-feedback
-    description: >
-      Schrödinger’s local export of entropy: living (and, here, cosmic)
-      order maintained by constraint and throughput. Scientific green name
-      for Demiurgic persuasion and World-Soul binding.
-    refs: ["Schrödinger, What is Life?"]
-
-  - id: cybernetic-feedback
-    label: Cybernetic Feedback
-    domain: scientific
-    role: governor
-    description: >
-      Wiener / Ashby: circular causation, required variety, homeostatic
-      set-points. The explicit control-theoretic language onto which V6
-      maps World Soul, Eros, and the Statesman cycle.
-    refs: ["Wiener, Cybernetics", "Ashby, Introduction to Cybernetics"]
-
   - id: attractor
-    label: Dynamical Attractor
-    domain: scientific
+    label: "Dynamical Attractor"
+    kind: principle
+    cluster: scientific
     role: attractor
     description: >
-      Region of phase space toward which trajectories converge. Formal
-      isomorphism of the Good (and of any later summit that functions as
-      a basin), without the ethical loading of to agathon.
+      Region of phase space toward which trajectories converge. Formal isomorphism
+      of the Good (and of any later summit that functions as a basin), without the
+      ethical loading of to agathon.
     refs: ["dynamical systems (standard)"]
 
-  - id: symmetry-breaking
-    label: Symmetry Breaking
-    domain: scientific
+  - id: cybernetic-feedback
+    label: "Cybernetic Feedback"
+    kind: principle
+    cluster: scientific
+    role: governor
     description: >
-      Selection of a particular ordered state from a more symmetric
-      possibility space. Scientific analogue of the Demiurge imposing
-      definite triangles / elements on the Receptacle’s indeterminacy.
-    refs: ["Anderson; modern cosmology / condensed matter"]
+      Wiener / Ashby: circular causation, required variety, homeostatic set-points.
+      The explicit control-theoretic language onto which V6 maps World Soul, Eros,
+      and the Statesman cycle.
+    refs: ["Wiener, Cybernetics", "Ashby, Introduction to Cybernetics"]
 
-  - id: self-organization
-    label: Self-Organization
-    domain: scientific
+  - id: entropy
+    label: "Entropy"
+    kind: principle
+    cluster: scientific
+    role: positive-feedback
     description: >
-      Order arising from local interaction without an external craftsman.
-      Cyan to World Soul (immanent binding); magenta to the Demiurge
-      (no separate nous looking at a paradigm).
-    refs: ["Prigogine", "Kauffman"]
+      Thermodynamic (and, loosely, informational) tendency toward equipartition and
+      loss of free energy / constraint. Scientific name for the wandering cause when
+      it is not persuaded — V6’s red arrow.
+    refs: ["Clausius", "2nd law"]
 
-  - id: information
-    label: Information / Constraint
-    domain: scientific
-    role: model
-    description: >
-      Difference that makes a difference; reduction of possibility space.
-      Isomorph of Forms-as-constraints — the paradigm read as a specification
-      rather than as a living intelligible animal.
-    refs: ["Shannon", "Bateson"]
-
-  # ---------------------------------------------------------------------------
-  # V4 — Religious & mythological
-  # ---------------------------------------------------------------------------
-
-  - id: ptah
-    label: Ptah
-    domain: religious
-    role: controller
-    description: >
-      Memphite craftsman-god who brings the world forth by heart and tongue.
-      Pre-Platonic and extra-Hellenic occupant of the Demiurge slot: a
-      divine artisan whose organ is intelligent speech.
-    refs: ["Memphite Theology (Shabaka Stone)"]
-
-  - id: maat
-    label: Ma'at
-    domain: religious
-    role: clock
-    description: >
-      Egyptian order, truth, and right measure that gods and kings must
-      continually re-establish. Religious name for ordered time plus the
-      Good-as-norm — order as something *maintained*, not once-for-all.
-    refs: ["Egyptian wisdom literature; temple theology"]
-
-  - id: genesis-creator
-    label: Genesis Creator
-    domain: religious
-    role: controller
-    description: >
-      God who speaks heavens and earth into being, separates, and sees that
-      it is good. Craftsman-adjacent, but classically read as creating
-      without a coeval receptacle (the V4 / V11 tension with Timaeus).
-    refs: ["Genesis 1"]
-
-  - id: tohu-vavohu
-    label: Tohu va-Bohu
-    domain: religious
-    role: noise
-    description: >
-      Formless-and-void of Genesis 1:2, with the deep (tehom). Functional
-      analogue of chōra / necessity — the unordered given that speech then
-      articulates — and, in later receptions, a door toward kenoma readings.
-    refs: ["Genesis 1:2"]
-
-  - id: christian-logos
-    label: Johannine Logos
-    domain: religious
-    role: controller
-    description: >
-      Word who was with God and was God, through whom all things were made.
-      Fuses paradigm, craftsman, and (in later doctrine) the Good’s self-
-      expression. Principal V4 / V5 hybrid on the religious side.
-    refs: ["John 1:1–18"]
-
-  - id: incarnation
-    label: Incarnation
-    domain: religious
-    role: hybrid
-    description: >
-      The Logos becoming flesh. Opposite vector to escape-gnosis: the
-      divine term *enters* becoming rather than extracting sparks from it.
-      Orange / green depending on whether one stresses hybridity or return.
-    refs: ["John 1:14", "Nicene reception"]
-
-  - id: orphic-dionysus
-    label: Orphic Dionysus
-    domain: religious
-    description: >
-      Zagreus dismembered by the Titans and reconstituted. Native Hellenic
-      myth of sparagmos and return — red then green — and a source for the
-      soma-sēma reading that V8 sets against the Receptacle.
-    refs: ["Orphic fragments (Kern / Bernabé)"]
-
-  - id: mystery-ascent
-    label: Mystery Ascent
-    domain: religious
+  - id: hegel-geist
+    label: "Hegelian Geist"
+    kind: principle
+    cluster: scientific
     role: negative-feedback
     description: >
-      Eleusinian and related mystery patterns: descent, vision, and a
-      changed standing toward death. Religious green path parallel to
-      Symposium eros, without a full Timaean cosmology.
-    refs: ["Homeric Hymn to Demeter", "later mystery testimonia"]
+      Spirit that externalises and returns to itself. Philosophical maximisation of
+      Platonic epistrophē / erotic return, now as historical dialectic rather than
+      as ascent of a single soul.
+    refs: ["Phenomenology of Spirit", "Science of Logic"]
 
-  - id: brahman
-    label: Brahman
-    domain: religious
-    role: attractor
+  - id: information
+    label: "Information / Constraint"
+    kind: principle
+    cluster: scientific
+    role: model
     description: >
-      Ultimate in Upaniṣadic / Vedāntic thought, especially nirguṇa.
-      Highest-principle analogue (V11): closer to the One / Ein Sof than
-      to a craftsman, and typically without a Demiurge who looks to Forms.
-    refs: ["Bṛhadāraṇyaka, Chāndogya", "later Vedānta"]
+      Difference that makes a difference; reduction of possibility space. Isomorph
+      of Forms-as-constraints — the paradigm read as a specification rather than as
+      a living intelligible animal.
+    refs: ["Shannon", "Bateson"]
 
-  - id: purusha-prakriti
-    label: Purusha–Prakriti
-    domain: religious
+  - id: kant-noumenon
+    label: "Kantian Noumenon"
+    kind: principle
+    cluster: scientific
+    role: model
     description: >
-      Sāṃkhya pair: witnessing consciousness and productive nature.
-      Lateral isomorphism of paradigm / receptacle *without* a craftsman
-      between them — nature evolves; purusha does not make.
-    refs: ["Sāṃkhya-kārikā"]
+      Thing-in-itself as the thought of a ground we cannot know. Occupies the
+      paradigm slot epistemically inverted: the model is no longer the most
+      knowable, but the limit of knowledge (V3, V11-adjacent).
+    refs: ["Critique of Pure Reason, A235–260 / B294–315"]
 
-  - id: sunyata
-    label: Śūnyatā
-    domain: religious
-    role: attractor
+  - id: negentropy
+    label: "Negentropy"
+    kind: principle
+    cluster: scientific
+    role: negative-feedback
     description: >
-      Emptiness of inherent existence. Occupies the summit slot by refusing
-      the slot: no Good that is a source of Forms, no craftsman, no
-      receptacle-as-third-kind. Strongest V11 magenta on the religious side.
-    refs: ["Mūlamadhyamakakārikā", "Prajñāpāramitā"]
+      Schrödinger’s local export of entropy: living (and, here, cosmic) order
+      maintained by constraint and throughput. Scientific green name for Demiurgic
+      persuasion and World-Soul binding.
+    refs: ["Schrödinger, What is Life?"]
+
+  - id: self-organization
+    label: "Self-Organization"
+    kind: principle
+    cluster: scientific
+    description: >
+      Order arising from local interaction without an external craftsman. Cyan to
+      World Soul (immanent binding); magenta to the Demiurge (no separate nous
+      looking at a paradigm).
+    refs: ["Prigogine", "Kauffman"]
+
+  - id: spinoza-deus
+    label: "Spinoza’s Deus sive Natura"
+    kind: principle
+    cluster: scientific
+    description: >
+      One substance, immanent cause of itself. Absorbs Good, paradigm, and world
+      into a single geometric necessity. Isomorphic as monism; contrast as the
+      refusal of a craftsman and of a beyond-being.
+    refs: ["Ethics I"]
+
+  - id: stoic-logos
+    label: "Stoic Logos"
+    kind: principle
+    cluster: scientific
+    role: governor
+    description: >
+      Immanent fiery reason that structures and recurs through the cosmos (including
+      ekpyrōsis). World Soul stripped of a separate paradigm and made identical with
+      the world’s active principle.
+    refs: ["SVF fragments", "Marcus Aurelius, Meditations"]
+
+  - id: symmetry-breaking
+    label: "Symmetry Breaking"
+    kind: principle
+    cluster: scientific
+    description: >
+      Selection of a particular ordered state from a more symmetric possibility
+      space. Scientific analogue of the Demiurge imposing definite triangles /
+      elements on the Receptacle’s indeterminacy.
+    refs: ["Anderson; modern cosmology / condensed matter"]
+
+  - id: whitehead-process
+    label: "Whiteheadian Process"
+    kind: principle
+    cluster: scientific
+    role: plant
+    description: >
+      Actual occasions, prehension, and a God who is both primordial and consequent.
+      Becoming promoted from last stage to the general category; the Receptacle
+      rewritten as extensive continuum.
+    refs: ["Process and Reality"]
 
   - id: zoroastrian-dualism
-    label: Zoroastrian Dualism
-    domain: religious
+    label: "Zoroastrian Dualism"
+    kind: principle
+    cluster: zoroastrian
     description: >
       Ahura Mazda against Angra Mainyu as coeval or quasi-coeval principles.
-      Contrast with Plato’s single Good plus a *non-evil* necessity: here
-      the opposing pole is itself a will, not a receptacle.
+      Contrast with Plato’s single Good plus a *non-evil* necessity: here the
+      opposing pole is itself a will, not a receptacle.
     refs: ["Gathas", "later Avestan / Pahlavi"]
-
-  # ---------------------------------------------------------------------------
-  # Extra pole used by V9 (fallen / exile time)
-  # ---------------------------------------------------------------------------
-
-  - id: fallen-time
-    label: Fallen Time
-    domain: mystical
-    role: clock
-    description: >
-      Time as exile, irreversible loss, or apocalyptic waiting — the V9
-      pole against Timaean ordered time. Covers Gnostic sojourn in the
-      spheres, later fall-narratives, and the Statesman world running down
-      once the steersman has let go.
-    refs: ["Gnostic ascent tractates", "Statesman 273c–e (run-down)"]

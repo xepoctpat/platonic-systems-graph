@@ -62,7 +62,7 @@ def main() -> None:
     multi = build_multigraph()
     G = as_simple_digraph(multi)
 
-    banner("Platonic Systems Graph — feedback / cycles")
+    banner("Systems graph — feedback / cycles")
     print(f"Simple digraph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges.")
 
     sccs = [c for c in nx.strongly_connected_components(G) if len(c) > 1]
@@ -120,9 +120,8 @@ def main() -> None:
     _dump("mixed", "Mixed loops (the cosmos can run down and be restored)")
 
     print("\nReading hint:")
-    print("  Return loops should pass through Eros, Tikkun, theurgy, Geist, or negentropy.")
-    print("  Fall loops should pass through Shevirah, Sophia, kenoma, entropy, or the")
-    print("  Statesman cycle. Mixed loops are where V6’s cybernetic claim is testable.")
+    print("  Return / fall / mixed loops are evidence, not confirmation of a Platonic spine.")
+    print("  Recurring hinges across cycles are candidates for an organic spine.")
 
 
 if __name__ == "__main__":

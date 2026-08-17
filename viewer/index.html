@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Platonic Systems Graph</title>
+  <title>Systems graph</title>
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
@@ -11,37 +11,43 @@
 <body>
   <header>
     <div class="brand">
-      <h1>Platonic Systems Graph</h1>
-      <p>V1–V11 · YAML is the source of truth</p>
+      <h1>Systems graph</h1>
+      <p>Peer clusters · YAML is the source of truth</p>
     </div>
-    <div class="filters">
-      <fieldset>
-        <legend>Domain</legend>
-        <label><input type="checkbox" data-kind="domain" value="platonic" checked /><span class="swatch swatch-platonic"></span>Platonic</label>
-        <label><input type="checkbox" data-kind="domain" value="mystical" checked /><span class="swatch swatch-mystical"></span>Mystical</label>
-        <label><input type="checkbox" data-kind="domain" value="scientific" checked /><span class="swatch swatch-scientific"></span>Scientific</label>
-        <label><input type="checkbox" data-kind="domain" value="religious" checked /><span class="swatch swatch-religious"></span>Religious</label>
-      </fieldset>
-      <fieldset>
-        <legend>Edge type</legend>
-        <label><input type="checkbox" data-kind="etype" value="gold" checked /><span class="swatch swatch-gold"></span>gold</label>
-        <label><input type="checkbox" data-kind="etype" value="cyan" checked /><span class="swatch swatch-cyan"></span>cyan</label>
-        <label><input type="checkbox" data-kind="etype" value="magenta" checked /><span class="swatch swatch-magenta"></span>magenta</label>
-        <label><input type="checkbox" data-kind="etype" value="green" checked /><span class="swatch swatch-green"></span>green</label>
-        <label><input type="checkbox" data-kind="etype" value="red" checked /><span class="swatch swatch-red"></span>red</label>
-        <label><input type="checkbox" data-kind="etype" value="orange" checked /><span class="swatch swatch-orange"></span>orange</label>
-      </fieldset>
-    </div>
-    <div class="actions">
+    <div class="toolbar">
+      <label class="search-label">Search
+        <input type="search" id="search" placeholder="label or id" autocomplete="off" />
+      </label>
+      <button type="button" id="laterals">Laterals only</button>
+      <button type="button" id="all-edges">All edge types</button>
+      <button type="button" id="clear-focus">Clear focus</button>
       <button type="button" id="fit">Fit</button>
       <button type="button" id="relayout">Re-layout</button>
       <span id="status"></span>
     </div>
   </header>
+  <div class="filters" id="filters">
+    <fieldset>
+      <legend>Kind</legend>
+      <div id="kind-filters"></div>
+    </fieldset>
+    <fieldset class="cluster-box">
+      <legend>Cluster</legend>
+      <div class="filter-actions">
+        <button type="button" id="clusters-all">All</button>
+        <button type="button" id="clusters-none">None</button>
+      </div>
+      <div id="cluster-filters"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Edge type</legend>
+      <div id="type-filters"></div>
+    </fieldset>
+  </div>
   <div id="wrap">
     <div id="cy"></div>
     <aside id="detail">
-      <p class="empty">Click a node or edge. Serve the repository root with <code>python -m http.server 8000</code> and open <code>/viewer/</code>.</p>
+      <p class="empty">Click a node to focus its neighbourhood. Serve the repo root on a free high port, e.g. <code>python -m http.server 8765</code>, then open <code>/viewer/</code>.</p>
     </aside>
   </div>
   <script src="js/app.js"></script>
