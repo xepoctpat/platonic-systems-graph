@@ -4631,3 +4631,163 @@ edges:
     strength: 0.8
     versions: []
     note: She claims both witness and nature, then slays. Sāṃkhya pair does not fight.
+
+  - from: hinduism
+    to: maya
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Appearance as mithyā name-and-form.
+
+  - from: hinduism
+    to: apaurusheya
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Authorless Vedic injunction.
+
+  - from: hinduism
+    to: paramanu
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Eternal atom.
+
+  - from: hinduism
+    to: kaivalya
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Isolation-exit of the seer.
+
+  - from: hinduism
+    to: nyaya-ishvara
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Inferred product-designer.
+
+  - from: maya
+    to: purusha-prakriti
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Mithyā name-and-form versus Sāṃkhya's real prakṛti.
+
+  - from: maya
+    to: devi
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Superimposed appearance versus the Goddess who deludes and slays.
+
+  - from: apaurusheya
+    to: rta
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Vedic injunction (codanā) is not ṛta as the kept-order clock.
+
+  - from: apaurusheya
+    to: genesis-creator
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Eternal unauthored speech versus a God who creates by speaking.
+
+  - from: paramanu
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Indivisible eternal particulars versus nurse-space that receives form.
+
+  - from: paramanu
+    to: purusha-prakriti
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Combinations of atoms versus one productive nature.
+
+  - from: kaivalya
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Seer isolated in its nature versus exit from the cosmos.
+
+  - from: kaivalya
+    to: fana-baqa
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Isolation of the seer versus passing-away and subsistence in God.
+
+  - from: kaivalya
+    to: brahman
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Liberation as isolation versus identity with Brahman.
+
+  - from: purusha-prakriti
+    to: kaivalya
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: "Yoga-sūtra 4.34: when the guṇas lapse the seer of the pair stands alone."
+
+  - from: nyaya-ishvara
+    to: paramanu
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Inferred agent guides atoms; they are not self-ordering.
+
+  - from: nyaya-ishvara
+    to: apaurusheya
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Product-designer versus authorless Vedic speech.
+
+  - from: nyaya-ishvara
+    to: brahma
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Inferred designer of products versus lotus-born kalpa-creator.
+
+  - from: nyaya-ishvara
+    to: aristotle-unmoved-mover
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Intelligent agent of atoms and earth versus a mover that moves as beloved.
+
+  - from: nyaya-ishvara
+    to: shiva
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Inferred Nyāya Īśvara versus Śiva as local lord of a kalpa.

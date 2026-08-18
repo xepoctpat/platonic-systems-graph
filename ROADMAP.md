@@ -214,7 +214,18 @@ Phase D stop condition is **met** (mythology gone; Popol Vuh is a named extra-Eu
 | Platonic share of top 12 betweenness | still **8/12** |
 | What moved | Ma'at into betweenness **#9**. Tiamat still degree #4. Operators sat with ṛta / Ma'at / Asha / Yijing, not with first waters. Devī split from Brahman (community 4 vs 3). |
 
-Next D: Hindu 3 (darśana increment). Buddhist 2 and science cosmology still wait for a new slot.
+### After Phase D (2026-08-18, Hindu 3)
+
+| | |
+|---|---|
+| Graph | 211 nodes · 594 edges · 42 systems · 169 principles · 31 clusters |
+| Edges | cyan 212 · gold 152 · magenta 95 · orange 56 · red 41 · green 38 |
+| Isolates | none |
+| Betweenness top 5 | demiurge 0.195 · the-good 0.154 · paradigm 0.138 · **receptacle 0.081** · information 0.075 |
+| Platonic share of top 12 betweenness | **7/12** (count moved; not a proven spine) |
+| What moved | Receptacle overtook information for #4. `hinduism` entered betweenness **#10** and degree **#5**. Genesis-creator back at #12. Tiamat still degree #4; Ma'at still betweenness #9. No gold to the Demiurge. |
+
+Next D: Buddhist 2 (pratītyasamutpāda / Yogācāra if a new slot) or science cosmology (only if distinct from entropy + ordered-time). Hinduism remains partial.
 
 ---
 
@@ -228,7 +239,7 @@ Stop when: `mythology` is gone (done in A) **and** at least one extra-Eurasian c
 | Mesoamerica | one cycle (Popol Vuh *or* Mexica suns) | a decorative “Aztec” sticker | [x] |
 | West Africa | Yoruba only with a named corpus in `refs` | a diversity flag | [x] |
 | Hindu 2 | Śiva / Viṣṇu / Devī as operators | avatāra lists | [x] |
-| Hindu 3 | darśana increment | every school | [ ] |
+| Hindu 3 | darśana increment | every school | [x] |
 | Buddhist 2 | pratītyasamutpāda and/or Yogācāra if new slot | every nikāya | [ ] |
 | Science | cosmology only if distinct from entropy + ordered-time | every physicist | [ ] |
 

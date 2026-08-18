@@ -113,9 +113,10 @@ items:
     status: partial
     cluster: hindu
     note: >
-      Brahman, Sāṃkhya pair, and Purāṇic operators (Brahmā, Viṣṇu, Śiva, Devī)
-      encoded from Maitrī 5.2 and Devī Māhātmya. Out: avatāra lists, every
-      Devī form, every Purāṇa, darśana increment (Hindu 3).
+      Brahman, Sāṃkhya pair, Purāṇic operators, and ṣaḍ-darśana increment
+      (adhyāsa, apauruṣeya, paramāṇu, kaivalya, Nyāya Īśvara) encoded from
+      the sūtra-bases. Out: avatāra lists, every Devī form, every Purāṇa,
+      school stickers, pramāṇa/padārtha lists, person-nodes, Buddhist 2.
 
   - id: zoroastrianism
     era: "c. 1200–300 BCE"

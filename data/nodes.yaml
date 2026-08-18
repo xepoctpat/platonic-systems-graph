@@ -124,10 +124,11 @@ nodes:
     kind: system
     cluster: hindu
     description: >
-      Later umbrella for Upaniṣadic Brahman, Sāṃkhya, and Purāṇic operators.
-      The Ṛgvedic corpus is its own system node (`vedic`), not collapsed here.
-      This pass: Brahmā, Viṣṇu, Śiva, Devī (Maitrī 5.2 + Devī Māhātmya).
-      Not avatāra lists, every Devī form, or darśana (Hindu 3).
+      Later umbrella for Upaniṣadic Brahman, Sāṃkhya, Purāṇic operators, and
+      ṣaḍ-darśana occupants (adhyāsa, apauruṣeya, paramāṇu, kaivalya, Nyāya
+      Īśvara). The Ṛgvedic corpus is its own system node (`vedic`), not
+      collapsed here. Not avatāra lists, every Devī form, Vedānta subschools,
+      or pramāṇa/padārtha lists.
     refs:
       - "Upaniṣads"
       - "Sāṃkhya-kārikā"
@@ -1791,6 +1792,69 @@ nodes:
       - "Devī Māhātmya (Mārkaṇḍeya Purāṇa 81–93)"
       - "Coburn, Encountering the Goddess"
       - "Kinsley, Hindu Goddesses"
+
+  - id: maya
+    label: "Māyā (adhyāsa)"
+    kind: principle
+    cluster: hindu
+    role: noise
+    description: >
+      Śaṅkara's adhyāsa/avidyā: the world as mithyā name-and-form on Brahman.
+      Appearance, not a second summit and not Devī as a fighting goddess.
+      Less-than-real overlay, not Sāṃkhya's real prakṛti.
+    refs:
+      - "Śaṅkara, Adhyāsa-bhāṣya on the Brahma-sūtra"
+      - "Brahma-sūtra-bhāṣya"
+
+  - id: apaurusheya
+    label: "Apauruṣeya"
+    kind: principle
+    cluster: hindu
+    description: >
+      Jaimini 1.1.1–5: dharma is what Vedic injunction (codanā) indicates.
+      The Veda is eternal unauthored speech — cosmic ought without a
+      speaker-god. Un-bags later dharma from ṛta-as-clock.
+    refs:
+      - "Mīmāṃsā-sūtra 1.1.1–5"
+      - "Śabara-bhāṣya"
+
+  - id: paramanu
+    label: "Paramāṇu"
+    kind: principle
+    cluster: hindu
+    description: >
+      Kaṇāda's indivisible eternal particulars. Their combinations, not a
+      nurse-space, make the empirical world. Atom as occupant, not kalām
+      (left out of Islamic philosophy) and not chōra.
+    refs:
+      - "Vaiśeṣika-sūtra"
+
+  - id: kaivalya
+    label: "Kaivalya"
+    kind: principle
+    cluster: hindu
+    role: exit
+    description: >
+      Yoga-sūtra 4.34: when the guṇas lapse the seer stands alone in its
+      nature. Liberation as isolation, not identity with Brahman, not exit
+      from the cosmos, and not a redo of the Sāṃkhya pair.
+    refs:
+      - "Yoga-sūtra 4.34"
+
+  - id: nyaya-ishvara
+    label: "Nyāya Īśvara"
+    kind: principle
+    cluster: hindu
+    role: controller
+    description: >
+      Inferred intelligent agent who guides atoms, karma, and earth
+      (Uddyotakara NV 4.1.21; Udayana kāryatvāt). Designer from products,
+      not lotus-born Brahmā, not Śiva as local Īśvara, not Yoga's special
+      puruṣa, and not the unmoved mover.
+    refs:
+      - "Nyāya-sūtra 4.1.21"
+      - "Uddyotakara, Nyāya-vārttika 4.1.21"
+      - "Udayana, Nyāyakusumāñjali"
 
   - id: blombos-mark
     label: "Blombos mark"
