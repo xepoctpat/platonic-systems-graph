@@ -13,11 +13,15 @@ No backend, no database, no build step.
 ├── data/
 │   ├── nodes.yaml            # systems + principles
 │   ├── edges.yaml            # typed relations
+│   ├── research-queue.yaml   # survey order (not a spine)
 │   └── versions.md           # what each diagram was for
 ├── analysis/                 # NetworkX → stdout
 ├── tools/serve.py            # local viewer on 127.0.0.1:8765
+├── tools/validate.py         # schema + dangling-edge check
 ├── viewer/                   # 2D inspector (HTML + CSS + JS)
-├── .grok/skills/             # repo-scoped Grok skills
+├── .grok/skills/             # researcher, add-entry, walk-roadmap, …
+├── .grok/workflows/          # walk-one, survey-tradition, collision-audit, spine-snapshot
+├── ROADMAP.md                # phases to compare later runs against
 ├── requirements.txt
 └── README.md
 ```
@@ -69,6 +73,7 @@ There is no `stage` field. A new node does not have to touch Plato.
 ## Analysis
 
 ```powershell
+python tools/validate.py
 python analysis/centrality.py
 python analysis/communities.py
 python analysis/paths.py
@@ -88,9 +93,17 @@ python tools/serve.py check
 python tools/serve.py stop
 ```
 
-Then open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080.
+Live (GitHub Pages): <https://xepoctpat.github.io/platonic-systems-graph/>
 
-- Node colour = cluster; system nodes are larger than principles.
+Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080.
+
+- Node colour = cluster; system nodes are larger (pale ring) than principles.
+- Default **Field** is a **ring of schools** (mind map, not a force hairball). A line between schools is an aggregated finding. Click a school for a radial neighbourhood. **Loop** places the cycle on a circle. **Path** is left-to-right.
+- **Open interiors** shows every edge. Click a node to open one school.
+- **Path**: two clicks, explicit A→…→B. **Loop**: one click, a short cycle (prefers mixed green/red). Both are query overlays.
+- Directed flow has one arrow. Peer maps have arrows both ways.
+- Legend is larger and can be collapsed.
+- Overlay legend (large, collapsible). **How to** in the right sidebar is the tutorial.
 - Filter by kind, cluster, and edge type.
 - **Laterals only** shows cyan + orange (the V5 view).
 - Click a node to focus its neighbourhood.
@@ -101,9 +114,10 @@ Keep CSS and JS out of the HTML.
 ## Extending
 
 1. Web survey one tradition or slot (`/researcher`). Walks `data/research-queue.yaml` from the earliest sourced cosmology unless you name a target. Small batches, sources first.
-2. Encode accepted nodes (`/add-entry`). Prefer laterals and collisions.
+2. Encode accepted nodes (`/add-entry`). Prefer laterals and collisions. Run `python tools/validate.py`.
 3. Re-run analysis (`/organic-spine`) and keep the viewer up (`/viewer-server`).
-4. Holding nodes (`mythology`, some system stubs) exist so laterals have a landing site. Replace them when the interior is surveyed.
+4. System stubs (`sufism`, `theosophy`, `jungian-psychology`) may exist as landing sites. Replace interiors when surveyed. Do not add a bag hub.
+5. Compare progress to `ROADMAP.md`.
 
 One node per functionally distinct system or principle, not one node per author.
 

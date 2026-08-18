@@ -5,8 +5,13 @@
 # Schema
 #   from, to    node ids (see nodes.yaml)
 #   type        gold | cyan | magenta | green | red | orange
-#   directed    true  = constitutive / causal / ascent-descent arrow
-#               false = symmetric map (isomorphism, contrast, hybrid)
+#   directed    true  = flow (constitutive / fall / return). Draw one arrow.
+#               false = symmetric map (isomorphism, contrast, hybrid).
+#               Draw marks both ways. Not a third schema.
+#
+# Trajectories (A via … to B, feedback loops) are query overlays, not extra
+# YAML. A new finding between existing nodes is one more binary edge — or a
+# new principle if three-or-more actors occupy a distinct slot. No hyperedges.
 #   strength    0.0–1.0
 #   versions    optional diagram tags (V1–V11). Illustrative, not required.
 #   note        one-sentence rationale
@@ -335,7 +340,7 @@ edges:
     directed: true
     strength: 1.0
     versions: [V2, V7]
-    note: The fall produces the ignorant craftsman who will fabricate this world.
+    note: Sethian path — unauthorized birth produces Yaldabaoth.
 
   - from: sophia-fall
     to: kenoma
@@ -1210,14 +1215,6 @@ edges:
     note: "V5 hybrid: theosophy borrows Vedantic / Puranic furniture."
 
   - from: theosophy
-    to: mythology
-    type: orange
-    directed: false
-    strength: 0.75
-    versions: [V5]
-    note: "V5 hybrid: comparative myth as theosophical method."
-
-  - from: theosophy
     to: sufism
     type: orange
     directed: false
@@ -1231,7 +1228,7 @@ edges:
     directed: false
     strength: 0.65
     versions: [V5]
-    note: "V5 hybrid: spark/atman and matter/maya comparisons. Weak until surveyed."
+    note: "V5 hybrid: spark/ātman and matter/māyā. Devī is Mahāmāyā who also slays; not a Gnostic fall."
 
   - from: gnosticism
     to: christianity
@@ -1240,46 +1237,6 @@ edges:
     strength: 0.85
     versions: [V5]
     note: "V5 isomorphism: shared Christian-adjacent furniture, opposite cosmos-valuation."
-
-  - from: hinduism
-    to: mythology
-    type: cyan
-    directed: false
-    strength: 0.7
-    versions: [V5]
-    note: "V5 lateral: Hindu narrative systems sit in the coarse mythology hub."
-
-  - from: sufism
-    to: mythology
-    type: orange
-    directed: false
-    strength: 0.55
-    versions: [V5]
-    note: V5 hybrid via the theosophical hub; direct link is weak pending survey.
-
-  - from: norse-myth
-    to: mythology
-    type: gold
-    directed: true
-    strength: 0.6
-    versions: [V5]
-    note: Holding membership only — replace once Norse is surveyed on its own terms.
-
-  - from: mesopotamian
-    to: mythology
-    type: cyan
-    directed: false
-    strength: 0.55
-    versions: [V5]
-    note: Peer to the coarse mythology hub, not a member of a leftover bag.
-
-  - from: egyptian-religion
-    to: mythology
-    type: cyan
-    directed: false
-    strength: 0.65
-    versions: [V5]
-    note: V5 / V4 extra-Hellenic myth peer.
 
   - from: christianity
     to: hermeticism
@@ -1423,7 +1380,7 @@ edges:
     directed: false
     strength: 0.8
     versions: [V4, V11]
-    note: System-to-principle interior pending a fuller Hindu survey.
+    note: System-to-principle interior. Nirguṇa summit; Purāṇic operators sit beside it.
 
   - from: biblical-religion
     to: genesis-creator
@@ -1552,14 +1509,6 @@ edges:
     strength: 0.5
     versions: []
     note: Seasonal or solstice stone mark versus numbered celestial time. Same slot, thinner.
-
-  - from: mythology
-    to: paleolithic-image
-    type: orange
-    directed: false
-    strength: 0.4
-    versions: [V5]
-    note: Holding hub only so the preliterate track can sit on V5 laterals.
 
   - from: mesopotamian
     to: nammu
@@ -2664,3 +2613,2021 @@ edges:
     strength: 0.55
     versions: [V9]
     note: Infinite time that can birth a fall. Thin.
+
+  # ---- Manichaean interior and collisions ----
+  - from: manichaeism
+    to: father-of-greatness
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Uncreated light pole of the two principles.
+
+  - from: manichaeism
+    to: king-of-darkness
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Uncreated dark pole of the two principles.
+
+  - from: manichaeism
+    to: manichaean-three-times
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: "The church’s own summary: two principles and three times."
+
+  - from: father-of-greatness
+    to: primal-man
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: First evocation / call against the invasion.
+
+  - from: father-of-greatness
+    to: living-spirit
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Second evocation after Primal Man is swallowed.
+
+  - from: father-of-greatness
+    to: third-messenger
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Third evocation; Nous that extracts remaining light.
+
+  - from: king-of-darkness
+    to: manichaean-mixture
+    type: red
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Invasion and devouring start the mixed age.
+
+  - from: primal-man
+    to: manichaean-mixture
+    type: red
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Swallowed five elements become light trapped in matter.
+
+  - from: living-spirit
+    to: primal-man
+    type: green
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Rescue of the First Man; Call becomes a deity.
+
+  - from: living-spirit
+    to: manichaean-mixture
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Cosmos built from dark corpses as a machine to unmix light.
+
+  - from: third-messenger
+    to: manichaean-mixture
+    type: green
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Extraction and later judgment return swallowed light.
+
+  - from: manichaean-three-times
+    to: manichaean-mixture
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Mixture is the middle time.
+
+  - from: manichaeism
+    to: zoroastrianism
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Iranian dualism inherited and recast. Mani is not a Magian.
+
+  - from: manichaeism
+    to: gnosticism
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Shared gnosis and cosmic pessimism; Mani has two uncreated poles, not a fall inside a pleroma.
+
+  - from: manichaeism
+    to: christianity
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Jesus and apostle-language reused; cosmos-valuation inverted.
+
+  - from: father-of-greatness
+    to: ahura-mazda
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Light summit. Mazda is uncreated wisdom; the Father is one of two coeval poles.
+
+  - from: father-of-greatness
+    to: zurvan
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Iranian texts may name the Father Zurwān; he is not the parent of twin spirits.
+
+  - from: father-of-greatness
+    to: gnostic-unknown-father
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V11]
+    note: Hidden light-summit. Mani’s Father has an uncreated dark twin; the Unknown Father does not.
+
+  - from: father-of-greatness
+    to: the-good
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: Single source of being versus one of two uncreated principles.
+
+  - from: king-of-darkness
+    to: angra-mainyu
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Uncreated hostile will / matter. Same slot, Mani’s pole is also Hylē.
+
+  - from: king-of-darkness
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V8]
+    note: Evil Matter that invades versus non-evil chōra that nurses becoming.
+
+  - from: king-of-darkness
+    to: kenoma
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V8]
+    note: Uncreated Darkness versus deficiency produced by an aeonic fall.
+
+  - from: primal-man
+    to: ahura-mazda
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: "Iranian Manichaean name of Primal Man is Ohrmazd: summit recast as wounded proto-anthropos."
+
+  - from: primal-man
+    to: sophia-fall
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Light lost into mixture. Sophia errs inside fullness; Primal Man is sent and swallowed.
+
+  - from: living-spirit
+    to: gnostic-demiurge
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V7]
+    note: Both fashion a cosmos from mixed stuff. Living Spirit extracts light; Ialdabaoth builds a prison.
+
+  - from: living-spirit
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V7]
+    note: World-fashioner with a purpose. Material is slain Darkness, not a nurse-receptacle.
+
+  - from: manichaean-mixture
+    to: kenoma
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V8]
+    note: Light trapped in a bad cosmos. Mixture is invaded Light; kenoma is deficiency.
+
+  - from: manichaean-three-times
+    to: ordered-time
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V9]
+    note: History of mix and unmix versus time generated with the heavens as image of eternity.
+
+  - from: manichaean-three-times
+    to: zurvan
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V9]
+    note: Three historical stages versus infinite Time as parent of the twins.
+
+  - from: third-messenger
+    to: escape-gnosis
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V10]
+    note: Extraction of light from the cosmos, not integration of becoming.
+
+  - from: third-messenger
+    to: incarnation
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Manichaean Messenger / Jesus-figure extracts light; incarnation binds heaven to flesh.
+
+  # ---- Early China ----
+  - from: early-china
+    to: tian
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Zhou Heaven is the early Chinese summit.
+
+  - from: early-china
+    to: dao
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Daodejing Dao is the nameless origin in the same field.
+
+  - from: early-china
+    to: yijing-change
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Xici change is the time-operator of the field.
+
+  - from: tian
+    to: tianming
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Heaven lends and withdraws the mandate.
+
+  - from: dao
+    to: tian
+    type: gold
+    directed: true
+    strength: 0.7
+    versions: []
+    note: "DDJ 25: heaven takes its law from the Dao."
+
+  - from: yijing-change
+    to: dao
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: "Xici: one yin and one yang is called Dao."
+
+  - from: dao
+    to: the-good
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V11]
+    note: Nameless source. Dao is not beyond-being for a craftsman.
+
+  - from: dao
+    to: plotinus-one
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V11]
+    note: Prior, returning, unnamed. Dao produces by unfolding, not by remaining.
+
+  - from: dao
+    to: brahman
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V11]
+    note: Ground that is not a craftsman. Weak; later Vedānta is not this pass.
+
+  - from: dao
+    to: sunyata
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: [V11]
+    note: Refuses a substantial summit. Dao still produces; emptiness does not.
+
+  - from: dao
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V7]
+    note: No craftsman. The ten thousand things arise without a look to a model.
+
+  - from: dao
+    to: genesis-creator
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Speech-creation versus the nameless that cannot be named.
+
+  - from: tian
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Order that must be kept. Tian withdraws from bad rule; Ma'at is restored by rite.
+
+  - from: tian
+    to: rta
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Cosmic rightness. Tian is also a political observer.
+
+  - from: tian
+    to: the-good
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: [V11]
+    note: Impersonal summit. Tian watches virtue; the Good grants being.
+
+  - from: tianming
+    to: statesman-cycle
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Rule can run down and be re-lent. Mandate is moral-political, not a cosmic steersman.
+
+  - from: yijing-change
+    to: ordered-time
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V9]
+    note: Change *is* the course versus time generated as image of eternity.
+
+  - from: yijing-change
+    to: becoming
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Production and reproduction. Becoming is last in Timaeus; here it is the general fact.
+
+  - from: yijing-change
+    to: whitehead-process
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Process as the category, not a late overlay. Weak modern rhyme.
+
+  # ---- Pythagorean / Aristotelian / Stoic systems ----
+  - from: pythagoreanism
+    to: limiters-unlimiteds
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Philolaus’s pair is the interior of the numbered cosmos.
+
+  - from: pythagoreanism
+    to: harmonia
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Harmonia fits the unlike pair.
+
+  - from: harmonia
+    to: limiters-unlimiteds
+    type: green
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Fitting-together of limiter and unlimited.
+
+  - from: pythagoreanism
+    to: platonism
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Timaean reception of number and harmonia. Not a Platonic stage.
+
+  - from: harmonia
+    to: world-soul
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Immanent bind of unlike parts. World Soul still looks up to a paradigm.
+
+  - from: limiters-unlimiteds
+    to: receptacle
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V8]
+    note: Unlimited as continuum. The pair includes limiters; chōra is not a limiter.
+
+  - from: harmonia
+    to: yijing-change
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Fitting of complements. Weak; yin-yang is not ratio.
+
+  - from: aristotelianism
+    to: aristotle-unmoved-mover
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The mover is the Peripatetic summit.
+
+  - from: aristotelianism
+    to: platonism
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Peer school. Critique of separate Forms, not a later Plato stage.
+
+  - from: stoicism
+    to: stoic-logos
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Immanent logos is the Stoic governor.
+
+  - from: stoicism
+    to: platonism
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Same slots, no separate paradigm.
+
+  - from: stoicism
+    to: hermeticism
+    type: orange
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Logos family without making Hermetica a Stoic appendix.
+
+  # ---- Merkavah ----
+  - from: merkavah
+    to: hekhalot-ascent
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Palace-journey is the practice.
+
+  - from: merkavah
+    to: merkabah-throne
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The chariot-throne is the term of the vision.
+
+  - from: hekhalot-ascent
+    to: merkabah-throne
+    type: green
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Ascent / descent terminates at the Glory.
+
+  - from: merkabah-throne
+    to: metatron
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: "3 Enoch: the transformed Enoch sits throne-side."
+
+  - from: merkavah
+    to: kabbalah
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Peer precursor. Kabbalah is not a later stage of the chariot.
+
+  - from: biblical-religion
+    to: merkavah
+    type: gold
+    directed: true
+    strength: 0.7
+    versions: []
+    note: Ezekiel’s chariot is the biblical seed of the practice.
+
+  - from: hekhalot-ascent
+    to: mystery-ascent
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Rite-path to a changed standing toward the divine. Palaces are not Eleusis.
+
+  - from: hekhalot-ascent
+    to: theurgy
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Technique to approach a summit. Hekhalot uses seals and names, not Iamblichean tokens.
+
+  - from: merkabah-throne
+    to: ein-sof
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: Seen Glory on a throne versus the Infinite beyond predication.
+
+  - from: merkabah-throne
+    to: sefirot
+    type: orange
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Later kabbalists reread the chariot. Weak until a dedicated link-pass.
+
+  - from: metatron
+    to: incarnation
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Human become Lesser YHWH versus Word become flesh.
+
+  - from: metatron
+    to: christian-logos
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Intermediate divine operator. Thin.
+
+  # ---- Islamic philosophy / Sufi interior ----
+  - from: islamic-philosophy
+    to: necessary-existent
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Avicenna’s summit occupant for the falsafa stream.
+
+  - from: aristotelianism
+    to: islamic-philosophy
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Arabic Aristotle is constitutive for falsafa.
+
+  - from: islamic-philosophy
+    to: neoplatonism
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Arabic Plotinus / Theology of Aristotle as a hybrid stream.
+
+  - from: necessary-existent
+    to: aristotle-unmoved-mover
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Uncaused first. Necessary Existent is essence=existence, not only thought-thinking-itself.
+
+  - from: necessary-existent
+    to: the-good
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V11]
+    note: Necessary being versus the Good beyond being.
+
+  - from: sufism
+    to: fana-baqa
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Junayd’s pair is the first interior operator.
+
+  - from: sufism
+    to: islamic-philosophy
+    type: orange
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Shared Islamicate field. Not the same slot.
+
+  - from: fana-baqa
+    to: plotinus-one
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Return by losing the self. Fanāʾ is not remaining as the One.
+
+  - from: fana-baqa
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: [V10]
+    note: Annihilation into God versus exit from a prison-cosmos.
+
+  - from: fana-baqa
+    to: eros
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: [V10]
+    note: Return path. Eros integrates becoming; fanāʾ burns the self.
+
+  - from: biblical-religion
+    to: hokhmah
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Proverbs Wisdom is interior, not a second Genesis.
+
+  - from: hokhmah
+    to: sophia-fall
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Wisdom beside the creator versus Wisdom who falls and produces deficiency.
+
+  - from: hokhmah
+    to: intelligible-paradigm
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: Present at making as a pattern-companion. Not the Living Creature.
+
+  - from: process-thought
+    to: whitehead-process
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: System home for the existing process principle.
+
+  # ---- Sethian / Valentinian split ----
+  - from: gnosticism
+    to: sethianism
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Parent handle to the Apocryphon-of-John school.
+
+  - from: gnosticism
+    to: valentinianism
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Parent handle to the Ptolemy / Valentinus school.
+
+  - from: sethianism
+    to: valentinianism
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Same slots, different craftsman and different fate of Sophia.
+
+  - from: sethianism
+    to: barbelo
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: First Thought is the Sethian unfolding of the Invisible Spirit.
+
+  - from: sethianism
+    to: gnostic-demiurge
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V7]
+    note: Yaldabaoth is the Sethian craftsman.
+
+  - from: valentinianism
+    to: horos
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Limit is the Valentinian operator Sethianism does not isolate.
+
+  - from: valentinianism
+    to: achamoth
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Lower Wisdom is the Valentinian leftover of the fall.
+
+  - from: valentinianism
+    to: valentinian-demiurge
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: [V7]
+    note: Psychic craftsman of the world outside the Pleroma.
+
+  - from: gnostic-unknown-father
+    to: barbelo
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Invisible Spirit’s first thought / image.
+
+  - from: barbelo
+    to: intelligible-paradigm
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: First image from which aeons unfold. Not the Living Creature as model for a good craftsman.
+
+  - from: sophia-fall
+    to: horos
+    type: red
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Valentinian path — stretching toward the Father meets Limit.
+
+  - from: horos
+    to: sophia-fall
+    type: green
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Horos restores higher Sophia to her pair inside the Pleroma.
+
+  - from: horos
+    to: achamoth
+    type: red
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Enthymesis fenced off and expelled.
+
+  - from: sophia-fall
+    to: achamoth
+    type: red
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The passion becomes a second, lower Wisdom.
+
+  - from: achamoth
+    to: valentinian-demiurge
+    type: red
+    directed: true
+    strength: 0.9
+    versions: [V7]
+    note: Lower Wisdom’s conversion produces the psychic craftsman.
+
+  - from: achamoth
+    to: kenoma
+    type: red
+    directed: true
+    strength: 0.8
+    versions: [V8]
+    note: Passions of Achamoth become matter and the space outside.
+
+  - from: valentinian-demiurge
+    to: gnostic-demiurge
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V7]
+    note: Instrument of restoration versus lion-serpent who builds a prison.
+
+  - from: valentinian-demiurge
+    to: demiurge
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: [V7]
+    note: World-fashioner who does not know the model. Closer to Plato than Yaldabaoth is, still not good without jealousy.
+
+  - from: valentinian-demiurge
+    to: living-spirit
+    type: magenta
+    directed: false
+    strength: 0.7
+    versions: [V7]
+    note: Both make a cosmos from mixed leftover. Living Spirit extracts light on purpose.
+
+  - from: horos
+    to: shevirah
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: A cut that saves the higher world. Weak; Horos fences a passion, shevirah shatters vessels.
+
+  - from: achamoth
+    to: hokhmah
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Fallen leftover Wisdom versus Wisdom beside the creator.
+
+  - from: barbelo
+    to: hokhmah
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: Companion-wisdom at the summit. Thin.
+
+  # ---- Mandaean interior and collisions ----
+  - from: mandaeism
+    to: hayyi-rabbi
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The Great Life is the uncreated summit.
+
+  - from: mandaeism
+    to: masbuta
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Repeated baptism is the church's distinctive operator.
+
+  - from: hayyi-rabbi
+    to: yushamin
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: First Life emanates the Second Life.
+
+  - from: yushamin
+    to: abatur
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Second Life to Third Life in the Four Lives chain.
+
+  - from: abatur
+    to: ptahil
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Third Life fathers the Fourth; also passes the secret of solidification.
+
+  - from: hayyi-rabbi
+    to: manda-d-hayyi
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Life sends Knowledge of Life to Adam.
+
+  - from: hayyi-rabbi
+    to: yardna
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Living water is the symbol and earthly presence of the Great Life.
+
+  - from: yushamin
+    to: ptahil
+    type: red
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Unauthorized creation starts the process that produces the world-craftsman.
+
+  - from: ruha
+    to: ptahil
+    type: red
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Dark Spirit cooperates in making Tibil and the body; the soul is not hers.
+
+  - from: yardna
+    to: masbuta
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Baptism is immersion in running Lightworld water.
+
+  - from: masbuta
+    to: hayyi-rabbi
+    type: green
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Repeated immersion makes a connection back to Life while still on earth.
+
+  - from: manda-d-hayyi
+    to: hayyi-rabbi
+    type: green
+    directed: true
+    strength: 0.8
+    versions: []
+    note: The call shows the soul its way back to Life.
+
+  - from: mandaeism
+    to: gnosticism
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Shared gnosis and a bad cosmos. Mandaeans keep a living baptismal cult and do not fold into Sethian or Valentinian interiors.
+
+  - from: mandaeism
+    to: manichaeism
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Two Mesopotamian dualisms. Mani is not a Mandaean; the Cologne Mani Codex cut that genealogy.
+
+  - from: mandaeism
+    to: christianity
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: John the Baptist reused as a priest; Jesus is a false messiah.
+
+  - from: hayyi-rabbi
+    to: gnostic-unknown-father
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V11]
+    note: Hidden light-summit. Hayyi is named Life and is present as yardna.
+
+  - from: hayyi-rabbi
+    to: father-of-greatness
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: Light/Life summit. Mani's Father has an uncreated dark twin; Hayyi does not.
+
+  - from: hayyi-rabbi
+    to: the-good
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: Life that does not fashion this earth versus the Good that roots a willing craftsman.
+
+  - from: yushamin
+    to: sophia-fall
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Creation without consent. Yushamin remains an uthra and can be reconciled.
+
+  - from: abatur
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Soul weighed at a threshold. Ma'at is order kept; Abatur is a demoted scale-lord.
+
+  - from: ptahil
+    to: gnostic-demiurge
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V7]
+    note: Both fashion a deficient world. Ptahil cannot give the soul and does not claim to be the only god.
+
+  - from: ptahil
+    to: valentinian-demiurge
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V7]
+    note: Instrumental craftsman below the summit. Ptahil needs Ruha; the Valentinian is a restoration tool.
+
+  - from: ptahil
+    to: living-spirit
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V7]
+    note: Both make a cosmos from mixed stuff. Living Spirit extracts light on purpose; Ptahil fails at the soul.
+
+  - from: ruha
+    to: king-of-darkness
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Dark pole of a dual cosmos. Ruha is queen with Ur; Mani's King is uncreated Hylē.
+
+  - from: ruha
+    to: kenoma
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: [V8]
+    note: This-world trap for the soul. Kenoma is deficiency after a fall; Ruha is native Darkness.
+
+  - from: ruha
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V8]
+    note: Evil Spirit who helps make bodies versus non-evil chōra that nurses becoming.
+
+  - from: yardna
+    to: nun
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Living Lightworld water on earth versus the remaining first water the sun-god rises from.
+
+  - from: yardna
+    to: tiamat
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Running water that saves versus the slain salt-deep cut into a cosmos.
+
+  - from: masbuta
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V10]
+    note: Repeated earthly immersion versus exit through the spheres.
+
+  - from: masbuta
+    to: mystery-ascent
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Rite-path that changes standing toward death. Baptism is repeatable and watery, not a single vision.
+
+  - from: manda-d-hayyi
+    to: escape-gnosis
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V10]
+    note: Knowledge that returns the spark. The Mandaean envoy is enacted as baptism, not only passwords.
+
+  - from: manda-d-hayyi
+    to: christian-logos
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Knowledge of Life versus the Word made flesh. Mandaean texts polemicize Jesus as a liar.
+
+  # ---- Norse interior (Völuspá) and collisions ----
+  - from: norse-myth
+    to: ginnungagap
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The yawning gap is the poem’s first given.
+
+  - from: norse-myth
+    to: yggdrasil
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The world-ash is the holding structure of the nine worlds.
+
+  - from: norse-myth
+    to: ragnarok
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: "The fate of the gods is the poem’s own end."
+
+  - from: ginnungagap
+    to: ymir
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Heat meets rime in the gap; the first being drips into form.
+
+  - from: sons-of-burr
+    to: ymir
+    type: red
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Combat creation; the brothers slay the first being.
+
+  - from: ymir
+    to: sons-of-burr
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The corpse is the material the craftsmen fashion into earth, sea, and sky.
+
+  - from: yggdrasil
+    to: wyrd
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The three maidens come from under the tree and score fates.
+
+  - from: wyrd
+    to: ragnarok
+    type: red
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Fate allotted includes the fate of the gods.
+
+  - from: ragnarok
+    to: yggdrasil
+    type: red
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The ash shakes; the ancient limbs shiver.
+
+  - from: ragnarok
+    to: earth-risen
+    type: green
+    directed: true
+    strength: 0.9
+    versions: []
+    note: After fire and flood, a green earth rises from the waves.
+
+  - from: norse-myth
+    to: mesopotamian
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Two combat cosmogonies that make a world from a slain first body.
+
+  - from: norse-myth
+    to: orphism
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Dismemberment that becomes a cosmos. Orphic sparagmos is of a god, not a first giant.
+
+  - from: ginnungagap
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V8]
+    note: Yawning void that precedes a slaying versus non-evil chōra that nurses becoming.
+
+  - from: ginnungagap
+    to: tohu-vavohu
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Formless before earth and heaven. The gap is empty; tehom is watery.
+
+  - from: ginnungagap
+    to: nun
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Void that must be left versus remaining first water the sun-god rises from.
+
+  - from: ymir
+    to: tiamat
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Slain first being whose body becomes heaven and earth.
+
+  - from: ymir
+    to: orphic-dionysus
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Body cut into a world versus a god cut and reconstituted.
+
+  - from: ymir
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V8]
+    note: Corpse of a defeated being versus nurse of particulars.
+
+  - from: sons-of-burr
+    to: marduk
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: []
+    note: Craftsmen by combat; both build from a slain first body.
+
+  - from: sons-of-burr
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V7]
+    note: Slay the first being versus persuade necessity without jealousy.
+
+  - from: yggdrasil
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Order that must be kept. The tree is watered daily; Ma'at is re-established.
+
+  - from: wyrd
+    to: ordered-time
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V9]
+    note: Fate scored on wood versus time generated as a moving image of eternity.
+
+  - from: wyrd
+    to: tablet-of-destinies
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Constraint that allots what happens. The tablet is seized; wyrd is scored by maidens.
+
+  - from: wyrd
+    to: tianming
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Fate set at birth versus a mandate Heaven can withdraw.
+
+  - from: ragnarok
+    to: statesman-cycle
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V9]
+    note: A cosmos that runs down. Here the gods die with it; the Statesman steersman can return.
+
+  - from: ragnarok
+    to: shevirah
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Cosmic shattering. Shevirah is vessels that break; Ragnarök is fire, wolf, and flood.
+
+  - from: ragnarok
+    to: entropy
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: World-end as heat and run-down. Entropy has no surviving gods on a new earth.
+
+  - from: earth-risen
+    to: tikkun
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Restoration after shattering. A new ground rises; tikkun repairs vessels.
+
+  # ---- Popol Vuh interior and collisions ----
+  - from: popol-vuh
+    to: heart-of-sky
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Heart of Sky is the storm-speaker of the Book of the Council.
+
+  - from: popol-vuh
+    to: maize-people
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: The successful human design is the book’s own people.
+
+  - from: popol-vuh
+    to: hero-twins
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: The twins are the book’s descent-and-return operators.
+
+  - from: sky-sea-stillness
+    to: plumed-serpent
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The Plumed Serpent is already in the still water.
+
+  - from: heart-of-sky
+    to: plumed-serpent
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Sky-storm and water-serpent confer; earth is spoken, not cut from a corpse.
+
+  - from: heart-of-sky
+    to: sky-sea-stillness
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: They say Earth and the water is emptied into plate and platform.
+
+  - from: heart-of-sky
+    to: failed-people
+    type: red
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Flood and resin rain when the wood people will not praise.
+
+  - from: heart-of-sky
+    to: maize-people
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The makers accept the maize design after the failures.
+
+  - from: plumed-serpent
+    to: maize-people
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Maker and modeler of the people who can keep the days.
+
+  - from: xibalba
+    to: hero-twins
+    type: red
+    directed: true
+    strength: 0.75
+    versions: []
+    note: The court kills the first pair and summons the second.
+
+  - from: hero-twins
+    to: xibalba
+    type: green
+    directed: true
+    strength: 0.9
+    versions: []
+    note: They outplay One and Seven Death and empty the underworld’s claim.
+
+  - from: hero-twins
+    to: maize-people
+    type: green
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Their ascent as sun and moon prepares the fourth creation.
+
+  - from: popol-vuh
+    to: norse-myth
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Two extra-Mediterranean cycles with a destroyed age and a return.
+
+  - from: popol-vuh
+    to: biblical-religion
+    type: orange
+    directed: false
+    strength: 0.65
+    versions: []
+    note: World by speech and a flood of failed people. Not the same creator.
+
+  - from: sky-sea-stillness
+    to: ginnungagap
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Stillness before earth. The Kʼicheʼ given is watery hush; the Norse given is a yawning gap.
+
+  - from: sky-sea-stillness
+    to: nun
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Water emptied so earth can stand versus remaining first water the sun-god rises from.
+
+  - from: sky-sea-stillness
+    to: tiamat
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Sea vacated by speech versus salt-deep cut into a cosmos.
+
+  - from: heart-of-sky
+    to: genesis-creator
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: World by word. Heart of Sky confers in a council and remakes humans until they praise.
+
+  - from: heart-of-sky
+    to: ptah
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Creation by intelligent speech. Ptah is heart and tongue in one; Heart of Sky is a storm triad.
+
+  - from: heart-of-sky
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V7]
+    note: Speech that empties a sea versus a craftsman who looks to Forms and persuades necessity.
+
+  - from: failed-people
+    to: ragnarok
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: A world-age of people ends in flood and fire. Ragnarök kills gods; this flood kills manikins.
+
+  - from: maize-people
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V10]
+    note: Humans stay to keep the days and feed the makers. Not sparks exiting a prison.
+
+  - from: hero-twins
+    to: orphic-dionysus
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Death and reconstitution. The twins trick their way back; Zagreus is torn and gathered.
+
+  - from: hero-twins
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V10]
+    note: Descent that returns as sun and moon for a living earth, not passwords out of the cosmos.
+
+  - from: xibalba
+    to: kenoma
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V8]
+    note: A lower court that traps and kills. Kenoma is deficiency after a fall; Xibalba is a place with lords.
+
+  # ---- Ifá / Yoruba interior and collisions ----
+  - from: ifa
+    to: olodumare
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: The corpus names Olodumare as the unemptying source.
+
+  - from: ifa
+    to: orunmila
+    type: gold
+    directed: true
+    strength: 0.95
+    versions: []
+    note: Orunmila is the voice of the 256 Odù.
+
+  - from: olodumare
+    to: ase
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Àṣẹ is the power the source owns and lends.
+
+  - from: olodumare
+    to: obatala
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: The remote summit sends the first earth-maker.
+
+  - from: olodumare
+    to: orunmila
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Witness of destiny stands next to the source.
+
+  - from: olokun
+    to: oduduwa
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Sand is poured on the first waters at Ilé-Ifẹ̀.
+
+  - from: obatala
+    to: oduduwa
+    type: red
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Palm wine delays the first craftsman; the second finishes the land.
+
+  - from: oduduwa
+    to: obatala
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Earth-maker versus sculptor of bodies. Olodumare splits the job.
+
+  - from: obatala
+    to: olodumare
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Clay figures wait for the breath the sculptor cannot give.
+
+  - from: orunmila
+    to: ori
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: The witness of destiny reads the inner head.
+
+  - from: ifa
+    to: popol-vuh
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Two extra-Eurasian named corpora. Speech-and-sand versus speech-and-maize.
+
+  - from: olodumare
+    to: tian
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: [V11]
+    note: Remote summit that delegates. Tian backs virtue; Olodumare is not culted at a shrine.
+
+  - from: olodumare
+    to: the-good
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: Unemptying source that does not root a willing craftsman versus the Good that does.
+
+  - from: olodumare
+    to: gnostic-unknown-father
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V11]
+    note: Hidden summit. Olodumare delegates orisha; the Unknown Father is sealed from the craftsman.
+
+  - from: olokun
+    to: nun
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Remaining first water. Nun is the rise-place of Atum; Olokun can flood the new land.
+
+  - from: olokun
+    to: sky-sea-stillness
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Watery given before earth. The Kʼicheʼ sea is emptied by speech; Olokun is owned.
+
+  - from: olokun
+    to: tiamat
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Water that stays and can return versus the slain salt-deep.
+
+  - from: obatala
+    to: ptah
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Sculptor of human bodies. Ptah makes the world by heart and tongue; Obatala waits for breath.
+
+  - from: obatala
+    to: ptahil
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: [V7]
+    note: Craftsman who cannot give the soul. Olodumare breathes; Life sends the spark.
+
+  - from: obatala
+    to: demiurge
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: [V7]
+    note: Drunk delay and a split commission versus a craftsman good without jealousy.
+
+  - from: oduduwa
+    to: sons-of-burr
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Land made on first water. Burr’s sons slay a body; Oduduwa pours sand.
+
+  - from: oduduwa
+    to: marduk
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Earth by poured sand and a hen versus earth cut from a slain first being.
+
+  - from: orunmila
+    to: tablet-of-destinies
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Destiny as readable constraint. The tablet is seized; Orunmila witnesses.
+
+  - from: orunmila
+    to: wyrd
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: [V9]
+    note: Fate that can be consulted. Wyrd is scored under the tree; Ifá is recitable Odù.
+
+  - from: ori
+    to: tianming
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Destiny chosen before birth versus a mandate Heaven can withdraw.
+
+  - from: ori
+    to: wyrd
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Allotted life. Ori is chosen; wyrd is scored by maidens.
+
+  - from: ase
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Efficacy that must be kept in use. Ma'at is re-established; àṣẹ is spoken and lent.
+
+  - from: hinduism
+    to: brahma
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Junior kalpa-creator of this corpus.
+
+  - from: hinduism
+    to: vishnu
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: []
+    note: System-to-principle interior. Preserver of the trimūrti.
+
+  - from: hinduism
+    to: shiva
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: []
+    note: System-to-principle interior. Dissolver of the trimūrti.
+
+  - from: hinduism
+    to: devi
+    type: cyan
+    directed: false
+    strength: 0.9
+    versions: []
+    note: System-to-principle interior. Devī Māhātmya summit-operator.
+
+  - from: vedic
+    to: rudra
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: Rudra is the Vedic howler of this hymn corpus.
+
+  - from: vedic
+    to: vishnu
+    type: gold
+    directed: true
+    strength: 0.75
+    versions: []
+    note: Three-strider of Ṛgveda 1.154 funds the later preserver.
+
+  - from: rudra
+    to: shiva
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: "Genealogical identity: howler becomes the kalpa-dissolver."
+
+  - from: rudra
+    to: agni
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Nirukta and the Śatarudrīya fuse the two fires.
+
+  - from: prajapati
+    to: brahma
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: Late-Vedic emitter becomes the Purāṇic lotus-craftsman.
+
+  - from: brahman
+    to: brahma
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: "Maitrī 5.2: rajas portion of Brahman."
+
+  - from: brahman
+    to: vishnu
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: "Maitrī 5.2: sattva portion of Brahman."
+
+  - from: brahman
+    to: shiva
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: "Maitrī 5.2: tamas portion, named Rudra there."
+
+  - from: brahma
+    to: devi
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: Brahmā praises her so Viṣṇu will wake; his tejas enters the Durgā-body.
+
+  - from: vishnu
+    to: devi
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: []
+    note: She is his sleep (Mahāmāyā) and takes his discus in the tejas-body.
+
+  - from: shiva
+    to: devi
+    type: gold
+    directed: true
+    strength: 0.8
+    versions: []
+    note: His tejas enters the combined Goddess of Devī Māhātmya 2.
+
+  - from: devi
+    to: vishnu
+    type: green
+    directed: true
+    strength: 0.85
+    versions: []
+    note: She withdraws so he can wake and slay Madhu-Kaitabha.
+
+  - from: brahma
+    to: heart-of-sky
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Junior craftsman who must petition a Goddess versus storm-speech that raises earth.
+
+  - from: brahma
+    to: obatala
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Craftsman who cannot finish alone. Olodumare breathes; Devī wakes Viṣṇu.
+
+  - from: vishnu
+    to: incarnation
+    type: cyan
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Descent into becoming to restore. Gītā 4.7–8 versus John 1.14. Not a person-list.
+
+  - from: vishnu
+    to: escape-gnosis
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Enters the world to keep it versus extracts sparks from it.
+
+  - from: vishnu
+    to: maat
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Order that must be kept. Viṣṇu descends when dharma wanes; Ma'at is re-established.
+
+  - from: vishnu
+    to: rta
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: Three strides measure the ṛta-path; later dharma is the same keep-work.
+
+  - from: shiva
+    to: ragnarok
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Official cyclic dissolution versus a fate that kills the gods with the world.
+
+  - from: shiva
+    to: yijing-change
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Destruction as the other face of production. Kalpa-end versus yin-yang pairing.
+
+  - from: shiva
+    to: orphic-dionysus
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: Wild and auspicious in one body. Bull, dance, and a cut that founds.
+
+  - from: devi
+    to: brahman
+    type: magenta
+    directed: false
+    strength: 0.9
+    versions: [V11]
+    note: Saguna Mother who fights and deludes versus nirguṇa ground without a combat.
+
+  - from: devi
+    to: tiamat
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: Mother who slays the buffalo versus mother cut into the world.
+
+  - from: devi
+    to: anat
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: Warrior goddess who restores a threatened order.
+
+  - from: devi
+    to: purusha-prakriti
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: She claims both witness and nature, then slays. Sāṃkhya pair does not fight.

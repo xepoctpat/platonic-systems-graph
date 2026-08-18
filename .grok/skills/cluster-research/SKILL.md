@@ -31,4 +31,4 @@ Naming nodes is source work. The JPGs in `diagrams/` are illustrations. Do not t
 7. Apply `/add-entry` to write the YAML.
 8. `/viewer-server` if the inspector should show the new nodes.
 
-For a web-backed historical or present-day sweep, use `/researcher` instead of inventing from memory. If the user names no tradition, propose the next stub that is most connected and least surveyed (Sufism, Mesopotamian, Norse, Theosophy interiors).
+For a web-backed historical or present-day sweep, use `/researcher` instead of inventing from memory. If the user names no tradition, take the next unchecked item in `ROADMAP.md`, else the most connected least-surveyed stub. Do not mint a bag hub.

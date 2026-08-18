@@ -17,10 +17,13 @@ A spine is an **output**. High Platonic centrality in the current YAML is partly
 1. From the repo root, with `.venv` active:
 
 ```
+python tools/validate.py
 python analysis/centrality.py
 python analysis/communities.py
 python analysis/feedback.py
 ```
+
+If `ROADMAP.md` exists, refresh its latest “After …” snapshot (size, isolates, betweenness top 5). Do not treat a new #4 hinge as a proven spine.
 
 2. Treat **betweenness** as the hinge list (nodes that sit on many paths between clusters).
 3. Treat **communities** as a proposed grouping. Compare to the `cluster` field — disagreement is interesting.

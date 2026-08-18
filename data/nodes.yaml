@@ -77,10 +77,30 @@ nodes:
     kind: system
     cluster: gnostic
     description: >
-      Sethian / Valentinian and related systems as a colliding peer, not a fallen
-      derivative. Same slots as Platonism (craftsman, matter, time, ascent, summit)
-      with inverted valuation.
-    refs: ["Apocryphon of John", "Hypostasis of the Archons"]
+      Parent handle for colliding peer schools that occupy craftsman / matter /
+      time / ascent / summit with inverted valuation. Not itself a third school.
+      Sethian and Valentinian are the interiors.
+    refs: ["Apocryphon of John", "Irenaeus, Adversus Haereses I"]
+
+  - id: sethianism
+    label: "Sethianism"
+    kind: system
+    cluster: gnostic
+    description: >
+      Classic Gnostic school of the Apocryphon of John. Invisible Spirit, Barbelo,
+      Sophia’s unauthorized birth, Yaldabaoth the lion-serpent. Seed of Seth is
+      the elect, not encoded as a list.
+    refs: ["Apocryphon of John (NHC II,1 / III,1 / IV,1 / BG 8502)", "Hypostasis of the Archons"]
+
+  - id: valentinianism
+    label: "Valentinianism"
+    kind: system
+    cluster: gnostic
+    description: >
+      Ptolemy / Valentinus stream. Sophia is restrained by Horos; her enthymesis
+      (Achamoth) is fenced out; a psychic Demiurge makes the world as an instrument.
+      Not the Sethian archontic prison-maker.
+    refs: ["Irenaeus, Adversus Haereses I.1–8", "Gospel of Truth"]
 
   - id: mystery-religions
     label: "Mystery religions"
@@ -104,9 +124,16 @@ nodes:
     kind: system
     cluster: hindu
     description: >
-      Later umbrella for Upaniṣadic Brahman, Sāṃkhya, and Purāṇic strands.
+      Later umbrella for Upaniṣadic Brahman, Sāṃkhya, and Purāṇic operators.
       The Ṛgvedic corpus is its own system node (`vedic`), not collapsed here.
-    refs: ["Upaniṣads", "Sāṃkhya-kārikā"]
+      This pass: Brahmā, Viṣṇu, Śiva, Devī (Maitrī 5.2 + Devī Māhātmya).
+      Not avatāra lists, every Devī form, or darśana (Hindu 3).
+    refs:
+      - "Upaniṣads"
+      - "Sāṃkhya-kārikā"
+      - "Maitrī Upaniṣad 5.2"
+      - "Devī Māhātmya (Mārkaṇḍeya Purāṇa 81–93)"
+      - "Coburn, Encountering the Goddess"
 
   - id: vedic
     label: "Vedic religion"
@@ -125,6 +152,19 @@ nodes:
       Archetypes and individuation as a peer. V5 hybrid toward Gnosticism and
       Theosophy — a lateral, not a Platonic stage.
     refs: ["Jung, Aion; Psychology and Alchemy"]
+
+  - id: merkavah
+    label: "Merkavah"
+    kind: system
+    cluster: jewish-mystical
+    description: >
+      Hekhalot / chariot mysticism. Descent through palaces to the throne of
+      Glory. Peer precursor to Kabbalah, not a stage of Ein Sof.
+    refs:
+      - "Ezekiel 1"
+      - "Hekhalot Rabbati"
+      - "3 Enoch (Sefer Hekhalot)"
+      - "Mishnah Hagigah 2:1"
 
   - id: kabbalah
     label: "Kabbalah"
@@ -145,15 +185,6 @@ nodes:
       Not a Platonic stage and not exhausted by the flood story.
     refs: ["ETCSL 1.1.3 Enki and the World Order", "Lambert 2013, Babylonian Creation Myths"]
 
-  - id: mythology
-    label: "Mythology (holding)"
-    kind: system
-    cluster: mythic
-    description: >
-      V5’s coarse ‘Mythology’ hub. Holding node until extra-Hellenic myth systems
-      are surveyed on their own terms. Do not treat as a spine.
-    refs: ["V5 holding node"]
-
   - id: neoplatonism
     label: "Neoplatonism"
     kind: system
@@ -169,8 +200,39 @@ nodes:
     kind: system
     cluster: norse
     description: >
-      V4/V5 extra-Hellenic myth peer (Yggdrasil, Ragnarök, fate). Interior pending.
-    refs: ["Poetic Edda (survey pending)"]
+      North-Atlantic cosmogony from Völuspá, with Gylfaginning as the prose
+      companion for the slaying of Ymir. Gap, first being, world-tree, fate,
+      end, and a green earth after. Not every named dwarf or Æsir.
+    refs:
+      - "Völuspá (Poetic Edda, Codex Regius)"
+      - "Gylfaginning 4–8 (Prose Edda)"
+      - "Grímnismál 40–41 (Ymir’s body)"
+
+  - id: popol-vuh
+    label: "Popol Vuh"
+    kind: system
+    cluster: mesoamerican
+    description: >
+      Kʼicheʼ Book of the Council. Sky-sea stillness, makers who speak the
+      earth, failed people, maize people, and the Hero Twins against Xibalba.
+      One named corpus, not Mexica suns and not every Maya city.
+    refs:
+      - "Popol Vuh (Tedlock 1996)"
+      - "Christenson, Popol Vuh: The Sacred Book of the Maya"
+      - "Ximénez manuscript (Newberry)"
+
+  - id: ifa
+    label: "Ifá"
+    kind: system
+    cluster: yoruba
+    description: >
+      Yoruba Ifá literary corpus (256 Odù). Olodumare delegates; Obatala and
+      Oduduwa make land and bodies; Orunmila witnesses destiny. Named corpus,
+      not every orisha and not a West Africa sticker.
+    refs:
+      - "Odù Ifá"
+      - "Abimbola, Ifá: An Exposition of Ifá Literary Corpus (1976)"
+      - "Idowu, Olódùmarè: God in Yoruba Belief (1962)"
 
   - id: orphism
     label: "Orphism"
@@ -189,6 +251,36 @@ nodes:
       for craftsman, soul, ordered time, receptacle, and eros. Does not
       automatically root every other node.
     refs: ["Timaeus", "Statesman", "Symposium", "Republic VI–VII"]
+
+  - id: pythagoreanism
+    label: "Pythagoreanism"
+    kind: system
+    cluster: pythagorean
+    description: >
+      Numbered cosmos as a peer, not a Plato stage. Philolaus: limiters and
+      unlimiteds fitted by harmonia. Aristotle’s “all is number” is a report,
+      not the first fragment.
+    refs:
+      - "Philolaus B1, B6 (Huffman)"
+      - "Aristotle, Metaphysics A5"
+
+  - id: aristotelianism
+    label: "Aristotelianism"
+    kind: system
+    cluster: scientific
+    description: >
+      Peripatetic cosmos with an unmoved mover as final cause. Peer to Plato,
+      not a later stage of the Good.
+    refs: ["Metaphysics Λ", "Physics VIII"]
+
+  - id: stoicism
+    label: "Stoicism"
+    kind: system
+    cluster: scientific
+    description: >
+      Immanent logos / pneuma as the world’s active principle. Peer to both
+      Plato’s World Soul and later Hermetic nous.
+    refs: ["SVF fragments", "Cleanthes, Hymn to Zeus"]
 
   - id: complexity-science
     label: "Complexity science"
@@ -216,6 +308,15 @@ nodes:
       structured cascade, not as Platonic descent.
     refs: ["modern physics (placeholder pending survey)"]
 
+  - id: process-thought
+    label: "Process thought"
+    kind: system
+    cluster: scientific
+    description: >
+      Whiteheadian process as a peer system. The existing process principle
+      now has a home. Not every commentator.
+    refs: ["Process and Reality"]
+
   - id: systems-theory
     label: "Systems theory"
     kind: system
@@ -224,14 +325,25 @@ nodes:
       Holons, boundaries, feedback as a peer system. V5 cyan to Neoplatonism.
     refs: ["Bertalanffy", "Wiener"]
 
+  - id: islamic-philosophy
+    label: "Islamic philosophy"
+    kind: system
+    cluster: islamic
+    description: >
+      Falsafa / kalām reception of Aristotle and the Neoplatonic corpus as a peer.
+      Avicenna’s Necessary Existent is the first occupant. Ishrāq later.
+    refs:
+      - "Avicenna, Shifa Ilahiyyat"
+      - "Avicenna, Najat"
+
   - id: sufism
     label: "Sufism"
     kind: system
     cluster: sufi
     description: >
-      Islamic mystical stream as a V5 peer. Interior not yet surveyed; node exists
-      so laterals have a place to land.
-    refs: ["placeholder pending cluster survey"]
+      Islamic mystical stream as a peer. Fanāʾ / baqāʾ is the first interior
+      occupant (Junayd). Not every ṭarīqa or later waḥdat al-wujūd dump.
+    refs: ["Junayd, Kitab al-fana (attr.)", "Iranica, Baqa wa Fana"]
 
   - id: theosophy
     label: "Theosophy"
@@ -239,7 +351,7 @@ nodes:
     cluster: theosophical
     description: >
       Blavatsky / later theosophy as a modern hybrid hub on V5: alchemy, Jung,
-      Hinduism, mythology, Sufism.
+      Hinduism, Sufism. Comparative myth is a method, not a peer system.
     refs: ["Blavatsky, The Secret Doctrine (survey pending)"]
 
   - id: zoroastrianism
@@ -251,6 +363,45 @@ nodes:
       and Angra Mainyu; Zurvanite infinite time as a later overlay. Twin of
       the Vedic stream, not a Platonic footnote.
     refs: ["Gathas", "Younger Avesta", "Pahlavi Zurvan texts"]
+
+  - id: manichaeism
+    label: "Manichaeism"
+    kind: system
+    cluster: manichaean
+    description: >
+      Mani’s church of two uncreated principles and three times. Iranian dualism
+      recast as a universal gnosis with a missionary canon. Not a Gnostic school
+      and not a Zoroastrian heresy.
+    refs:
+      - "Kephalaia (two principles / three times)"
+      - "Theodore bar Konai, Scholion (cosmogony)"
+      - "Gnoli, Manichaeism: An Overview (Encyclopedia of Religion)"
+
+  - id: mandaeism
+    label: "Mandaeism"
+    kind: system
+    cluster: mandaean
+    description: >
+      Living baptismal religion of the Mandaeans (Naṣoraeans). Dual Worlds of
+      Light and Darkness; Four Lives; repeated immersion in running water.
+      Gnostic-adjacent, not a Sethian or Valentinian school, and not Mani's
+      church. John the Baptist is a priest in the story, not the founder.
+    refs:
+      - "Ginza (Right / Left)"
+      - "Qolasta (Drower, Canonical Prayerbook)"
+      - "Rudolph, Iranica MANDAEANS ii"
+
+  - id: early-china
+    label: "Early China"
+    kind: system
+    cluster: chinese
+    description: >
+      Shang–Zhou Heaven and Mandate, the Yijing’s change, and the Daodejing’s
+      Dao as one peer field. Not later imperial cult, not every sage, not Pangu.
+    refs:
+      - "Shangshu / Shijing (tianming)"
+      - "Yijing, Xici I"
+      - "Daodejing 1, 25, 42"
 
   - id: canaanite
     label: "Canaanite religion"
@@ -327,6 +478,16 @@ nodes:
       good. Craftsman-adjacent, but classically read as creating without a coeval
       receptacle (the V4 / V11 tension with Timaeus).
     refs: ["Genesis 1"]
+
+  - id: hokhmah
+    label: "Hokhmah"
+    kind: principle
+    cluster: biblical
+    role: model
+    description: >
+      Personified Wisdom of Proverbs 8: present at creation, a master-worker
+      beside the Lord. Not a second Genesis creator and not Sophia’s fall.
+    refs: ["Proverbs 8", "Job 28"]
 
   - id: tohu-vavohu
     label: "Tohu va-Bohu"
@@ -423,11 +584,53 @@ nodes:
     cluster: gnostic
     role: controller
     description: >
-      Ialdabaoth / Saklas / archontic craftsman. Makes the heavens and the
-      psychic-material world, claims to be the only god, and does not know the
-      Pleroma. Occupies the *same functional slot* as Plato’s Demiurge with inverted
-      moral sign (V7).
+      Sethian Yaldabaoth / Saklas / Samael. Lion-serpent archon who steals power
+      from Sophia, fabricates the spheres, and says “I am God and there is no
+      other.” The V7 prison-maker. Not the Valentinian psychic craftsman.
     refs: ["Apocryphon of John", "Hypostasis of the Archons"]
+
+  - id: barbelo
+    label: "Barbelo"
+    kind: principle
+    cluster: gnostic
+    role: model
+    description: >
+      Sethian First Thought / image of the Invisible Spirit. Forethought from
+      which Autogenes and the aeons unfold. Not Bythos and not a Valentinian syzygy.
+    refs: ["Apocryphon of John (Barbelo as first power)"]
+
+  - id: horos
+    label: "Horos"
+    kind: principle
+    cluster: gnostic
+    role: governor
+    description: >
+      Valentinian Limit (also Stauros, Lytrotes). Restrains Sophia, fences her
+      enthymesis out of the Pleroma, and restores her to her pair. A boundary
+      operator Sethianism does not isolate.
+    refs: ["Irenaeus, Adversus Haereses I.2"]
+
+  - id: achamoth
+    label: "Achamoth"
+    kind: principle
+    cluster: gnostic
+    role: positive-feedback
+    description: >
+      Lower Wisdom: Sophia’s expelled enthymesis, shapeless, outside the Pleroma.
+      Her passions become matter and soul; she is mother of the Valentinian
+      Demiurge. Not the higher Sophia who remains inside.
+    refs: ["Irenaeus, Adversus Haereses I.2.4, I.4–5"]
+
+  - id: valentinian-demiurge
+    label: "Valentinian Demiurge"
+    kind: principle
+    cluster: gnostic
+    role: controller
+    description: >
+      Psychic craftsman, son of Achamoth. Makes everything outside the Pleroma
+      and thinks he is the only god, but is an instrument of restoration. Animal
+      men go with him; pneumatics pass beyond. Not Yaldabaoth.
+    refs: ["Irenaeus, Adversus Haereses I.5, I.7"]
 
   - id: gnostic-unknown-father
     label: "Unknown Father"
@@ -435,10 +638,10 @@ nodes:
     cluster: gnostic
     role: attractor
     description: >
-      Bythos / Invisible Spirit / Forefather of Sethian and Valentinian systems. A
-      highest principle defined by *unknowability* to the craftsman of this world.
-      Cyan-cousin and magenta-rival of the Good (V11).
-    refs: ["Apocryphon of John", "Valentinian speculation"]
+      Shared summit name: Sethian Invisible Spirit / Valentinian Bythos–Propator.
+      Defined by unknowability to the world-craftsman. Not split unless the two
+      summits start occupying different slots.
+    refs: ["Apocryphon of John", "Irenaeus, Adversus Haereses I.1–2"]
 
   - id: kenoma
     label: "Kenoma"
@@ -467,10 +670,10 @@ nodes:
     cluster: gnostic
     role: positive-feedback
     description: >
-      The aeonic passion or unauthorized emanation that produces deficiency. Native
-      Gnostic account of how fullness becomes lack; the red trigger for both kenoma
-      and the Gnostic demiurge.
-    refs: ["Apocryphon of John", "Valentinian Sophia myth"]
+      Shared fall: Sethian Sophia conceives without a consort; Valentinian Sophia
+      stretches toward the Father and is cut. Native account of how fullness
+      becomes lack. Downstream craftsmen now differ by school.
+    refs: ["Apocryphon of John", "Irenaeus, Adversus Haereses I.2"]
 
   - id: mystery-ascent
     label: "Mystery Ascent"
@@ -761,6 +964,78 @@ nodes:
       breaking; peer to scientific symmetry-breaking, not its cause.
     refs: ["Symposium 190c–191a", "Statesman (Zeus epoch)"]
 
+  - id: limiters-unlimiteds
+    label: "Limiters and Unlimiteds"
+    kind: principle
+    cluster: pythagorean
+    role: model
+    description: >
+      Philolaus’s pair: nothing knowable without both limiters and unlimiteds.
+      The fitted pair is the cosmos, not a craftsman looking at Forms.
+    refs: ["Philolaus B1", "Philolaus B6"]
+
+  - id: harmonia
+    label: "Harmonia"
+    kind: principle
+    cluster: pythagorean
+    role: governor
+    description: >
+      The fitting-together of unlike limiters and unlimiteds (also musical
+      ratio). Immanent bind, not a Demiurge persuading necessity.
+    refs: ["Philolaus B6", "Aristotle, Metaphysics A5"]
+
+  - id: hekhalot-ascent
+    label: "Hekhalot Ascent"
+    kind: principle
+    cluster: jewish-mystical
+    role: negative-feedback
+    description: >
+      Journey through seven palaces to the chariot-throne. The texts often say
+      “descent.” Terrifying angels, seals, and song — not Symposium eros and
+      not sefirotic cascade.
+    refs: ["Hekhalot Rabbati", "Hekhalot Zutarti", "Maaseh Merkabah"]
+
+  - id: merkabah-throne
+    label: "Merkabah Throne"
+    kind: principle
+    cluster: jewish-mystical
+    role: attractor
+    description: >
+      Ezekiel’s chariot-throne and the kavod seated in the innermost palace.
+      Summit as a seen Glory, not an Ein Sof beyond predication.
+    refs: ["Ezekiel 1", "Hekhalot Rabbati"]
+
+  - id: metatron
+    label: "Metatron"
+    kind: principle
+    cluster: jewish-mystical
+    role: governor
+    description: >
+      Enoch transformed into the Prince of the Presence / Lesser YHWH (3 Enoch).
+      Human become throne-side operator. Not the Johannine Logos and not a sefirah.
+    refs: ["3 Enoch (Sefer Hekhalot)", "Genesis 5:24"]
+
+  - id: necessary-existent
+    label: "Necessary Existent"
+    kind: principle
+    cluster: islamic
+    role: attractor
+    description: >
+      Avicenna’s wājib al-wujūd: that whose essence is to exist. Summit as
+      necessary being, not the Good beyond being and not an unmoved thought
+      thinking itself only.
+    refs: ["Avicenna, Shifa Ilahiyyat I.6–7", "Avicenna, Najat"]
+
+  - id: fana-baqa
+    label: "Fana and Baqa"
+    kind: principle
+    cluster: sufi
+    role: negative-feedback
+    description: >
+      Passing-away of the self and subsistence in God (Junayd). Return by
+      annihilation, then a sober return to the senses. One node for the pair.
+    refs: ["Junayd (Abdel-Kader)", "Iranica, Baqa wa Fana"]
+
   - id: aristotle-unmoved-mover
     label: "Unmoved Mover"
     kind: principle
@@ -972,6 +1247,550 @@ nodes:
       Infinite Time in later Zurvanite reading: parent of the twins Ohrmazd
       and Ahriman. Time as the highest, not as a moving image of eternity.
     refs: ["Pahlavi Zurvan mythology"]
+
+  - id: father-of-greatness
+    label: "Father of Greatness"
+    kind: principle
+    cluster: manichaean
+    role: attractor
+    description: >
+      Uncreated sovereign of the World of Light (Abbā dəRabbūṯā). Iranian texts
+      may name him Zurwān, but he is one pole of the dual formula, not the parent
+      of twin spirits.
+    refs:
+      - "Kephalaia"
+      - "Theodore bar Konai"
+      - "Gnoli, Encyclopedia of Religion"
+
+  - id: king-of-darkness
+    label: "King of Darkness"
+    kind: principle
+    cluster: manichaean
+    role: prison
+    description: >
+      Uncreated Prince of Darkness / Hylē / Matter. Coeval with the Father, not
+      a fallen aeon and not leftover chōra. Invasion of Light starts the mixture.
+    refs:
+      - "Theodore bar Konai"
+      - "Kephalaia"
+      - "Gnoli, Encyclopedia of Religion"
+
+  - id: primal-man
+    label: "Primal Man"
+    kind: principle
+    cluster: manichaean
+    role: plant
+    description: >
+      First evocation (Nāšā Qaḏmāyā). Sent with five light-elements, swallowed
+      by Darkness. Iranian texts call him Ohrmazd — the good spirit recast as
+      the wounded proto-anthropos, not as the uncreated summit.
+    refs:
+      - "Theodore bar Konai"
+      - "Kephalaia"
+      - "Gnoli, Encyclopedia of Religion"
+
+  - id: living-spirit
+    label: "Living Spirit"
+    kind: principle
+    cluster: manichaean
+    role: controller
+    description: >
+      Second evocation. Rescues Primal Man and fashions heavens and earths from
+      the corpses of the dark powers — a good extraction-machine, not an ignorant
+      prison-maker.
+    refs:
+      - "Theodore bar Konai"
+      - "Kephalaia"
+      - "Gnoli, Encyclopedia of Religion"
+
+  - id: third-messenger
+    label: "Third Messenger"
+    kind: principle
+    cluster: manichaean
+    role: negative-feedback
+    description: >
+      Third evocation (the Messenger / Great Nous). Extracts swallowed light by
+      display and later judgment. Return operator for the mixture; not the
+      Johannine incarnate Logos.
+    refs:
+      - "Theodore bar Konai"
+      - "Kephalaia"
+      - "Gnoli, Encyclopedia of Religion"
+
+  - id: manichaean-mixture
+    label: "Manichaean Mixture"
+    kind: principle
+    cluster: manichaean
+    role: positive-feedback
+    description: >
+      Present age: light particles trapped in matter, bodies, and rebirth.
+      The middle of the three times. Fall as invasion-and-swallowing, not as
+      an aeon’s error inside a pleroma.
+    refs:
+      - "Chinese Compendium (three stages)"
+      - "Augustine, Contra Felicem (initium, medium, finis)"
+      - "Gnoli, Encyclopedia of Religion"
+
+  - id: manichaean-three-times
+    label: "Manichaean Three Times"
+    kind: principle
+    cluster: manichaean
+    role: clock
+    description: >
+      Former separation, present mixture, future re-separation. Cosmic history
+      as the doctrine itself, not time as a moving image of eternity and not
+      Zurvan as parent of twins.
+    refs:
+      - "Chinese Compendium (prior / middle / posterior)"
+      - "Augustine, Contra Felicem"
+      - "Kephalaia"
+
+  - id: hayyi-rabbi
+    label: "Hayyi Rabbi"
+    kind: principle
+    cluster: mandaean
+    role: attractor
+    description: >
+      The Great Life / First Life (also Lord of Greatness, King of Light).
+      Uncreated summit of the World of Light. Symbol is living water. Does
+      not fashion Tibil; that work is delegated down the Lives.
+    refs:
+      - "Right Ginza"
+      - "Rudolph, Iranica MANDAEANS ii"
+      - "Qolasta (opening: in the name of the Great Life)"
+
+  - id: yushamin
+    label: "Yushamin"
+    kind: principle
+    cluster: mandaean
+    role: positive-feedback
+    description: >
+      Second Life. Primal uthra who acts in creation without consulting the
+      First Life (Right Ginza 3; Book of John 1–10). Prototype of a priest
+      who errs and can be reconciled. Not Ruha and not Sophia expelled.
+    refs:
+      - "Right Ginza 3"
+      - "Mandaean Book of John 1–10"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+
+  - id: abatur
+    label: "Abatur"
+    kind: principle
+    cluster: mandaean
+    role: governor
+    description: >
+      Third Life. Weighs souls on the threshold of the Lightworld against
+      Šitil. Demoted from 'elevated' to lord of the scales until the end.
+      Father of Ptahil in the Four Lives chain.
+    refs:
+      - "Diwan Abatur"
+      - "Mandaean Book of John 70–72"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+
+  - id: ptahil
+    label: "Ptahil"
+    kind: principle
+    cluster: mandaean
+    role: controller
+    description: >
+      Fourth Life. Uthra-craftsman of Tibil. Makes the earth with help from
+      Ruha and cannot give Adam a soul; Life must send it. Not Yaldabaoth
+      and not a successful extraction-machine.
+    refs:
+      - "Right Ginza"
+      - "Rudolph, Iranica MANDAEANS ii"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+
+  - id: ruha
+    label: "Ruha"
+    kind: principle
+    cluster: mandaean
+    role: prison
+    description: >
+      Queen of the World of Darkness (with Ur). Mother of the Seven and the
+      Twelve. Helps Ptahil make Tibil and the body; the soul is not hers.
+      Personified spirit, not the higher soul (nišimta).
+    refs:
+      - "Right Ginza 3"
+      - "Rudolph, Iranica MANDAEANS ii"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+
+  - id: yardna
+    label: "Yardna"
+    kind: principle
+    cluster: mandaean
+    role: model
+    description: >
+      Running "Jordan": any baptismal river as Lightworld water on earth.
+      Not chaos-water and not a slain first sea. Hayyi's symbol; the
+      medium of masbuta.
+    refs:
+      - "Qolasta (masbuta liturgy)"
+      - "Rudolph, Iranica MANDAEANS ii"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+
+  - id: masbuta
+    label: "Masbuta"
+    kind: principle
+    cluster: mandaean
+    role: negative-feedback
+    description: >
+      Repeated full immersion in yardna. Cleanses and makes a laufa
+      (connection) to the Lightworld while still in Tibil. Horizontal
+      counterpart of the death-ascent (masiqta), not a one-time Christian
+      washing and not exit-gnosis.
+    refs:
+      - "Qolasta (Drower, Canonical Prayerbook, baptism)"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+      - "Rudolph, Iranica MANDAEANS ii"
+
+  - id: manda-d-hayyi
+    label: "Manda d-Hayyi"
+    kind: principle
+    cluster: mandaean
+    role: exit
+    description: >
+      Knowledge of Life. Dominant envoy who reveals to Adam his Lightworld
+      origin so the soul can return. Not the Johannine Logos and not a
+      historical founder. Hibil, Šitil, and Anōš stay unnamed as a list.
+    refs:
+      - "Right Ginza"
+      - "Rudolph, Iranica MANDAEANS ii"
+      - "Buckley, Mandaean Religion (Encyclopedia of Religion)"
+
+  - id: ginnungagap
+    label: "Ginnungagap"
+    kind: principle
+    cluster: norse
+    role: noise
+    description: >
+      Yawning void before sea, earth, or heaven (Völuspá 3). In Gylfaginning
+      the mild middle where Muspell’s heat meets Niflheim’s rime and life
+      drips into a form. Not a nurse and not a slain first water.
+    refs:
+      - "Völuspá 3"
+      - "Gylfaginning 4–5"
+
+  - id: ymir
+    label: "Ymir"
+    kind: principle
+    cluster: norse
+    role: noise
+    description: >
+      First being of the gap. Burr’s sons slay him; earth, sea, sky, and
+      Midgard are made from the corpse (Gylfaginning 8; Grímnismál 40–41).
+      Matter as a defeated body, not a remaining sea.
+    refs:
+      - "Völuspá 3"
+      - "Gylfaginning 5–8"
+      - "Grímnismál 40–41"
+
+  - id: sons-of-burr
+    label: "Sons of Burr"
+    kind: principle
+    cluster: norse
+    role: controller
+    description: >
+      Odin, Vili, and Vé. Lift the land and make Midgard (Völuspá 4); slay
+      Ymir and fashion the world from the body. Craftsmen by combat, not a
+      dump of the whole Æsir.
+    refs:
+      - "Völuspá 4"
+      - "Gylfaginning 6–8"
+      - "Lokasenna 26 (Vili and Vé named)"
+
+  - id: yggdrasil
+    label: "Yggdrasil"
+    kind: principle
+    cluster: norse
+    role: model
+    description: >
+      World-ash, evergreen over Urðr’s well. Holds the nine worlds; dews
+      fall from it; it shakes when the end comes. Order as a living tree
+      that must be watered, not a once-for-all paradigm.
+    refs:
+      - "Völuspá 2, 19, 47"
+      - "Gylfaginning 15–16"
+      - "Grímnismál 29–35"
+
+  - id: wyrd
+    label: "Wyrd / Urðr"
+    kind: principle
+    cluster: norse
+    role: clock
+    description: >
+      Fate scored by the three maidens under the tree (Urðr, Verðandi,
+      Skuld). They allot life and set fates. Not time as an image of
+      eternity and not a mandate that can be withdrawn.
+    refs:
+      - "Völuspá 20"
+      - "Gylfaginning 15"
+
+  - id: ragnarok
+    label: "Ragnarök"
+    kind: principle
+    cluster: norse
+    role: positive-feedback
+    description: >
+      Fate of the gods: wolf free, tree shakes, earth sinks, fire licks
+      heaven (Völuspá 44–57). The gods die with the world. Not a steersman
+      letting go of a cosmos that continues.
+    refs:
+      - "Völuspá 44–57"
+      - "Gylfaginning (Surtr / Fenrir)"
+
+  - id: earth-risen
+    label: "Earth risen"
+    kind: principle
+    cluster: norse
+    role: negative-feedback
+    description: >
+      After the fire, a green earth rises from the waves; unsown fields
+      bear fruit; surviving gods meet at Ithavoll (Völuspá 59–62). Return
+      as a new ground, not tikkun of shattered vessels.
+    refs:
+      - "Völuspá 59–62"
+
+  - id: sky-sea-stillness
+    label: "Sky-sea stillness"
+    kind: principle
+    cluster: mesoamerican
+    role: noise
+    description: >
+      Opening of the Popol Vuh: sky empty, sea murmuring, nothing yet named.
+      The makers are already in the water. First given as hush, not a slain
+      deep and not a yawning northern gap.
+    refs:
+      - "Popol Vuh, primordial world (Tedlock / Christenson)"
+
+  - id: heart-of-sky
+    label: "Heart of Sky"
+    kind: principle
+    cluster: mesoamerican
+    role: controller
+    description: >
+      Huracán and the thunderbolt triad. Speaks the earth up from the sea
+      with the Plumed Serpent; floods the wood people when they will not
+      praise. Craftsman by word and storm, not a lone Demiurge.
+    refs:
+      - "Popol Vuh (Tedlock, Heart of Sky / Hurricane)"
+      - "Christenson, Popol Vuh"
+
+  - id: plumed-serpent
+    label: "Sovereign Plumed Serpent"
+    kind: principle
+    cluster: mesoamerican
+    role: controller
+    description: >
+      Qʼuqʼumatz in the water, enclosed in quetzal blue-green. Maker and
+      modeler who confers with Heart of Sky. Tedlock reads Tepeu as a title,
+      not a second god. Not a Mexica Quetzalcoatl node.
+    refs:
+      - "Popol Vuh (Tedlock, Sovereign Plumed Serpent)"
+      - "Christenson, Popol Vuh"
+
+  - id: failed-people
+    label: "Failed people"
+    kind: principle
+    cluster: mesoamerican
+    role: positive-feedback
+    description: >
+      Mud bodies crumble; wood manikins walk and multiply with nothing in
+      heart or mind. Heart of Sky floods them and the animals tear the rest.
+      A discarded design, not a spark-prison.
+    refs:
+      - "Popol Vuh, first and second human attempts (Tedlock)"
+      - "Christenson, Popol Vuh"
+
+  - id: maize-people
+    label: "Maize people"
+    kind: principle
+    cluster: mesoamerican
+    role: plant
+    description: >
+      Humans ground from yellow and white maize at Paxil / Cayalá. They can
+      keep the days and name the makers. Sight is then dimmed so they are not
+      gods. Matter as food-body, not leftover deficiency.
+    refs:
+      - "Popol Vuh, fourth creation (Tedlock)"
+      - "Smithsonian NMAI, Creation Story of the Maya"
+
+  - id: hero-twins
+    label: "Hero Twins"
+    kind: principle
+    cluster: mesoamerican
+    role: negative-feedback
+    description: >
+      Hunahpu and Xbalanque. Descend to Xibalba, outplay One and Seven Death,
+      rise as sun and moon, and clear the road for maize people. Return by
+      trick, not exit-gnosis.
+    refs:
+      - "Popol Vuh, Hunahpu and Xbalanque (Tedlock)"
+      - "Christenson, Popol Vuh"
+
+  - id: xibalba
+    label: "Xibalba"
+    kind: principle
+    cluster: mesoamerican
+    role: prison
+    description: >
+      Place of Fright. Underworld court of One and Seven Death; houses of
+      trial and a ballcourt that kills. The twins empty its claim. Not kenoma
+      and not a remaining first water.
+    refs:
+      - "Popol Vuh, Xibalba (Tedlock)"
+      - "Christenson, Popol Vuh"
+
+  - id: olodumare
+    label: "Olodumare"
+    kind: principle
+    cluster: yoruba
+    role: attractor
+    description: >
+      Supreme owner of the source that does not empty. Remote, unculted
+      directly; breathes life and delegates earth-work. Not a Timaean
+      craftsman and not a gendered Bible-God.
+    refs:
+      - "Idowu, Olódùmarè: God in Yoruba Belief"
+      - "Odù Ifá"
+      - "Abimbola, Yoruba Culture (Olodumare without gender in Ifá)"
+
+  - id: olokun
+    label: "Olokun"
+    kind: principle
+    cluster: yoruba
+    role: noise
+    description: >
+      Owner of the first waters under the sky. The given before sand is
+      poured at Ilé-Ifẹ̀. Can flood the new land. Not a slain first deep.
+    refs:
+      - "Idowu, Olódùmarè: God in Yoruba Belief"
+      - "Yoruba creation cycle (Obatala / Oduduwa descent)"
+
+  - id: obatala
+    label: "Obatala"
+    kind: principle
+    cluster: yoruba
+    role: controller
+    description: >
+      Òrìṣà-ńlá, sent with chain, sand, and hen to make land. Drinks palm
+      wine; Oduduwa finishes the earth. Then sculpts human bodies; Olodumare
+      breathes. Sculptor, not the remote summit.
+    refs:
+      - "Idowu, Olódùmarè: God in Yoruba Belief"
+      - "Odù Ifá / Ifá theology of Obatala and Oduduwa"
+
+  - id: oduduwa
+    label: "Oduduwa"
+    kind: principle
+    cluster: yoruba
+    role: controller
+    description: >
+      Completes the descent at Ilé-Ifẹ̀: sand on the waters, hen scatters
+      dry land. Earth-maker after Obatala’s delay. Not every later Ọọ̀ni
+      king-list.
+    refs:
+      - "Idowu, Olódùmarè: God in Yoruba Belief"
+      - "Ifá theology (Oduduwa at Ilé-Ifẹ̀)"
+
+  - id: orunmila
+    label: "Orunmila"
+    kind: principle
+    cluster: yoruba
+    role: model
+    description: >
+      Ẹlẹ́rìí ìpín: witness of creation and of destiny. Voice of the Ifá
+      corpus. Counsel at the making; not the tablet seized in combat and
+      not a hidden Nous.
+    refs:
+      - "Abimbola, Ifá: An Exposition of Ifá Literary Corpus"
+      - "Odù Ifá"
+
+  - id: ori
+    label: "Ori"
+    kind: principle
+    cluster: yoruba
+    role: clock
+    description: >
+      Inner head. Destiny chosen before birth; Orunmila witnesses the
+      choice. Not a mandate Heaven withdraws and not fate scored by three
+      maidens under a tree.
+    refs:
+      - "Abimbola, Ifá: An Exposition of Ifá Literary Corpus (ori)"
+      - "Odù Ifá"
+
+  - id: ase
+    label: "Àṣẹ"
+    kind: principle
+    cluster: yoruba
+    role: governor
+    description: >
+      Power to make what is said happen. Olodumare owns it; speech, ritual,
+      and orisha work by it. Efficacy as a transferable force, not a Form
+      contemplated.
+    refs:
+      - "Idowu, Olódùmarè: God in Yoruba Belief"
+      - "Abimbola, Yoruba Culture"
+
+  - id: brahma
+    label: "Brahmā"
+    kind: principle
+    cluster: hindu
+    role: controller
+    description: >
+      Lotus-born kalpa-creator of the trimūrti. Rajas portion of Brahman
+      (Maitrī 5.2). In Devī Māhātmya 1 he is already at work when Madhu and
+      Kaitabha rise; he must praise the Goddess so Viṣṇu will wake. Junior
+      craftsman, not a widely culted summit.
+    refs:
+      - "Maitrī Upaniṣad 5.2"
+      - "Devī Māhātmya 1 (Coburn)"
+      - "Flood, An Introduction to Hinduism"
+
+  - id: vishnu
+    label: "Viṣṇu"
+    kind: principle
+    cluster: hindu
+    role: governor
+    description: >
+      Preserver. Sattva portion of Brahman (Maitrī 5.2). Ṛgvedic three-strider
+      (RV 1.154) who later descends when dharma wanes (Gītā 4.7–8) and sleeps
+      as Nārāyaṇa until Devī withdraws. Operator of maintenance and descent,
+      not a dashāvatāra catalogue.
+    refs:
+      - "Ṛgveda 1.154"
+      - "Maitrī Upaniṣad 5.2"
+      - "Bhagavad Gītā 4.7–8"
+      - "Devī Māhātmya 1 (Coburn)"
+
+  - id: shiva
+    label: "Śiva"
+    kind: principle
+    cluster: hindu
+    role: clock
+    description: >
+      Dissolver who recycles the kalpa. Tamas portion of Brahman under the
+      older name Rudra (Maitrī 5.2). Auspicious yogi and fierce ender in one
+      operator. Not every local Īśvara and not a linga-icon dump.
+    refs:
+      - "Maitrī Upaniṣad 5.2"
+      - "Śvetāśvatara Upaniṣad 3.2"
+      - "Flood, An Introduction to Hinduism"
+      - "Devī Māhātmya 2 (tejas of the gods)"
+
+  - id: devi
+    label: "Devī"
+    kind: principle
+    cluster: hindu
+    role: attractor
+    description: >
+      Mahādevī of the Devī Māhātmya: Mahāmāyā who is Viṣṇu's sleep and the
+      tejas-body that slays Mahiṣa. Summit that also fights. One operator,
+      not Kālī, Durgā, and the Mātṛkās as separate nodes.
+    refs:
+      - "Devī Māhātmya (Mārkaṇḍeya Purāṇa 81–93)"
+      - "Coburn, Encountering the Goddess"
+      - "Kinsley, Hindu Goddesses"
 
   - id: blombos-mark
     label: "Blombos mark"
@@ -1361,6 +2180,20 @@ nodes:
       Ennead genealogy.
     refs: ["Ṛgveda Dyaus-Pṛthivī hymns"]
 
+  - id: rudra
+    label: "Rudra"
+    kind: principle
+    cluster: vedic
+    description: >
+      Vedic howler and archer (RV 2.33). Feared healer at the edge of the
+      hymn-pantheon. Later the tamas name of the trimūrti destroyer. Not the
+      Maruts as a set and not every Śaiva epithet.
+    refs:
+      - "Ṛgveda 2.33"
+      - "Ṛgveda 1.114"
+      - "Maitrī Upaniṣad 5.2"
+      - "Macdonell, Vedic Mythology"
+
   - id: el-canaanite
     label: "El"
     kind: principle
@@ -1421,3 +2254,53 @@ nodes:
       Divine craftsman. Makes Baal’s maces against Yam and builds Baal’s palace.
       Artisan of tools and house, not of the cosmos from a corpse.
     refs: ["KTU 1.2", "KTU 1.4"]
+
+  - id: tian
+    label: "Tian"
+    kind: principle
+    cluster: chinese
+    role: attractor
+    description: >
+      Zhou Heaven: lofty order that sees as the people see and backs virtue.
+      Summit without a craftsman. Shang Di is the earlier high-god name, not
+      a second node.
+    refs:
+      - "Shangshu, Taishi / Cai Zhong zhi ming"
+      - "Shijing, Wenwang (tianming mi chang)"
+
+  - id: tianming
+    label: "Tianming"
+    kind: principle
+    cluster: chinese
+    role: governor
+    description: >
+      Mandate of Heaven. Rule is lent and can be withdrawn. Political-cosmic
+      feedback, not a once-given covenant and not a fallen time.
+    refs:
+      - "Shangshu (tianming)"
+      - "Shijing, Wenwang"
+
+  - id: dao
+    label: "Dao"
+    kind: principle
+    cluster: chinese
+    role: attractor
+    description: >
+      Nameless origin before heaven and earth (DDJ 1, 25). Produces One, Two,
+      Three, the ten thousand things (DDJ 42). Returns. Not a craftsman and
+      not a personal creator.
+    refs:
+      - "Daodejing 1"
+      - "Daodejing 25"
+      - "Daodejing 42"
+
+  - id: yijing-change
+    label: "Yijing Change"
+    kind: principle
+    cluster: chinese
+    role: clock
+    description: >
+      One yin and one yang is called Dao; production and reproduction is called
+      Change (Xici I). Time as ceaseless pairing, not a moving image of eternity.
+    refs:
+      - "Yijing, Xici I (一陰一陽之謂道; 生生之謂易)"

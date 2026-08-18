@@ -24,17 +24,18 @@ This graph is a field of peer systems and collisions, not a timeline of everyone
 - Systems before principles. A stub `system` with real refs beats invented principles.
 - No living individuals as the unit of analysis. A named school or book is fine; a person-brand is not.
 - No node without a `refs` entry you actually opened or can name.
-- Do not write YAML until the user accepts the batch, unless they said “add them.”
-- Then use `/add-entry`. After a write, `/viewer-server` so they can see it.
+- Do not write YAML until the user accepts the batch, unless they said “add them,” **continue**, **iterate**, **autonomous**, or **AFK**.
+- Then use `/add-entry`. After a write: `python tools/validate.py`, tick `ROADMAP.md` if that file exists, update `SESSION-HANDOFF.md`, `/viewer-server`.
+- Never add a bag hub (a node whose only job is to collect laterals). Stub *systems* are fine; hubs that can rank as hinges are not.
 
 ## Queue
 
-`data/research-queue.yaml` is the list to walk. It is chronological by earliest *sourced* cosmology, not a spine.
+`data/research-queue.yaml` is the inventory. `ROADMAP.md` is leverage order over the same ids — not a second queue.
 
 - If the user names a tradition, slot, or id, do that item.
-- If they say “start from the beginning” / “next” / give no target, take the **earliest `empty` or `stub`** item in that file.
-- After a batch is accepted and written, set that item to `partial` or `surveyed`.
-- Do not invent a second queue.
+- If they are walking phases / said continue / iterate / next **and** `ROADMAP.md` exists, take the next **unchecked** Phase B/C/D item.
+- Else take the earliest `empty` or `stub` in the queue. Do not expand a time-slot stub (e.g. Nabta) when a named collision is empty.
+- After a batch is written, set that item to `partial` or `surveyed`.
 
 ## Steps
 
@@ -46,7 +47,7 @@ This graph is a field of peer systems and collisions, not a timeline of everyone
    `id` · `kind` (system|principle) · `cluster` · slot · one-sentence claim · `refs` · suggested edges (type + existing `to`/`from`)
 
 5. Show the batch as a table. Flag weak or holding items. Say what you did **not** add and why.
-6. Stop. Wait for accept / reject / “add them.”
+6. Stop and wait — unless the user already authorized encode (add them / continue / iterate / autonomous / AFK). Then write.
 
 ## What “present day” means
 

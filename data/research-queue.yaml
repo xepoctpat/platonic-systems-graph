@@ -104,8 +104,18 @@ items:
     cluster: vedic
     note: >
       Ṛgvedic core encoded: Ṛta, Puruṣa, Prajāpati, Indra, Vṛtra, Agni, Soma,
-      Varuṇa, Sūrya, Tvaṣṭṛ, Dyaus, Pṛthivī. Out: Aśvins, Maruts, Uṣas, Mitra
-      as a separate node, Viṣṇu, Rudra (next increment or Purāṇic pass).
+      Varuṇa, Sūrya, Tvaṣṭṛ, Dyaus, Pṛthivī, Rudra. Viṣṇu parked as the Hindu
+      operator with RV 1.154 as a gold stem. Out: Aśvins, Maruts, Uṣas, Mitra
+      as a separate node.
+
+  - id: hinduism
+    era: "c. 400 BCE–"
+    status: partial
+    cluster: hindu
+    note: >
+      Brahman, Sāṃkhya pair, and Purāṇic operators (Brahmā, Viṣṇu, Śiva, Devī)
+      encoded from Maitrī 5.2 and Devī Māhātmya. Out: avatāra lists, every
+      Devī form, every Purāṇa, darśana increment (Hindu 3).
 
   - id: zoroastrianism
     era: "c. 1200–300 BCE"
@@ -119,13 +129,17 @@ items:
     era: "c. 1000–200 BCE"
     status: partial
     cluster: biblical
-    note: Genesis creator and tohu exist. Missing wisdom, merkabah precursors, exile-time.
+    note: >
+      Genesis creator, tohu, Hokhmah (Prov 8). Merkavah now its own system.
+      Exile-time skipped (would duplicate fallen-time).
 
   - id: early-china
     era: "c. 1200–200 BCE"
-    status: empty
+    status: partial
     cluster: chinese
-    note: Shang/Zhou, Yijing, Dao, Tian. No nodes yet.
+    note: >
+      Tian, Tianming, Dao, Yijing change encoded. Shang Di folded into Tian.
+      Out: Pangu, qi-as-everything, every sage, 64 hexagrams.
 
   # ---- Hellenic ----
   - id: orphism
@@ -136,9 +150,11 @@ items:
 
   - id: pythagorean
     era: "c. 530–300 BCE"
-    status: empty
+    status: partial
     cluster: pythagorean
-    note: Number as cosmos. Peer to later mathematicals, not a Platonic stage.
+    note: >
+      Philolaus limiters/unlimiteds + harmonia. Not tetractys dump, not every
+      akousma, not “all is number” as a first principle.
 
   - id: platonism
     era: "c. 380 BCE–"
@@ -148,15 +164,15 @@ items:
 
   - id: aristotelianism
     era: "c. 350 BCE–"
-    status: empty
+    status: partial
     cluster: scientific
-    note: Unmoved mover exists as a principle; no system node.
+    note: System parked on the existing Unmoved Mover. Interior not expanded.
 
   - id: stoicism
     era: "c. 300 BCE–200 CE"
-    status: empty
+    status: partial
     cluster: scientific
-    note: Stoic logos exists as a principle; no system node.
+    note: System parked on the existing Stoic logos. Ekpyrōsis not a separate node.
 
   - id: mystery-religions
     era: "c. 600 BCE–400 CE"
@@ -175,19 +191,28 @@ items:
     era: "c. 100–400 CE"
     status: partial
     cluster: gnostic
-    note: Collision pair seeded. Sethian vs Valentinian still collapsed.
+    note: >
+      Parent handle. Sethian (Barbelo, Yaldabaoth) and Valentinian (Horos,
+      Achamoth, psychic Demiurge) split. Out: four luminaries, 30 aeons,
+      three natures as nodes.
 
   - id: mandaeism
     era: "c. 200 CE–"
-    status: empty
+    status: partial
     cluster: mandaean
-    note: Living Gnostic-adjacent baptismal system. Distinct from Sethian corpus.
+    note: >
+      Four Lives, Ruha, yardna, masbuta, Manda d-Hayyi encoded. Out: Hibil /
+      Šitil / Anōš list, Ur, Seven and Twelve, masiqta as a separate node,
+      Secret Adam, John as a person-node, every uthra.
 
   - id: manichaeism
     era: "c. 240–1000 CE"
-    status: empty
+    status: partial
     cluster: manichaean
-    note: Major dualist collision. Do not fold into gnosticism.
+    note: >
+      Two principles + three times + three evocations encoded (Father, King of
+      Darkness, Primal Man, Living Spirit, Third Messenger, Mixture). Not every
+      aeon, Elect/Hearer rule, or Chinese name-set.
 
   - id: neoplatonism
     era: "c. 250–600 CE"
@@ -197,9 +222,11 @@ items:
 
   - id: merkavah
     era: "c. 100–700 CE"
-    status: empty
+    status: partial
     cluster: jewish-mystical
-    note: Hekhalot / chariot ascent. Precursor peer to Kabbalah, not a stage of it.
+    note: >
+      Ascent, throne, Metatron encoded. Not every palace, angel, or Shiur Komah
+      measurement.
 
   # ---- medieval ----
   - id: christianity
@@ -210,15 +237,17 @@ items:
 
   - id: islamic-philosophy
     era: "c. 800–1200"
-    status: empty
+    status: partial
     cluster: islamic
-    note: Falsafa / kalām / Ishrāq. Peer to both Plato and Aristotle receptions.
+    note: >
+      System + Necessary Existent. Out: kalām atomism, Ishrāq, every faylasūf.
 
   - id: sufism
     era: "c. 800 CE–"
-    status: stub
+    status: partial
     cluster: sufi
-    note: System stub only. V5 landing site.
+    note: >
+      Fanāʾ/baqāʾ (Junayd) encoded. Out: every maqām, Ibn Arabi waḥdat dump.
 
   - id: kabbalah
     era: "c. 1200–1700"
@@ -272,9 +301,9 @@ items:
 
   - id: process-thought
     era: "1929–"
-    status: empty
+    status: partial
     cluster: scientific
-    note: Whitehead principle exists; no system node.
+    note: System parked on the existing Whitehead principle.
 
   - id: systems-theory
     era: "1948–"
@@ -294,18 +323,27 @@ items:
   # ---- parallel peers (not “later”) ----
   - id: norse-myth
     era: "oral / c. 800–1300 CE texts"
-    status: stub
+    status: partial
     cluster: norse
-    note: System stub. Völuspá cosmogony / Ragnarök not encoded.
+    note: >
+      Völuspá cycle encoded (gap, Ymir, Burr’s sons, Yggdrasil, wyrd,
+      Ragnarök, earth risen). Out: dwarf catalogue, Ask/Embla as nodes,
+      Audhumla, every Æsir, Fenrir/Surtr as separate nodes.
 
   - id: mesoamerican
     era: "c. 1000 BCE–1500 CE"
-    status: empty
+    status: partial
     cluster: mesoamerican
-    note: Maya / Mexica cosmogony. Peer, not a late add-on.
+    note: >
+      Popol Vuh cycle encoded (stillness, Heart of Sky, Plumed Serpent,
+      failed people, maize people, Hero Twins, Xibalba). Out: Seven Macaw,
+      every Xibalba lord, Tohil, Kʼicheʼ genealogy, Mexica Five Suns.
 
   - id: west-african
     era: "documentable from oral + early modern sources"
-    status: empty
-    cluster: west-african
-    note: e.g. Yoruba. Only when sourced; no decorative node.
+    status: partial
+    cluster: yoruba
+    note: >
+      Ifá cosmogony encoded (Olodumare, Olokun, Obatala, Oduduwa, Orunmila,
+      ori, àṣẹ). Out: every orisha, 256 Odù as nodes, Eshu, Ilé-Ifẹ̀ as a
+      place-node, diaspora Santería dump.
