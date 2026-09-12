@@ -53,6 +53,7 @@ const EDGE_MEANING = {
 };
 const ZOOM_SHOW_PRINCIPLES = 1.15;
 const TYPE_PREF = { gold: 0, green: 1, cyan: 2, orange: 3, red: 4, magenta: 5 };
+const FINDING_ORDER = ["magenta", "orange", "red", "green", "gold", "cyan"];
 
 const detail = document.getElementById("detail");
 const status = document.getElementById("status");
@@ -67,6 +68,13 @@ let pathMode = false;
 let loopMode = false;
 let pathPick = null;
 let pathRoute = null;
+let latestSet = new Set();
+let latestMeta = { pass: "", label: "" };
+let newOnly = false;
+let newEdgeCount = 0;
+let newClusterSet = new Set();
+let labelTick = 0;
+let searchTick = 0;
 
 function esc(s) {
   return String(s == null ? "" : s)
@@ -103,6 +111,24 @@ async function loadData() {
     }
   }
   throw last;
+}
+
+async function loadLatest() {
+  const tries = ["../data/latest.yaml", "/data/latest.yaml"];
+  for (const path of tries) {
+    try {
+      const doc = await loadYaml(path);
+      const nodes = (doc && doc.nodes) || [];
+      return {
+        pass: (doc && doc.pass) || "",
+        label: (doc && doc.label) || "",
+        nodes: nodes.filter(Boolean)
+      };
+    } catch (err) {
+      /* overlay is optional */
+    }
+  }
+  return { pass: "", label: "", nodes: [] };
 }
 
 function toElements(nodes, edges) {
@@ -167,14 +193,64 @@ function labelMode() {
 
 function markBridges() {
   if (!cy) return;
+  newEdgeCount = 0;
+  newClusterSet = new Set();
   cy.edges().forEach((e) => {
+    if (e.data("meta")) return;
     const sc = e.source().data("cluster");
     const tc = e.target().data("cluster");
     const bridge = !!(sc && tc && sc !== tc);
+    const neu = edgeTouchesLatest(e);
     e.data("bridge", bridge);
+    e.data("isNew", neu);
     e.toggleClass("bridge", bridge);
     e.toggleClass("interior", !bridge);
+    if (neu) {
+      newEdgeCount += 1;
+      if (bridge) {
+        newClusterSet.add(sc);
+        newClusterSet.add(tc);
+      }
+    }
   });
+  latestSet.forEach((id) => {
+    const n = cy.getElementById(id);
+    if (!n.empty()) newClusterSet.add(n.data("cluster"));
+  });
+}
+
+function edgeTouchesLatest(e) {
+  return latestSet.has(e.source().id()) || latestSet.has(e.target().id());
+}
+
+function clustersWithNewBridges() {
+  return newClusterSet;
+}
+
+function applyLabelsSoon() {
+  if (labelTick) return;
+  labelTick = requestAnimationFrame(() => {
+    labelTick = 0;
+    applyLabels();
+  });
+}
+
+function readHashId() {
+  const raw = (location.hash || "").replace(/^#/, "");
+  if (!raw) return "";
+  const params = new URLSearchParams(raw.includes("=") ? raw : "id=" + raw);
+  return params.get("id") || "";
+}
+
+function setHashId(id) {
+  const next = id ? "#id=" + encodeURIComponent(id) : "#";
+  if (location.hash === next || (next === "#" && !location.hash)) return;
+  history.replaceState(null, "", next === "#" ? location.pathname + location.search : next);
+}
+
+function hopArrow(e, fromId) {
+  if (!e.data("directed")) return "↔";
+  return e.source().id() === fromId ? "→" : "←";
 }
 
 const LOUD_BRIDGES = new Set(["magenta", "orange", "red", "green", "gold"]);
@@ -499,13 +575,32 @@ function syncMetaEdges(types) {
     const rb = reps.get(cb);
     if (!ra || !rb || ra.id() === rb.id()) return;
     const key = [ra.id(), rb.id()].sort().join("||");
-    const cur = pairs.get(key) || { source: ra.id(), target: rb.id(), type: t, count: 0, types: new Set() };
+    const cur = pairs.get(key) || {
+      source: ra.id(),
+      target: rb.id(),
+      type: t,
+      count: 0,
+      types: new Set(),
+      members: []
+    };
     cur.count += 1;
     cur.types.add(t);
+    cur.members.push({
+      id: e.id(),
+      from: e.source().id(),
+      to: e.target().id(),
+      fromLabel: e.source().data("label") || e.source().id(),
+      toLabel: e.target().data("label") || e.target().id(),
+      type: t,
+      note: e.data("note") || "",
+      isNew: !!e.data("isNew")
+    });
     if ((TYPE_PREF[t] ?? 9) < (TYPE_PREF[cur.type] ?? 9)) cur.type = t;
     pairs.set(key, cur);
   });
   pairs.forEach((p, key) => {
+    const newCount = p.members.filter((m) => m.isNew).length;
+    if (newOnly && newCount === 0) return;
     cy.add({
       group: "edges",
       classes: "meta bridge",
@@ -517,6 +612,8 @@ function syncMetaEdges(types) {
         directed: false,
         strength: Math.min(1, 0.35 + p.count * 0.08),
         meta: true,
+        members: p.members,
+        newCount: newCount,
         note: p.count + " finding(s): " + [...p.types].sort().join(", "),
         versions: ""
       }
@@ -633,40 +730,219 @@ function showGuide() {
     `<li><strong>Path</strong>, then two nodes: hops laid out left to right with arrows.</li>` +
     `<li><strong>Loop</strong>, then one node: the cycle is drawn as a circle. Prefers mixed fall + return.</li>` +
     `<li><strong>Laterals</strong> adds cyan (same-slot) lines on the school ring.</li>` +
+    `<li><strong>Findings</strong> lists every cross-cluster edge. <strong>New</strong> is the last accepted pass (` +
+    esc(latestMeta.label || "none") +
+    `).</li>` +
     `<li><strong>Open interiors</strong> is cluster blossoms — still a map, not a hairball to drag apart.</li>` +
     `</ol>` +
-    `<p class="empty">Paths and loops are queries, not a stored spine. YAML is the source of truth.</p>`;
+    `<p class="empty">Paths and loops are queries, not a stored spine. YAML is the source of truth. Permalink: #id=node-id</p>`;
 }
 
 function showNode(d) {
+  const node = cy ? cy.getElementById(d.id) : null;
   const role = d.role ? ` · ${d.role}` : "";
+  const items = [];
+  if (node && node.nonempty()) {
+    node.connectedEdges().forEach((e) => {
+      if (e.data("meta")) return;
+      const other = e.source().id() === d.id ? e.target() : e.source();
+      items.push({
+        id: e.id(),
+        jump: other.id(),
+        type: e.data("type"),
+        arrow: hopArrow(e, d.id),
+        label: other.data("label") || other.id(),
+        isNew: !!e.data("isNew"),
+        span: e.data("bridge") ? "bridge" : "interior"
+      });
+    });
+    items.sort((a, b) => (TYPE_PREF[a.type] ?? 9) - (TYPE_PREF[b.type] ?? 9));
+  }
+  const conn =
+    items.length === 0
+      ? `<p class="empty">No edges on the current filters.</p>`
+      : `<ul class="conn">${items
+          .map(
+            (it) =>
+              `<li><button type="button" class="jump" data-jump="${esc(it.jump)}" data-edge="${esc(it.id)}">` +
+              `<span class="hop" style="color:${EDGE_COLOR[it.type] || "#aaa"}">${esc(it.type)} ${esc(it.arrow)}</span> ` +
+              `<strong>${esc(it.label)}</strong>` +
+              (it.isNew ? `<span class="badge-new">new</span>` : "") +
+              ` <span class="legend-hint">${esc(it.span)}</span></button></li>`
+          )
+          .join("")}</ul>`;
   detail.innerHTML =
     `<h2>${esc(d.label)}</h2>` +
     `<div class="meta"><code>${esc(d.id)}</code> · ${esc(d.kind)} · ${esc(d.cluster)}${esc(role)}</div>` +
     `<p>${esc((d.description || "").trim())}</p>` +
     (d.refs ? `<div class="refs">${esc(d.refs)}</div>` : "") +
-    `<p class="empty">Neighbourhood focused. Click the canvas or Clear focus to reset.</p>`;
+    `<h2>Connections</h2>` +
+    conn +
+    `<p class="empty">Neighbourhood focused. Permalink <code>#id=${esc(d.id)}</code></p>`;
+}
+
+function memberList(members, onlyNew) {
+  const rows = (members || []).filter((m) => !onlyNew || m.isNew);
+  if (!rows.length) return `<p class="empty">No principle-level edges in this pair.</p>`;
+  return `<ul class="findings">${rows
+    .map(
+      (m) =>
+        `<li><button type="button" class="jump" data-jump="${esc(m.from)}" data-edge="${esc(m.id)}">` +
+        `<span class="hop" style="color:${EDGE_COLOR[m.type] || "#aaa"}">${esc(m.type)}</span> ` +
+        `<strong>${esc(m.fromLabel)}</strong> ↔ <strong>${esc(m.toLabel)}</strong>` +
+        (m.isNew ? `<span class="badge-new">new</span>` : "") +
+        (m.note ? `<div class="legend-hint">${esc(m.note)}</div>` : "") +
+        `</button></li>`
+    )
+    .join("")}</ul>`;
 }
 
 function showEdge(d) {
   if (d.meta) {
+    const nNew = d.newCount || 0;
     detail.innerHTML =
       `<h2>Between schools</h2>` +
-      `<div class="meta"><code>${esc(d.source)}</code> ↔ <code>${esc(d.target)}</code> · ${esc(d.type)}</div>` +
+      `<div class="meta"><code>${esc(d.source)}</code> ↔ <code>${esc(d.target)}</code> · ${esc(d.type)}` +
+      (nNew ? ` · ${nNew} new` : "") +
+      `</div>` +
       `<p>${esc(d.note)}</p>` +
-      `<p class="empty">Aggregated finding. Click a school to open the actual principle-level edges.</p>`;
+      memberList(d.members, newOnly) +
+      `<p class="empty">Aggregated finding. Click a row to open that neighbourhood.</p>`;
     return;
   }
   const span = d.bridge ? "bridge" : "interior";
+  const neu = d.isNew ? ` <span class="badge-new">new</span>` : "";
   detail.innerHTML =
-    `<h2>${esc(d.type)} ${span}</h2>` +
+    `<h2>${esc(d.type)} ${span}${neu}</h2>` +
     `<div class="meta"><code>${esc(d.source)}</code> → <code>${esc(d.target)}</code>` +
     ` · strength ${esc(String(d.strength))}` +
     (d.directed ? "" : " · undirected") +
     ` · ${span}` +
     `</div>` +
     `<p>${esc(d.note)}</p>` +
-    `<div class="refs">versions: ${esc(d.versions || "—")}</div>`;
+    `<div class="refs">versions: ${esc(d.versions || "—")}</div>` +
+    `<p><button type="button" class="jump" data-jump="${esc(d.source)}" data-edge="${esc(d.id)}">Open ${esc(d.source)}</button></p>` +
+    `<p><button type="button" class="jump" data-jump="${esc(d.target)}" data-edge="${esc(d.id)}">Open ${esc(d.target)}</button></p>`;
+}
+
+function collectFindings(onlyNew) {
+  if (!cy) return [];
+  const types = checked("etype");
+  const clusters = checked("cluster");
+  const rows = [];
+  cy.edges().forEach((e) => {
+    if (e.data("meta")) return;
+    if (!types.has(e.data("type"))) return;
+    if (!clusters.has(e.source().data("cluster")) || !clusters.has(e.target().data("cluster"))) return;
+    if (onlyNew) {
+      if (!e.data("isNew")) return;
+    } else if (!e.data("bridge")) {
+      return;
+    }
+    rows.push({
+      id: e.id(),
+      from: e.source().id(),
+      to: e.target().id(),
+      fromLabel: e.source().data("label") || e.source().id(),
+      toLabel: e.target().data("label") || e.target().id(),
+      type: e.data("type"),
+      note: e.data("note") || "",
+      isNew: !!e.data("isNew"),
+      span: e.data("bridge") ? "bridge" : "interior"
+    });
+  });
+  rows.sort((a, b) => {
+    const ta = FINDING_ORDER.indexOf(a.type);
+    const tb = FINDING_ORDER.indexOf(b.type);
+    if (ta !== tb) return (ta < 0 ? 9 : ta) - (tb < 0 ? 9 : tb);
+    if (a.isNew !== b.isNew) return a.isNew ? -1 : 1;
+    const byFrom = a.fromLabel.localeCompare(b.fromLabel);
+    return byFrom !== 0 ? byFrom : a.toLabel.localeCompare(b.toLabel);
+  });
+  return rows;
+}
+
+function showFindings() {
+  const help = document.getElementById("help");
+  if (help) help.classList.remove("active");
+  const findingsBtn = document.getElementById("findings");
+  if (findingsBtn) findingsBtn.classList.add("active");
+  const onlyNew = newOnly;
+  const rows = collectFindings(onlyNew);
+  const groups = new Map();
+  FINDING_ORDER.forEach((t) => groups.set(t, []));
+  rows.forEach((r) => {
+    if (!groups.has(r.type)) groups.set(r.type, []);
+    groups.get(r.type).push(r);
+  });
+  const title = onlyNew ? latestMeta.label || "New findings" : "Findings";
+  const blocks = [];
+  groups.forEach((list, type) => {
+    if (!list.length) return;
+    const nNew = list.filter((r) => r.isNew).length;
+    blocks.push(
+      `<details class="findings-group" open>` +
+        `<summary><span class="hop" style="color:${EDGE_COLOR[type] || "#aaa"}">${esc(type)}</span> · ${list.length}` +
+        (nNew ? ` · ${nNew} new` : "") +
+        ` · ${esc(EDGE_MEANING[type] || "")}</summary>` +
+        `<ul class="findings">${list
+          .map(
+            (m) =>
+              `<li><button type="button" class="jump" data-jump="${esc(m.from)}" data-edge="${esc(m.id)}">` +
+              `<strong>${esc(m.fromLabel)}</strong> ↔ <strong>${esc(m.toLabel)}</strong>` +
+              (m.isNew ? `<span class="badge-new">new</span>` : "") +
+              ` <span class="legend-hint">${esc(m.span)}</span>` +
+              (m.note ? `<div class="legend-hint">${esc(m.note)}</div>` : "") +
+              `</button></li>`
+          )
+          .join("")}</ul></details>`
+    );
+  });
+  detail.innerHTML =
+    `<h2>${esc(title)}</h2>` +
+    `<div class="meta">${rows.length} ${onlyNew ? "edge(s) in the last pass" : "cross-cluster edge(s)"}</div>` +
+    (blocks.join("") || `<p class="empty">Nothing to list on the current filters.</p>`) +
+    `<p class="empty">Click a row to open that neighbourhood. New is ${esc(latestMeta.pass || "unset")}.</p>`;
+}
+
+function openJump(nodeId, edgeId) {
+  if (!cy || !nodeId) return;
+  const node = cy.getElementById(nodeId);
+  if (node.empty()) return;
+  clearPath(false);
+  focusId = nodeId;
+  pathMode = false;
+  loopMode = false;
+  const pathBtn = document.getElementById("path");
+  const loopBtn = document.getElementById("loop");
+  if (pathBtn) pathBtn.classList.remove("active");
+  if (loopBtn) loopBtn.classList.remove("active");
+  document.getElementById("help").classList.remove("active");
+  document.getElementById("findings").classList.remove("active");
+  setHashId(nodeId);
+  applyFilter();
+  if (edgeId) {
+    const edge = cy.getElementById(edgeId);
+    if (!edge.empty()) {
+      cy.elements().unselect();
+      edge.select();
+      showEdge(edge.data());
+      return;
+    }
+  }
+  showNode(node.data());
+}
+
+function applyHash() {
+  const id = readHashId();
+  if (!id || !cy) return false;
+  const node = cy.getElementById(id);
+  if (node.empty()) return false;
+  focusId = id;
+  document.getElementById("help").classList.remove("active");
+  applyFilter();
+  showNode(node.data());
+  return true;
 }
 
 function applyFilter() {
@@ -686,6 +962,10 @@ function applyFilter() {
   const pathSet = pathRoute ? new Set(pathRoute.nodes) : null;
   const pathEdgeIds = pathRoute ? new Set(pathRoute.edges.map((e) => e.id())) : null;
   const collapse = fieldMode && !focusSet.size && !pathSet;
+  const newClusters = newOnly ? clustersWithNewBridges() : null;
+  let vn = 0;
+  let ve = 0;
+  let vb = 0;
 
   cy.nodes().forEach((n) => {
     const d = n.data();
@@ -698,9 +978,13 @@ function applyFilter() {
       ok = false;
     }
     if (ok && focusSet.size) ok = focusSet.has(d.id);
+    if (ok && newOnly && collapse && d.kind === "system") {
+      ok = newClusters.has(d.cluster);
+    }
     n.toggleClass("bridge-end", ok && d.kind === "principle" && hasLiveBridge(n, types, clusters, kinds, false));
     n.toggleClass("loud-end", ok && d.kind === "principle" && hasLiveBridge(n, types, clusters, kinds, true));
     n.style("display", ok ? "element" : "none");
+    if (ok) vn += 1;
   });
 
   syncMetaEdges(types);
@@ -722,14 +1006,16 @@ function applyFilter() {
       focusSet.size &&
       (e.data("type") === "green" || e.data("type") === "red");
     e.toggleClass("feedback", fb);
+    e.toggleClass("new-finding", shown && !!e.data("isNew") && newOnly);
+    if (shown) {
+      ve += 1;
+      if (e.data("bridge")) vb += 1;
+    }
   });
 
   paintPath();
   applyLabels();
   runViewLayout();
-  const vn = cy.nodes(":visible").length;
-  const ve = cy.edges(":visible").length;
-  const vb = cy.edges(":visible").filter((e) => e.data("bridge")).length;
   if (loopMode && !pathRoute) {
     status.textContent = "Loop: click a node to paint a cycle through it";
   } else if (pathMode && !pathRoute) {
@@ -745,7 +1031,9 @@ function applyFilter() {
       " hops · " +
       (pathRoute.followArrows ? "follows arrows" : "undirected only");
   } else {
-    status.textContent = vn + " nodes · " + ve + " edges · " + vb + " bridges";
+    const latestBit =
+      latestMeta.pass && newEdgeCount ? " · " + newEdgeCount + " new (" + latestMeta.pass + ")" : "";
+    status.textContent = vn + " nodes · " + ve + " edges · " + vb + " bridges" + latestBit;
   }
 }
 
@@ -759,6 +1047,8 @@ async function init() {
   let data;
   try {
     data = await loadData();
+    latestMeta = await loadLatest();
+    latestSet = new Set(latestMeta.nodes || []);
   } catch (err) {
     document.getElementById("wrap").innerHTML =
       `<div class="err"><p>Could not load YAML.</p>` +
@@ -829,10 +1119,8 @@ async function init() {
       {
         selector: "node.bridge-end",
         style: {
-          width: 15,
-          height: 15,
           "border-color": "#ece6d8",
-          "border-width": 1.5
+          "border-width": 2
         }
       },
       {
@@ -893,7 +1181,16 @@ async function init() {
       },
       {
         selector: "node.path-end",
-        style: { width: 22, height: 22, "border-width": 3 }
+        style: { "border-width": 3, "border-color": "#fff" }
+      },
+      {
+        selector: "edge.new-finding",
+        style: {
+          opacity: 1,
+          width: (el) => 2.4 + 2.2 * (el.data("strength") || 0.5),
+          "arrow-scale": 1.45,
+          "z-index": 16
+        }
       },
       {
         selector: "edge.feedback",
@@ -960,6 +1257,8 @@ async function init() {
     }
     focusId = id;
     document.getElementById("help").classList.remove("active");
+    document.getElementById("findings").classList.remove("active");
+    setHashId(id);
     showNode(evt.target.data());
     applyFilter();
   });
@@ -968,6 +1267,8 @@ async function init() {
     if (evt.target === cy) {
       focusId = null;
       if (!pathMode && !loopMode) clearPath(true);
+      setHashId("");
+      document.getElementById("findings").classList.remove("active");
       applyFilter();
       if (!pathRoute) showGuide();
     }
@@ -975,26 +1276,57 @@ async function init() {
 
   cy.on("mouseover", "node", (evt) => {
     evt.target.addClass("hovered");
-    applyLabels();
   });
   cy.on("mouseout", "node", (evt) => {
     evt.target.removeClass("hovered");
-    applyLabels();
   });
-  cy.on("zoom pan", applyLabels);
+  cy.on("zoom pan", applyLabelsSoon);
 
   document.getElementById("help").addEventListener("click", () => {
     focusId = null;
     if (!pathMode && !loopMode) clearPath(true);
+    document.getElementById("findings").classList.remove("active");
     applyFilter();
     showGuide();
   });
-  document.getElementById("search").addEventListener("input", applyFilter);
+  document.getElementById("findings").addEventListener("click", () => {
+    focusId = null;
+    if (!pathMode && !loopMode) clearPath(true);
+    applyFilter();
+    showFindings();
+  });
+  document.getElementById("new-findings").addEventListener("click", () => {
+    if (!latestSet.size) return;
+    newOnly = !newOnly;
+    document.getElementById("new-findings").classList.toggle("active", newOnly);
+    if (newOnly) {
+      setChecks("etype", () => true);
+      document.getElementById("laterals").classList.remove("active");
+    }
+    applyFilter();
+    showFindings();
+  });
+  detail.addEventListener("click", (ev) => {
+    const btn = ev.target.closest("button.jump");
+    if (!btn) return;
+    openJump(btn.getAttribute("data-jump"), btn.getAttribute("data-edge"));
+  });
+  window.addEventListener("hashchange", () => {
+    if (!applyHash()) {
+      focusId = null;
+      applyFilter();
+      showGuide();
+    }
+  });
+  document.getElementById("search").addEventListener("input", () => {
+    clearTimeout(searchTick);
+    searchTick = setTimeout(applyFilter, 80);
+  });
   document.getElementById("labels").addEventListener("change", applyLabels);
   document.getElementById("field").addEventListener("click", () => {
     fieldMode = true;
     lateralOnly = false;
-    setChecks("etype", (v) => v !== "cyan");
+    if (!newOnly) setChecks("etype", (v) => v !== "cyan");
     document.getElementById("field").classList.add("active");
     document.getElementById("open-interiors").classList.remove("active");
     document.getElementById("laterals").classList.remove("active");
@@ -1064,6 +1396,8 @@ async function init() {
     focusId = null;
     clearPath(false);
     cy.elements().unselect();
+    setHashId("");
+    document.getElementById("findings").classList.remove("active");
     applyFilter();
     showGuide();
   });
@@ -1083,8 +1417,12 @@ async function init() {
   markBridges();
   setChecks("etype", (v) => v !== "cyan");
   bindFilterChanges();
+  if (!latestSet.size) {
+    const nb = document.getElementById("new-findings");
+    if (nb) nb.hidden = true;
+  }
   applyFilter();
-  showGuide();
+  if (!applyHash()) showGuide();
 }
 
 init();

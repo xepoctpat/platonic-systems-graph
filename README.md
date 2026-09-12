@@ -14,6 +14,7 @@ No backend, no database, no build step.
 │   ├── nodes.yaml            # systems + principles
 │   ├── edges.yaml            # typed relations
 │   ├── research-queue.yaml   # survey order (not a spine)
+│   ├── latest.yaml           # last accepted pass (viewer New overlay)
 │   └── versions.md           # what each diagram was for
 ├── analysis/                 # NetworkX → stdout
 ├── tools/serve.py            # local viewer on 127.0.0.1:8765
@@ -74,11 +75,13 @@ There is no `stage` field. A new node does not have to touch Plato.
 
 ```powershell
 python tools/validate.py
+python analysis/report.py
 python analysis/centrality.py
 python analysis/communities.py
 python analysis/paths.py
 python analysis/paths.py platonism gnosticism
 python analysis/feedback.py
+python -m unittest tests.test_graph
 ```
 
 High-betweenness nodes and mixed green/red cycles are **candidates** for an organic spine. Do not treat Platonic centrality as confirmation of a backbone.
@@ -95,7 +98,7 @@ python tools/serve.py stop
 
 Live (GitHub Pages): <https://xepoctpat.github.io/platonic-systems-graph/>
 
-Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080.
+Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080. `tools/serve.py` sends `Cache-Control: no-store` for YAML/JS/CSS so local edits show without a hard refresh.
 
 - Node colour = cluster; system nodes are larger (pale ring) than principles.
 - Default **Field** is a **ring of schools** (mind map, not a force hairball). A line between schools is an aggregated finding. Click a school for a radial neighbourhood. **Loop** places the cycle on a circle. **Path** is left-to-right.
@@ -106,7 +109,9 @@ Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` 
 - Overlay legend (large, collapsible). **How to** in the right sidebar is the tutorial.
 - Filter by kind, cluster, and edge type.
 - **Laterals only** shows cyan + orange (the V5 view).
-- Click a node to focus its neighbourhood.
+- Click a node to focus its neighbourhood. The sidebar lists every connection.
+- **Findings** lists every cross-cluster edge. **New** highlights the last accepted pass (`data/latest.yaml`).
+- Permalink: `http://127.0.0.1:8765/viewer/#id=maya`
 - Search matches label or id.
 
 Keep CSS and JS out of the HTML.

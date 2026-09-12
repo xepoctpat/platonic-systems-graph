@@ -19,6 +19,7 @@ from graph_io import (  # noqa: E402
     KINDS,
     build_multigraph,
     load_edges,
+    load_latest,
     load_nodes,
 )
 
@@ -104,6 +105,26 @@ def _check_edges(edges: list[dict], node_ids: set[str]) -> tuple[list[str], list
     return errors, warnings
 
 
+def _check_latest(node_ids: set[str]) -> tuple[list[str], list[str]]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    try:
+        latest = load_latest()
+    except (FileNotFoundError, ValueError) as exc:
+        errors.append(str(exc))
+        return errors, warnings
+    ids = latest.get("nodes") or []
+    if not ids:
+        warnings.append("latest.yaml has no nodes (viewer New overlay is empty)")
+        return errors, warnings
+    if not latest.get("pass") or not latest.get("label"):
+        warnings.append("latest.yaml missing pass or label")
+    for nid in ids:
+        if nid not in node_ids:
+            errors.append(f"latest.yaml unknown id {nid!r}")
+    return errors, warnings
+
+
 def main() -> int:
     try:
         nodes = load_nodes()
@@ -117,6 +138,9 @@ def main() -> int:
     e_err, e_warn = _check_edges(edges, node_ids)
     errors.extend(e_err)
     warnings.extend(e_warn)
+    l_err, l_warn = _check_latest(node_ids)
+    errors.extend(l_err)
+    warnings.extend(l_warn)
 
     isolates: list[str] = []
     if not errors:

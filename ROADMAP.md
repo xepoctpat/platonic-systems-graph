@@ -260,9 +260,10 @@ Done 2026-08-18. Compare against the old “every label + every edge at once” 
 - [x] Field hides cyan by default (the hairball); Loop paints a green/red cycle
 - [x] Larger collapsible legend
 - [x] Drop force layout. Field = school ring; click = radial mind map; Loop = circle; Path = rank. Same idea as wwm_toolkit charts: deterministic cards, not a drag-apart hairball.
-- [ ] URL hash `#id=…` so notes can point at a node
-- [ ] Cluster-aware layout (still cose)
-- [ ] `analysis/report.py` → a replaceable spine snapshot
+- [x] URL hash `#id=…` so notes can point at a node
+- [x] Cluster-aware layout (school ring + cluster blossoms; not cose)
+- [x] Findings list + New overlay from `data/latest.yaml` (last accepted pass)
+- [x] `analysis/report.py` → a replaceable spine snapshot
 - [ ] Pin or vendor js-yaml + cytoscape if offline viewing matters
 
 ## Phase E — Productize only what the graph needs

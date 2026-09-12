@@ -31,4 +31,5 @@ YAML in `data/nodes.yaml` and `data/edges.yaml` is the only source of truth. Rea
 3. Add the node with `id`, `label`, `kind`, `cluster`, `description`, optional `role` and `refs`.
 4. Add only the strongest edges. Every edge needs `from`, `to`, `type`, `directed`, `strength`, `note`. `versions` is optional.
 5. Run `python tools/validate.py`. Fix errors before anything else. Then `python analysis/paths.py FROM TO` or `python analysis/centrality.py` if you need a path or hinge check.
-6. After a write, `/viewer-server` so the inspector is up on http://127.0.0.1:8765/viewer/
+6. After an accepted pass, rewrite `data/latest.yaml` with that pass’s node ids (`pass`, `label`, `nodes`). The viewer **New** overlay reads this. It is not a third graph.
+7. After a write, `/viewer-server` so the inspector is up on http://127.0.0.1:8765/viewer/

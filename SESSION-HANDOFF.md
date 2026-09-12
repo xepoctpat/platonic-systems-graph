@@ -3,7 +3,7 @@
 Stop point: **Known-good is Hindu 3.** YAML write was already in; this pass ran validate, centrality, ROADMAP After-row, and serve check. Do not treat remaining Platonic betweenness as a proven spine.
 
 Viewer (live): https://xepoctpat.github.io/platonic-systems-graph/  
-Local: http://127.0.0.1:8765/viewer/  (hard-refresh if JS is cached)
+Local: http://127.0.0.1:8765/viewer/  (serve.py sends no-store; GitHub Pages may still need a hard-refresh)
 
 ## How to resume (next session)
 
@@ -74,7 +74,7 @@ Phase D stop was already met (Popol Vuh). Hindu 3 is a darśana lateral.
 | B Collisions | All 9 encoded. Share is now **7/12** Platonic — count only, not a spine proof |
 | C Split interiors | Required done. Palamite / Hermetica only if a **new slot** |
 | D Parallel peers | Norse, Popol Vuh, Ifá, Hindu 2, **Hindu 3** done. **Buddhist 2 next** |
-| Viewer | Field / Path / Loop usable. Open: `#id=` permalinks, `analysis/report.py`, vendor JS |
+| Viewer | Field / Path / Loop / Findings / New. Permalinks `#id=`. Open: `analysis/report.py`, vendor JS |
 | Workflows | Project-only under `.grok/workflows/` |
 
 ## Do next (one pass — after the weekly limit resets)
@@ -111,5 +111,7 @@ A workflow **cannot** launch another workflow. Sequential work is **inside** `/w
 `/walk-one {"encode":false}` surveys and stops.
 
 ## Click in the viewer
+
+**New** then a row, or permalink http://127.0.0.1:8765/viewer/#id=maya
 
 Māyā ↔ prakṛti · Māyā ↔ Devī · Apauruṣeya ↔ ṛta · Apauruṣeya ↔ Genesis creator · Paramāṇu ↔ Receptacle · Kaivalya ↔ Escape Gnosis · Kaivalya ↔ fanāʾ/baqāʾ · Nyāya Īśvara ↔ Unmoved mover

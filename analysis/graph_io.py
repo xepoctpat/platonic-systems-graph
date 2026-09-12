@@ -17,16 +17,25 @@ DATA = ROOT / "data"
 EDGE_TYPES = ("gold", "cyan", "magenta", "green", "red", "orange")
 KINDS = ("system", "principle")
 LATERAL_TYPES = ("orange", "cyan")
+FLOW_TYPES = ("gold", "green", "red")
+PEER_TYPES = ("cyan", "magenta", "orange")
+
+_yaml_cache: dict[str, tuple[float, dict]] = {}
 
 
 def _read_yaml(name: str) -> dict:
     path = DATA / name
     if not path.exists():
         raise FileNotFoundError(f"Missing data file: {path}")
+    mtime = path.stat().st_mtime
+    hit = _yaml_cache.get(name)
+    if hit and hit[0] == mtime:
+        return hit[1]
     with path.open(encoding="utf-8") as fh:
         data = yaml.safe_load(fh)
     if not isinstance(data, dict):
         raise ValueError(f"{path} did not parse as a mapping")
+    _yaml_cache[name] = (mtime, data)
     return data
 
 
@@ -47,6 +56,22 @@ def load_edges() -> list[dict]:
     if not isinstance(edges, list):
         raise ValueError("edges.yaml must contain a top-level 'edges' list")
     return edges
+
+
+def load_latest() -> dict:
+    """Viewer overlay. Missing file is empty, not an error."""
+    path = DATA / "latest.yaml"
+    if not path.exists():
+        return {"pass": "", "label": "", "nodes": []}
+    data = _read_yaml("latest.yaml")
+    nodes = data.get("nodes") or []
+    if not isinstance(nodes, list):
+        raise ValueError("latest.yaml 'nodes' must be a list")
+    return {
+        "pass": data.get("pass") or "",
+        "label": data.get("label") or "",
+        "nodes": [n for n in nodes if n],
+    }
 
 
 def build_multigraph() -> nx.MultiDiGraph:

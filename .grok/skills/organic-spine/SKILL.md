@@ -18,6 +18,7 @@ A spine is an **output**. High Platonic centrality in the current YAML is partly
 
 ```
 python tools/validate.py
+python analysis/report.py
 python analysis/centrality.py
 python analysis/communities.py
 python analysis/feedback.py

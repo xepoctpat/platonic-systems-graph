@@ -18,12 +18,31 @@ import socket
 import sys
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import urlparse
 
 HOST = "127.0.0.1"
 PORT = 8765
 ROOT = Path(__file__).resolve().parent.parent
 PID_FILE = ROOT / ".viewer-serve.pid"
 URL = f"http://{HOST}:{PORT}/viewer/"
+NO_STORE_EXT = {".js", ".css", ".yaml", ".yml", ".html", ".json"}
+
+
+class Handler(SimpleHTTPRequestHandler):
+    """Repo-root static server. YAML as text; no-store so the inspector sees edits."""
+
+    extensions_map = {
+        **SimpleHTTPRequestHandler.extensions_map,
+        ".yaml": "text/yaml; charset=utf-8",
+        ".yml": "text/yaml; charset=utf-8",
+    }
+
+    def end_headers(self) -> None:
+        path = urlparse(self.path).path.lower()
+        ext = Path(path).suffix
+        if ext in NO_STORE_EXT or path.endswith("/"):
+            self.send_header("Cache-Control", "no-store")
+        super().end_headers()
 
 
 def _listening() -> bool:
@@ -97,7 +116,7 @@ def cmd_start() -> int:
         return 0
     os.chdir(ROOT)
     PID_FILE.write_text(str(os.getpid()), encoding="utf-8")
-    handler = SimpleHTTPRequestHandler
+    handler = Handler
     try:
         server = ThreadingHTTPServer((HOST, PORT), handler)
     except OSError as exc:

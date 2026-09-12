@@ -1,0 +1,12 @@
+# Viewer overlay for the last accepted encode. Not a third graph.
+# nodes.yaml and edges.yaml remain the source of truth.
+# Replace this file after each accepted /add-entry pass.
+
+pass: hindu-3
+label: Hindu 3 — darśana occupants
+nodes:
+  - maya
+  - apaurusheya
+  - paramanu
+  - kaivalya
+  - nyaya-ishvara
