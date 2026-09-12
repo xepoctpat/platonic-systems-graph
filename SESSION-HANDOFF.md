@@ -1,9 +1,11 @@
-# Session handoff (2026-08-18, Hindu 3 audited)
+# Session handoff (2026-09-12, viewer wrap)
 
-Stop point: **Known-good is Hindu 3.** YAML write was already in; this pass ran validate, centrality, ROADMAP After-row, and serve check. Do not treat remaining Platonic betweenness as a proven spine.
+Stop point: **Graph still Hindu 3** (no YAML encode this session). Viewer now has Findings / New / `#id=` permalinks. Local serve is **stopped**. Do not treat remaining Platonic betweenness as a proven spine.
+
+This session: `/learn` (harness only) then viewer UX + serve no-store + `analysis/report.py` + `tests/test_graph.py`. Commit `99c3ec7` plus this wrap. Not a tradition pass.
 
 Viewer (live): https://xepoctpat.github.io/platonic-systems-graph/  
-Local: http://127.0.0.1:8765/viewer/  (serve.py sends no-store; GitHub Pages may still need a hard-refresh)
+Local: http://127.0.0.1:8765/viewer/  (down until `python tools/serve.py start`; no-store when up. GitHub Pages may still need a hard-refresh)
 
 ## How to resume (next session)
 
@@ -74,7 +76,7 @@ Phase D stop was already met (Popol Vuh). Hindu 3 is a darśana lateral.
 | B Collisions | All 9 encoded. Share is now **7/12** Platonic — count only, not a spine proof |
 | C Split interiors | Required done. Palamite / Hermetica only if a **new slot** |
 | D Parallel peers | Norse, Popol Vuh, Ifá, Hindu 2, **Hindu 3** done. **Buddhist 2 next** |
-| Viewer | Field / Path / Loop / Findings / New. Permalinks `#id=`. Open: `analysis/report.py`, vendor JS |
+| Viewer | Field / Path / Loop / Findings / New. Permalinks `#id=`. `analysis/report.py` exists. Open: vendor JS |
 | Workflows | Project-only under `.grok/workflows/` |
 
 ## Do next (one pass — after the weekly limit resets)
