@@ -201,6 +201,16 @@ flowchart LR
 
 Pages opened. James Darmesteter, Mihr Yašt, Yt. 10. L. H. Mills, Gathas (Yasna 28–34, 43–46, 47–50, 51, and 53): Mithra is not named.
 
+### 6. Unsleeping eye
+
+Pass 2026-11-22. Partial swap. The watch is shared, and the work of the eyes did not transfer. Ṛgveda 3.59.1 beholds the peoples with eyes that do not close. Yt. 10.7 counts ten thousand eyes and calls him sleepless beside that count. Yt. 10.13 looks over the Aryan abode with a beneficent eye. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The covenant edge is unchanged. No new node.
+
+```mermaid
+flowchart LR
+  mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
+  mitra ---|"orange · unsleeping eye"| avestan-mithra
+```
+
 ---
 
 ## The graph as the instrument
@@ -262,6 +272,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 | 3 | Solar table: Sūrya, Helios, Re, Mitra, then Mitra ~ Jesus | Sūrya, Re, Helios, Mitra | Done 2026-11-22 for the four. Jesus still a question. No edge |
 | 4 | Mitra ~ Jesus | Mitra yes. No Jesus node | Tested 2026-11-22. Unclassified. No edge. No link. Jesus not encoded |
 | 5 | Avestan Miθra | Mitra yes. Miθra added | Encoded 2026-11-22. One cyan covenant lateral. No second edge |
+| 6 | Unsleeping eye | Both nodes exist | Encoded 2026-11-22. Partial swap. One orange lateral. Covenant edge unchanged |
 
 ---
 
@@ -275,6 +286,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 - 2026-11-22. Solar attribute. Helios and Mitra added. Sūrya–Helios cyan. Re joined by orange, not as a second chariot. Mitra is covenant (Ṛgveda 3.59.1), not the sun. Jesus not encoded. Avestan Miθra left open.
 - 2026-11-22. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. No link on the drawing. Malachi 3:20 (English 4:2) and Luke 22:20 do not carry Mitra’s covenant. Avestan Miθra remains open.
 - 2026-11-22. Avestan Miθra. Shared attribute: the covenant (Ṛgveda 3.59.1 and Yt. 10.2). One cyan lateral, undirected. New node `avestan-mithra`. The chariot is only Yt. 10.124–125. The companion does not match. Mills’s Gathas do not name Mithra. No second lateral.
+- 2026-11-22. Unsleeping eye. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The watch is shared. What failed: Ṛgveda 3.59.1 beholds the peoples with eyes that do not close; Yt. 10.7 counts ten thousand eyes and calls him sleepless beside that count; Yt. 10.13 looks with a beneficent eye. Covenant edge unchanged. No new node.
 
 ```mermaid
 flowchart LR

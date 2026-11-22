@@ -2,7 +2,8 @@
 # nodes.yaml and edges.yaml remain the source of truth.
 # Replace this file after each accepted /add-entry pass.
 
-pass: avestan-mithra
-label: Avestan Miθra — covenant shared with Mitra
+pass: unsleeping-eye
+label: Unsleeping eye — partial swap, Mitra and Miθra
 nodes:
+  - mitra
   - avestan-mithra

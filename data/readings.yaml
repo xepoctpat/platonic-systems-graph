@@ -140,21 +140,22 @@ readings:
     title: "Mitra · Miθra"
     claim: >
       Vedic Mitra and Avestan Miθra share the covenant in named passages.
-      A shared name is not the attribute. The chariot does not match.
+      The unsleeping eye is a partial swap: the watch is shared, and the
+      work of the eyes did not transfer.
     status: confirmed
     mermaid: |
       flowchart LR
         mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
+        mitra ---|"orange · unsleeping eye"| avestan-mithra
     confirmed: >
-      One cyan lateral, marked both ways. Mitra sets peoples to their
-      agreements (Ṛgveda 3.59.1). Miθra is the contract (Yt. 10.2).
-      No descent.
+      Two laterals, marked both ways. Covenant: Mitra sets peoples to their
+      agreements (Ṛgveda 3.59.1) and Miθra is the contract (Yt. 10.2).
+      Eye: partial swap. The watch is shared, and the work of the eyes did
+      not transfer (Ṛgveda 3.59.1; Yt. 10.7; Yt. 10.13).
     open: >
-      The unsleeping eye is named on both sides (Ṛgveda 3.59.1; Yt. 10.7
-      and 10.13) and is not a second edge. Kingship is named on both sides
-      and is not the sun’s, and it is not a second edge. The chariot is
-      only Yt. 10.124–125. The companion does not match. Mills’s Gathas
-      do not name Mithra.
+      Kingship is named on both sides and is not the sun’s, and it has no
+      edge. The chariot is only Yt. 10.124–125. The companion does not
+      match. Mills’s Gathas do not name Mithra.
     attributes:
       columns:
         - label: Attribute
@@ -167,8 +168,8 @@ readings:
           - ""
           - "Gold chariot, four white stallions (Yt. 10.124–125). Over the Hara before the sun (Yt. 10.13)"
         - - "Eye, or light that sees"
-          - "Eyes that do not close, Ṛgveda 3.59.1"
-          - "Ten thousand eyes, sleepless (Yt. 10.7). A beneficent eye from the Hara (Yt. 10.13)"
+          - "Beholds the peoples with eyes that do not close, Ṛgveda 3.59.1"
+          - "Ten thousand eyes, and sleepless, as separate epithets (Yt. 10.7). A beneficent eye over the Aryan abode (Yt. 10.13)"
         - - Witness to oaths or covenants
           - "Sets peoples to their agreements, Ṛgveda 3.59.1"
           - "Break not the contract (Yt. 10.2)"

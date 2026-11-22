@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, compact)
 
-Stop point: **242 nodes · 624 edges.** Validate was **OK**. Working tree is **clean** at this commit. Do not push unless the operator asks.
+Stop point: **242 nodes · 625 edges.** Validate was **OK**. Working tree is **clean** at this commit. `main` is pushed to `origin/main`, including `43d92ee` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -16,20 +16,21 @@ Cursor user setting, outside this repo: `files.autoSave` is `afterDelay`, delay 
 
 ## Git
 
-`main` is **1 commit ahead** of `origin/main` and has not been pushed.
+`main` matches `origin/main` after this push. `43d92ee` and this commit are both on the remote.
 
 | Commit | What |
 |---|---|
 | `9d2f026` | Reading tab for the finished findings. 3D button and canvas removed |
 | `6987a71` | Mitra ~ Jesus unclassified. No node, no edge, no link. `space.js` removed |
-| HEAD | Avestan Miθra. One cyan covenant lateral. New node `avestan-mithra` |
+| `43d92ee` | Avestan Miθra. One cyan covenant lateral. New node `avestan-mithra` |
+| HEAD | Unsleeping eye. Partial swap. One orange lateral. No new node |
 
 ## Graph now
 
 | | |
 |---|---|
-| Edges | cyan 224 · gold 154 · magenta 102 · orange 65 · red 41 · green 38 |
-| Latest pass | avestan-mithra — covenant shared with Mitra |
+| Edges | cyan 224 · gold 154 · magenta 102 · orange 66 · red 41 · green 38 |
+| Latest pass | unsleeping-eye — partial swap, Mitra and Miθra |
 | Clusters added | `hellenic`, `roman` |
 
 Greco-Roman twelve (Livy 22.10.9, plus Liber) is a **drawing check, not an origin**. Cyan where only a translated name was sourced. Orange for Mars, Venus Erycina, Mercury, Vesta, Ceres, Liber. Gold for Apollo Medicus (vowed 433, Livy 4.25.3).
@@ -38,7 +39,15 @@ Ma'at · ṛta · Asha: three cyan edges already present. Open sharing, not a lo
 
 Solar: Sūrya–Helios cyan. Sūrya–Re and Helios–Re orange (barque, not chariot). Mitra–Sūrya orange (covenant, not the sun; Ṛgveda 3.59.1). Mitra–Varuṇa cyan. Jesus not encoded.
 
-Avestan Miθra: one cyan lateral to Mitra on the covenant (Ṛgveda 3.59.1 and Yt. 10.2). New node `avestan-mithra`. The chariot is only Yt. 10.124–125. The unsleeping eye is named (Ṛgveda 3.59.1; Yt. 10.7, 10.13) and is not a second edge. The companion does not match. Mills’s Gathas do not name Mithra. `data/latest.yaml` is this encode. `zoroastrianism` stays partial.
+Avestan Miθra: one cyan lateral to Mitra on the covenant (Ṛgveda 3.59.1 and Yt. 10.2). New node `avestan-mithra`. The chariot is only Yt. 10.124–125. The companion does not match. Mills’s Gathas do not name Mithra. `zoroastrianism` stays partial.
+
+Unsleeping eye: partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The watch is shared, and the work of the eyes did not transfer. Ṛgveda 3.59.1 beholds the peoples with eyes that do not close. Yt. 10.7 counts ten thousand eyes and calls him sleepless beside that count. Yt. 10.13 looks over the Aryan abode with a beneficent eye. The covenant edge is unchanged. No new node. `data/latest.yaml` is this encode.
+
+Side findings, seen and not scored, not encoded:
+
+- Yt. 10.0, the opening invocation, already says “a thousand ears, ten thousand eyes,” before §1.
+- Yt. 10.15: “the powerful Mithra looks with a health-bringing eye” across the seven karshvares.
+- Yt. 10.82: he has “ten thousand eyes to see,” and with those eyes he watches the man who injures Mithra and the man who lies unto Mithra. That verse ties the eyes to the liar. It was not one of the passages this cell was allowed to score.
 
 Latest pass: mitra-jesus stayed unclassified. No Jesus node. No edge. The drawing has no link.
 
@@ -56,15 +65,17 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 
 ## Do next, only if the operator asks
 
-1. The unsleeping eye is named on both sides and has no second edge.
+1. Kingship is named on both sides (Ṛgveda 3.59.4; Yt. 10.16 and Yt. 10.145) and has no edge.
 2. Do not encode Jesus without a sourced shared attribute.
 3. Roman Mithras stays the pending mystery interior.
+4. Yt. 10.0, Yt. 10.15, and Yt. 10.82 stay unscored.
 
 ## Do not
 
 - Treat the Greco-Roman twelve as an origin.
 - Encode Jesus without a sourced shared attribute.
-- Add a second Miθra lateral, a yazata list, or a gold edge.
+- Add a Miθra lateral for kingship, Yt. 10.0, Yt. 10.15, or Yt. 10.82 unless a later pass is asked for.
+- Change the covenant edge, or add a gold edge.
 - Fold Roman Mithras into `avestan-mithra`, or mark `zoroastrianism` surveyed.
 - Turn Malachi 4:2 or Luke 22:20 into an edge.
 - Encode every god, or write a school’s chronicle and call it emergence.

@@ -16,13 +16,13 @@ Walk `/researcher` → `/add-entry` → `python tools/validate.py` → `/organic
 
 | | |
 |---|---|
-| Graph | 242 nodes · 624 edges · 42 systems · 200 principles · 33 clusters |
-| Edges | cyan 224 · gold 154 · magenta 102 · orange 65 · red 41 · green 38 |
+| Graph | 242 nodes · 625 edges · 42 systems · 200 principles · 33 clusters |
+| Edges | cyan 224 · gold 154 · magenta 102 · orange 66 · red 41 · green 38 |
 | Store | `data/nodes.yaml` and `data/edges.yaml` |
 | Sheet | comparison check, in the viewer |
 | 3D | retired. Loops are planar |
 | Drawings | Mermaid only. Documented laterals are typed. Unclassified clusters are a loose subgraph with generic links |
-| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Mitra ~ Jesus was tested and stayed unclassified. No Jesus node. No edge. The drawing has no link. Avestan Miθra is one cyan lateral on the covenant (Ṛgveda 3.59.1 and Yt. 10.2). The chariot is only the Yašt. No second lateral |
+| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Mitra ~ Jesus was tested and stayed unclassified. No Jesus node. No edge. The drawing has no link. Avestan Miθra keeps the cyan covenant (Ṛgveda 3.59.1 and Yt. 10.2). The unsleeping eye is an orange partial swap (Ṛgveda 3.59.1, Yt. 10.7, Yt. 10.13). The chariot is only the Yašt |
 
 `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens.
 

@@ -15,17 +15,17 @@
     "mandaean",
     "manichaean",
     "zoroastrian",
-    "egyptian",
     "vedic",
-    "hindu",
-    "buddhist",
-    "chinese",
-    "yoruba",
+    "egyptian",
+    "canaanite",
+    "biblical",
     "mesopotamian",
     "norse",
     "mesoamerican",
-    "biblical",
-    "canaanite",
+    "yoruba",
+    "chinese",
+    "hindu",
+    "buddhist",
     "alchemical",
     "kabbalistic",
     "jewish-mystical",
@@ -6221,7 +6221,7 @@
         "magenta": 0,
         "green": 0,
         "red": 0,
-        "orange": 1
+        "orange": 2
       },
       "members": [
         {
@@ -6245,6 +6245,16 @@
           "directed": false
         },
         {
+          "id": "e624",
+          "from": "mitra",
+          "to": "avestan-mithra",
+          "fromLabel": "Mitra",
+          "toLabel": "Miθra",
+          "type": "orange",
+          "note": "Partial swap. The watch is shared, and the work of the eyes did not transfer: Mitra beholds the peoples with eyes that do not close (Ṛgveda 3.59.1), while Miθra’s ten thousand eyes and his sleeplessness are separate epithets (Yt. 10.7) and his look from the Hara is a beneficent eye (Yt. 10.13).\n",
+          "directed": false
+        },
+        {
           "id": "e303",
           "from": "vedic",
           "to": "zoroastrianism",
@@ -6255,8 +6265,8 @@
           "directed": false
         }
       ],
-      "count": 3,
-      "mix": "3 · cyan 2 · orange 1"
+      "count": 4,
+      "mix": "4 · orange 2 · cyan 2"
     }
   ],
   "communities": {

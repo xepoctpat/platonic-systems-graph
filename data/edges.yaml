@@ -5103,3 +5103,16 @@ edges:
     note: >
       Shared attribute, not descent. Mitra sets peoples to their agreements
       (Ṛgveda 3.59.1), and Miθra is the contract one must not break (Yt. 10.2).
+
+  - from: mitra
+    to: avestan-mithra
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: []
+    note: >
+      Partial swap. The watch is shared, and the work of the eyes did not
+      transfer: Mitra beholds the peoples with eyes that do not close
+      (Ṛgveda 3.59.1), while Miθra’s ten thousand eyes and his sleeplessness
+      are separate epithets (Yt. 10.7) and his look from the Hara is a
+      beneficent eye (Yt. 10.13).
