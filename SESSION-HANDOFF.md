@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, day wrap)
 
-Stop point: **242 nodes · 628 edges** at `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `172d6d5` and this commit.
+Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `b9dea44` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -28,7 +28,8 @@ Validate warns `duplicate cyan edge mitra->avestan-mithra (2 times)` and `duplic
 | `ad0c8e7` | Chariot. Shared attribute. One cyan lateral |
 | `75255cb` | Companion. Partial swap. One orange lateral |
 | `172d6d5` | Day wrap. No graph edit |
-| HEAD | Ma'at · ṛta · Asha skip. Notes only. No graph edit |
+| `b9dea44` | Ma'at · ṛta · Asha skip. Notes only. No graph edit |
+| HEAD | Roman Mithras skip. Unclassified. Notes only. No graph edit |
 
 Edge counts at the stop: cyan 225 · gold 154 · magenta 102 · orange 68 · red 41 · green 38.
 
@@ -40,10 +41,23 @@ Ptahhotep, Ṛgveda 5.15.2, and Yasna 28.11 each name only their own word. None 
 
 Restoration stays a side finding inside each tradition, not an edge among the three: the Tutankhamun restoration stela (`mAat mn.tj` — justice established in its place) and Yasna 30.5 (the holiest Spirit chose Right). Ṛta guarded by Varuṇa stays the existing gold edge `rta` → `varuna`. Do not merge the `mitra` duplicate-edge warnings.
 
+## Roman Mithras — skip, do not reopen as unexamined
+
+Unclassified. No node. No edge. No link. Not folded into `avestan-mithra` or `mitra`. `mystery-religions` stays `stub`. `data/latest.yaml` stays `companion`. Do not merge the `mitra` duplicate-edge warnings.
+
+Passage: Statius, *Thebaid* 1.716–720. The Mithras clause is 1.719–720: `Persei sub rupibus antri / indignata sequi torquentem cornua Mithram`. Under the rocks of the Persian cave he twists the horns that refuse to follow. No named passage already on a graph node puts that attribute on that node.
+
+Side findings, not encodes:
+
+- *Thebaid* 1.718–719: fruit-bearing Osiris is the other `seu`. It does not put the murdered king of the West on Mithras, and it does not put “fruit-bearing” on the `osiris` refs. Isis was not opened.
+- *Thebaid* 1.696 and 1.716–720: the hymn addresses Phoebus and offers Mithras as one name in the closing list. The horns and the cave modify `Mithram` only. `apollo` and `roman-apollo` stay the Livy temple, not this line.
+- `helios` stays the chariot and the god who oversees and hears. These lines do not put that on Mithras.
+- `el-canaanite` stays the Baal Cycle bull. That text was not opened. A bull epithet is not these horns under this cave.
+
 ## Holds — not a next cell
 
 - Do not encode Jesus without a sourced shared attribute. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. The drawing has no link.
-- Roman Mithras stays the pending mystery interior. `mystery-religions` stays `stub`.
+- Do not reopen Roman Mithras as an unexamined stub. The skip is recorded. `mystery-religions` stays `stub`.
 - Side findings stay unscored. They are later correlations. They are not an encode.
 - Yt. 10.13’s before-the-sun crossing stays Avestan only. It does not fill the Vedic chariot cell. The beneficent-eye clause of that verse stays on the eye edge.
 
@@ -70,7 +84,7 @@ Side findings, with the passages already recorded:
 
 ## What Now already says
 
-Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
+Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. No node. No edge. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
 
 Those are waits and finished readings. They are not a new cell.
 
@@ -91,7 +105,7 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 1. Do not reopen Ma'at · ṛta · Asha as unexamined. The skip is recorded. The three cyan edges stay.
 2. Leave Mitra · Miθra as it is. The five rows are filled.
 3. Do not encode Jesus without a sourced shared attribute.
-4. Leave Roman Mithras as the pending mystery interior.
+4. Do not reopen Roman Mithras as unexamined. The unclassified skip is recorded. No node. No edge.
 5. Leave the side findings unscored unless a later pass names one passage.
 6. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
 7. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
