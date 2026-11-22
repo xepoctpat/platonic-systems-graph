@@ -1,6 +1,6 @@
-# Session handoff (2026-11-22, day wrap)
+# Session handoff (2026-11-23)
 
-Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `53c686d` and this commit.
+Stop point: **242 nodes · 628 edges.** Validate was **OK** (42 systems, 200 principles, 33 clusters). Types: gold 154 · cyan 225 · magenta 102 · green 38 · red 41 · orange 68. The only graph edit is the note on the existing `nephthys` → `osiris` edge. `data/nodes.yaml` and `data/readings.yaml` are unchanged. `data/latest.yaml` is `limb-assembly`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `4cc4e01` and this commit. The duplicate `mitra` warnings remain. Do not merge them.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -36,7 +36,8 @@ Validate warns `duplicate cyan edge mitra->avestan-mithra (2 times)` and `duplic
 | `d38e6d5` | Osiris boat skip. Unclassified. Notes only. No graph edit |
 | `ebc54cc` | Horizon name skip. Unclassified. Notes only. No graph edit |
 | `53c686d` | Horizon sailing skip. Unclassified. Notes only. No graph edit |
-| HEAD | Isis finding skip. Unclassified. Notes only. No graph edit |
+| `4cc4e01` | Isis finding skip. Unclassified. Notes only. No graph edit |
+| HEAD | Limb assembly. Shared attribute. Citation on `nephthys` → `osiris`. No new edge |
 
 Edge counts at the stop: cyan 225 · gold 154 · magenta 102 · orange 68 · red 41 · green 38.
 
@@ -153,6 +154,14 @@ Side findings, not encodes:
 - Giving to Horus. Utterance 357, §584c: they have given him to Horus, that Horus may be satisfied with him.
 - Limb-assembly in Utterances 364, 366, and 367. Utterance 364, §616a–c: Nephthys has assembled all his limbs. §617a–b: Horus has united his limbs and put him together. Utterance 366, §628a: his two sisters Isis and Nephthys come to him and heal him. Utterance 367, §635a–b: Horus has collected his limbs and put him together. Utterance 364, §610c, they have healed him, stays with those utterances.
 
+## Limb assembly — citation, do not add a second edge
+
+Shared attribute. The existing green edge `nephthys` → `osiris` keeps type green, directed true, and strength 0.7. The note is: Helps the reconstitution. Nephthys assembled for Osiris all his limbs and made them well (Mercer 1952, Utterance 364, §616a–c).
+
+No second edge. The `isis` → `osiris` edge is not cited. No `horus` node. No edge between `re` and `osiris`. `data/latest.yaml` is `limb-assembly`. Do not merge the `mitra` duplicate-edge warnings.
+
+Side finding, not an encode: Utterance 367, §635, Horus has collected his limbs and put him together. There is no `horus` node.
+
 ## Holds — not a next cell
 
 - Do not encode Jesus without a sourced shared attribute. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. The drawing has no link.
@@ -183,7 +192,7 @@ Side findings, with the passages already recorded:
 
 ## What Now already says
 
-Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. The Isis mystery was read at Apuleius, Metamorphoses 11.23, and skipped as unclassified. The name Isis is absent from that section. The night sun was read against Re and skipped as unclassified. Apuleius 11.23 puts the midnight seeing on the speaker. Budge, Am-Tuat, p. 117, has Re work the paddle toward the body of Osiris. That line does not put the seeing on Re. The Osiris boat was read against Pyramid Texts, Utterance 357, and skipped as unclassified. Isis and Nephthys find Osiris. That utterance does not put his body in the place the night boat rows toward. The horizon name was read against Budge, Am-Tuat, p. 259, and skipped as unclassified. Coming forth from the mouth of Ankh-neteru and a position in the Eastern Horizon is not going forth from the horizon. The horizon sailing was read against the day car and skipped as unclassified. Budge, p. 270, is a sailing over the Horizon and a place in the shrine. Ṛgveda 1.50.8–9 and Homeric Hymn 31.8–15 are the yoked car. Those are not the same motion. No edge from `re` to `surya` or `helios` for that sentence. The day-car edge stays. The finding sentence was read against the stored gathering and skipped as unclassified. Mercer, Utterance 357, §584a, is a seeing and a finding. It is not “Gathering of pieces; return without leaving the cosmos.” No citation on the `isis` → `osiris` edge. No second edge. No edge between `re` and `osiris`. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
+Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. The Isis mystery was read at Apuleius, Metamorphoses 11.23, and skipped as unclassified. The name Isis is absent from that section. The night sun was read against Re and skipped as unclassified. Apuleius 11.23 puts the midnight seeing on the speaker. Budge, Am-Tuat, p. 117, has Re work the paddle toward the body of Osiris. That line does not put the seeing on Re. The Osiris boat was read against Pyramid Texts, Utterance 357, and skipped as unclassified. Isis and Nephthys find Osiris. That utterance does not put his body in the place the night boat rows toward. The horizon name was read against Budge, Am-Tuat, p. 259, and skipped as unclassified. Coming forth from the mouth of Ankh-neteru and a position in the Eastern Horizon is not going forth from the horizon. The horizon sailing was read against the day car and skipped as unclassified. Budge, p. 270, is a sailing over the Horizon and a place in the shrine. Ṛgveda 1.50.8–9 and Homeric Hymn 31.8–15 are the yoked car. Those are not the same motion. No edge from `re` to `surya` or `helios` for that sentence. The day-car edge stays. The finding sentence was read against the stored gathering and skipped as unclassified. Mercer, Utterance 357, §584a, is a seeing and a finding. It is not “Gathering of pieces; return without leaving the cosmos.” No citation on the `isis` → `osiris` edge. No second edge. No edge between `re` and `osiris`. Limb assembly is encoded on the existing `nephthys` → `osiris` edge. Mercer 1952, Utterance 364, §616a–c: Nephthys assembled for Osiris all his limbs and made them well. Utterance 367 §635 stays a side finding. No `horus` node. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
 
 Those are waits and finished readings. They are not a new cell.
 
@@ -212,9 +221,10 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 9. Do not reopen the horizon name as unexamined. The unclassified skip is recorded. No edge between `re` and `osiris`. Budge p. 117 is not the Re side.
 10. Do not reopen the horizon sailing as unexamined. The unclassified skip is recorded. No edge from `re` to `surya` or `helios` for p. 270. The day-car edge stays.
 11. Do not reopen the Isis finding as unexamined. The unclassified skip is recorded. No citation of Utterance 357 on the `isis` → `osiris` edge. No second edge. No edge between `re` and `osiris`.
-12. Leave the side findings unscored unless a later pass names one passage.
-13. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
-14. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
+12. The limb-assembly citation is recorded on `nephthys` → `osiris`. Do not add a second edge. Do not cite the `isis` → `osiris` edge. Do not add a `horus` node. Utterance 367 §635 stays a side finding.
+13. Leave the side findings unscored unless a later pass names one passage.
+14. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
+15. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
 
 ## Do not
 

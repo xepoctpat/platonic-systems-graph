@@ -2046,7 +2046,9 @@ edges:
     directed: true
     strength: 0.7
     versions: []
-    note: Helps the reconstitution.
+    note: >
+      Helps the reconstitution. Nephthys assembled for Osiris all his limbs
+      and made them well (Mercer 1952, Utterance 364, §616a–c).
 
   - from: canaanite
     to: el-canaanite

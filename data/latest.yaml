@@ -2,8 +2,8 @@
 # nodes.yaml and edges.yaml remain the source of truth.
 # Replace this file after each accepted /add-entry pass.
 
-pass: companion
-label: Companion — partial swap, Mitra and Miθra
+pass: limb-assembly
+label: Limb assembly — shared attribute, Nephthys and Osiris
 nodes:
-  - mitra
-  - avestan-mithra
+  - nephthys
+  - osiris
