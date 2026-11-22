@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, day wrap)
 
-Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `d38e6d5` and this commit.
+Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `ebc54cc` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -34,7 +34,8 @@ Validate warns `duplicate cyan edge mitra->avestan-mithra (2 times)` and `duplic
 | `0b6c13a` | Isis mystery skip. Unclassified. Notes only. No graph edit |
 | `1a10dad` | Night sun skip. Unclassified. Notes only. No graph edit |
 | `d38e6d5` | Osiris boat skip. Unclassified. Notes only. No graph edit |
-| HEAD | Horizon name skip. Unclassified. Notes only. No graph edit |
+| `ebc54cc` | Horizon name skip. Unclassified. Notes only. No graph edit |
+| HEAD | Horizon sailing skip. Unclassified. Notes only. No graph edit |
 
 Edge counts at the stop: cyan 225 · gold 154 · magenta 102 · orange 68 · red 41 · green 38.
 
@@ -126,6 +127,19 @@ Side findings, not encodes:
 - Budge, p. 275: their work is to hold up the Great Disk in the Eastern Horizon of the sky every day.
 - Mercer, Utterance 364, §621b, and Utterance 368, §636c: the horizon name sits on Osiris again. They do not put the going-forth on Re.
 
+## Horizon sailing — skip, do not reopen as unexamined
+
+Unclassified. No edge from `re` to `surya` or `helios` for this sentence. The cyan day-car edge `surya` → `helios` is not edited. `data/latest.yaml` stays `companion`. Do not merge the `mitra` duplicate-edge warnings. Do not reopen the horizon-name skip or the boat skip.
+
+Passages: Budge, *The Book of Am-Tuat* (1905), p. 270: “Thou sailest over the Horizon, thou takest up thy place in thy shrine.” Ṛgveda 1.50.8–9: seven bay steeds harnessed to the car, and with that team he goes forth. Homeric Hymn 31.8–15: mounted on horses, he stays the golden-yoked chariot. A sailing and a shrine are not that yoked car.
+
+Side findings, not encodes:
+
+- Same praise, p. 270: he produces his own birth; heaven belongs to his soul and the earth to his body; “descend thou into the sky and take thou thy two souls.”
+- Same page, the frame: they sing praises from dawn, when he takes his position in the Hall of the east of the sky, and they say the speech unto Ra.
+- Ṛgveda 1.50.7, outside 1.50.8–9: he traverses sky and wide mid-air and metes the days with his beams.
+- Homeric Hymn 31.15a, outside the stored lines 8–15: he rests at the peak of heaven. Line 16 sends the horses through heaven to Ocean.
+
 ## Holds — not a next cell
 
 - Do not encode Jesus without a sourced shared attribute. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. The drawing has no link.
@@ -156,7 +170,7 @@ Side findings, with the passages already recorded:
 
 ## What Now already says
 
-Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. The Isis mystery was read at Apuleius, Metamorphoses 11.23, and skipped as unclassified. The name Isis is absent from that section. The night sun was read against Re and skipped as unclassified. Apuleius 11.23 puts the midnight seeing on the speaker. Budge, Am-Tuat, p. 117, has Re work the paddle toward the body of Osiris. That line does not put the seeing on Re. The Osiris boat was read against Pyramid Texts, Utterance 357, and skipped as unclassified. Isis and Nephthys find Osiris. That utterance does not put his body in the place the night boat rows toward. The horizon name was read against Budge, Am-Tuat, p. 259, and skipped as unclassified. Coming forth from the mouth of Ankh-neteru and a position in the Eastern Horizon is not going forth from the horizon. No edge between `re` and `osiris`. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
+Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. The Isis mystery was read at Apuleius, Metamorphoses 11.23, and skipped as unclassified. The name Isis is absent from that section. The night sun was read against Re and skipped as unclassified. Apuleius 11.23 puts the midnight seeing on the speaker. Budge, Am-Tuat, p. 117, has Re work the paddle toward the body of Osiris. That line does not put the seeing on Re. The Osiris boat was read against Pyramid Texts, Utterance 357, and skipped as unclassified. Isis and Nephthys find Osiris. That utterance does not put his body in the place the night boat rows toward. The horizon name was read against Budge, Am-Tuat, p. 259, and skipped as unclassified. Coming forth from the mouth of Ankh-neteru and a position in the Eastern Horizon is not going forth from the horizon. The horizon sailing was read against the day car and skipped as unclassified. Budge, p. 270, is a sailing over the Horizon and a place in the shrine. Ṛgveda 1.50.8–9 and Homeric Hymn 31.8–15 are the yoked car. Those are not the same motion. No edge from `re` to `surya` or `helios` for that sentence. The day-car edge stays. No edge between `re` and `osiris`. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
 
 Those are waits and finished readings. They are not a new cell.
 
@@ -183,9 +197,10 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 7. Do not reopen the night sun as unexamined. The unclassified skip is recorded. No edge to `re`, `surya`, `helios`, or `mitra`.
 8. Do not reopen the Osiris boat as unexamined. The unclassified skip is recorded. No edge between `re` and `osiris`. The `isis`–`osiris` edge stays.
 9. Do not reopen the horizon name as unexamined. The unclassified skip is recorded. No edge between `re` and `osiris`. Budge p. 117 is not the Re side.
-10. Leave the side findings unscored unless a later pass names one passage.
-11. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
-12. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
+10. Do not reopen the horizon sailing as unexamined. The unclassified skip is recorded. No edge from `re` to `surya` or `helios` for p. 270. The day-car edge stays.
+11. Leave the side findings unscored unless a later pass names one passage.
+12. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
+13. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
 
 ## Do not
 
