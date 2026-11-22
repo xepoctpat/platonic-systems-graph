@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, compact)
 
-Stop point: **241 nodes · 623 edges.** Validate was **OK**. Working tree is **clean**. Do not push unless the operator asks.
+Stop point: **241 nodes · 623 edges.** Validate was **OK**. Working tree is **clean** at this commit. Do not push unless the operator asks.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -8,7 +8,7 @@ Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before en
 
 Emergence means laterals: schools that look unrelated share an origin or an attribute. It is not a history of each school, and it is not a Platonic spine.
 
-The reading is a **tab**, taken from `xepoctpat/wwm_toolkit`: one origin, a small Mermaid chart, and the claim beside it. The paragraph does not go on the arrow. An open question stays in the card and does not become an edge. Mermaid is the only finding drawing. 3D is retired (the button is still in the viewer). No force-directed view.
+The reading is a **tab**, taken from `xepoctpat/wwm_toolkit`: one origin, a small Mermaid chart, and the claim beside it. The paragraph does not go on the arrow. An open question stays in the card and does not become an edge. Mermaid is the only finding drawing. 3D is retired. The button, the canvas, and `space.js` are gone. No force-directed view.
 
 YAML is still the store. SQLite or Neo4j only when a real attribute query hurts. Kaggle and scrapes are name checks, never `refs`. A medieval hidden or condemnatory name is not the old node unless the function is sourced on both sides.
 
@@ -16,28 +16,28 @@ Cursor user setting, outside this repo: `files.autoSave` is `afterDelay`, delay 
 
 ## Git
 
-`main` is **4 commits ahead** of `origin/main` and has not been pushed.
+`main` is **2 commits ahead** of `origin/main` and has not been pushed.
 
 | Commit | What |
 |---|---|
-| `0b304d3` | Reading layer: mix chords, `view.json`, slots, tours |
-| `caafd26` | Yogācāra, pendant laterals, grouped field, 3D canvas |
-| `9c07d59` | Handoff before the lateral turn |
-| HEAD | Greco-Roman transfer, solar attribute, comparison sheet, research plan |
+| `9d2f026` | Reading tab for the finished findings. 3D button and canvas removed |
+| HEAD | Mitra ~ Jesus unclassified. No node, no edge, no link. `space.js` removed |
 
 ## Graph now
 
 | | |
 |---|---|
 | Edges | cyan 223 · gold 154 · magenta 102 · orange 65 · red 41 · green 38 |
-| Latest pass | `solar-attribute` — Helios, Mitra (`data/latest.yaml`) |
+| Latest pass | mitra-jesus — unclassified, no encode |
 | Clusters added | `hellenic`, `roman` |
 
 Greco-Roman twelve (Livy 22.10.9, plus Liber) is a **drawing check, not an origin**. Cyan where only a translated name was sourced. Orange for Mars, Venus Erycina, Mercury, Vesta, Ceres, Liber. Gold for Apollo Medicus (vowed 433, Livy 4.25.3).
 
 Ma'at · ṛta · Asha: three cyan edges already present. Open sharing, not a loop. Drawn in the research plan.
 
-Solar: Sūrya–Helios cyan. Sūrya–Re and Helios–Re orange (barque, not chariot). Mitra–Sūrya orange (covenant, not the sun; Ṛgveda 3.59.1). Mitra–Varuṇa cyan. Jesus not encoded. Avestan Miθra open.
+Solar: Sūrya–Helios cyan. Sūrya–Re and Helios–Re orange (barque, not chariot). Mitra–Sūrya orange (covenant, not the sun; Ṛgveda 3.59.1). Mitra–Varuṇa cyan. Jesus not encoded. Avestan Miθra open. `data/latest.yaml` is still that solar encode.
+
+Latest pass: mitra-jesus, unclassified, no encode. No Jesus node. No edge. The drawing has no link.
 
 ## How to resume
 
@@ -53,14 +53,14 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 
 ## Do next, only if the operator asks
 
-1. Phase 4 in the research plan: one thinner overlap, unclassified until a source types it.
-2. Viewer tabs: one origin, Mermaid, note beside it. Sheet stays the spine check.
-3. Remove the 3D button.
+1. Avestan Miθra is still open.
+2. Do not encode Jesus without a sourced shared attribute.
 
 ## Do not
 
 - Treat the Greco-Roman twelve as an origin.
 - Encode Jesus, or Avestan Miθra, without a sourced shared attribute.
+- Turn Malachi 4:2 or Luke 22:20 into an edge.
 - Encode every god, or write a school’s chronicle and call it emergence.
 - Edge `nabta-playa` to force one component.
 - Turn a lateral into a descent arrow.

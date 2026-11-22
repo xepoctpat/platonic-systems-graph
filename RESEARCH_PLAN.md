@@ -154,6 +154,34 @@ flowchart LR
 
 Only after one template pair, the triad, and the solar table exist. A thinner overlap starts unclassified: a loose Mermaid subgraph, generic links, no type. It becomes a documented lateral when the shared origin or attribute has a source. If it never does, it stays a question and gains no edge. The medieval checkpoint applies here whenever the later name is a disguise or a condemnation.
 
+Pass 2026-11-22. One thinner overlap: Mitra ~ Jesus. The names look shared. The passages opened do not reach a shared attribute. Status: unclassified. No Jesus node. No edge. The drawing has no link. Avestan Miθra remains open.
+
+Claim: Vedic Mitra and Jesus do not share a solar function or Mitra’s covenant in the passages opened.
+
+A typed edge would have required one shared attribute, sourced on both sides, in the passages opened: a chariot or daily crossing, the unclosing watch of Ṛgveda 3.59.1, Mitra’s setting of peoples to their agreements, kingship that belongs to the sun, or a companion who is not the sun. The Jesus / Hebrew cells stayed blank, so no edge was typed and no generic link was drawn.
+
+Malachi 3:20 (English 4:2) is a rising sun of righteousness with healing in its wings. It is not Mitra’s covenant. Luke 22:20 is a new covenant in blood, not Mitra setting peoples to their agreements. Luke 1:78–79 and Matthew 17:2 are light metaphors. Blank cells stay blank.
+
+Pages opened. These citations stay in the plan. They are not refs on a graph edge: Sefaria Malachi 3.20, Mechon Mamre Malachi 3, sacred-texts RV 3.59, BibleHub Luke 1:78–79, Matthew 17:2, Luke 22:20.
+
+Open question: does any named passage give Jesus the unclosing watch of Ṛgveda 3.59.1, or his setting of peoples to their agreements?
+
+| Attribute | Mitra | Jesus / Hebrew |
+|---|---|---|
+| Chariot or daily crossing | | |
+| Eye, or light that sees | Eyes that do not close, Ṛgveda 3.59.1 | |
+| Witness to oaths or covenants | Sets peoples to their agreements, Ṛgveda 3.59.1 | |
+| Sovereignty (sun as king) | Born a king, Ṛgveda 3.59.4. That kingship is not the sun’s | |
+| Companion who is not the sun | Paired with Varuṇa | |
+
+```mermaid
+flowchart LR
+  mitra["Mitra"]
+  jesus["Jesus"]
+```
+
+Confirmed: No shared attribute in the passages opened. No node. No edge.
+
 ---
 
 ## The graph as the instrument
@@ -213,6 +241,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 | 1 | Greco-Roman twelve, representation check only | Yes (Livy 22.10.9, plus Liber) | Done 2026-11-22. Not an origin. Cyan, orange, and one gold import |
 | 2 | Ma'at · ṛta · Asha | Yes (`maat`, `rta`, `asha`) | Done 2026-11-22. Three cyan edges. Open sharing, not a loop |
 | 3 | Solar table: Sūrya, Helios, Re, Mitra, then Mitra ~ Jesus | Sūrya, Re, Helios, Mitra | Done 2026-11-22 for the four. Jesus still a question. No edge |
+| 4 | Mitra ~ Jesus | Mitra yes. No Jesus node | Tested 2026-11-22. Unclassified. No edge. No link. Jesus not encoded |
 
 ---
 
@@ -224,6 +253,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 - 2026-11-22. Pantheon check extended to the twelve of Livy 22.10.9, plus Liber (Dionysius 6.17.2). Cyan where only a translated name was sourced. Orange for Mars, Venus Erycina, Mercury’s merchants, Vesta’s aniconic fire, and the Ceres–Liber temple. Gold for Apollo Medicus, vowed in 433. Not an origin. Left open: Capitoline Juno, Neptune’s water, Menrva, woodland Diana, the Volcanalia.
 - 2026-11-22. Ma'at · ṛta · Asha confirmed as an open cyan sharing. No new node. No loop drawn among the three.
 - 2026-11-22. Solar attribute. Helios and Mitra added. Sūrya–Helios cyan. Re joined by orange, not as a second chariot. Mitra is covenant (Ṛgveda 3.59.1), not the sun. Jesus not encoded. Avestan Miθra left open.
+- 2026-11-22. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. No link on the drawing. Malachi 3:20 (English 4:2) and Luke 22:20 do not carry Mitra’s covenant. Avestan Miθra remains open.
 
 ```mermaid
 flowchart LR

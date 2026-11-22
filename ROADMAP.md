@@ -22,7 +22,7 @@ Walk `/researcher` → `/add-entry` → `python tools/validate.py` → `/organic
 | Sheet | comparison check, in the viewer |
 | 3D | retired. Loops are planar |
 | Drawings | Mermaid only. Documented laterals are typed. Unclassified clusters are a loose subgraph with generic links |
-| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Jesus not encoded |
+| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Mitra ~ Jesus was tested and stayed unclassified. No Jesus node. No edge. The drawing has no link. Avestan Miθra remains open |
 
 `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens.
 
@@ -90,7 +90,7 @@ After a batch: `python tools/validate.py`, then note what the new lateral change
 ## Open
 
 - [x] Mermaid for Ma'at · ṛta · Asha: open cyan sharing in `RESEARCH_PLAN.md`. Not a loop. Not yet a viewer tab.
-- [ ] A second drawing for one unclassified cluster: loose Mermaid, generic links, no invented type.
-- [ ] Remove the 3D button from the viewer. Loops stay planar.
+- [ ] A second drawing for one unclassified cluster: loose Mermaid, generic links, no invented type. The Mitra · Jesus card is an open question with no link, not a typed lateral.
+- [x] Remove the 3D button from the viewer. The button, canvas, and space.js are gone; loops stay planar.
 - [ ] Keep the comparison sheet as the spine check only.
 - [ ] Revisit the store when likenesses and attributes stop fitting a single typed edge. YAML imports into SQLite or Neo4j. Not before.

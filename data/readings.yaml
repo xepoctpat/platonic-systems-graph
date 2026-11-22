@@ -96,3 +96,41 @@ readings:
           - ""
           - ""
           - "Paired with Varuṇa. Avestan Miθra is still open"
+
+  - id: mitra-jesus
+    title: "Mitra · Jesus"
+    claim: >
+      Vedic Mitra and Jesus do not share a solar function or Mitra's covenant
+      in the passages opened.
+    status: unclassified
+    mermaid: |
+      flowchart LR
+        mitra["Mitra"]
+        jesus["Jesus"]
+    confirmed: "No shared attribute in the passages opened. No node. No edge."
+    open: >
+      Does any named passage give Jesus the unclosing watch of Ṛgveda 3.59.1,
+      or his setting of peoples to their agreements?
+    attributes:
+      columns:
+        - label: Attribute
+        - label: Mitra
+          id: mitra
+        - label: "Jesus / Hebrew"
+          id: jesus
+      rows:
+        - - Chariot or daily crossing
+          - ""
+          - ""
+        - - "Eye, or light that sees"
+          - "Eyes that do not close, Ṛgveda 3.59.1"
+          - ""
+        - - Witness to oaths or covenants
+          - "Sets peoples to their agreements, Ṛgveda 3.59.1"
+          - ""
+        - - "Sovereignty (sun as king)"
+          - "Born a king, Ṛgveda 3.59.4. That kingship is not the sun's"
+          - ""
+        - - Companion who is not the sun
+          - "Paired with Varuṇa"
+          - ""
