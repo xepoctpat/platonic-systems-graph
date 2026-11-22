@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, day wrap)
 
-Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `36951d4` and this commit.
+Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `0b6c13a` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -31,7 +31,8 @@ Validate warns `duplicate cyan edge mitra->avestan-mithra (2 times)` and `duplic
 | `b9dea44` | Ma'at · ṛta · Asha skip. Notes only. No graph edit |
 | `3c8e9ff` | Roman Mithras skip. Unclassified. Notes only. No graph edit |
 | `36951d4` | Eleusis skip. Unclassified. Notes only. No graph edit |
-| HEAD | Isis mystery skip. Unclassified. Notes only. No graph edit |
+| `0b6c13a` | Isis mystery skip. Unclassified. Notes only. No graph edit |
+| HEAD | Night sun skip. Unclassified. Notes only. No graph edit |
 
 Edge counts at the stop: cyan 225 · gold 154 · magenta 102 · orange 68 · red 41 · green 38.
 
@@ -83,6 +84,20 @@ Side findings, not encodes:
 - 11.24: the next morning he is adorned in the likeness of the sun and set up in the place of a statue. `ad instar solis` is this dressing. It is not the midnight sun of 11.23.
 - 11.25: the prayer says the goddess turns the world, lights the sun, rules the world, and treads Tartarus, and that the elements serve her. The subject is the goddess. The scored period’s subject is the speaker.
 
+## Night sun — skip, do not reopen as unexamined
+
+Unclassified. No node. No edge. No link to `re`, `surya`, `helios`, or `mitra`. `data/latest.yaml` stays `companion`. Do not merge the `mitra` duplicate-edge warnings. Do not reopen Roman Mithras, Eleusis, or the Isis mystery skip.
+
+Passages: Apuleius, *Metamorphoses* 11.23, `nocte media vidi solem candido coruscantem lumine`. At midnight the speaker saw the sun flashing with bright light. The seeing is on the speaker. Budge, *The Book of Am-Tuat* (1905), Sixth Division, text above the boat, p. 117: this great god travels through this city, provided with his boat, on the water, and works the paddle toward the place of the body of Osiris. That line does not put the midnight seeing on Re.
+
+Side findings, not encodes:
+
+- Budge’s picture note, pp. 116–117: the Sixth Division is passed through by the sun-god during the sixth hour of the night, and the dead sun-god Afu-Ra stands in his boat. That is his account of the scene, not the line.
+- Same chapter, not the line: the Field Metchet-nebt-tuatiu is the road of the Boat of Ra, and the hour Mesherit-ar-Maat guides this great god. The chapter title prints Metchet-mu-nebt-tuat.
+- *Metamorphoses* 11.24: the next morning he is dressed in the likeness of the sun. That dressing is not the midnight seeing.
+- *Metamorphoses* 11.25: the goddess lights the sun. The subject is the goddess.
+- *Metamorphoses* 11.22 names the priest Mithras. It does not reopen the Roman Mithras skip. Statius, *Thebaid* 1.719–720, stays the cave and the horns.
+
 ## Holds — not a next cell
 
 - Do not encode Jesus without a sourced shared attribute. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. The drawing has no link.
@@ -113,7 +128,7 @@ Side findings, with the passages already recorded:
 
 ## What Now already says
 
-Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. The Isis mystery was read at Apuleius, Metamorphoses 11.23, and skipped as unclassified. The name Isis is absent from that section. No node. No edge. Not folded into the Egyptian `isis` node. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
+Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. The Isis mystery was read at Apuleius, Metamorphoses 11.23, and skipped as unclassified. The name Isis is absent from that section. The night sun was read against Re and skipped as unclassified. Apuleius 11.23 puts the midnight seeing on the speaker. Budge, Am-Tuat, p. 117, has Re work the paddle toward the body of Osiris. That line does not put the seeing on Re. No edge. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
 
 Those are waits and finished readings. They are not a new cell.
 
@@ -137,9 +152,10 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 4. Do not reopen Roman Mithras as unexamined. The unclassified skip is recorded. No node. No edge.
 5. Do not reopen Eleusis as unexamined. The unclassified skip is recorded. No node. No edge. The cyan interior edge stays.
 6. Do not reopen the Isis mystery interior as unexamined. The unclassified skip is recorded. No node. No edge. Not folded into the Egyptian `isis` node. 11.22 does not reopen Roman Mithras.
-7. Leave the side findings unscored unless a later pass names one passage.
-8. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
-9. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
+7. Do not reopen the night sun as unexamined. The unclassified skip is recorded. No edge to `re`, `surya`, `helios`, or `mitra`.
+8. Leave the side findings unscored unless a later pass names one passage.
+9. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
+10. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
 
 ## Do not
 
