@@ -12,7 +12,9 @@
 # Trajectories (A via … to B, feedback loops) are query overlays, not extra
 # YAML. A new finding between existing nodes is one more binary edge — or a
 # new principle if three-or-more actors occupy a distinct slot. No hyperedges.
-#   strength    0.0–1.0
+#   strength    0.0–1.0 editorial confidence.
+#               Community detection uses it as edge weight.
+#               It is not chord width and not betweenness weight.
 #   versions    optional diagram tags (V1–V11). Illustrative, not required.
 #   note        one-sentence rationale
 #

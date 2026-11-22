@@ -15,11 +15,14 @@ No backend, no database, no build step.
 │   ├── edges.yaml            # typed relations
 │   ├── research-queue.yaml   # survey order (not a spine)
 │   ├── latest.yaml           # last accepted pass (viewer New overlay)
+│   ├── slots.yaml            # curated collisions (not a stage index)
+│   ├── tours.yaml            # V7–V11 illustrations
+│   ├── view.json             # derived reading; validate rewrites it
 │   └── versions.md           # what each diagram was for
 ├── analysis/                 # NetworkX → stdout
 ├── tools/serve.py            # local viewer on 127.0.0.1:8765
 ├── tools/validate.py         # schema + dangling-edge check
-├── viewer/                   # 2D inspector (HTML + CSS + JS)
+├── viewer/                   # 2D inspector (HTML + CSS + ES modules)
 ├── .grok/skills/             # researcher, add-entry, walk-roadmap, …
 ├── .grok/workflows/          # walk-one, survey-tradition, collision-audit, spine-snapshot
 ├── ROADMAP.md                # phases to compare later runs against
@@ -100,19 +103,22 @@ Live (GitHub Pages): <https://xepoctpat.github.io/platonic-systems-graph/>
 
 Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080. `tools/serve.py` sends `Cache-Control: no-store` for YAML/JS/CSS so local edits show without a hard refresh.
 
-- Node colour = cluster; system nodes are larger (pale ring) than principles.
-- Default **Field** is a **ring of schools** (mind map, not a force hairball). A line between schools is an aggregated finding. Click a school for a radial neighbourhood. **Loop** places the cycle on a circle. **Path** is left-to-right.
-- **Open interiors** shows every edge. Click a node to open one school.
+- Node colour = cluster; system nodes are larger (pale ring) than principles. **Communities** recolours the border only. Fill stays the cluster.
+- Default **Field** shows all six edge types. Schools sit on a ring ordered by shared findings (a layout, not a chronology). A line between schools is a mix: the words are counts by type, and the width is how many findings. Click the line for the edges. Gold does not stand in for the whole mix.
+- **Open interiors** shows every edge, schools in that same order. Click a node to open one school: same-cluster principles on the left, other clusters on the right, grouped by relation.
+- **Slots** lists curated collisions (`data/slots.yaml`). **Tours** lays V7–V11 left to right. A tour is an illustration, not the law of the graph.
 - **Path**: two clicks, explicit A→…→B. **Loop**: one click, a short cycle (prefers mixed green/red). Both are query overlays.
-- Directed flow has one arrow. Peer maps have arrows both ways.
-- Legend is larger and can be collapsed.
-- Overlay legend (large, collapsible). **How to** in the right sidebar is the tutorial.
+- Directed flow has one arrow. Peer maps have arrows both ways. An aggregated school line has no arrow.
+- Legend groups Flow and Map. Cluster colour stays in the cluster filter. **How to** in the right sidebar is the tutorial.
 - Filter by kind, cluster, and edge type.
-- **Laterals only** shows cyan + orange (the V5 view).
-- Click a node to focus its neighbourhood. The sidebar lists every connection.
+- **Laterals only** shows cyan + orange.
+- Click a node to focus its neighbourhood. The sidebar splits inside / outside and shows each note.
 - **Findings** lists every cross-cluster edge. **New** highlights the last accepted pass (`data/latest.yaml`).
+- **Hinges** is the unweighted betweenness top 12. It does not resize the ring. **Hide Platonic** unchecks that cluster and reports the precomputed component count (`data/view.json`). One component is the success test.
 - Permalink: `http://127.0.0.1:8765/viewer/#id=maya`
 - Search matches label or id.
+
+`python tools/validate.py` rewrites `data/view.json` from the YAML. The viewer reads that file for the ring order, communities, hinges, slots, and tours. js-yaml and Cytoscape are vendored in `viewer/vendor/` (js-yaml 4.1.0, cytoscape 3.30.4).
 
 Keep CSS and JS out of the HTML.
 

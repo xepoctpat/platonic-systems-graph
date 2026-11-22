@@ -1,11 +1,11 @@
-# Session handoff (2026-09-12, viewer wrap)
+# Session handoff (2026-11-22, reading layer)
 
-Stop point: **Graph still Hindu 3** (no YAML encode this session). Viewer now has Findings / New / `#id=` permalinks. Local serve is **stopped**. Do not treat remaining Platonic betweenness as a proven spine.
+Stop point: **Graph still Hindu 3** (no tradition encode). The viewer now reads `data/view.json`: mix chords, seriation ring, slots, tours, community borders, hide-Platonic count, hinges list. Local serve is up at http://127.0.0.1:8765/viewer/ until stopped. Do not treat remaining Platonic betweenness as a proven spine.
 
-This session: `/learn` (harness only) then viewer UX + serve no-store + `analysis/report.py` + `tests/test_graph.py`. Commit `99c3ec7` plus this wrap. Not a tradition pass.
+This session: representation only. Vendored js-yaml 4.1.0 and cytoscape 3.30.4. Split the viewer into ES modules. Buddhist 2 was not started.
 
 Viewer (live): https://xepoctpat.github.io/platonic-systems-graph/  
-Local: http://127.0.0.1:8765/viewer/  (down until `python tools/serve.py start`; no-store when up. GitHub Pages may still need a hard-refresh)
+Local: http://127.0.0.1:8765/viewer/  (no-store when up. GitHub Pages needs this commit pushed, then a hard refresh)
 
 ## How to resume (next session)
 
@@ -76,7 +76,7 @@ Phase D stop was already met (Popol Vuh). Hindu 3 is a darśana lateral.
 | B Collisions | All 9 encoded. Share is now **7/12** Platonic — count only, not a spine proof |
 | C Split interiors | Required done. Palamite / Hermetica only if a **new slot** |
 | D Parallel peers | Norse, Popol Vuh, Ifá, Hindu 2, **Hindu 3** done. **Buddhist 2 next** |
-| Viewer | Field / Path / Loop / Findings / New. Permalinks `#id=`. `analysis/report.py` exists. Open: vendor JS |
+| Viewer | Mix chords, seriation ring, slots, tours, communities, hide-Platonic, hinges. Vendored JS. `data/view.json` from validate |
 | Workflows | Project-only under `.grok/workflows/` |
 
 ## Do next (one pass — after the weekly limit resets)

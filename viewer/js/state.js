@@ -1,0 +1,22 @@
+export const state = {
+  cy: null,
+  focusId: null,
+  lateralOnly: false,
+  fieldMode: true,
+  pathMode: false,
+  loopMode: false,
+  pathPick: null,
+  pathRoute: null,
+  routeKind: "",
+  latestSet: new Set(),
+  latestMeta: { pass: "", label: "", nodes: [] },
+  newOnly: false,
+  newEdgeCount: 0,
+  newClusterSet: new Set(),
+  labelTick: 0,
+  searchTick: 0,
+  view: null,
+  quoteHidePlatonic: false,
+  communityOn: false,
+  allClusters: []
+};

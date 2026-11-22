@@ -1,0 +1,51 @@
+# =============================================================================
+# tours.yaml — named illustrations
+# =============================================================================
+#
+# Left-to-right readings of tensions already drawn in data/versions.md (V7–V11).
+# An illustration, not the law of the graph. V1's seven-stage ladder is not a tour.
+# Node ids must already exist.
+# =============================================================================
+
+tours:
+
+  - id: v7-craftsman
+    title: Demiurge against the archon
+    sentence: >
+      Same craftsman slot, opposite sign. The Platonic craftsman looks to an
+      eternal model and is without jealousy. The archontic craftsman fabricates
+      a prison and does not know the Pleroma.
+    nodes: [demiurge, gnostic-demiurge]
+
+  - id: v8-matter
+    title: Receptacle against prison
+    sentence: >
+      Chōra is nurse, space, and a necessary condition of becoming. Kenoma is
+      the emptiness that imprisons. Same “below,” opposite soteriology.
+    nodes: [receptacle, kenoma]
+
+  - id: v9-time
+    title: Ordered time against fallen time
+    sentence: >
+      Ordered time is the moving image of eternity, generated with the heavens.
+      Fallen time is exile, rupture, and a clock that does not imitate the paradigm.
+    nodes: [ordered-time, fallen-time]
+
+  - id: v10-return
+    title: Cosmic love against escape
+    sentence: >
+      Eros binds and returns the cosmos. Escape gnosis aims at exit from it.
+    nodes: [eros, escape-gnosis]
+
+  - id: v11-summit
+    title: Status of the highest principle
+    sentence: >
+      Good, One, Ein Sof, Unknown Father, Brahman, emptiness. Cyan where the
+      slot is analogous, magenta where the valuation inverts. Not a ranked summit.
+    nodes:
+      - the-good
+      - plotinus-one
+      - ein-sof
+      - gnostic-unknown-father
+      - brahman
+      - sunyata

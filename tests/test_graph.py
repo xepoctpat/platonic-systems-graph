@@ -92,5 +92,61 @@ class ValidateCliTests(unittest.TestCase):
         self.assertIn("Platonic share", r.stdout)
 
 
+class ViewExportTests(unittest.TestCase):
+    def test_seriate_breaks_ties_by_name(self) -> None:
+        from export_view import seriate
+
+        self.assertEqual(seriate(["b", "a", "c"], {("a", "b"): 1, ("a", "c"): 1}), ["a", "b", "c"])
+
+    def test_view_is_stable_and_complete(self) -> None:
+        from export_view import build_view
+
+        first = build_view()
+        second = build_view()
+        self.assertEqual(first, second)
+        clusters = {n["cluster"] for n in load_nodes()}
+        self.assertEqual(set(first["ring"]), clusters)
+        self.assertEqual(len(first["ring"]), len(clusters))
+        self.assertEqual(set(first["communities"]), {n["id"] for n in load_nodes()})
+        self.assertIsInstance(first["hidePlatonic"]["components"], int)
+        self.assertGreaterEqual(first["hidePlatonic"]["components"], 1)
+        self.assertEqual(len(first["betweenness"]), 12)
+        self.assertEqual(
+            [row["id"] for row in first["slots"]],
+            ["craftsman", "matter", "time", "return", "summit"],
+        )
+        self.assertEqual(len(first["tours"]), 5)
+        ids = {n["id"] for n in load_nodes()}
+        for row in first["slots"]:
+            self.assertTrue(set(row["members"]) <= ids)
+        for row in first["tours"]:
+            self.assertTrue(set(row["nodes"]) <= ids)
+
+    def test_maya_prakriti_stays_magenta_and_interior(self) -> None:
+        """Same-cluster pair. It must stay magenta and must not be filed as a bridge."""
+        hit = [e for e in load_edges() if e["from"] == "maya" and e["to"] == "purusha-prakriti"]
+        self.assertEqual(len(hit), 1)
+        self.assertEqual(hit[0]["type"], "magenta")
+        from export_view import build_view
+
+        for bridge in build_view()["bridges"]:
+            for member in bridge["members"]:
+                pair = {member["from"], member["to"]}
+                self.assertNotEqual(pair, {"maya", "purusha-prakriti"})
+
+    def test_receptacle_kenoma_bridge_keeps_magenta(self) -> None:
+        from export_view import build_view
+
+        bridges = build_view()["bridges"]
+        bridge = next(b for b in bridges if set(b["clusters"]) == {"platonic", "gnostic"})
+        member = next(
+            m for m in bridge["members"] if m["from"] == "receptacle" and m["to"] == "kenoma"
+        )
+        self.assertEqual(member["type"], "magenta")
+        self.assertGreater(bridge["counts"]["magenta"], bridge["counts"]["gold"])
+        self.assertTrue(bridge["mix"].split(" · ")[1].startswith("magenta"))
+        self.assertNotIn("type", bridge)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -46,6 +46,8 @@ This graph is a field of peer systems and collisions, not a timeline of everyone
 
    `id` · `kind` (system|principle) · `cluster` · slot · one-sentence claim · `refs` · suggested edges (type + existing `to`/`from`)
 
+   If the candidate joins a row in `data/slots.yaml`, use that slot id. Add a new id in that file only when the pass opens a slot. Do not put `slot` on the node.
+
 5. Show the batch as a table. Flag weak or holding items. Say what you did **not** add and why.
 6. Stop and wait — unless the user already authorized encode (add them / continue / iterate / autonomous / AFK). Then write.
 

@@ -35,6 +35,8 @@ class Handler(SimpleHTTPRequestHandler):
         **SimpleHTTPRequestHandler.extensions_map,
         ".yaml": "text/yaml; charset=utf-8",
         ".yml": "text/yaml; charset=utf-8",
+        ".js": "text/javascript; charset=utf-8",
+        ".mjs": "text/javascript; charset=utf-8",
     }
 
     def end_headers(self) -> None:

@@ -211,7 +211,7 @@ button.active { border-color: var(--orange); color: #fff; }
   bottom: 12px;
   z-index: 2;
   width: min(420px, 52vw);
-  max-height: min(78vh, 640px);
+  max-height: min(42vh, 380px);
   padding: 0;
   background: rgba(16, 16, 16, 0.96);
   border: 1px solid var(--line);
@@ -406,6 +406,37 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
   font-size: 13px;
   padding: 4px 0;
 }
+
+.legend-head {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.overlay-note {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  max-width: min(28em, 46vw);
+  margin: 0;
+  padding: 8px 12px;
+  background: rgba(16, 16, 16, 0.96);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#detail .type-head {
+  margin: 12px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#detail > button.jump { margin-bottom: 8px; }
 
 #detail .badge-new {
   color: var(--orange);

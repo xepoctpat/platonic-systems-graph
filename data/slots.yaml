@@ -1,0 +1,50 @@
+# =============================================================================
+# slots.yaml — curated peer groups of occupants
+# =============================================================================
+#
+# Not a stage index and not a rank. A slot names principles that already
+# occupy one functional collision. Members are existing node ids.
+# Add an id here only when a pass actually opens a slot. Do not copy this
+# list onto every principle in nodes.yaml.
+# =============================================================================
+
+slots:
+
+  - id: craftsman
+    label: Craftsman
+    gloss: >
+      Benevolent craftsman who looks to an eternal model, versus the archontic
+      craftsman who fabricates a prison and does not know the Pleroma.
+    members: [demiurge, gnostic-demiurge]
+
+  - id: matter
+    label: Matter
+    gloss: >
+      Chōra as nurse, space, and necessary condition of becoming, versus matter
+      as tomb or prison.
+    members: [receptacle, kenoma]
+
+  - id: time
+    label: Time
+    gloss: >
+      Time as the moving image of eternity, versus exile-time and irreversible fall.
+    members: [ordered-time, fallen-time]
+
+  - id: return
+    label: Return
+    gloss: >
+      Cosmic love that binds and returns the world, versus a gnosis whose end is exit.
+    members: [eros, escape-gnosis]
+
+  - id: summit
+    label: Summit
+    gloss: >
+      The highest principle as Good, One, Ein Sof, Unknown Father, Brahman, or
+      emptiness. Structural analogy and theological inversion, not a ladder.
+    members:
+      - the-good
+      - plotinus-one
+      - ein-sof
+      - gnostic-unknown-father
+      - brahman
+      - sunyata

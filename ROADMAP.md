@@ -264,7 +264,9 @@ Done 2026-08-18. Compare against the old “every label + every edge at once” 
 - [x] Cluster-aware layout (school ring + cluster blossoms; not cose)
 - [x] Findings list + New overlay from `data/latest.yaml` (last accepted pass)
 - [x] `analysis/report.py` → a replaceable spine snapshot
-- [ ] Pin or vendor js-yaml + cytoscape if offline viewing matters
+- [x] Pin or vendor js-yaml + cytoscape if offline viewing matters
+
+Reading layer (viewer pass, no new nodes): Field chords show the type mix and use width for the count. Ring order is the seriation in `data/view.json`. Curated slots and tours read V7–V11. Community borders and the hide-Platonic component count are overlays. `python tools/validate.py` rewrites `data/view.json`.
 
 ## Phase E — Productize only what the graph needs
 

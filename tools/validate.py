@@ -172,7 +172,18 @@ def main() -> int:
     for msg in warnings:
         print(f"WARN   {msg}")
 
-    return 1 if errors else 0
+    if errors:
+        return 1
+
+    try:
+        from export_view import write_view
+
+        write_view()
+    except ValueError as exc:
+        print(f"ERROR  {exc}")
+        return 1
+    print("  view  data/view.json")
+    return 0
 
 
 if __name__ == "__main__":

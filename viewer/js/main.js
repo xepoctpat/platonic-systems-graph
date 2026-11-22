@@ -1,0 +1,713 @@
+import { EDGE_COLOR, communityColor, clusterColor, esc, LATERALS, loadData, loadLatest, loadView, toElements, uniqueSorted } from "./data.js";
+import {
+  checked,
+  mountChecks,
+  mountLegend,
+  setChecks,
+  showEdge,
+  showFindings,
+  showGuide,
+  showHinges,
+  showLoop,
+  showNode,
+  showReading,
+  showSlots,
+  showTrajectory,
+  showTours
+} from "./detail.js";
+import {
+  applyLabels,
+  applyLabelsSoon,
+  bestLoop,
+  chordWidth,
+  findRoute,
+  hasLiveBridge,
+  loopKind,
+  markBridges,
+  paintPath,
+  runViewLayout,
+  syncMetaEdges
+} from "./layout.js";
+import { state } from "./state.js";
+
+const status = document.getElementById("status");
+
+function readHashId() {
+  const raw = (location.hash || "").replace(/^#/, "");
+  if (!raw) return "";
+  const params = new URLSearchParams(raw.includes("=") ? raw : "id=" + raw);
+  return params.get("id") || "";
+}
+
+function setHashId(id) {
+  const next = id ? "#id=" + encodeURIComponent(id) : "#";
+  if (location.hash === next || (next === "#" && !location.hash)) return;
+  history.replaceState(null, "", next === "#" ? location.pathname + location.search : next);
+}
+
+function deactivate(ids) {
+  ids.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove("active");
+  });
+}
+
+export function clearPath(keepMode) {
+  state.pathPick = null;
+  state.pathRoute = null;
+  state.routeKind = "";
+  if (state.cy) state.cy.elements().removeClass("on-path path-end");
+  if (!keepMode) {
+    state.pathMode = false;
+    state.loopMode = false;
+    deactivate(["path", "loop", "slots", "tours", "hinges"]);
+  }
+}
+
+function platonicHiddenExactly() {
+  const on = checked("cluster");
+  if (on.has("platonic")) return false;
+  return state.allClusters.every((c) => c === "platonic" || on.has(c));
+}
+
+function paintOverlayNote() {
+  const el = document.getElementById("overlay-note");
+  if (!el) return;
+  const lines = [];
+  if (!state.view) {
+    lines.push("view.json is missing. Run python tools/validate.py.");
+  }
+  if (state.communityOn && state.view) {
+    lines.push(state.view.caption.communities);
+  }
+  if (state.quoteHidePlatonic && state.view && platonicHiddenExactly()) {
+    const k = state.view.hidePlatonic.components;
+    const noun = k === 1 ? "component" : "components";
+    lines.push(
+      `Platonic cluster hidden · ${k} undirected ${noun}. The success test is one component.`
+    );
+  } else if (state.quoteHidePlatonic && !platonicHiddenExactly()) {
+    state.quoteHidePlatonic = false;
+    deactivate(["hide-platonic"]);
+  }
+  el.hidden = lines.length === 0;
+  el.textContent = lines.join(" ");
+}
+
+function paintCommunity() {
+  if (!state.cy) return;
+  state.cy.nodes().forEach((n) => n.toggleClass("show-community", state.communityOn));
+  const btn = document.getElementById("communities");
+  if (btn) btn.classList.toggle("active", state.communityOn);
+}
+
+function applyFilter() {
+  const cy = state.cy;
+  if (!cy) return;
+  const kinds = checked("kind");
+  const clusters = checked("cluster");
+  const types = checked("etype");
+  const q = document.getElementById("search").value.trim().toLowerCase();
+
+  const focusSet = new Set();
+  if (state.focusId && cy.getElementById(state.focusId).nonempty()) {
+    const seed = cy.getElementById(state.focusId);
+    focusSet.add(state.focusId);
+    seed.neighborhood().nodes().forEach((n) => focusSet.add(n.id()));
+  }
+
+  const pathSet = state.pathRoute ? new Set(state.pathRoute.nodes) : null;
+  const pathEdgeIds = state.pathRoute ? new Set(state.pathRoute.edges.map((e) => e.id())) : null;
+  const collapse = state.fieldMode && !focusSet.size && !pathSet;
+  let vn = 0;
+  let ve = 0;
+  let vb = 0;
+
+  cy.nodes().forEach((n) => {
+    const d = n.data();
+    let ok = kinds.has(d.kind) && clusters.has(d.cluster);
+    if (pathSet) {
+      ok = pathSet.has(d.id);
+    } else if (ok && q) {
+      ok = d.label.toLowerCase().includes(q) || d.id.toLowerCase().includes(q);
+    } else if (ok && collapse && d.kind === "principle") {
+      ok = false;
+    }
+    if (ok && focusSet.size && !pathSet) ok = focusSet.has(d.id);
+    if (ok && state.newOnly && collapse && d.kind === "system") {
+      ok = state.newClusterSet.has(d.cluster);
+    }
+    n.toggleClass("bridge-end", ok && d.kind === "principle" && hasLiveBridge(n, types, clusters, kinds, false));
+    n.toggleClass("loud-end", ok && d.kind === "principle" && hasLiveBridge(n, types, clusters, kinds, true));
+    n.style("display", ok ? "element" : "none");
+    if (ok) vn += 1;
+  });
+
+  syncMetaEdges(types);
+
+  cy.edges().forEach((e) => {
+    const okType = e.data("meta") ? true : types.has(e.data("type"));
+    const okEnds = e.source().visible() && e.target().visible();
+    let okFocus = true;
+    if (pathEdgeIds) {
+      okFocus = pathEdgeIds.has(e.id());
+    } else if (focusSet.size) {
+      okFocus = focusSet.has(e.source().id()) && focusSet.has(e.target().id());
+    }
+    const okScope = collapse ? !!e.data("meta") : !e.data("meta");
+    const shown = okType && okEnds && okFocus && okScope;
+    e.style("display", shown ? "element" : "none");
+    const fb =
+      shown &&
+      focusSet.size &&
+      (e.data("type") === "green" || e.data("type") === "red");
+    e.toggleClass("feedback", fb);
+    e.toggleClass("new-finding", shown && !!e.data("isNew") && state.newOnly);
+    if (shown) {
+      ve += 1;
+      if (e.data("bridge") || e.data("meta")) vb += 1;
+    }
+  });
+
+  paintPath();
+  paintCommunity();
+  applyLabels();
+  runViewLayout();
+  paintOverlayNote();
+
+  if (state.loopMode && !state.pathRoute) {
+    status.textContent = "Loop: click a node to paint a cycle through it";
+  } else if (state.pathMode && !state.pathRoute) {
+    status.textContent = state.pathPick ? "Path: click the end node" : "Path: click the start node";
+  } else if (state.pathRoute && state.loopMode) {
+    status.textContent = "Loop · " + state.pathRoute.edges.length + " hops · " + loopKind(state.pathRoute);
+  } else if (state.pathRoute && state.routeKind === "tour") {
+    status.textContent = "Tour · illustration · " + state.pathRoute.title;
+  } else if (state.pathRoute && state.routeKind === "slot") {
+    status.textContent = "Slot · " + state.pathRoute.title;
+  } else if (state.pathRoute) {
+    status.textContent =
+      "Path · " +
+      (state.pathRoute.nodes.length - 1) +
+      " hops · " +
+      (state.pathRoute.followArrows ? "follows arrows" : "undirected only");
+  } else {
+    const latestBit =
+      state.latestMeta.pass && state.newEdgeCount
+        ? " · " + state.newEdgeCount + " new (" + state.latestMeta.pass + ")"
+        : "";
+    status.textContent = vn + " nodes · " + ve + " edges · " + vb + " bridges" + latestBit;
+  }
+}
+
+function openJump(nodeId, edgeId) {
+  const cy = state.cy;
+  if (!cy || !nodeId) return;
+  const node = cy.getElementById(nodeId);
+  if (node.empty()) return;
+  clearPath(false);
+  state.focusId = nodeId;
+  document.getElementById("help").classList.remove("active");
+  document.getElementById("findings").classList.remove("active");
+  setHashId(nodeId);
+  applyFilter();
+  if (edgeId) {
+    const edge = cy.getElementById(edgeId);
+    if (!edge.empty()) {
+      cy.elements().unselect();
+      edge.select();
+      showEdge(edge.data());
+      return;
+    }
+  }
+  showNode(node.data());
+}
+
+function edgesAmong(ids, pred) {
+  const want = new Set(ids);
+  const found = [];
+  state.cy.edges().forEach((e) => {
+    if (e.data("meta")) return;
+    if (!want.has(e.source().id()) || !want.has(e.target().id())) return;
+    if (pred && !pred(e)) return;
+    found.push(e);
+  });
+  return found;
+}
+
+function openReading(kind, row) {
+  clearPath(false);
+  state.focusId = null;
+  setHashId("");
+  deactivate(["help", "findings", "path", "loop", "hinges"]);
+  document.getElementById(kind === "tour" ? "tours" : "slots").classList.add("active");
+  state.routeKind = kind;
+  state.pathRoute = {
+    nodes: row.nodes || row.members,
+    edges:
+      kind === "slot"
+        ? edgesAmong(row.members, (e) => e.data("type") === "gold" || e.data("type") === "cyan" || e.data("type") === "magenta")
+        : edgesAmong(row.nodes),
+    title: row.title || row.label,
+    sentence: row.sentence || row.gloss,
+    followArrows: false
+  };
+  applyFilter();
+  showReading();
+}
+
+function applyHash() {
+  const id = readHashId();
+  if (!id || !state.cy) return false;
+  const node = state.cy.getElementById(id);
+  if (node.empty()) return false;
+  clearPath(false);
+  state.focusId = id;
+  document.getElementById("help").classList.remove("active");
+  document.getElementById("findings").classList.remove("active");
+  applyFilter();
+  showNode(node.data());
+  return true;
+}
+
+function graphStyle() {
+  return [
+    {
+      selector: "node",
+      style: {
+        label: "",
+        color: "#f4efe4",
+        "font-size": 11,
+        "font-family": "Segoe UI, Georgia, serif",
+        "text-wrap": "wrap",
+        "text-max-width": 120,
+        "text-valign": "center",
+        "text-halign": "center",
+        "text-outline-width": 0,
+        "min-zoomed-font-size": 6,
+        "text-events": "no",
+        shape: "round-rectangle",
+        width: (el) => Math.min(150, Math.max(56, String(el.data("label") || "").length * 7.2 + 18)),
+        height: 28,
+        padding: "4px",
+        "background-color": (el) => clusterColor(el.data("cluster")),
+        "border-width": 1,
+        "border-color": "#111"
+      }
+    },
+    {
+      selector: "node[kind = 'system']",
+      style: {
+        height: 36,
+        "font-size": 13,
+        "font-weight": 600,
+        "text-max-width": 150,
+        "border-width": 2,
+        "border-color": "#f2e6b8"
+      }
+    },
+    {
+      selector: "node.bridge-end",
+      style: { "border-color": "#ece6d8", "border-width": 2 }
+    },
+    {
+      selector: "node.show-community",
+      style: {
+        "border-width": 5,
+        "border-color": (el) => communityColor(el.data("community"))
+      }
+    },
+    {
+      selector: "node[kind = 'system'].show-community",
+      style: {
+        "border-width": 5,
+        "border-color": (el) => communityColor(el.data("community"))
+      }
+    },
+    { selector: "node.label-on", style: { label: "data(label)" } },
+    {
+      selector: "node.hovered",
+      style: { label: "data(label)", "border-color": "#fff", "border-width": 2, "z-index": 10 }
+    },
+    {
+      selector: "edge",
+      style: {
+        width: 1.6,
+        "line-color": (el) => EDGE_COLOR[el.data("type")] || "#666",
+        "target-arrow-color": (el) => EDGE_COLOR[el.data("type")] || "#666",
+        "source-arrow-color": (el) => EDGE_COLOR[el.data("type")] || "#666",
+        "target-arrow-shape": "triangle",
+        "source-arrow-shape": (el) => (el.data("directed") ? "none" : "triangle"),
+        "arrow-scale": 1.15,
+        "curve-style": "bezier",
+        opacity: 0.78
+      }
+    },
+    { selector: "edge.bridge", style: { opacity: 0.95, width: 2.2, "arrow-scale": 1.25 } },
+    { selector: "edge.faint", style: { opacity: 0.16, width: 0.7 } },
+    {
+      selector: "edge.meta",
+      style: {
+        width: (el) => chordWidth(el.data("count")),
+        "line-color": "#d9d3c7",
+        "target-arrow-shape": "none",
+        "source-arrow-shape": "none",
+        "curve-style": "straight",
+        opacity: (el) => Math.min(0.95, 0.22 + 0.045 * (el.data("count") || 1)),
+        label: "data(mix)",
+        color: "#f4efe4",
+        "font-size": 12,
+        "font-family": "Segoe UI, Georgia, serif",
+        "text-rotation": "autorotate",
+        "text-wrap": "wrap",
+        "text-max-width": 168,
+        "text-background-color": "#141414",
+        "text-background-opacity": 0.9,
+        "text-background-padding": "3px",
+        "min-zoomed-font-size": 8,
+        "z-index": (el) => el.data("count") || 1
+      }
+    },
+    {
+      selector: "node.on-path",
+      style: { label: "data(label)", "border-color": "#fff", "border-width": 2, "z-index": 20 }
+    },
+    { selector: "node.path-end", style: { "border-width": 3, "border-color": "#fff" } },
+    {
+      selector: "edge.new-finding",
+      style: { opacity: 1, width: 3, "arrow-scale": 1.45, "z-index": 16 }
+    },
+    {
+      selector: "edge.feedback",
+      style: { opacity: 1, width: 3.2, "arrow-scale": 1.45, "z-index": 15 }
+    },
+    {
+      selector: "edge.on-path",
+      style: { opacity: 1, width: 4, "arrow-scale": 1.6, "z-index": 20 }
+    },
+    { selector: ":selected", style: { "border-color": "#fff", "border-width": 3, opacity: 1 } }
+  ];
+}
+
+async function init() {
+  let data;
+  try {
+    data = await loadData();
+    state.latestMeta = await loadLatest();
+    state.latestSet = new Set(state.latestMeta.nodes || []);
+  } catch (err) {
+    document.getElementById("wrap").innerHTML =
+      `<div class="err"><p>Could not load YAML.</p>` +
+      `<p>From the repository root:</p>` +
+      `<p><code>python tools/serve.py</code></p>` +
+      `<p>then open <code>http://127.0.0.1:8765/viewer/</code>.</p>` +
+      `<p>${esc(err && err.message)}</p></div>`;
+    return;
+  }
+  try {
+    state.view = await loadView();
+  } catch (err) {
+    state.view = null;
+  }
+
+  const clusters = uniqueSorted(data.nodes.map((n) => n.cluster).filter(Boolean));
+  state.allClusters = clusters;
+  const kinds = uniqueSorted(data.nodes.map((n) => n.kind).filter(Boolean));
+  mountChecks(document.getElementById("kind-filters"), kinds, "kind", (k) =>
+    k === "system" ? "#f2e6b8" : "#888"
+  );
+  mountChecks(document.getElementById("cluster-filters"), clusters, "cluster", clusterColor);
+  mountChecks(document.getElementById("type-filters"), ["gold", "cyan", "magenta", "green", "red", "orange"], "etype", (t) => EDGE_COLOR[t]);
+  mountLegend();
+
+  state.cy = globalThis.cytoscape({
+    container: document.getElementById("cy"),
+    elements: toElements(data.nodes, data.edges, state.view && state.view.communities),
+    layout: { name: "preset", fit: false, padding: 60 },
+    autoungrabify: true,
+    minZoom: 0.08,
+    maxZoom: 3.5,
+    wheelSensitivity: 0.28,
+    textureOnViewport: true,
+    hideEdgesOnViewport: false,
+    style: graphStyle()
+  });
+
+  const cy = state.cy;
+  cy.on("tap", "node", (evt) => {
+    const id = evt.target.id();
+    if (state.loopMode) {
+      state.pathPick = null;
+      state.pathRoute = bestLoop(id);
+      state.routeKind = state.pathRoute ? "loop" : "";
+      state.focusId = null;
+      applyFilter();
+      document.getElementById("help").classList.remove("active");
+      if (state.pathRoute) showLoop(loopKind);
+      else {
+        document.getElementById("detail").innerHTML =
+          `<p class="empty">No short cycle through ${esc(evt.target.data("label") || id)}.</p>`;
+      }
+      return;
+    }
+    if (state.pathMode) {
+      if (!state.pathPick) {
+        state.pathPick = id;
+        state.pathRoute = null;
+        applyFilter();
+        return;
+      }
+      if (state.pathPick === id) {
+        status.textContent = "Path: pick a different end node";
+        return;
+      }
+      state.pathRoute = findRoute(state.pathPick, id);
+      state.routeKind = state.pathRoute ? "path" : "";
+      state.pathPick = null;
+      state.focusId = null;
+      applyFilter();
+      document.getElementById("help").classList.remove("active");
+      if (state.pathRoute) showTrajectory();
+      else {
+        document.getElementById("detail").innerHTML =
+          `<p class="empty">No route between those nodes on the current filters.</p>`;
+      }
+      return;
+    }
+    if (state.routeKind === "tour" || state.routeKind === "slot") clearPath(false);
+    state.focusId = id;
+    document.getElementById("help").classList.remove("active");
+    document.getElementById("findings").classList.remove("active");
+    setHashId(id);
+    showNode(evt.target.data());
+    applyFilter();
+  });
+  cy.on("tap", "edge", (evt) => showEdge(evt.target.data()));
+  cy.on("mouseover", "edge.meta", (evt) => {
+    if (!status.dataset.hold) status.dataset.hold = status.textContent;
+    status.textContent = evt.target.data("mix") || "";
+  });
+  cy.on("mouseout", "edge.meta", () => {
+    if (status.dataset.hold) {
+      status.textContent = status.dataset.hold;
+      delete status.dataset.hold;
+    }
+  });
+  cy.on("tap", (evt) => {
+    if (evt.target === cy) {
+      state.focusId = null;
+      if (!state.pathMode && !state.loopMode) clearPath(true);
+      if (state.routeKind === "tour" || state.routeKind === "slot") clearPath(false);
+      setHashId("");
+      document.getElementById("findings").classList.remove("active");
+      applyFilter();
+      if (!state.pathRoute) showGuide();
+    }
+  });
+  cy.on("mouseover", "node", (evt) => evt.target.addClass("hovered"));
+  cy.on("mouseout", "node", (evt) => evt.target.removeClass("hovered"));
+  cy.on("zoom pan", applyLabelsSoon);
+
+  document.getElementById("help").addEventListener("click", () => {
+    state.focusId = null;
+    clearPath(false);
+    document.getElementById("findings").classList.remove("active");
+    applyFilter();
+    showGuide();
+  });
+  document.getElementById("findings").addEventListener("click", () => {
+    state.focusId = null;
+    clearPath(false);
+    setHashId("");
+    applyFilter();
+    showFindings();
+  });
+  document.getElementById("new-findings").addEventListener("click", () => {
+    if (!state.latestSet.size) return;
+    state.newOnly = !state.newOnly;
+    document.getElementById("new-findings").classList.toggle("active", state.newOnly);
+    if (state.newOnly) {
+      setChecks("etype", () => true);
+      document.getElementById("laterals").classList.remove("active");
+      state.lateralOnly = false;
+    }
+    applyFilter();
+    showFindings();
+  });
+  document.getElementById("detail").addEventListener("click", (ev) => {
+    const slotBtn = ev.target.closest("[data-slot]");
+    if (slotBtn) {
+      const row = ((state.view && state.view.slots) || []).find((s) => s.id === slotBtn.getAttribute("data-slot"));
+      if (row) openReading("slot", row);
+      return;
+    }
+    const tourBtn = ev.target.closest("[data-tour]");
+    if (tourBtn) {
+      const row = ((state.view && state.view.tours) || []).find((t) => t.id === tourBtn.getAttribute("data-tour"));
+      if (row) openReading("tour", row);
+      return;
+    }
+    const btn = ev.target.closest("button.jump");
+    if (!btn) return;
+    openJump(btn.getAttribute("data-jump"), btn.getAttribute("data-edge"));
+  });
+  window.addEventListener("hashchange", () => {
+    if (!applyHash()) {
+      state.focusId = null;
+      applyFilter();
+      showGuide();
+    }
+  });
+  document.getElementById("search").addEventListener("input", () => {
+    clearTimeout(state.searchTick);
+    state.searchTick = setTimeout(applyFilter, 80);
+  });
+  document.getElementById("labels").addEventListener("change", applyLabels);
+  document.getElementById("field").addEventListener("click", () => {
+    clearPath(false);
+    state.focusId = null;
+    state.fieldMode = true;
+    state.lateralOnly = false;
+    if (!state.newOnly) setChecks("etype", () => true);
+    document.getElementById("field").classList.add("active");
+    deactivate(["open-interiors", "laterals"]);
+    applyFilter();
+    showGuide();
+  });
+  document.getElementById("open-interiors").addEventListener("click", () => {
+    clearPath(false);
+    state.fieldMode = false;
+    setChecks("etype", () => true);
+    document.getElementById("open-interiors").classList.add("active");
+    deactivate(["field", "laterals"]);
+    state.lateralOnly = false;
+    applyFilter();
+  });
+  document.getElementById("clusters-all").addEventListener("click", () => {
+    state.quoteHidePlatonic = false;
+    deactivate(["hide-platonic"]);
+    setChecks("cluster", () => true);
+    applyFilter();
+  });
+  document.getElementById("clusters-none").addEventListener("click", () => {
+    state.quoteHidePlatonic = false;
+    deactivate(["hide-platonic"]);
+    setChecks("cluster", () => false);
+    applyFilter();
+  });
+  document.getElementById("path").addEventListener("click", () => {
+    if (state.pathMode) {
+      clearPath(false);
+      applyFilter();
+      showGuide();
+      return;
+    }
+    clearPath(false);
+    state.focusId = null;
+    state.pathMode = true;
+    state.loopMode = false;
+    document.getElementById("path").classList.add("active");
+    applyFilter();
+  });
+  document.getElementById("loop").addEventListener("click", () => {
+    if (state.loopMode) {
+      clearPath(false);
+      applyFilter();
+      showGuide();
+      return;
+    }
+    clearPath(false);
+    state.focusId = null;
+    state.loopMode = true;
+    state.pathMode = false;
+    document.getElementById("loop").classList.add("active");
+    applyFilter();
+  });
+  document.getElementById("laterals").addEventListener("click", () => {
+    state.lateralOnly = true;
+    setChecks("etype", (v) => LATERALS.has(v));
+    document.getElementById("laterals").classList.add("active");
+    applyFilter();
+  });
+  document.getElementById("all-edges").addEventListener("click", () => {
+    state.lateralOnly = false;
+    setChecks("etype", () => true);
+    document.getElementById("laterals").classList.remove("active");
+    applyFilter();
+  });
+  document.getElementById("slots").addEventListener("click", () => {
+    state.focusId = null;
+    clearPath(false);
+    setHashId("");
+    document.getElementById("slots").classList.add("active");
+    applyFilter();
+    showSlots();
+  });
+  document.getElementById("tours").addEventListener("click", () => {
+    state.focusId = null;
+    clearPath(false);
+    setHashId("");
+    document.getElementById("tours").classList.add("active");
+    applyFilter();
+    showTours();
+  });
+  document.getElementById("hinges").addEventListener("click", () => {
+    state.focusId = null;
+    clearPath(false);
+    setHashId("");
+    document.getElementById("hinges").classList.add("active");
+    applyFilter();
+    showHinges();
+  });
+  document.getElementById("communities").addEventListener("click", () => {
+    state.communityOn = !state.communityOn;
+    applyFilter();
+  });
+  document.getElementById("hide-platonic").addEventListener("click", () => {
+    setChecks("cluster", (v) => v !== "platonic");
+    state.quoteHidePlatonic = true;
+    document.getElementById("hide-platonic").classList.add("active");
+    applyFilter();
+  });
+  document.getElementById("clear-focus").addEventListener("click", () => {
+    state.focusId = null;
+    clearPath(false);
+    cy.elements().unselect();
+    setHashId("");
+    document.getElementById("findings").classList.remove("active");
+    applyFilter();
+    showGuide();
+  });
+  document.getElementById("fit").addEventListener("click", () => {
+    cy.fit(cy.elements(":visible"), 30);
+  });
+  document.getElementById("relayout").addEventListener("click", () => {
+    runViewLayout();
+  });
+  document.getElementById("legend-toggle").addEventListener("click", () => {
+    const box = document.getElementById("legend");
+    const collapsed = box.classList.toggle("collapsed");
+    document.getElementById("legend-toggle").setAttribute("aria-expanded", collapsed ? "false" : "true");
+  });
+
+  document.querySelectorAll("input[type=checkbox]").forEach((el) => {
+    el.addEventListener("change", (ev) => {
+      if (ev.target.dataset.kind === "cluster" && state.quoteHidePlatonic && !platonicHiddenExactly()) {
+        state.quoteHidePlatonic = false;
+        deactivate(["hide-platonic"]);
+      }
+      applyFilter();
+    });
+  });
+
+  markBridges();
+  setChecks("etype", () => true);
+  if (!state.latestSet.size) {
+    const nb = document.getElementById("new-findings");
+    if (nb) nb.hidden = true;
+  }
+  applyFilter();
+  if (!applyHash()) showGuide();
+}
+
+init();

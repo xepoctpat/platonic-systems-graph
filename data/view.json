@@ -1,0 +1,6353 @@
+{
+  "source": "Derived by analysis/export_view.py. YAML is the source of truth.",
+  "caption": {
+    "communities": "Greedy modularity proposal. Edge weight is editorial strength, not a measured quantity. Not a recovered spine.",
+    "betweenness": "Unweighted betweenness. Count only, not a spine. A high Platonic rank is remaining seed bias.",
+    "ring": "Greedy nearest-neighbor order by shared cross-cluster findings. Layout only, not a chronology and not a spine.",
+    "hidePlatonic": "Undirected component count after removing cluster platonic. The success test is one component.",
+    "slots": "Peer groups of occupants. Not stages and not a rank.",
+    "tours": "Illustrations of named tensions. Not the law of the graph."
+  },
+  "ring": [
+    "platonic",
+    "scientific",
+    "hermetic",
+    "christian",
+    "gnostic",
+    "mandaean",
+    "manichaean",
+    "zoroastrian",
+    "egyptian",
+    "vedic",
+    "hindu",
+    "chinese",
+    "yoruba",
+    "mesopotamian",
+    "norse",
+    "mesoamerican",
+    "biblical",
+    "canaanite",
+    "alchemical",
+    "kabbalistic",
+    "jewish-mystical",
+    "hellenic-mystery",
+    "jungian",
+    "theosophical",
+    "sufi",
+    "islamic",
+    "neoplatonic",
+    "buddhist",
+    "orphic",
+    "preliterate",
+    "pythagorean"
+  ],
+  "bridges": [
+    {
+      "clusters": [
+        "alchemical",
+        "kabbalistic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e108",
+          "from": "tikkun",
+          "to": "alchemical-opus",
+          "fromLabel": "Tikkun",
+          "toLabel": "Alchemical Opus",
+          "type": "orange",
+          "note": "Restoration family — repair of vessels and the opus as sibling return-works.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "alchemical",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e110",
+          "from": "alchemical-opus",
+          "to": "theurgy",
+          "fromLabel": "Alchemical Opus",
+          "toLabel": "Theurgy",
+          "type": "orange",
+          "note": "Restoration family — material and theurgic techniques of return.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "alchemical",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 1,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e34",
+          "from": "alchemical-opus",
+          "to": "eros",
+          "fromLabel": "Alchemical Opus",
+          "toLabel": "Eros",
+          "type": "cyan",
+          "note": "Solve et coagula is erotic return enacted on elemental bodies.",
+          "directed": false
+        },
+        {
+          "id": "e45",
+          "from": "alchemical-opus",
+          "to": "intelligible-paradigm",
+          "fromLabel": "Alchemical Opus",
+          "toLabel": "Intelligible Paradigm",
+          "type": "green",
+          "note": "Rubedo claims to return the work to a perfected formal image.",
+          "directed": true
+        }
+      ],
+      "count": 2,
+      "mix": "2 · green 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "alchemical",
+        "theosophical"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e144",
+          "from": "alchemy",
+          "to": "theosophy",
+          "fromLabel": "Alchemy",
+          "toLabel": "Theosophy",
+          "type": "cyan",
+          "note": "V5 lateral: opus language absorbed into modern theosophical synthesis.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "canaanite"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e258",
+          "from": "el-canaanite",
+          "to": "genesis-creator",
+          "fromLabel": "El",
+          "toLabel": "Genesis Creator",
+          "type": "cyan",
+          "note": "Shared name-slot El. Not identity with Israel’s speaker.",
+          "directed": false
+        },
+        {
+          "id": "e265",
+          "from": "yam",
+          "to": "tohu-vavohu",
+          "fromLabel": "Yam",
+          "toLabel": "Tohu va-Bohu",
+          "type": "cyan",
+          "note": "Sea/deep as the thing speech or a storm-god has to master.",
+          "directed": false
+        },
+        {
+          "id": "e274",
+          "from": "baal",
+          "to": "genesis-creator",
+          "fromLabel": "Baal",
+          "toLabel": "Genesis Creator",
+          "type": "magenta",
+          "note": "Cloud-Rider slot Israel claims for YHWH against Baal.",
+          "directed": false
+        },
+        {
+          "id": "e255",
+          "from": "canaanite",
+          "to": "biblical-religion",
+          "fromLabel": "Canaanite religion",
+          "toLabel": "Biblical religion",
+          "type": "orange",
+          "note": "Shared West Semitic furniture; biblical texts argue with Baal, not copy him.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · cyan 2 · magenta 1 · orange 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "chinese"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e365",
+          "from": "dao",
+          "to": "genesis-creator",
+          "fromLabel": "Dao",
+          "toLabel": "Genesis Creator",
+          "type": "magenta",
+          "note": "Speech-creation versus the nameless that cannot be named.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "egyptian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e219",
+          "from": "nun",
+          "to": "tohu-vavohu",
+          "fromLabel": "Nun",
+          "toLabel": "Tohu va-Bohu",
+          "type": "cyan",
+          "note": "Dark water before speech.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "gnostic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e432",
+          "from": "barbelo",
+          "to": "hokhmah",
+          "fromLabel": "Barbelo",
+          "toLabel": "Hokhmah",
+          "type": "cyan",
+          "note": "Companion-wisdom at the summit. Thin.",
+          "directed": false
+        },
+        {
+          "id": "e431",
+          "from": "achamoth",
+          "to": "hokhmah",
+          "fromLabel": "Achamoth",
+          "toLabel": "Hokhmah",
+          "type": "magenta",
+          "note": "Fallen leftover Wisdom versus Wisdom beside the creator.",
+          "directed": false
+        },
+        {
+          "id": "e408",
+          "from": "hokhmah",
+          "to": "sophia-fall",
+          "fromLabel": "Hokhmah",
+          "toLabel": "Sophia’s Fall",
+          "type": "magenta",
+          "note": "Wisdom beside the creator versus Wisdom who falls and produces deficiency.",
+          "directed": false
+        },
+        {
+          "id": "e120",
+          "from": "kenoma",
+          "to": "tohu-vavohu",
+          "fromLabel": "Kenoma",
+          "toLabel": "Tohu va-Bohu",
+          "type": "orange",
+          "note": "Two religious names for the unordered below, later readable as prison or as raw given.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · magenta 2 · orange 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "hindu"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e582",
+          "from": "apaurusheya",
+          "to": "genesis-creator",
+          "fromLabel": "Apauruṣeya",
+          "toLabel": "Genesis Creator",
+          "type": "magenta",
+          "note": "Eternal unauthored speech versus a God who creates by speaking.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "jewish-mystical"
+      ],
+      "counts": {
+        "gold": 1,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e390",
+          "from": "biblical-religion",
+          "to": "merkavah",
+          "fromLabel": "Biblical religion",
+          "toLabel": "Merkavah",
+          "type": "gold",
+          "note": "Ezekiel’s chariot is the biblical seed of the practice.",
+          "directed": true
+        }
+      ],
+      "count": 1,
+      "mix": "1 · gold 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "mesoamerican"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e510",
+          "from": "heart-of-sky",
+          "to": "genesis-creator",
+          "fromLabel": "Heart of Sky",
+          "toLabel": "Genesis Creator",
+          "type": "cyan",
+          "note": "World by word. Heart of Sky confers in a council and remakes humans until they praise.",
+          "directed": false
+        },
+        {
+          "id": "e506",
+          "from": "popol-vuh",
+          "to": "biblical-religion",
+          "fromLabel": "Popol Vuh",
+          "toLabel": "Biblical religion",
+          "type": "orange",
+          "note": "World by speech and a flood of failed people. Not the same creator.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e193",
+          "from": "nammu",
+          "to": "tohu-vavohu",
+          "fromLabel": "Nammu",
+          "toLabel": "Tohu va-Bohu",
+          "type": "cyan",
+          "note": "Formless water before speech or separation.",
+          "directed": false
+        },
+        {
+          "id": "e196",
+          "from": "tiamat",
+          "to": "tohu-vavohu",
+          "fromLabel": "Tiamat",
+          "toLabel": "Tohu va-Bohu",
+          "type": "cyan",
+          "note": "Salt-deep and biblical tehom as sibling unordered waters.",
+          "directed": false
+        },
+        {
+          "id": "e209",
+          "from": "mesopotamian",
+          "to": "biblical-religion",
+          "fromLabel": "Mesopotamian religion",
+          "toLabel": "Biblical religion",
+          "type": "orange",
+          "note": "Enūma Eliš and Genesis share watery beginning and ordered speech; not identity.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 2 · orange 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e478",
+          "from": "ginnungagap",
+          "to": "tohu-vavohu",
+          "fromLabel": "Ginnungagap",
+          "toLabel": "Tohu va-Bohu",
+          "type": "cyan",
+          "note": "Formless before earth and heaven. The gap is empty; tehom is watery.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 2,
+        "green": 0,
+        "red": 1,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e84",
+          "from": "demiurge",
+          "to": "genesis-creator",
+          "fromLabel": "Demiurge",
+          "toLabel": "Genesis Creator",
+          "type": "cyan",
+          "note": "Speaker who sees that it is good occupies the craftsman slot.",
+          "directed": false
+        },
+        {
+          "id": "e409",
+          "from": "hokhmah",
+          "to": "intelligible-paradigm",
+          "fromLabel": "Hokhmah",
+          "toLabel": "Intelligible Paradigm",
+          "type": "cyan",
+          "note": "Present at making as a pattern-companion. Not the Living Creature.",
+          "directed": false
+        },
+        {
+          "id": "e86",
+          "from": "receptacle",
+          "to": "tohu-vavohu",
+          "fromLabel": "Receptacle",
+          "toLabel": "Tohu va-Bohu",
+          "type": "cyan",
+          "note": "Formless-and-void / tehom is the nearest biblical analogue of chōra.",
+          "directed": false
+        },
+        {
+          "id": "e85",
+          "from": "demiurge",
+          "to": "genesis-creator",
+          "fromLabel": "Demiurge",
+          "toLabel": "Genesis Creator",
+          "type": "magenta",
+          "note": "Creatio (classically) without a coeval receptacle versus persuasion of chōra.",
+          "directed": false
+        },
+        {
+          "id": "e136",
+          "from": "the-good",
+          "to": "genesis-creator",
+          "fromLabel": "The Good",
+          "toLabel": "Genesis Creator",
+          "type": "magenta",
+          "note": "Beyond-being Good versus a personal speaker who is already a who.",
+          "directed": false
+        },
+        {
+          "id": "e104",
+          "from": "tohu-vavohu",
+          "to": "becoming",
+          "fromLabel": "Tohu va-Bohu",
+          "toLabel": "Becoming",
+          "type": "red",
+          "note": "Residual formlessness remains the threat that speech / separation had to master.",
+          "directed": true
+        }
+      ],
+      "count": 6,
+      "mix": "6 · cyan 3 · magenta 2 · red 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e115",
+          "from": "entropy",
+          "to": "tohu-vavohu",
+          "fromLabel": "Entropy",
+          "toLabel": "Tohu va-Bohu",
+          "type": "orange",
+          "note": "Fall family — equipartition and formless void as sibling unordered givens.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "biblical",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e317",
+          "from": "ahura-mazda",
+          "to": "genesis-creator",
+          "fromLabel": "Ahura Mazda",
+          "toLabel": "Genesis Creator",
+          "type": "cyan",
+          "note": "Uncreated good creator. Mazda has a rival spirit Genesis classically does not.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "buddhist",
+        "chinese"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e363",
+          "from": "dao",
+          "to": "sunyata",
+          "fromLabel": "Dao",
+          "toLabel": "Śūnyatā",
+          "type": "cyan",
+          "note": "Refuses a substantial summit. Dao still produces; emptiness does not.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "buddhist",
+        "gnostic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e138",
+          "from": "sunyata",
+          "to": "gnostic-unknown-father",
+          "fromLabel": "Śūnyatā",
+          "toLabel": "Unknown Father",
+          "type": "cyan",
+          "note": "Weak analogy only — both withdraw predication; emptiness is not a Father.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "buddhist",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e100",
+          "from": "the-good",
+          "to": "sunyata",
+          "fromLabel": "The Good",
+          "toLabel": "Śūnyatā",
+          "type": "magenta",
+          "note": "Emptiness occupies the summit by refusing source-of-Forms and craftsman alike.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "canaanite",
+        "egyptian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 5,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e270",
+          "from": "anat",
+          "to": "isis",
+          "fromLabel": "Anat",
+          "toLabel": "Isis",
+          "type": "cyan",
+          "note": "Two gatherers. Anat hacks Death; Isis reassembles a body.",
+          "directed": false
+        },
+        {
+          "id": "e268",
+          "from": "baal",
+          "to": "osiris",
+          "fromLabel": "Baal",
+          "toLabel": "Osiris",
+          "type": "cyan",
+          "note": "Two kings who die and return; Baal to rain, Osiris to the West.",
+          "directed": false
+        },
+        {
+          "id": "e269",
+          "from": "baal",
+          "to": "re",
+          "fromLabel": "Baal",
+          "toLabel": "Re",
+          "type": "cyan",
+          "note": "Daily or seasonal return of a weather/light god. Thin.",
+          "directed": false
+        },
+        {
+          "id": "e271",
+          "from": "kothar",
+          "to": "ptah",
+          "fromLabel": "Kothar-wa-Khasis",
+          "toLabel": "Ptah",
+          "type": "cyan",
+          "note": "Two artisan gods of tools and houses.",
+          "directed": false
+        },
+        {
+          "id": "e266",
+          "from": "mot",
+          "to": "seth",
+          "fromLabel": "Mot",
+          "toLabel": "Seth",
+          "type": "cyan",
+          "note": "Two death-dealing wills inside a cosmos that still has a high god.",
+          "directed": false
+        },
+        {
+          "id": "e264",
+          "from": "yam",
+          "to": "nun",
+          "fromLabel": "Yam",
+          "toLabel": "Nun",
+          "type": "magenta",
+          "note": "Opponent-sea versus remaining first water.",
+          "directed": false
+        }
+      ],
+      "count": 6,
+      "mix": "6 · cyan 5 · magenta 1"
+    },
+    {
+      "clusters": [
+        "canaanite",
+        "gnostic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e267",
+          "from": "mot",
+          "to": "fallen-time",
+          "fromLabel": "Mot",
+          "toLabel": "Fallen Time",
+          "type": "cyan",
+          "note": "Death as a season Baal enters. Weak.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "canaanite",
+        "hindu"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e572",
+          "from": "devi",
+          "to": "anat",
+          "fromLabel": "Devī",
+          "toLabel": "Anat",
+          "type": "cyan",
+          "note": "Warrior goddess who restores a threatened order.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "canaanite",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e257",
+          "from": "el-canaanite",
+          "to": "anu",
+          "fromLabel": "El",
+          "toLabel": "An / Anu",
+          "type": "cyan",
+          "note": "Two high gods who sit above the fighting younger god.",
+          "directed": false
+        },
+        {
+          "id": "e272",
+          "from": "kothar",
+          "to": "enki",
+          "fromLabel": "Kothar-wa-Khasis",
+          "toLabel": "Enki / Ea",
+          "type": "cyan",
+          "note": "Craft and cunning in service of a younger king-god.",
+          "directed": false
+        },
+        {
+          "id": "e263",
+          "from": "yam",
+          "to": "tiamat",
+          "fromLabel": "Yam",
+          "toLabel": "Tiamat",
+          "type": "cyan",
+          "note": "Two combat-seas. Yam is bound; Tiamat is made into the world.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "canaanite",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e273",
+          "from": "kothar",
+          "to": "demiurge",
+          "fromLabel": "Kothar-wa-Khasis",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "Makes weapons and a palace, not the cosmos from a model.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "canaanite",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e282",
+          "from": "indra",
+          "to": "baal",
+          "fromLabel": "Indra",
+          "toLabel": "Baal",
+          "type": "cyan",
+          "note": "Two storm-kings who defeat a water-opponent.",
+          "directed": false
+        },
+        {
+          "id": "e291",
+          "from": "tvastr",
+          "to": "kothar",
+          "fromLabel": "Tvaṣṭṛ",
+          "toLabel": "Kothar-wa-Khasis",
+          "type": "cyan",
+          "note": "Two smiths of weapons and forms.",
+          "directed": false
+        },
+        {
+          "id": "e284",
+          "from": "vrtra",
+          "to": "yam",
+          "fromLabel": "Vṛtra",
+          "toLabel": "Yam",
+          "type": "cyan",
+          "note": "Two water-opponents bound or split by a storm-king.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "egyptian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e366",
+          "from": "tian",
+          "to": "maat",
+          "fromLabel": "Tian",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Order that must be kept. Tian withdraws from bad rule; Ma'at is restored by rite.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "hindu"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e362",
+          "from": "dao",
+          "to": "brahman",
+          "fromLabel": "Dao",
+          "toLabel": "Brahman",
+          "type": "cyan",
+          "note": "Ground that is not a craftsman. Weak; later Vedānta is not this pass.",
+          "directed": false
+        },
+        {
+          "id": "e568",
+          "from": "shiva",
+          "to": "yijing-change",
+          "fromLabel": "Śiva",
+          "toLabel": "Yijing Change",
+          "type": "cyan",
+          "note": "Destruction as the other face of production. Kalpa-end versus yin-yang pairing.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · cyan 2"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e361",
+          "from": "dao",
+          "to": "plotinus-one",
+          "fromLabel": "Dao",
+          "toLabel": "Plotinus’s One",
+          "type": "cyan",
+          "note": "Prior, returning, unnamed. Dao produces by unfolding, not by remaining.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e488",
+          "from": "wyrd",
+          "to": "tianming",
+          "fromLabel": "Wyrd / Urðr",
+          "toLabel": "Tianming",
+          "type": "magenta",
+          "note": "Fate set at birth versus a mandate Heaven can withdraw.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 4,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e360",
+          "from": "dao",
+          "to": "the-good",
+          "fromLabel": "Dao",
+          "toLabel": "The Good",
+          "type": "cyan",
+          "note": "Nameless source. Dao is not beyond-being for a craftsman.",
+          "directed": false
+        },
+        {
+          "id": "e368",
+          "from": "tian",
+          "to": "the-good",
+          "fromLabel": "Tian",
+          "toLabel": "The Good",
+          "type": "cyan",
+          "note": "Impersonal summit. Tian watches virtue; the Good grants being.",
+          "directed": false
+        },
+        {
+          "id": "e369",
+          "from": "tianming",
+          "to": "statesman-cycle",
+          "fromLabel": "Tianming",
+          "toLabel": "Statesman Cycle",
+          "type": "cyan",
+          "note": "Rule can run down and be re-lent. Mandate is moral-political, not a cosmic steersman.",
+          "directed": false
+        },
+        {
+          "id": "e371",
+          "from": "yijing-change",
+          "to": "becoming",
+          "fromLabel": "Yijing Change",
+          "toLabel": "Becoming",
+          "type": "cyan",
+          "note": "Production and reproduction. Becoming is last in Timaeus; here it is the general fact.",
+          "directed": false
+        },
+        {
+          "id": "e364",
+          "from": "dao",
+          "to": "demiurge",
+          "fromLabel": "Dao",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "No craftsman. The ten thousand things arise without a look to a model.",
+          "directed": false
+        },
+        {
+          "id": "e370",
+          "from": "yijing-change",
+          "to": "ordered-time",
+          "fromLabel": "Yijing Change",
+          "toLabel": "Ordered Time",
+          "type": "magenta",
+          "note": "Change *is* the course versus time generated as image of eternity.",
+          "directed": false
+        }
+      ],
+      "count": 6,
+      "mix": "6 · cyan 4 · magenta 2"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "pythagorean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e379",
+          "from": "harmonia",
+          "to": "yijing-change",
+          "fromLabel": "Harmonia",
+          "toLabel": "Yijing Change",
+          "type": "cyan",
+          "note": "Fitting of complements. Weak; yin-yang is not ratio.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e372",
+          "from": "yijing-change",
+          "to": "whitehead-process",
+          "fromLabel": "Yijing Change",
+          "toLabel": "Whiteheadian Process",
+          "type": "cyan",
+          "note": "Process as the category, not a late overlay. Weak modern rhyme.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e367",
+          "from": "tian",
+          "to": "rta",
+          "fromLabel": "Tian",
+          "toLabel": "Ṛta",
+          "type": "cyan",
+          "note": "Cosmic rightness. Tian is also a political observer.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "chinese",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e529",
+          "from": "olodumare",
+          "to": "tian",
+          "fromLabel": "Olodumare",
+          "toLabel": "Tian",
+          "type": "cyan",
+          "note": "Remote summit that delegates. Tian backs virtue; Olodumare is not culted at a shrine.",
+          "directed": false
+        },
+        {
+          "id": "e542",
+          "from": "ori",
+          "to": "tianming",
+          "fromLabel": "Ori",
+          "toLabel": "Tianming",
+          "type": "magenta",
+          "note": "Destiny chosen before birth versus a mandate Heaven can withdraw.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "gnostic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e150",
+          "from": "gnosticism",
+          "to": "christianity",
+          "fromLabel": "Gnosticism",
+          "toLabel": "Christianity",
+          "type": "cyan",
+          "note": "V5 isomorphism: shared Christian-adjacent furniture, opposite cosmos-valuation.",
+          "directed": false
+        },
+        {
+          "id": "e133",
+          "from": "incarnation",
+          "to": "escape-gnosis",
+          "fromLabel": "Incarnation",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Divine descent into flesh versus extraction of light from flesh.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "hermetic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 2
+      },
+      "members": [
+        {
+          "id": "e105",
+          "from": "christian-logos",
+          "to": "hermetic-nous",
+          "fromLabel": "Johannine Logos",
+          "toLabel": "Hermetic Nous",
+          "type": "orange",
+          "note": "Logos family — Word and Hermetic nous as hybrid craftsman-revealers.",
+          "directed": false
+        },
+        {
+          "id": "e151",
+          "from": "christianity",
+          "to": "hermeticism",
+          "fromLabel": "Christianity",
+          "toLabel": "Hermeticism",
+          "type": "orange",
+          "note": "Logos family at system grain (already present at principle grain).",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 2"
+    },
+    {
+      "clusters": [
+        "christian",
+        "hindu"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e563",
+          "from": "vishnu",
+          "to": "incarnation",
+          "fromLabel": "Viṣṇu",
+          "toLabel": "Incarnation",
+          "type": "cyan",
+          "note": "Descent into becoming to restore. Gītā 4.7–8 versus John 1.14. Not a person-list.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "jewish-mystical"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e396",
+          "from": "metatron",
+          "to": "christian-logos",
+          "fromLabel": "Metatron",
+          "toLabel": "Johannine Logos",
+          "type": "cyan",
+          "note": "Intermediate divine operator. Thin.",
+          "directed": false
+        },
+        {
+          "id": "e395",
+          "from": "metatron",
+          "to": "incarnation",
+          "fromLabel": "Metatron",
+          "toLabel": "Incarnation",
+          "type": "magenta",
+          "note": "Human become Lesser YHWH versus Word become flesh.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "mandaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e464",
+          "from": "manda-d-hayyi",
+          "to": "christian-logos",
+          "fromLabel": "Manda d-Hayyi",
+          "toLabel": "Johannine Logos",
+          "type": "magenta",
+          "note": "Knowledge of Life versus the Word made flesh. Mandaean texts polemicize Jesus as a liar.",
+          "directed": false
+        },
+        {
+          "id": "e447",
+          "from": "mandaeism",
+          "to": "christianity",
+          "fromLabel": "Mandaeism",
+          "toLabel": "Christianity",
+          "type": "orange",
+          "note": "John the Baptist reused as a priest; Jesus is a false messiah.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · orange 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "manichaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e353",
+          "from": "third-messenger",
+          "to": "incarnation",
+          "fromLabel": "Third Messenger",
+          "toLabel": "Incarnation",
+          "type": "magenta",
+          "note": "Manichaean Messenger / Jesus-figure extracts light; incarnation binds heaven to flesh.",
+          "directed": false
+        },
+        {
+          "id": "e337",
+          "from": "manichaeism",
+          "to": "christianity",
+          "fromLabel": "Manichaeism",
+          "toLabel": "Christianity",
+          "type": "orange",
+          "note": "Jesus and apostle-language reused; cosmos-valuation inverted.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · orange 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e111",
+          "from": "incarnation",
+          "to": "theurgy",
+          "fromLabel": "Incarnation",
+          "toLabel": "Theurgy",
+          "type": "orange",
+          "note": "Hybrid of divine descent and ritual ascent — opposite vectors, same medium (body).",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 2,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 1,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e89",
+          "from": "christian-logos",
+          "to": "demiurge",
+          "fromLabel": "Johannine Logos",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "Same craftsman-intellect slot, now internal to a triune summit.",
+          "directed": false
+        },
+        {
+          "id": "e90",
+          "from": "incarnation",
+          "to": "world-soul",
+          "fromLabel": "Incarnation",
+          "toLabel": "World Soul",
+          "type": "cyan",
+          "note": "Divine life stretched through a body — analogous, not identical, to psychic ensouling.",
+          "directed": false
+        },
+        {
+          "id": "e87",
+          "from": "demiurge",
+          "to": "christian-logos",
+          "fromLabel": "Demiurge",
+          "toLabel": "Johannine Logos",
+          "type": "gold",
+          "note": "Patristic reception reads the Timaean craftsman through John 1.",
+          "directed": true
+        },
+        {
+          "id": "e88",
+          "from": "intelligible-paradigm",
+          "to": "christian-logos",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Johannine Logos",
+          "type": "gold",
+          "note": "The Word also absorbs the paradigm — things were made *through* him.",
+          "directed": true
+        },
+        {
+          "id": "e91",
+          "from": "incarnation",
+          "to": "becoming",
+          "fromLabel": "Incarnation",
+          "toLabel": "Becoming",
+          "type": "green",
+          "note": "The divine term enters becoming rather than extracting sparks from it.",
+          "directed": true
+        },
+        {
+          "id": "e112",
+          "from": "incarnation",
+          "to": "eros",
+          "fromLabel": "Incarnation",
+          "toLabel": "Eros",
+          "type": "orange",
+          "note": "Love that comes down versus love that climbs — complementary, not identical.",
+          "directed": false
+        }
+      ],
+      "count": 6,
+      "mix": "6 · gold 2 · cyan 2 · orange 1 · green 1"
+    },
+    {
+      "clusters": [
+        "christian",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e106",
+          "from": "christian-logos",
+          "to": "stoic-logos",
+          "fromLabel": "Johannine Logos",
+          "toLabel": "Stoic Logos",
+          "type": "orange",
+          "note": "Logos family — immanent reason and Johannine Word share a name and a slot.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "hindu"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e565",
+          "from": "vishnu",
+          "to": "maat",
+          "fromLabel": "Viṣṇu",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Order that must be kept. Viṣṇu descends when dharma wanes; Ma'at is re-established.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "kabbalistic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e235",
+          "from": "amun",
+          "to": "ein-sof",
+          "fromLabel": "Amun",
+          "toLabel": "Ein Sof",
+          "type": "cyan",
+          "note": "Two hidden summits. Amun still has temples and a craftsman beside him.",
+          "directed": false
+        },
+        {
+          "id": "e228",
+          "from": "osiris",
+          "to": "shevirah",
+          "fromLabel": "Osiris",
+          "toLabel": "Shevirah",
+          "type": "cyan",
+          "note": "Breaking then repair. Weak; shevirah is vessels, not a murdered king.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · cyan 2"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "mandaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e452",
+          "from": "abatur",
+          "to": "maat",
+          "fromLabel": "Abatur",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Soul weighed at a threshold. Ma'at is order kept; Abatur is a demoted scale-lord.",
+          "directed": false
+        },
+        {
+          "id": "e459",
+          "from": "yardna",
+          "to": "nun",
+          "fromLabel": "Yardna",
+          "toLabel": "Nun",
+          "type": "magenta",
+          "note": "Living Lightworld water on earth versus the remaining first water the sun-god rises from.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "mesoamerican"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e511",
+          "from": "heart-of-sky",
+          "to": "ptah",
+          "fromLabel": "Heart of Sky",
+          "toLabel": "Ptah",
+          "type": "cyan",
+          "note": "Creation by intelligent speech. Ptah is heart and tongue in one; Heart of Sky is a storm triad.",
+          "directed": false
+        },
+        {
+          "id": "e508",
+          "from": "sky-sea-stillness",
+          "to": "nun",
+          "fromLabel": "Sky-sea stillness",
+          "toLabel": "Nun",
+          "type": "magenta",
+          "note": "Water emptied so earth can stand versus remaining first water the sun-god rises from.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 5,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e210",
+          "from": "mesopotamian",
+          "to": "egyptian-religion",
+          "fromLabel": "Mesopotamian religion",
+          "toLabel": "Egyptian religion",
+          "type": "cyan",
+          "note": "Two early written craftsman-and-order systems.",
+          "directed": false
+        },
+        {
+          "id": "e216",
+          "from": "nun",
+          "to": "nammu",
+          "fromLabel": "Nun",
+          "toLabel": "Nammu",
+          "type": "cyan",
+          "note": "Two nurse-seas. Neither is slain to make the world.",
+          "directed": false
+        },
+        {
+          "id": "e243",
+          "from": "nut",
+          "to": "anu",
+          "fromLabel": "Nut",
+          "toLabel": "An / Anu",
+          "type": "cyan",
+          "note": "Two skies. Nut is a vault that swallows the sun; An is high god.",
+          "directed": false
+        },
+        {
+          "id": "e242",
+          "from": "shu",
+          "to": "enlil",
+          "fromLabel": "Shu",
+          "toLabel": "Enlil",
+          "type": "cyan",
+          "note": "Air that holds sky off earth versus Enlil’s separation of An and Ki.",
+          "directed": false
+        },
+        {
+          "id": "e232",
+          "from": "thoth",
+          "to": "divine-me",
+          "fromLabel": "Thoth",
+          "toLabel": "Me",
+          "type": "cyan",
+          "note": "Measure and office. Speech that keeps the world countable.",
+          "directed": false
+        },
+        {
+          "id": "e217",
+          "from": "nun",
+          "to": "tiamat",
+          "fromLabel": "Nun",
+          "toLabel": "Tiamat",
+          "type": "magenta",
+          "note": "Infinite water that remains versus water that is cut into cosmos.",
+          "directed": false
+        }
+      ],
+      "count": 6,
+      "mix": "6 · cyan 5 · magenta 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e485",
+          "from": "yggdrasil",
+          "to": "maat",
+          "fromLabel": "Yggdrasil",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Order that must be kept. The tree is watered daily; Ma'at is re-established.",
+          "directed": false
+        },
+        {
+          "id": "e479",
+          "from": "ginnungagap",
+          "to": "nun",
+          "fromLabel": "Ginnungagap",
+          "toLabel": "Nun",
+          "type": "magenta",
+          "note": "Void that must be left versus remaining first water the sun-god rises from.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "orphic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e227",
+          "from": "osiris",
+          "to": "orphic-dionysus",
+          "fromLabel": "Osiris",
+          "toLabel": "Orphic Dionysus",
+          "type": "cyan",
+          "note": "Two sparagmos-and-return gods. Native to different systems.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 8,
+        "magenta": 0,
+        "green": 1,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e234",
+          "from": "amun",
+          "to": "the-good",
+          "fromLabel": "Amun",
+          "toLabel": "The Good",
+          "type": "cyan",
+          "note": "Hidden source of gods and order. Not beyond being in Republic’s sense.",
+          "directed": false
+        },
+        {
+          "id": "e221",
+          "from": "atum",
+          "to": "demiurge",
+          "fromLabel": "Atum",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "First intellect-like creator, without a separate paradigm he looks to.",
+          "directed": false
+        },
+        {
+          "id": "e81",
+          "from": "demiurge",
+          "to": "ptah",
+          "fromLabel": "Demiurge",
+          "toLabel": "Ptah",
+          "type": "cyan",
+          "note": "Memphite craftsman-by-heart-and-tongue occupies the Demiurge slot independently.",
+          "directed": false
+        },
+        {
+          "id": "e237",
+          "from": "isis",
+          "to": "eros",
+          "fromLabel": "Isis",
+          "toLabel": "Eros",
+          "type": "cyan",
+          "note": "Binding love that gathers. Weak; Isis is rite and magic, not the Symposium ladder.",
+          "directed": false
+        },
+        {
+          "id": "e218",
+          "from": "nun",
+          "to": "receptacle",
+          "fromLabel": "Nun",
+          "toLabel": "Receptacle",
+          "type": "cyan",
+          "note": "Given in which a first form can stand.",
+          "directed": false
+        },
+        {
+          "id": "e83",
+          "from": "ordered-time",
+          "to": "maat",
+          "fromLabel": "Ordered Time",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Right measure of cosmos and kingship ≅ numbered celestial time.",
+          "directed": false
+        },
+        {
+          "id": "e224",
+          "from": "re",
+          "to": "ordered-time",
+          "fromLabel": "Re",
+          "toLabel": "Ordered Time",
+          "type": "cyan",
+          "note": "Numbered cycle of day and night versus celestial periods as image of eternity.",
+          "directed": false
+        },
+        {
+          "id": "e82",
+          "from": "the-good",
+          "to": "maat",
+          "fromLabel": "The Good",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Ma'at is order-as-norm, maintained rather than beyond being.",
+          "directed": false
+        },
+        {
+          "id": "e103",
+          "from": "maat",
+          "to": "ordered-time",
+          "fromLabel": "Ma'at",
+          "toLabel": "Ordered Time",
+          "type": "green",
+          "note": "Ma'at is order that must be continually re-established — religious negentropy.",
+          "directed": true
+        }
+      ],
+      "count": 9,
+      "mix": "9 · cyan 8 · green 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e231",
+          "from": "thoth",
+          "to": "information",
+          "fromLabel": "Thoth",
+          "toLabel": "Information / Constraint",
+          "type": "cyan",
+          "note": "Writing and the weighing of the heart as cosmic record.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 8,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e294",
+          "from": "agni",
+          "to": "thoth",
+          "fromLabel": "Agni",
+          "toLabel": "Thoth",
+          "type": "cyan",
+          "note": "Messenger and go-between. Weak; Agni is fire, Thoth is writing.",
+          "directed": false
+        },
+        {
+          "id": "e299",
+          "from": "dyaus",
+          "to": "nut",
+          "fromLabel": "Dyaus",
+          "toLabel": "Nut",
+          "type": "cyan",
+          "note": "Sky as parent, not as vault that swallows the sun.",
+          "directed": false
+        },
+        {
+          "id": "e289",
+          "from": "prajapati",
+          "to": "atum",
+          "fromLabel": "Prajāpati",
+          "toLabel": "Atum",
+          "type": "cyan",
+          "note": "Self-emitting first creator. Heat and speech versus mound in Nun.",
+          "directed": false
+        },
+        {
+          "id": "e300",
+          "from": "prithivi",
+          "to": "geb",
+          "fromLabel": "Pṛthivī",
+          "toLabel": "Geb",
+          "type": "cyan",
+          "note": "Two earths paired with a sky.",
+          "directed": false
+        },
+        {
+          "id": "e279",
+          "from": "rta",
+          "to": "maat",
+          "fromLabel": "Ṛta",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Two names for order that must be kept.",
+          "directed": false
+        },
+        {
+          "id": "e296",
+          "from": "surya",
+          "to": "re",
+          "fromLabel": "Sūrya",
+          "toLabel": "Re",
+          "type": "cyan",
+          "note": "Two suns. Sūrya rides ṛta; Re dies and is rowed.",
+          "directed": false
+        },
+        {
+          "id": "e292",
+          "from": "tvastr",
+          "to": "ptah",
+          "fromLabel": "Tvaṣṭṛ",
+          "toLabel": "Ptah",
+          "type": "cyan",
+          "note": "Artisan of bodies and tools.",
+          "directed": false
+        },
+        {
+          "id": "e302",
+          "from": "varuna",
+          "to": "maat",
+          "fromLabel": "Varuṇa",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Guardian of rightness versus the name of rightness itself.",
+          "directed": false
+        }
+      ],
+      "count": 8,
+      "mix": "8 · cyan 8"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e544",
+          "from": "ase",
+          "to": "maat",
+          "fromLabel": "Àṣẹ",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Efficacy that must be kept in use. Ma'at is re-established; àṣẹ is spoken and lent.",
+          "directed": false
+        },
+        {
+          "id": "e535",
+          "from": "obatala",
+          "to": "ptah",
+          "fromLabel": "Obatala",
+          "toLabel": "Ptah",
+          "type": "cyan",
+          "note": "Sculptor of human bodies. Ptah makes the world by heart and tongue; Obatala waits for breath.",
+          "directed": false
+        },
+        {
+          "id": "e532",
+          "from": "olokun",
+          "to": "nun",
+          "fromLabel": "Olokun",
+          "toLabel": "Nun",
+          "type": "cyan",
+          "note": "Remaining first water. Nun is the rise-place of Atum; Olokun can flood the new land.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "egyptian",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e315",
+          "from": "angra-mainyu",
+          "to": "seth",
+          "fromLabel": "Angra Mainyu",
+          "toLabel": "Seth",
+          "type": "cyan",
+          "note": "Two hostile wills. Seth is inside a Ma'at-cosmos; Angra claims a first pole.",
+          "directed": false
+        },
+        {
+          "id": "e312",
+          "from": "asha",
+          "to": "maat",
+          "fromLabel": "Asha",
+          "toLabel": "Ma'at",
+          "type": "cyan",
+          "note": "Three names for order that must be kept (asha, ṛta, Ma'at).",
+          "directed": false
+        },
+        {
+          "id": "e230",
+          "from": "seth",
+          "to": "zoroastrian-dualism",
+          "fromLabel": "Seth",
+          "toLabel": "Zoroastrian Dualism",
+          "type": "cyan",
+          "note": "Hostile will inside a cosmos that still has one order-norm. Not two first principles.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "hindu"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e585",
+          "from": "kaivalya",
+          "to": "escape-gnosis",
+          "fromLabel": "Kaivalya",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Seer isolated in its nature versus exit from the cosmos.",
+          "directed": false
+        },
+        {
+          "id": "e564",
+          "from": "vishnu",
+          "to": "escape-gnosis",
+          "fromLabel": "Viṣṇu",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Enters the world to keep it versus extracts sparks from it.",
+          "directed": false
+        },
+        {
+          "id": "e149",
+          "from": "gnosticism",
+          "to": "hinduism",
+          "fromLabel": "Gnosticism",
+          "toLabel": "Hinduism",
+          "type": "orange",
+          "note": "V5 hybrid: spark/ātman and matter/māyā. Devī is Mahāmāyā who also slays; not a Gnostic fall.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · magenta 2 · orange 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "jungian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e145",
+          "from": "jungian-psychology",
+          "to": "gnosticism",
+          "fromLabel": "Jungian psychology",
+          "toLabel": "Gnosticism",
+          "type": "orange",
+          "note": "V5 hybrid: archetypal reading of Gnostic myth (Aion, Seven Sermons).",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "kabbalistic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 1,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e430",
+          "from": "horos",
+          "to": "shevirah",
+          "fromLabel": "Horos",
+          "toLabel": "Shevirah",
+          "type": "cyan",
+          "note": "A cut that saves the higher world. Weak; Horos fences a passion, shevirah shatters vessels.",
+          "directed": false
+        },
+        {
+          "id": "e35",
+          "from": "shevirah",
+          "to": "sophia-fall",
+          "fromLabel": "Shevirah",
+          "toLabel": "Sophia’s Fall",
+          "type": "cyan",
+          "note": "Two canonical shatterings: vessels that cannot hold the influx / an aeon that overreaches.",
+          "directed": false
+        },
+        {
+          "id": "e119",
+          "from": "gnostic-unknown-father",
+          "to": "ein-sof",
+          "fromLabel": "Unknown Father",
+          "toLabel": "Ein Sof",
+          "type": "orange",
+          "note": "Summit family — both hidden; only one is the father of a condemned craftsman.",
+          "directed": false
+        },
+        {
+          "id": "e42",
+          "from": "shevirah",
+          "to": "kenoma",
+          "fromLabel": "Shevirah",
+          "toLabel": "Kenoma",
+          "type": "red",
+          "note": "Shards and husks are the Kabbalistic near-neighbour of Gnostic emptiness.",
+          "directed": true
+        }
+      ],
+      "count": 4,
+      "mix": "4 · cyan 2 · orange 1 · red 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "mandaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 5,
+        "magenta": 3,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e448",
+          "from": "hayyi-rabbi",
+          "to": "gnostic-unknown-father",
+          "fromLabel": "Hayyi Rabbi",
+          "toLabel": "Unknown Father",
+          "type": "cyan",
+          "note": "Hidden light-summit. Hayyi is named Life and is present as yardna.",
+          "directed": false
+        },
+        {
+          "id": "e463",
+          "from": "manda-d-hayyi",
+          "to": "escape-gnosis",
+          "fromLabel": "Manda d-Hayyi",
+          "toLabel": "Escape Gnosis",
+          "type": "cyan",
+          "note": "Knowledge that returns the spark. The Mandaean envoy is enacted as baptism, not only passwords.",
+          "directed": false
+        },
+        {
+          "id": "e454",
+          "from": "ptahil",
+          "to": "valentinian-demiurge",
+          "fromLabel": "Ptahil",
+          "toLabel": "Valentinian Demiurge",
+          "type": "cyan",
+          "note": "Instrumental craftsman below the summit. Ptahil needs Ruha; the Valentinian is a restoration tool.",
+          "directed": false
+        },
+        {
+          "id": "e457",
+          "from": "ruha",
+          "to": "kenoma",
+          "fromLabel": "Ruha",
+          "toLabel": "Kenoma",
+          "type": "cyan",
+          "note": "This-world trap for the soul. Kenoma is deficiency after a fall; Ruha is native Darkness.",
+          "directed": false
+        },
+        {
+          "id": "e451",
+          "from": "yushamin",
+          "to": "sophia-fall",
+          "fromLabel": "Yushamin",
+          "toLabel": "Sophia’s Fall",
+          "type": "cyan",
+          "note": "Creation without consent. Yushamin remains an uthra and can be reconciled.",
+          "directed": false
+        },
+        {
+          "id": "e445",
+          "from": "mandaeism",
+          "to": "gnosticism",
+          "fromLabel": "Mandaeism",
+          "toLabel": "Gnosticism",
+          "type": "magenta",
+          "note": "Shared gnosis and a bad cosmos. Mandaeans keep a living baptismal cult and do not fold into Sethian or Valentinian interiors.",
+          "directed": false
+        },
+        {
+          "id": "e461",
+          "from": "masbuta",
+          "to": "escape-gnosis",
+          "fromLabel": "Masbuta",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Repeated earthly immersion versus exit through the spheres.",
+          "directed": false
+        },
+        {
+          "id": "e453",
+          "from": "ptahil",
+          "to": "gnostic-demiurge",
+          "fromLabel": "Ptahil",
+          "toLabel": "Gnostic Demiurge",
+          "type": "magenta",
+          "note": "Both fashion a deficient world. Ptahil cannot give the soul and does not claim to be the only god.",
+          "directed": false
+        }
+      ],
+      "count": 8,
+      "mix": "8 · cyan 5 · magenta 3"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "manichaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 4,
+        "magenta": 4,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e340",
+          "from": "father-of-greatness",
+          "to": "gnostic-unknown-father",
+          "fromLabel": "Father of Greatness",
+          "toLabel": "Unknown Father",
+          "type": "cyan",
+          "note": "Hidden light-summit. Mani’s Father has an uncreated dark twin; the Unknown Father does not.",
+          "directed": false
+        },
+        {
+          "id": "e349",
+          "from": "manichaean-mixture",
+          "to": "kenoma",
+          "fromLabel": "Manichaean Mixture",
+          "toLabel": "Kenoma",
+          "type": "cyan",
+          "note": "Light trapped in a bad cosmos. Mixture is invaded Light; kenoma is deficiency.",
+          "directed": false
+        },
+        {
+          "id": "e346",
+          "from": "primal-man",
+          "to": "sophia-fall",
+          "fromLabel": "Primal Man",
+          "toLabel": "Sophia’s Fall",
+          "type": "cyan",
+          "note": "Light lost into mixture. Sophia errs inside fullness; Primal Man is sent and swallowed.",
+          "directed": false
+        },
+        {
+          "id": "e352",
+          "from": "third-messenger",
+          "to": "escape-gnosis",
+          "fromLabel": "Third Messenger",
+          "toLabel": "Escape Gnosis",
+          "type": "cyan",
+          "note": "Extraction of light from the cosmos, not integration of becoming.",
+          "directed": false
+        },
+        {
+          "id": "e344",
+          "from": "king-of-darkness",
+          "to": "kenoma",
+          "fromLabel": "King of Darkness",
+          "toLabel": "Kenoma",
+          "type": "magenta",
+          "note": "Uncreated Darkness versus deficiency produced by an aeonic fall.",
+          "directed": false
+        },
+        {
+          "id": "e347",
+          "from": "living-spirit",
+          "to": "gnostic-demiurge",
+          "fromLabel": "Living Spirit",
+          "toLabel": "Gnostic Demiurge",
+          "type": "magenta",
+          "note": "Both fashion a cosmos from mixed stuff. Living Spirit extracts light; Ialdabaoth builds a prison.",
+          "directed": false
+        },
+        {
+          "id": "e336",
+          "from": "manichaeism",
+          "to": "gnosticism",
+          "fromLabel": "Manichaeism",
+          "toLabel": "Gnosticism",
+          "type": "magenta",
+          "note": "Shared gnosis and cosmic pessimism; Mani has two uncreated poles, not a fall inside a pleroma.",
+          "directed": false
+        },
+        {
+          "id": "e429",
+          "from": "valentinian-demiurge",
+          "to": "living-spirit",
+          "fromLabel": "Valentinian Demiurge",
+          "toLabel": "Living Spirit",
+          "type": "magenta",
+          "note": "Both make a cosmos from mixed leftover. Living Spirit extracts light on purpose.",
+          "directed": false
+        }
+      ],
+      "count": 8,
+      "mix": "8 · magenta 4 · cyan 4"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "mesoamerican"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e517",
+          "from": "xibalba",
+          "to": "kenoma",
+          "fromLabel": "Xibalba",
+          "toLabel": "Kenoma",
+          "type": "cyan",
+          "note": "A lower court that traps and kills. Kenoma is deficiency after a fall; Xibalba is a place with lords.",
+          "directed": false
+        },
+        {
+          "id": "e516",
+          "from": "hero-twins",
+          "to": "escape-gnosis",
+          "fromLabel": "Hero Twins",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Descent that returns as sun and moon for a living earth, not passwords out of the cosmos.",
+          "directed": false
+        },
+        {
+          "id": "e514",
+          "from": "maize-people",
+          "to": "escape-gnosis",
+          "fromLabel": "Maize people",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Humans stay to keep the days and feed the makers. Not sparks exiting a prison.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · magenta 2 · cyan 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e197",
+          "from": "tiamat",
+          "to": "kenoma",
+          "fromLabel": "Tiamat",
+          "toLabel": "Kenoma",
+          "type": "magenta",
+          "note": "Slain body becomes the world, not a prison for sparks. Weak.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 4,
+        "magenta": 8,
+        "green": 0,
+        "red": 3,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e420",
+          "from": "barbelo",
+          "to": "intelligible-paradigm",
+          "fromLabel": "Barbelo",
+          "toLabel": "Intelligible Paradigm",
+          "type": "cyan",
+          "note": "First image from which aeons unfold. Not the Living Creature as model for a good craftsman.",
+          "directed": false
+        },
+        {
+          "id": "e29",
+          "from": "intelligible-paradigm",
+          "to": "pleroma",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Pleroma",
+          "type": "cyan",
+          "note": "Fullness of aeons occupies the paradigm slot — a complete divine inventory.",
+          "directed": false
+        },
+        {
+          "id": "e134",
+          "from": "the-good",
+          "to": "gnostic-unknown-father",
+          "fromLabel": "The Good",
+          "toLabel": "Unknown Father",
+          "type": "cyan",
+          "note": "Both sit above the craftsman; only one remains the source of a good cosmos.",
+          "directed": false
+        },
+        {
+          "id": "e428",
+          "from": "valentinian-demiurge",
+          "to": "demiurge",
+          "fromLabel": "Valentinian Demiurge",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "World-fashioner who does not know the model. Closer to Plato than Yaldabaoth is, still not good without jealousy.",
+          "directed": false
+        },
+        {
+          "id": "e165",
+          "from": "age-of-exile",
+          "to": "fallen-time",
+          "fromLabel": "Age of exile",
+          "toLabel": "Fallen Time",
+          "type": "magenta",
+          "note": "Platonic exile vs Gnostic exile-time — related, not identical.",
+          "directed": false
+        },
+        {
+          "id": "e124",
+          "from": "demiurge",
+          "to": "gnostic-demiurge",
+          "fromLabel": "Demiurge",
+          "toLabel": "Gnostic Demiurge",
+          "type": "magenta",
+          "note": "Same craftsman slot, inverted sign — benevolent looker-to-the-model vs ignorant archon.",
+          "directed": false
+        },
+        {
+          "id": "e132",
+          "from": "eros",
+          "to": "escape-gnosis",
+          "fromLabel": "Eros",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Bind-and-return the cosmos versus wake-and-leave it.",
+          "directed": false
+        },
+        {
+          "id": "e125",
+          "from": "gnostic-unknown-father",
+          "to": "demiurge",
+          "fromLabel": "Unknown Father",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Gnostic theology splits the Good from the craftsman so the latter can be condemned.",
+          "directed": false
+        },
+        {
+          "id": "e129",
+          "from": "ordered-time",
+          "to": "fallen-time",
+          "fromLabel": "Ordered Time",
+          "toLabel": "Fallen Time",
+          "type": "magenta",
+          "note": "Moving image of eternity versus exile-time, irreversible loss, apocalyptic waiting.",
+          "directed": false
+        },
+        {
+          "id": "e139",
+          "from": "platonism",
+          "to": "gnosticism",
+          "fromLabel": "Platonism",
+          "toLabel": "Gnosticism",
+          "type": "magenta",
+          "note": "Peer collision of two systems that occupy the same slots with opposite valuation.",
+          "directed": false
+        },
+        {
+          "id": "e127",
+          "from": "receptacle",
+          "to": "kenoma",
+          "fromLabel": "Receptacle",
+          "toLabel": "Kenoma",
+          "type": "magenta",
+          "note": "Nurse / space / necessary condition versus emptiness that imprisons sparks.",
+          "directed": false
+        },
+        {
+          "id": "e135",
+          "from": "the-good",
+          "to": "gnostic-unknown-father",
+          "fromLabel": "The Good",
+          "toLabel": "Unknown Father",
+          "type": "magenta",
+          "note": "Source-of-intelligibility versus a Father defined by being unknown to this world.",
+          "directed": false
+        },
+        {
+          "id": "e48",
+          "from": "escape-gnosis",
+          "to": "becoming",
+          "fromLabel": "Escape Gnosis",
+          "toLabel": "Becoming",
+          "type": "red",
+          "note": "The same soteriology treats becoming as what must be left, not healed.",
+          "directed": true
+        },
+        {
+          "id": "e128",
+          "from": "kenoma",
+          "to": "becoming",
+          "fromLabel": "Kenoma",
+          "toLabel": "Becoming",
+          "type": "red",
+          "note": "On the prison reading, particulars are captivity, not images.",
+          "directed": true
+        },
+        {
+          "id": "e130",
+          "from": "statesman-cycle",
+          "to": "fallen-time",
+          "fromLabel": "Statesman Cycle",
+          "toLabel": "Fallen Time",
+          "type": "red",
+          "note": "Plato already owns a fallen-time episode — the world forgotten by its steersman.",
+          "directed": true
+        }
+      ],
+      "count": 15,
+      "mix": "15 · magenta 8 · cyan 4 · red 3"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e131",
+          "from": "fallen-time",
+          "to": "entropy",
+          "fromLabel": "Fallen Time",
+          "toLabel": "Entropy",
+          "type": "cyan",
+          "note": "Exile-time and thermodynamic run-down occupy the same degraded-clock slot.",
+          "directed": false
+        },
+        {
+          "id": "e114",
+          "from": "entropy",
+          "to": "kenoma",
+          "fromLabel": "Entropy",
+          "toLabel": "Kenoma",
+          "type": "orange",
+          "note": "Fall family — scientific dissolution and Gnostic emptiness as sibling deficits.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "sufi"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e405",
+          "from": "fana-baqa",
+          "to": "escape-gnosis",
+          "fromLabel": "Fana and Baqa",
+          "toLabel": "Escape Gnosis",
+          "type": "magenta",
+          "note": "Annihilation into God versus exit from a prison-cosmos.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e531",
+          "from": "olodumare",
+          "to": "gnostic-unknown-father",
+          "fromLabel": "Olodumare",
+          "toLabel": "Unknown Father",
+          "type": "cyan",
+          "note": "Hidden summit. Olodumare delegates orisha; the Unknown Father is sealed from the craftsman.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "gnostic",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e322",
+          "from": "zurvan",
+          "to": "fallen-time",
+          "fromLabel": "Zurvan",
+          "toLabel": "Fallen Time",
+          "type": "cyan",
+          "note": "Infinite time that can birth a fall. Thin.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hellenic-mystery",
+        "jewish-mystical"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e391",
+          "from": "hekhalot-ascent",
+          "to": "mystery-ascent",
+          "fromLabel": "Hekhalot Ascent",
+          "toLabel": "Mystery Ascent",
+          "type": "cyan",
+          "note": "Rite-path to a changed standing toward the divine. Palaces are not Eleusis.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hellenic-mystery",
+        "jungian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e158",
+          "from": "jungian-psychology",
+          "to": "mystery-ascent",
+          "fromLabel": "Jungian psychology",
+          "toLabel": "Mystery Ascent",
+          "type": "cyan",
+          "note": "Individuation isomorphic to mystery pattern; weak until Jung cluster is surveyed.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hellenic-mystery",
+        "mandaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e462",
+          "from": "masbuta",
+          "to": "mystery-ascent",
+          "fromLabel": "Masbuta",
+          "toLabel": "Mystery Ascent",
+          "type": "orange",
+          "note": "Rite-path that changes standing toward death. Baptism is repeatable and watery, not a single vision.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "hellenic-mystery",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 1,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e95",
+          "from": "eros",
+          "to": "mystery-ascent",
+          "fromLabel": "Eros",
+          "toLabel": "Mystery Ascent",
+          "type": "cyan",
+          "note": "Eleusinian-type vision is erotic return without a full Timaean hierarchy.",
+          "directed": false
+        },
+        {
+          "id": "e96",
+          "from": "mystery-ascent",
+          "to": "the-good",
+          "fromLabel": "Mystery Ascent",
+          "toLabel": "The Good",
+          "type": "green",
+          "note": "The mysteries claim a changed standing toward the highest, via rite not dialectic.",
+          "directed": true
+        }
+      ],
+      "count": 2,
+      "mix": "2 · green 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hermetic",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 1,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e32",
+          "from": "hermetic-nous",
+          "to": "demiurge",
+          "fromLabel": "Hermetic Nous",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "Hermetic nous is craftsman and inner god at once — same slot, mixed soteriology.",
+          "directed": false
+        },
+        {
+          "id": "e22",
+          "from": "demiurge",
+          "to": "hermetic-nous",
+          "fromLabel": "Demiurge",
+          "toLabel": "Hermetic Nous",
+          "type": "gold",
+          "note": "Poimandres inherits a craftsman-intellect still looking toward a higher nous.",
+          "directed": true
+        }
+      ],
+      "count": 2,
+      "mix": "2 · gold 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hermetic",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 2
+      },
+      "members": [
+        {
+          "id": "e143",
+          "from": "hermeticism",
+          "to": "complexity-science",
+          "fromLabel": "Hermeticism",
+          "toLabel": "Complexity science",
+          "type": "cyan",
+          "note": "V5 lateral: as-above-so-below isomorphic to nested dynamics.",
+          "directed": false
+        },
+        {
+          "id": "e107",
+          "from": "hermetic-nous",
+          "to": "stoic-logos",
+          "fromLabel": "Hermetic Nous",
+          "toLabel": "Stoic Logos",
+          "type": "orange",
+          "note": "Logos family — pneumatic / noetic fire as both structure and revealer.",
+          "directed": false
+        },
+        {
+          "id": "e384",
+          "from": "stoicism",
+          "to": "hermeticism",
+          "fromLabel": "Stoicism",
+          "toLabel": "Hermeticism",
+          "type": "orange",
+          "note": "Logos family without making Hermetica a Stoic appendix.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · orange 2 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "kabbalistic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e118",
+          "from": "ein-sof",
+          "to": "brahman",
+          "fromLabel": "Ein Sof",
+          "toLabel": "Brahman",
+          "type": "orange",
+          "note": "Summit family — Infinite and nirguṇa as laterally paired absences of predicate.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "mesoamerican"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e561",
+          "from": "brahma",
+          "to": "heart-of-sky",
+          "fromLabel": "Brahmā",
+          "toLabel": "Heart of Sky",
+          "type": "magenta",
+          "note": "Junior craftsman who must petition a Goddess versus storm-speech that raises earth.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e571",
+          "from": "devi",
+          "to": "tiamat",
+          "fromLabel": "Devī",
+          "toLabel": "Tiamat",
+          "type": "magenta",
+          "note": "Mother who slays the buffalo versus mother cut into the world.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e117",
+          "from": "plotinus-one",
+          "to": "brahman",
+          "fromLabel": "Plotinus’s One",
+          "toLabel": "Brahman",
+          "type": "orange",
+          "note": "Summit family — One and Brahman compared as beyond-attribute sources.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e567",
+          "from": "shiva",
+          "to": "ragnarok",
+          "fromLabel": "Śiva",
+          "toLabel": "Ragnarök",
+          "type": "magenta",
+          "note": "Official cyclic dissolution versus a fate that kills the gods with the world.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "orphic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e569",
+          "from": "shiva",
+          "to": "orphic-dionysus",
+          "fromLabel": "Śiva",
+          "toLabel": "Orphic Dionysus",
+          "type": "cyan",
+          "note": "Wild and auspicious in one body. Bull, dance, and a cut that founds.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e98",
+          "from": "intelligible-paradigm",
+          "to": "purusha-prakriti",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Purusha–Prakriti",
+          "type": "cyan",
+          "note": "Purusha as witness-consciousness is a distant analogue of the paradigm / nous.",
+          "directed": false
+        },
+        {
+          "id": "e99",
+          "from": "receptacle",
+          "to": "purusha-prakriti",
+          "fromLabel": "Receptacle",
+          "toLabel": "Purusha–Prakriti",
+          "type": "cyan",
+          "note": "Prakriti as productive nature occupies the receptacle slot without being persuaded.",
+          "directed": false
+        },
+        {
+          "id": "e97",
+          "from": "the-good",
+          "to": "brahman",
+          "fromLabel": "The Good",
+          "toLabel": "Brahman",
+          "type": "cyan",
+          "note": "Nirguṇa Brahman occupies the summit slot without a craftsman looking to Forms.",
+          "directed": false
+        },
+        {
+          "id": "e583",
+          "from": "paramanu",
+          "to": "receptacle",
+          "fromLabel": "Paramāṇu",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Indivisible eternal particulars versus nurse-space that receives form.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · cyan 3 · magenta 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e592",
+          "from": "nyaya-ishvara",
+          "to": "aristotle-unmoved-mover",
+          "fromLabel": "Nyāya Īśvara",
+          "toLabel": "Unmoved Mover",
+          "type": "magenta",
+          "note": "Intelligent agent of atoms and earth versus a mover that moves as beloved.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "sufi"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e586",
+          "from": "kaivalya",
+          "to": "fana-baqa",
+          "fromLabel": "Kaivalya",
+          "toLabel": "Fana and Baqa",
+          "type": "magenta",
+          "note": "Isolation of the seer versus passing-away and subsistence in God.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "theosophical"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e147",
+          "from": "theosophy",
+          "to": "hinduism",
+          "fromLabel": "Theosophy",
+          "toLabel": "Hinduism",
+          "type": "orange",
+          "note": "V5 hybrid: theosophy borrows Vedantic / Puranic furniture.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 4,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e566",
+          "from": "vishnu",
+          "to": "rta",
+          "fromLabel": "Viṣṇu",
+          "toLabel": "Ṛta",
+          "type": "cyan",
+          "note": "Three strides measure the ṛta-path; later dharma is the same keep-work.",
+          "directed": false
+        },
+        {
+          "id": "e553",
+          "from": "prajapati",
+          "to": "brahma",
+          "fromLabel": "Prajāpati",
+          "toLabel": "Brahmā",
+          "type": "gold",
+          "note": "Late-Vedic emitter becomes the Purāṇic lotus-craftsman.",
+          "directed": true
+        },
+        {
+          "id": "e551",
+          "from": "rudra",
+          "to": "shiva",
+          "fromLabel": "Rudra",
+          "toLabel": "Śiva",
+          "type": "gold",
+          "note": "Genealogical identity: howler becomes the kalpa-dissolver.",
+          "directed": true
+        },
+        {
+          "id": "e275",
+          "from": "vedic",
+          "to": "hinduism",
+          "fromLabel": "Vedic religion",
+          "toLabel": "Hinduism",
+          "type": "gold",
+          "note": "Historical derivation. Ṛgvedic corpus funds later Hinduism; they are not one node.",
+          "directed": true
+        },
+        {
+          "id": "e550",
+          "from": "vedic",
+          "to": "vishnu",
+          "fromLabel": "Vedic religion",
+          "toLabel": "Viṣṇu",
+          "type": "gold",
+          "note": "Three-strider of Ṛgveda 1.154 funds the later preserver.",
+          "directed": true
+        },
+        {
+          "id": "e288",
+          "from": "vedic-purusha",
+          "to": "purusha-prakriti",
+          "fromLabel": "Puruṣa (Puruṣasūkta)",
+          "toLabel": "Purusha–Prakriti",
+          "type": "magenta",
+          "note": "Hymn-person who is cut versus Sāṃkhya witness who does not make.",
+          "directed": false
+        },
+        {
+          "id": "e581",
+          "from": "apaurusheya",
+          "to": "rta",
+          "fromLabel": "Apauruṣeya",
+          "toLabel": "Ṛta",
+          "type": "orange",
+          "note": "Vedic injunction (codanā) is not ṛta as the kept-order clock.",
+          "directed": false
+        }
+      ],
+      "count": 7,
+      "mix": "7 · gold 4 · magenta 1 · orange 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "hindu",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e562",
+          "from": "brahma",
+          "to": "obatala",
+          "fromLabel": "Brahmā",
+          "toLabel": "Obatala",
+          "type": "cyan",
+          "note": "Craftsman who cannot finish alone. Olodumare breathes; Devī wakes Viṣṇu.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "islamic",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e399",
+          "from": "islamic-philosophy",
+          "to": "neoplatonism",
+          "fromLabel": "Islamic philosophy",
+          "toLabel": "Neoplatonism",
+          "type": "orange",
+          "note": "Arabic Plotinus / Theology of Aristotle as a hybrid stream.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "islamic",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e401",
+          "from": "necessary-existent",
+          "to": "the-good",
+          "fromLabel": "Necessary Existent",
+          "toLabel": "The Good",
+          "type": "magenta",
+          "note": "Necessary being versus the Good beyond being.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "islamic",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 1,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e400",
+          "from": "necessary-existent",
+          "to": "aristotle-unmoved-mover",
+          "fromLabel": "Necessary Existent",
+          "toLabel": "Unmoved Mover",
+          "type": "cyan",
+          "note": "Uncaused first. Necessary Existent is essence=existence, not only thought-thinking-itself.",
+          "directed": false
+        },
+        {
+          "id": "e398",
+          "from": "aristotelianism",
+          "to": "islamic-philosophy",
+          "fromLabel": "Aristotelianism",
+          "toLabel": "Islamic philosophy",
+          "type": "gold",
+          "note": "Arabic Aristotle is constitutive for falsafa.",
+          "directed": true
+        }
+      ],
+      "count": 2,
+      "mix": "2 · gold 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "islamic",
+        "sufi"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e403",
+          "from": "sufism",
+          "to": "islamic-philosophy",
+          "fromLabel": "Sufism",
+          "toLabel": "Islamic philosophy",
+          "type": "orange",
+          "note": "Shared Islamicate field. Not the same slot.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "jewish-mystical",
+        "kabbalistic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 2
+      },
+      "members": [
+        {
+          "id": "e393",
+          "from": "merkabah-throne",
+          "to": "ein-sof",
+          "fromLabel": "Merkabah Throne",
+          "toLabel": "Ein Sof",
+          "type": "magenta",
+          "note": "Seen Glory on a throne versus the Infinite beyond predication.",
+          "directed": false
+        },
+        {
+          "id": "e394",
+          "from": "merkabah-throne",
+          "to": "sefirot",
+          "fromLabel": "Merkabah Throne",
+          "toLabel": "Sefirot",
+          "type": "orange",
+          "note": "Later kabbalists reread the chariot. Weak until a dedicated link-pass.",
+          "directed": false
+        },
+        {
+          "id": "e389",
+          "from": "merkavah",
+          "to": "kabbalah",
+          "fromLabel": "Merkavah",
+          "toLabel": "Kabbalah",
+          "type": "orange",
+          "note": "Peer precursor. Kabbalah is not a later stage of the chariot.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · orange 2 · magenta 1"
+    },
+    {
+      "clusters": [
+        "jewish-mystical",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e392",
+          "from": "hekhalot-ascent",
+          "to": "theurgy",
+          "fromLabel": "Hekhalot Ascent",
+          "toLabel": "Theurgy",
+          "type": "cyan",
+          "note": "Technique to approach a summit. Hekhalot uses seals and names, not Iamblichean tokens.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "jungian",
+        "theosophical"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e146",
+          "from": "jungian-psychology",
+          "to": "theosophy",
+          "fromLabel": "Jungian psychology",
+          "toLabel": "Theosophy",
+          "type": "orange",
+          "note": "V5 hybrid: shared modern esoteric-psychological milieu.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "kabbalistic",
+        "neoplatonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 2
+      },
+      "members": [
+        {
+          "id": "e116",
+          "from": "plotinus-one",
+          "to": "ein-sof",
+          "fromLabel": "Plotinus’s One",
+          "toLabel": "Ein Sof",
+          "type": "orange",
+          "note": "Summit family — two apophatic infinities in historical conversation.",
+          "directed": false
+        },
+        {
+          "id": "e109",
+          "from": "tikkun",
+          "to": "theurgy",
+          "fromLabel": "Tikkun",
+          "toLabel": "Theurgy",
+          "type": "orange",
+          "note": "Restoration family — ritual work that claims to finish what thought cannot.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 2"
+    },
+    {
+      "clusters": [
+        "kabbalistic",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e492",
+          "from": "earth-risen",
+          "to": "tikkun",
+          "fromLabel": "Earth risen",
+          "toLabel": "Tikkun",
+          "type": "cyan",
+          "note": "Restoration after shattering. A new ground rises; tikkun repairs vessels.",
+          "directed": false
+        },
+        {
+          "id": "e490",
+          "from": "ragnarok",
+          "to": "shevirah",
+          "fromLabel": "Ragnarök",
+          "toLabel": "Shevirah",
+          "type": "cyan",
+          "note": "Cosmic shattering. Shevirah is vessels that break; Ragnarök is fire, wolf, and flood.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · cyan 2"
+    },
+    {
+      "clusters": [
+        "kabbalistic",
+        "orphic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e113",
+          "from": "shevirah",
+          "to": "orphic-dionysus",
+          "fromLabel": "Shevirah",
+          "toLabel": "Orphic Dionysus",
+          "type": "orange",
+          "note": "Fall family — breaking of vessels and sparagmos as sibling shatterings.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "kabbalistic",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e31",
+          "from": "intelligible-paradigm",
+          "to": "sefirot",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Sefirot",
+          "type": "cyan",
+          "note": "The sefirotic tree is the most diagrammable later isomorphism of structured procession.",
+          "directed": false
+        },
+        {
+          "id": "e30",
+          "from": "the-good",
+          "to": "ein-sof",
+          "fromLabel": "The Good",
+          "toLabel": "Ein Sof",
+          "type": "cyan",
+          "note": "Ein Sof occupies the beyond-predication summit without being the Republic’s Good.",
+          "directed": false
+        },
+        {
+          "id": "e33",
+          "from": "tikkun",
+          "to": "eros",
+          "fromLabel": "Tikkun",
+          "toLabel": "Eros",
+          "type": "cyan",
+          "note": "Repair of the vessels and erotic ascent are parallel return operators.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "kabbalistic",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e141",
+          "from": "kabbalah",
+          "to": "physics",
+          "fromLabel": "Kabbalah",
+          "toLabel": "Physics",
+          "type": "cyan",
+          "note": "V5 lateral: structured cascade / emanation isomorphic to a law-like field hierarchy.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "kabbalistic",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e318",
+          "from": "amesha-spentas",
+          "to": "sefirot",
+          "fromLabel": "Amesha Spentas",
+          "toLabel": "Sefirot",
+          "type": "cyan",
+          "note": "Structured aspects of the divine. Heptad versus ten; weak.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "mandaean",
+        "manichaean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e449",
+          "from": "hayyi-rabbi",
+          "to": "father-of-greatness",
+          "fromLabel": "Hayyi Rabbi",
+          "toLabel": "Father of Greatness",
+          "type": "cyan",
+          "note": "Light/Life summit. Mani's Father has an uncreated dark twin; Hayyi does not.",
+          "directed": false
+        },
+        {
+          "id": "e456",
+          "from": "ruha",
+          "to": "king-of-darkness",
+          "fromLabel": "Ruha",
+          "toLabel": "King of Darkness",
+          "type": "cyan",
+          "note": "Dark pole of a dual cosmos. Ruha is queen with Ur; Mani's King is uncreated Hylē.",
+          "directed": false
+        },
+        {
+          "id": "e455",
+          "from": "ptahil",
+          "to": "living-spirit",
+          "fromLabel": "Ptahil",
+          "toLabel": "Living Spirit",
+          "type": "magenta",
+          "note": "Both make a cosmos from mixed stuff. Living Spirit extracts light on purpose; Ptahil fails at the soul.",
+          "directed": false
+        },
+        {
+          "id": "e446",
+          "from": "mandaeism",
+          "to": "manichaeism",
+          "fromLabel": "Mandaeism",
+          "toLabel": "Manichaeism",
+          "type": "orange",
+          "note": "Two Mesopotamian dualisms. Mani is not a Mandaean; the Cologne Mani Codex cut that genealogy.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · cyan 2 · magenta 1 · orange 1"
+    },
+    {
+      "clusters": [
+        "mandaean",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e460",
+          "from": "yardna",
+          "to": "tiamat",
+          "fromLabel": "Yardna",
+          "toLabel": "Tiamat",
+          "type": "magenta",
+          "note": "Running water that saves versus the slain salt-deep cut into a cosmos.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "mandaean",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e450",
+          "from": "hayyi-rabbi",
+          "to": "the-good",
+          "fromLabel": "Hayyi Rabbi",
+          "toLabel": "The Good",
+          "type": "magenta",
+          "note": "Life that does not fashion this earth versus the Good that roots a willing craftsman.",
+          "directed": false
+        },
+        {
+          "id": "e458",
+          "from": "ruha",
+          "to": "receptacle",
+          "fromLabel": "Ruha",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Evil Spirit who helps make bodies versus non-evil chōra that nurses becoming.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 2"
+    },
+    {
+      "clusters": [
+        "mandaean",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e536",
+          "from": "obatala",
+          "to": "ptahil",
+          "fromLabel": "Obatala",
+          "toLabel": "Ptahil",
+          "type": "cyan",
+          "note": "Craftsman who cannot give the soul. Olodumare breathes; Life sends the spark.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "manichaean",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 3,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e348",
+          "from": "living-spirit",
+          "to": "demiurge",
+          "fromLabel": "Living Spirit",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "World-fashioner with a purpose. Material is slain Darkness, not a nurse-receptacle.",
+          "directed": false
+        },
+        {
+          "id": "e341",
+          "from": "father-of-greatness",
+          "to": "the-good",
+          "fromLabel": "Father of Greatness",
+          "toLabel": "The Good",
+          "type": "magenta",
+          "note": "Single source of being versus one of two uncreated principles.",
+          "directed": false
+        },
+        {
+          "id": "e343",
+          "from": "king-of-darkness",
+          "to": "receptacle",
+          "fromLabel": "King of Darkness",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Evil Matter that invades versus non-evil chōra that nurses becoming.",
+          "directed": false
+        },
+        {
+          "id": "e350",
+          "from": "manichaean-three-times",
+          "to": "ordered-time",
+          "fromLabel": "Manichaean Three Times",
+          "toLabel": "Ordered Time",
+          "type": "magenta",
+          "note": "History of mix and unmix versus time generated with the heavens as image of eternity.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · magenta 3 · cyan 1"
+    },
+    {
+      "clusters": [
+        "manichaean",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 2
+      },
+      "members": [
+        {
+          "id": "e338",
+          "from": "father-of-greatness",
+          "to": "ahura-mazda",
+          "fromLabel": "Father of Greatness",
+          "toLabel": "Ahura Mazda",
+          "type": "cyan",
+          "note": "Light summit. Mazda is uncreated wisdom; the Father is one of two coeval poles.",
+          "directed": false
+        },
+        {
+          "id": "e342",
+          "from": "king-of-darkness",
+          "to": "angra-mainyu",
+          "fromLabel": "King of Darkness",
+          "toLabel": "Angra Mainyu",
+          "type": "cyan",
+          "note": "Uncreated hostile will / matter. Same slot, Mani’s pole is also Hylē.",
+          "directed": false
+        },
+        {
+          "id": "e339",
+          "from": "father-of-greatness",
+          "to": "zurvan",
+          "fromLabel": "Father of Greatness",
+          "toLabel": "Zurvan",
+          "type": "magenta",
+          "note": "Iranian texts may name the Father Zurwān; he is not the parent of twin spirits.",
+          "directed": false
+        },
+        {
+          "id": "e351",
+          "from": "manichaean-three-times",
+          "to": "zurvan",
+          "fromLabel": "Manichaean Three Times",
+          "toLabel": "Zurvan",
+          "type": "magenta",
+          "note": "Three historical stages versus infinite Time as parent of the twins.",
+          "directed": false
+        },
+        {
+          "id": "e335",
+          "from": "manichaeism",
+          "to": "zoroastrianism",
+          "fromLabel": "Manichaeism",
+          "toLabel": "Zoroastrianism",
+          "type": "orange",
+          "note": "Iranian dualism inherited and recast. Mani is not a Magian.",
+          "directed": false
+        },
+        {
+          "id": "e345",
+          "from": "primal-man",
+          "to": "ahura-mazda",
+          "fromLabel": "Primal Man",
+          "toLabel": "Ahura Mazda",
+          "type": "orange",
+          "note": "Iranian Manichaean name of Primal Man is Ohrmazd: summit recast as wounded proto-anthropos.",
+          "directed": false
+        }
+      ],
+      "count": 6,
+      "mix": "6 · magenta 2 · orange 2 · cyan 2"
+    },
+    {
+      "clusters": [
+        "mesoamerican",
+        "mesopotamian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e509",
+          "from": "sky-sea-stillness",
+          "to": "tiamat",
+          "fromLabel": "Sky-sea stillness",
+          "toLabel": "Tiamat",
+          "type": "magenta",
+          "note": "Sea vacated by speech versus salt-deep cut into a cosmos.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "mesoamerican",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e513",
+          "from": "failed-people",
+          "to": "ragnarok",
+          "fromLabel": "Failed people",
+          "toLabel": "Ragnarök",
+          "type": "cyan",
+          "note": "A world-age of people ends in flood and fire. Ragnarök kills gods; this flood kills manikins.",
+          "directed": false
+        },
+        {
+          "id": "e507",
+          "from": "sky-sea-stillness",
+          "to": "ginnungagap",
+          "fromLabel": "Sky-sea stillness",
+          "toLabel": "Ginnungagap",
+          "type": "cyan",
+          "note": "Stillness before earth. The Kʼicheʼ given is watery hush; the Norse given is a yawning gap.",
+          "directed": false
+        },
+        {
+          "id": "e505",
+          "from": "popol-vuh",
+          "to": "norse-myth",
+          "fromLabel": "Popol Vuh",
+          "toLabel": "Norse myth",
+          "type": "orange",
+          "note": "Two extra-Mediterranean cycles with a destroyed age and a return.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 2 · orange 1"
+    },
+    {
+      "clusters": [
+        "mesoamerican",
+        "orphic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e515",
+          "from": "hero-twins",
+          "to": "orphic-dionysus",
+          "fromLabel": "Hero Twins",
+          "toLabel": "Orphic Dionysus",
+          "type": "cyan",
+          "note": "Death and reconstitution. The twins trick their way back; Zagreus is torn and gathered.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "mesoamerican",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 1,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e512",
+          "from": "heart-of-sky",
+          "to": "demiurge",
+          "fromLabel": "Heart of Sky",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Speech that empties a sea versus a craftsman who looks to Forms and persuades necessity.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · magenta 1"
+    },
+    {
+      "clusters": [
+        "mesoamerican",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e533",
+          "from": "olokun",
+          "to": "sky-sea-stillness",
+          "fromLabel": "Olokun",
+          "toLabel": "Sky-sea stillness",
+          "type": "cyan",
+          "note": "Watery given before earth. The Kʼicheʼ sea is emptied by speech; Olokun is owned.",
+          "directed": false
+        },
+        {
+          "id": "e528",
+          "from": "ifa",
+          "to": "popol-vuh",
+          "fromLabel": "Ifá",
+          "toLabel": "Popol Vuh",
+          "type": "orange",
+          "note": "Two extra-Eurasian named corpora. Speech-and-sand versus speech-and-maize.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "mesopotamian",
+        "norse"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e483",
+          "from": "sons-of-burr",
+          "to": "marduk",
+          "fromLabel": "Sons of Burr",
+          "toLabel": "Marduk",
+          "type": "cyan",
+          "note": "Craftsmen by combat; both build from a slain first body.",
+          "directed": false
+        },
+        {
+          "id": "e487",
+          "from": "wyrd",
+          "to": "tablet-of-destinies",
+          "fromLabel": "Wyrd / Urðr",
+          "toLabel": "Tablet of Destinies",
+          "type": "cyan",
+          "note": "Constraint that allots what happens. The tablet is seized; wyrd is scored by maidens.",
+          "directed": false
+        },
+        {
+          "id": "e480",
+          "from": "ymir",
+          "to": "tiamat",
+          "fromLabel": "Ymir",
+          "toLabel": "Tiamat",
+          "type": "cyan",
+          "note": "Slain first being whose body becomes heaven and earth.",
+          "directed": false
+        },
+        {
+          "id": "e475",
+          "from": "norse-myth",
+          "to": "mesopotamian",
+          "fromLabel": "Norse myth",
+          "toLabel": "Mesopotamian religion",
+          "type": "orange",
+          "note": "Two combat cosmogonies that make a world from a slain first body.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · cyan 3 · orange 1"
+    },
+    {
+      "clusters": [
+        "mesopotamian",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 4,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e204",
+          "from": "divine-me",
+          "to": "intelligible-paradigm",
+          "fromLabel": "Me",
+          "toLabel": "Intelligible Paradigm",
+          "type": "cyan",
+          "note": "Inventory of what a complete world must include, without a Living Creature.",
+          "directed": false
+        },
+        {
+          "id": "e200",
+          "from": "enki",
+          "to": "demiurge",
+          "fromLabel": "Enki / Ea",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "Wisdom-craftsman who assigns offices without making the world from a corpse.",
+          "directed": false
+        },
+        {
+          "id": "e191",
+          "from": "enlil",
+          "to": "zeus-division",
+          "fromLabel": "Enlil",
+          "toLabel": "Zeus’s division",
+          "type": "cyan",
+          "note": "Two narrative cuts that make duality and space.",
+          "directed": false
+        },
+        {
+          "id": "e192",
+          "from": "nammu",
+          "to": "receptacle",
+          "fromLabel": "Nammu",
+          "toLabel": "Receptacle",
+          "type": "cyan",
+          "note": "Water as nurse-given before form, not as slain matter.",
+          "directed": false
+        },
+        {
+          "id": "e199",
+          "from": "marduk",
+          "to": "demiurge",
+          "fromLabel": "Marduk",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Persuades necessity versus slays the deep. Same craftsman slot, opposite method.",
+          "directed": false
+        },
+        {
+          "id": "e195",
+          "from": "tiamat",
+          "to": "receptacle",
+          "fromLabel": "Tiamat",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Nurse versus corpse: chōra receives form; Tiamat is cut into heaven and earth.",
+          "directed": false
+        }
+      ],
+      "count": 6,
+      "mix": "6 · cyan 4 · magenta 2"
+    },
+    {
+      "clusters": [
+        "mesopotamian",
+        "preliterate"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e205",
+          "from": "divine-me",
+          "to": "vinca-signs",
+          "fromLabel": "Me",
+          "toLabel": "Vinča signs",
+          "type": "cyan",
+          "note": "Repeatable marks versus named offices. Same information slot, different grain.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "mesopotamian",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e203",
+          "from": "divine-me",
+          "to": "information",
+          "fromLabel": "Me",
+          "toLabel": "Information / Constraint",
+          "type": "cyan",
+          "note": "Offices as transferable constraints.",
+          "directed": false
+        },
+        {
+          "id": "e190",
+          "from": "enlil",
+          "to": "symmetry-breaking",
+          "fromLabel": "Enlil",
+          "toLabel": "Symmetry Breaking",
+          "type": "cyan",
+          "note": "Same slot as Zeus’s division and physical symmetry breaking.",
+          "directed": false
+        },
+        {
+          "id": "e208",
+          "from": "tablet-of-destinies",
+          "to": "information",
+          "fromLabel": "Tablet of Destinies",
+          "toLabel": "Information / Constraint",
+          "type": "cyan",
+          "note": "Fate as an object that can change hands.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "mesopotamian",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 4,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e298",
+          "from": "dyaus",
+          "to": "anu",
+          "fromLabel": "Dyaus",
+          "toLabel": "An / Anu",
+          "type": "cyan",
+          "note": "Two sky-fathers.",
+          "directed": false
+        },
+        {
+          "id": "e283",
+          "from": "indra",
+          "to": "marduk",
+          "fromLabel": "Indra",
+          "toLabel": "Marduk",
+          "type": "cyan",
+          "note": "Combat against a water-dragon. Indra does not build the world from the corpse.",
+          "directed": false
+        },
+        {
+          "id": "e286",
+          "from": "vedic-purusha",
+          "to": "tiamat",
+          "fromLabel": "Puruṣa (Puruṣasūkta)",
+          "toLabel": "Tiamat",
+          "type": "cyan",
+          "note": "Cosmos from a body. Sacrifice versus combat.",
+          "directed": false
+        },
+        {
+          "id": "e285",
+          "from": "vrtra",
+          "to": "tiamat",
+          "fromLabel": "Vṛtra",
+          "toLabel": "Tiamat",
+          "type": "cyan",
+          "note": "Dragon of the waters. Vṛtra pens them; Tiamat becomes the world.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · cyan 4"
+    },
+    {
+      "clusters": [
+        "mesopotamian",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e540",
+          "from": "orunmila",
+          "to": "tablet-of-destinies",
+          "fromLabel": "Orunmila",
+          "toLabel": "Tablet of Destinies",
+          "type": "cyan",
+          "note": "Destiny as readable constraint. The tablet is seized; Orunmila witnesses.",
+          "directed": false
+        },
+        {
+          "id": "e539",
+          "from": "oduduwa",
+          "to": "marduk",
+          "fromLabel": "Oduduwa",
+          "toLabel": "Marduk",
+          "type": "magenta",
+          "note": "Earth by poured sand and a hen versus earth cut from a slain first being.",
+          "directed": false
+        },
+        {
+          "id": "e534",
+          "from": "olokun",
+          "to": "tiamat",
+          "fromLabel": "Olokun",
+          "toLabel": "Tiamat",
+          "type": "magenta",
+          "note": "Water that stays and can return versus the slain salt-deep.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · magenta 2 · cyan 1"
+    },
+    {
+      "clusters": [
+        "neoplatonic",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 7,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 1,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e137",
+          "from": "plotinus-one",
+          "to": "the-good",
+          "fromLabel": "Plotinus’s One",
+          "toLabel": "The Good",
+          "type": "cyan",
+          "note": "Closest later identity-claim on the summit — still not quite Republic VI.",
+          "directed": false
+        },
+        {
+          "id": "e23",
+          "from": "demiurge",
+          "to": "chaldean-oracles",
+          "fromLabel": "Demiurge",
+          "toLabel": "Chaldean Oracles",
+          "type": "gold",
+          "note": "The Oracles keep a Father/Intellect craftsman grammar inside middle Platonism.",
+          "directed": true
+        },
+        {
+          "id": "e20",
+          "from": "demiurge",
+          "to": "nous-neoplatonic",
+          "fromLabel": "Demiurge",
+          "toLabel": "Neoplatonic Nous",
+          "type": "gold",
+          "note": "The craftsman is fused into Nous rather than left as a separate artisan.",
+          "directed": true
+        },
+        {
+          "id": "e24",
+          "from": "eros",
+          "to": "theurgy",
+          "fromLabel": "Eros",
+          "toLabel": "Theurgy",
+          "type": "gold",
+          "note": "Theurgy operationalises erotic return as ritual rather than as dialectic alone.",
+          "directed": true
+        },
+        {
+          "id": "e19",
+          "from": "intelligible-paradigm",
+          "to": "nous-neoplatonic",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Neoplatonic Nous",
+          "type": "gold",
+          "note": "Neoplatonic Nous absorbs the Timaean paradigm as intellect-identical-with-Forms.",
+          "directed": true
+        },
+        {
+          "id": "e140",
+          "from": "platonism",
+          "to": "neoplatonism",
+          "fromLabel": "Platonism",
+          "toLabel": "Neoplatonism",
+          "type": "gold",
+          "note": "Historical derivation — not a rank. Neoplatonism funds itself from Platonic texts.",
+          "directed": true
+        },
+        {
+          "id": "e18",
+          "from": "the-good",
+          "to": "plotinus-one",
+          "fromLabel": "The Good",
+          "toLabel": "Plotinus’s One",
+          "type": "gold",
+          "note": "Plotinus’s One is the direct philosophical intensification of the Good.",
+          "directed": true
+        },
+        {
+          "id": "e21",
+          "from": "world-soul",
+          "to": "psyche-neoplatonic",
+          "fromLabel": "World Soul",
+          "toLabel": "Neoplatonic Soul",
+          "type": "gold",
+          "note": "The third hypostasis is the World Soul rewritten as procession that can forget.",
+          "directed": true
+        },
+        {
+          "id": "e28",
+          "from": "theurgy",
+          "to": "the-good",
+          "fromLabel": "Theurgy",
+          "toLabel": "The Good",
+          "type": "green",
+          "note": "Late-antique ritual still aims at the Platonic summit, not at exit from being.",
+          "directed": true
+        }
+      ],
+      "count": 9,
+      "mix": "9 · gold 7 · green 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "neoplatonic",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e142",
+          "from": "neoplatonism",
+          "to": "systems-theory",
+          "fromLabel": "Neoplatonism",
+          "toLabel": "Systems theory",
+          "type": "cyan",
+          "note": "V5 lateral: procession/return isomorphic to holons, levels, feedback.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "neoplatonic",
+        "sufi"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e404",
+          "from": "fana-baqa",
+          "to": "plotinus-one",
+          "fromLabel": "Fana and Baqa",
+          "toLabel": "Plotinus’s One",
+          "type": "cyan",
+          "note": "Return by losing the self. Fanāʾ is not remaining as the One.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "norse",
+        "orphic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e481",
+          "from": "ymir",
+          "to": "orphic-dionysus",
+          "fromLabel": "Ymir",
+          "toLabel": "Orphic Dionysus",
+          "type": "cyan",
+          "note": "Body cut into a world versus a god cut and reconstituted.",
+          "directed": false
+        },
+        {
+          "id": "e476",
+          "from": "norse-myth",
+          "to": "orphism",
+          "fromLabel": "Norse myth",
+          "toLabel": "Orphism",
+          "type": "orange",
+          "note": "Dismemberment that becomes a cosmos. Orphic sparagmos is of a god, not a first giant.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "norse",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 4,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e489",
+          "from": "ragnarok",
+          "to": "statesman-cycle",
+          "fromLabel": "Ragnarök",
+          "toLabel": "Statesman Cycle",
+          "type": "cyan",
+          "note": "A cosmos that runs down. Here the gods die with it; the Statesman steersman can return.",
+          "directed": false
+        },
+        {
+          "id": "e477",
+          "from": "ginnungagap",
+          "to": "receptacle",
+          "fromLabel": "Ginnungagap",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Yawning void that precedes a slaying versus non-evil chōra that nurses becoming.",
+          "directed": false
+        },
+        {
+          "id": "e484",
+          "from": "sons-of-burr",
+          "to": "demiurge",
+          "fromLabel": "Sons of Burr",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Slay the first being versus persuade necessity without jealousy.",
+          "directed": false
+        },
+        {
+          "id": "e486",
+          "from": "wyrd",
+          "to": "ordered-time",
+          "fromLabel": "Wyrd / Urðr",
+          "toLabel": "Ordered Time",
+          "type": "magenta",
+          "note": "Fate scored on wood versus time generated as a moving image of eternity.",
+          "directed": false
+        },
+        {
+          "id": "e482",
+          "from": "ymir",
+          "to": "receptacle",
+          "fromLabel": "Ymir",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Corpse of a defeated being versus nurse of particulars.",
+          "directed": false
+        }
+      ],
+      "count": 5,
+      "mix": "5 · magenta 4 · cyan 1"
+    },
+    {
+      "clusters": [
+        "norse",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e491",
+          "from": "ragnarok",
+          "to": "entropy",
+          "fromLabel": "Ragnarök",
+          "toLabel": "Entropy",
+          "type": "cyan",
+          "note": "World-end as heat and run-down. Entropy has no surviving gods on a new earth.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "norse",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 3,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e538",
+          "from": "oduduwa",
+          "to": "sons-of-burr",
+          "fromLabel": "Oduduwa",
+          "toLabel": "Sons of Burr",
+          "type": "cyan",
+          "note": "Land made on first water. Burr’s sons slay a body; Oduduwa pours sand.",
+          "directed": false
+        },
+        {
+          "id": "e543",
+          "from": "ori",
+          "to": "wyrd",
+          "fromLabel": "Ori",
+          "toLabel": "Wyrd / Urðr",
+          "type": "cyan",
+          "note": "Allotted life. Ori is chosen; wyrd is scored by maidens.",
+          "directed": false
+        },
+        {
+          "id": "e541",
+          "from": "orunmila",
+          "to": "wyrd",
+          "fromLabel": "Orunmila",
+          "toLabel": "Wyrd / Urðr",
+          "type": "cyan",
+          "note": "Fate that can be consulted. Wyrd is scored under the tree; Ifá is recitable Odù.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 3"
+    },
+    {
+      "clusters": [
+        "orphic",
+        "platonic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 1,
+        "green": 0,
+        "red": 1,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e92",
+          "from": "orphic-dionysus",
+          "to": "world-soul",
+          "fromLabel": "Orphic Dionysus",
+          "toLabel": "World Soul",
+          "type": "cyan",
+          "note": "Dismembered-and-reconstituted god ≅ soul as what can be scattered and gathered.",
+          "directed": false
+        },
+        {
+          "id": "e94",
+          "from": "orphic-dionysus",
+          "to": "receptacle",
+          "fromLabel": "Orphic Dionysus",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "Soma-sēma (body as tomb) versus chōra as nurse of the same particulars.",
+          "directed": false
+        },
+        {
+          "id": "e93",
+          "from": "orphic-dionysus",
+          "to": "becoming",
+          "fromLabel": "Orphic Dionysus",
+          "toLabel": "Becoming",
+          "type": "red",
+          "note": "Sparagmos is the Hellenic red event — divine body shattered into matter.",
+          "directed": true
+        }
+      ],
+      "count": 3,
+      "mix": "3 · magenta 1 · red 1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "orphic",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e287",
+          "from": "vedic-purusha",
+          "to": "orphic-dionysus",
+          "fromLabel": "Puruṣa (Puruṣasūkta)",
+          "toLabel": "Orphic Dionysus",
+          "type": "cyan",
+          "note": "Two dismembered divine bodies that found a world or a people.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "preliterate"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e184",
+          "from": "nabta-playa",
+          "to": "ordered-time",
+          "fromLabel": "Nabta Playa",
+          "toLabel": "Ordered Time",
+          "type": "cyan",
+          "note": "Seasonal or solstice stone mark versus numbered celestial time. Same slot, thinner.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "pythagorean"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e377",
+          "from": "harmonia",
+          "to": "world-soul",
+          "fromLabel": "Harmonia",
+          "toLabel": "World Soul",
+          "type": "cyan",
+          "note": "Immanent bind of unlike parts. World Soul still looks up to a paradigm.",
+          "directed": false
+        },
+        {
+          "id": "e378",
+          "from": "limiters-unlimiteds",
+          "to": "receptacle",
+          "fromLabel": "Limiters and Unlimiteds",
+          "toLabel": "Receptacle",
+          "type": "cyan",
+          "note": "Unlimited as continuum. The pair includes limiters; chōra is not a limiter.",
+          "directed": false
+        },
+        {
+          "id": "e376",
+          "from": "pythagoreanism",
+          "to": "platonism",
+          "fromLabel": "Pythagoreanism",
+          "toLabel": "Platonism",
+          "type": "orange",
+          "note": "Timaean reception of number and harmonia. Not a Platonic stage.",
+          "directed": false
+        }
+      ],
+      "count": 3,
+      "mix": "3 · cyan 2 · orange 1"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 10,
+        "cyan": 15,
+        "magenta": 5,
+        "green": 2,
+        "red": 2,
+        "orange": 2
+      },
+      "members": [
+        {
+          "id": "e123",
+          "from": "becoming",
+          "to": "cybernetic-feedback",
+          "fromLabel": "Becoming",
+          "toLabel": "Cybernetic Feedback",
+          "type": "cyan",
+          "note": "Particulars are the plant whose outputs the World Soul / Eros must correct.",
+          "directed": false
+        },
+        {
+          "id": "e60",
+          "from": "demiurge",
+          "to": "negentropy",
+          "fromLabel": "Demiurge",
+          "toLabel": "Negentropy",
+          "type": "cyan",
+          "note": "Craftsman-as-orderer ≅ local maintenance of free energy and form.",
+          "directed": false
+        },
+        {
+          "id": "e63",
+          "from": "demiurge",
+          "to": "symmetry-breaking",
+          "fromLabel": "Demiurge",
+          "toLabel": "Symmetry Breaking",
+          "type": "cyan",
+          "note": "Imposing definite triangles on chōra ≅ selecting an ordered state from symmetry.",
+          "directed": false
+        },
+        {
+          "id": "e64",
+          "from": "eros",
+          "to": "cybernetic-feedback",
+          "fromLabel": "Eros",
+          "toLabel": "Cybernetic Feedback",
+          "type": "cyan",
+          "note": "Cosmic love is negative feedback — error relative to the Good is reduced.",
+          "directed": false
+        },
+        {
+          "id": "e61",
+          "from": "intelligible-paradigm",
+          "to": "information",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Information / Constraint",
+          "type": "cyan",
+          "note": "Living intelligible animal ≅ specification / constraint (same slot, colder ontology).",
+          "directed": false
+        },
+        {
+          "id": "e122",
+          "from": "ordered-time",
+          "to": "cybernetic-feedback",
+          "fromLabel": "Ordered Time",
+          "toLabel": "Cybernetic Feedback",
+          "type": "cyan",
+          "note": "Numbered celestial periods function as the system’s reference trajectory.",
+          "directed": false
+        },
+        {
+          "id": "e59",
+          "from": "receptacle",
+          "to": "entropy",
+          "fromLabel": "Receptacle",
+          "toLabel": "Entropy",
+          "type": "cyan",
+          "note": "Noise / wandering cause ≅ thermodynamic dissolution of constraint.",
+          "directed": false
+        },
+        {
+          "id": "e66",
+          "from": "spinoza-deus",
+          "to": "the-good",
+          "fromLabel": "Spinoza’s Deus sive Natura",
+          "toLabel": "The Good",
+          "type": "cyan",
+          "note": "One immanent substance occupies the summit slot by absorbing every lower stage.",
+          "directed": false
+        },
+        {
+          "id": "e76",
+          "from": "statesman-cycle",
+          "to": "entropy",
+          "fromLabel": "Statesman Cycle",
+          "toLabel": "Entropy",
+          "type": "cyan",
+          "note": "Plato’s native run-down myth is already a proto-entropic story.",
+          "directed": false
+        },
+        {
+          "id": "e65",
+          "from": "stoic-logos",
+          "to": "world-soul",
+          "fromLabel": "Stoic Logos",
+          "toLabel": "World Soul",
+          "type": "cyan",
+          "note": "Same governor slot; Stoic logos refuses a separate paradigm above the world.",
+          "directed": false
+        },
+        {
+          "id": "e58",
+          "from": "the-good",
+          "to": "attractor",
+          "fromLabel": "The Good",
+          "toLabel": "Dynamical Attractor",
+          "type": "cyan",
+          "note": "Same basin-of-attraction slot; the attractor has no ethical loading.",
+          "directed": false
+        },
+        {
+          "id": "e67",
+          "from": "whitehead-process",
+          "to": "becoming",
+          "fromLabel": "Whiteheadian Process",
+          "toLabel": "Becoming",
+          "type": "cyan",
+          "note": "Actual occasions generalise Timaean genesis into the basic metaphysical unit.",
+          "directed": false
+        },
+        {
+          "id": "e68",
+          "from": "whitehead-process",
+          "to": "receptacle",
+          "fromLabel": "Whiteheadian Process",
+          "toLabel": "Receptacle",
+          "type": "cyan",
+          "note": "The extensive continuum is a modern rewrite of chōra.",
+          "directed": false
+        },
+        {
+          "id": "e62",
+          "from": "world-soul",
+          "to": "self-organization",
+          "fromLabel": "World Soul",
+          "toLabel": "Self-Organization",
+          "type": "cyan",
+          "note": "Immanent binding without a separate nous is the self-organization reading.",
+          "directed": false
+        },
+        {
+          "id": "e164",
+          "from": "zeus-division",
+          "to": "symmetry-breaking",
+          "fromLabel": "Zeus’s division",
+          "toLabel": "Symmetry Breaking",
+          "type": "cyan",
+          "note": "Same slot: a more symmetric whole is cut into a particular ordered state.",
+          "directed": false
+        },
+        {
+          "id": "e57",
+          "from": "becoming",
+          "to": "whitehead-process",
+          "fromLabel": "Becoming",
+          "toLabel": "Whiteheadian Process",
+          "type": "gold",
+          "note": "Process philosophy promotes becoming from last stage to the general category.",
+          "directed": true
+        },
+        {
+          "id": "e53",
+          "from": "demiurge",
+          "to": "negentropy",
+          "fromLabel": "Demiurge",
+          "toLabel": "Negentropy",
+          "type": "gold",
+          "note": "Local export of entropy is Demiurgic persuasion under another name.",
+          "directed": true
+        },
+        {
+          "id": "e56",
+          "from": "eros",
+          "to": "hegel-geist",
+          "fromLabel": "Eros",
+          "toLabel": "Hegelian Geist",
+          "type": "gold",
+          "note": "Geist maximises erotic / epistrophic return as historical dialectic.",
+          "directed": true
+        },
+        {
+          "id": "e55",
+          "from": "intelligible-paradigm",
+          "to": "information",
+          "fromLabel": "Intelligible Paradigm",
+          "toLabel": "Information / Constraint",
+          "type": "gold",
+          "note": "Forms-as-constraints become information as reduction of possibility space.",
+          "directed": true
+        },
+        {
+          "id": "e54",
+          "from": "receptacle",
+          "to": "entropy",
+          "fromLabel": "Receptacle",
+          "toLabel": "Entropy",
+          "type": "gold",
+          "note": "The wandering cause is the Timaean ancestor of unconstrained equipartition.",
+          "directed": true
+        },
+        {
+          "id": "e80",
+          "from": "symmetry-breaking",
+          "to": "receptacle",
+          "fromLabel": "Symmetry Breaking",
+          "toLabel": "Receptacle",
+          "type": "gold",
+          "note": "A definite ordered state is cut out of an under-determined possibility space.",
+          "directed": true
+        },
+        {
+          "id": "e49",
+          "from": "the-good",
+          "to": "aristotle-unmoved-mover",
+          "fromLabel": "The Good",
+          "toLabel": "Unmoved Mover",
+          "type": "gold",
+          "note": "The mover that moves as beloved inherits Good-as-attractor.",
+          "directed": true
+        },
+        {
+          "id": "e50",
+          "from": "the-good",
+          "to": "attractor",
+          "fromLabel": "The Good",
+          "toLabel": "Dynamical Attractor",
+          "type": "gold",
+          "note": "Dynamical attractors are the stripped mathematical name of the Good’s pull.",
+          "directed": true
+        },
+        {
+          "id": "e52",
+          "from": "world-soul",
+          "to": "cybernetic-feedback",
+          "fromLabel": "World Soul",
+          "toLabel": "Cybernetic Feedback",
+          "type": "gold",
+          "note": "Homeostasis is the control-theoretic reading of a self-moving cosmic soul.",
+          "directed": true
+        },
+        {
+          "id": "e51",
+          "from": "world-soul",
+          "to": "stoic-logos",
+          "fromLabel": "World Soul",
+          "toLabel": "Stoic Logos",
+          "type": "gold",
+          "note": "Stoic logos is the World Soul made wholly immanent and fiery.",
+          "directed": true
+        },
+        {
+          "id": "e79",
+          "from": "hegel-geist",
+          "to": "the-good",
+          "fromLabel": "Hegelian Geist",
+          "toLabel": "The Good",
+          "type": "green",
+          "note": "Absolute knowing is return of spirit to its ground — a historicised Good.",
+          "directed": true
+        },
+        {
+          "id": "e77",
+          "from": "negentropy",
+          "to": "becoming",
+          "fromLabel": "Negentropy",
+          "toLabel": "Becoming",
+          "type": "green",
+          "note": "Living (and cosmic) order is locally maintained against the second law.",
+          "directed": true
+        },
+        {
+          "id": "e70",
+          "from": "aristotle-unmoved-mover",
+          "to": "demiurge",
+          "fromLabel": "Unmoved Mover",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Final cause that does not look to a separate model or persuade a receptacle.",
+          "directed": false
+        },
+        {
+          "id": "e69",
+          "from": "kant-noumenon",
+          "to": "intelligible-paradigm",
+          "fromLabel": "Kantian Noumenon",
+          "toLabel": "Intelligible Paradigm",
+          "type": "magenta",
+          "note": "The model-slot inverted — the ground is what we precisely cannot know.",
+          "directed": false
+        },
+        {
+          "id": "e71",
+          "from": "self-organization",
+          "to": "demiurge",
+          "fromLabel": "Self-Organization",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Order without an external craftsman — the strongest scientific inversion of V7.",
+          "directed": false
+        },
+        {
+          "id": "e72",
+          "from": "spinoza-deus",
+          "to": "demiurge",
+          "fromLabel": "Spinoza’s Deus sive Natura",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Immanent necessity leaves no work for a craftsman and no leftover chōra.",
+          "directed": false
+        },
+        {
+          "id": "e121",
+          "from": "statesman-cycle",
+          "to": "cybernetic-feedback",
+          "fromLabel": "Statesman Cycle",
+          "toLabel": "Cybernetic Feedback",
+          "type": "magenta",
+          "note": "Letting-go of the helm is loss of negative feedback — control theory as myth.",
+          "directed": false
+        },
+        {
+          "id": "e381",
+          "from": "aristotelianism",
+          "to": "platonism",
+          "fromLabel": "Aristotelianism",
+          "toLabel": "Platonism",
+          "type": "orange",
+          "note": "Peer school. Critique of separate Forms, not a later Plato stage.",
+          "directed": false
+        },
+        {
+          "id": "e383",
+          "from": "stoicism",
+          "to": "platonism",
+          "fromLabel": "Stoicism",
+          "toLabel": "Platonism",
+          "type": "orange",
+          "note": "Same slots, no separate paradigm.",
+          "directed": false
+        },
+        {
+          "id": "e74",
+          "from": "entropy",
+          "to": "becoming",
+          "fromLabel": "Entropy",
+          "toLabel": "Becoming",
+          "type": "red",
+          "note": "Uncompensated entropy dissolves the generated order of particulars.",
+          "directed": true
+        },
+        {
+          "id": "e75",
+          "from": "entropy",
+          "to": "ordered-time",
+          "fromLabel": "Entropy",
+          "toLabel": "Ordered Time",
+          "type": "red",
+          "note": "Heat-death / run-down is fallen time in thermodynamic language.",
+          "directed": true
+        }
+      ],
+      "count": 36,
+      "mix": "36 · cyan 15 · gold 10 · magenta 5 · orange 2 · red 2 · green 2"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "sufi"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e406",
+          "from": "fana-baqa",
+          "to": "eros",
+          "fromLabel": "Fana and Baqa",
+          "toLabel": "Eros",
+          "type": "cyan",
+          "note": "Return path. Eros integrates becoming; fanāʾ burns the self.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · cyan 1"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "vedic"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e290",
+          "from": "prajapati",
+          "to": "demiurge",
+          "fromLabel": "Prajāpati",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "Makes living kinds. No separate paradigm.",
+          "directed": false
+        },
+        {
+          "id": "e293",
+          "from": "tvastr",
+          "to": "demiurge",
+          "fromLabel": "Tvaṣṭṛ",
+          "toLabel": "Demiurge",
+          "type": "cyan",
+          "note": "Shapes beings and the vajra, not the whole cosmos from a model.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · cyan 2"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "yoruba"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 2,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e537",
+          "from": "obatala",
+          "to": "demiurge",
+          "fromLabel": "Obatala",
+          "toLabel": "Demiurge",
+          "type": "magenta",
+          "note": "Drunk delay and a split commission versus a craftsman good without jealousy.",
+          "directed": false
+        },
+        {
+          "id": "e530",
+          "from": "olodumare",
+          "to": "the-good",
+          "fromLabel": "Olodumare",
+          "toLabel": "The Good",
+          "type": "magenta",
+          "note": "Unemptying source that does not root a willing craftsman versus the Good that does.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · magenta 2"
+    },
+    {
+      "clusters": [
+        "platonic",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 3,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e316",
+          "from": "ahura-mazda",
+          "to": "the-good",
+          "fromLabel": "Ahura Mazda",
+          "toLabel": "The Good",
+          "type": "cyan",
+          "note": "Summit of wisdom and asha. Not beyond being, and has an opposing will.",
+          "directed": false
+        },
+        {
+          "id": "e102",
+          "from": "zoroastrian-dualism",
+          "to": "receptacle",
+          "fromLabel": "Zoroastrian Dualism",
+          "toLabel": "Receptacle",
+          "type": "magenta",
+          "note": "The opposing pole is itself a hostile principle, not chōra.",
+          "directed": false
+        },
+        {
+          "id": "e101",
+          "from": "zoroastrian-dualism",
+          "to": "the-good",
+          "fromLabel": "Zoroastrian Dualism",
+          "toLabel": "The Good",
+          "type": "magenta",
+          "note": "Two first wills versus one Good plus a non-evil necessity.",
+          "directed": false
+        },
+        {
+          "id": "e321",
+          "from": "zurvan",
+          "to": "ordered-time",
+          "fromLabel": "Zurvan",
+          "toLabel": "Ordered Time",
+          "type": "magenta",
+          "note": "Time as parent of good and evil versus time as image of eternity.",
+          "directed": false
+        }
+      ],
+      "count": 4,
+      "mix": "4 · magenta 3 · cyan 1"
+    },
+    {
+      "clusters": [
+        "preliterate",
+        "scientific"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 2,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 0
+      },
+      "members": [
+        {
+          "id": "e175",
+          "from": "blombos-mark",
+          "to": "information",
+          "fromLabel": "Blombos mark",
+          "toLabel": "Information / Constraint",
+          "type": "cyan",
+          "note": "Same slot only: a difference that can be stored. Not language and not Forms.",
+          "directed": false
+        },
+        {
+          "id": "e182",
+          "from": "vinca-signs",
+          "to": "information",
+          "fromLabel": "Vinča signs",
+          "toLabel": "Information / Constraint",
+          "type": "cyan",
+          "note": "Repeatable signs without a deciphered language.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · cyan 2"
+    },
+    {
+      "clusters": [
+        "sufi",
+        "theosophical"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 0,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e148",
+          "from": "theosophy",
+          "to": "sufism",
+          "fromLabel": "Theosophy",
+          "toLabel": "Sufism",
+          "type": "orange",
+          "note": "V5 hybrid: theosophy's perennialist uptake of Sufi material.",
+          "directed": false
+        }
+      ],
+      "count": 1,
+      "mix": "1 · orange 1"
+    },
+    {
+      "clusters": [
+        "vedic",
+        "zoroastrian"
+      ],
+      "counts": {
+        "gold": 0,
+        "cyan": 1,
+        "magenta": 0,
+        "green": 0,
+        "red": 0,
+        "orange": 1
+      },
+      "members": [
+        {
+          "id": "e311",
+          "from": "asha",
+          "to": "rta",
+          "fromLabel": "Asha",
+          "toLabel": "Ṛta",
+          "type": "cyan",
+          "note": "Cognate Indo-Iranian order-names.",
+          "directed": false
+        },
+        {
+          "id": "e303",
+          "from": "vedic",
+          "to": "zoroastrianism",
+          "fromLabel": "Vedic religion",
+          "toLabel": "Zoroastrianism",
+          "type": "orange",
+          "note": "Shared Indo-Iranian furniture (asura/ahura, ṛta/asha). Not identity.",
+          "directed": false
+        }
+      ],
+      "count": 2,
+      "mix": "2 · orange 1 · cyan 1"
+    }
+  ],
+  "communities": {
+    "abatur": 1,
+    "achamoth": 1,
+    "age-of-exile": 2,
+    "agni": 6,
+    "ahura-mazda": 7,
+    "alchemical-opus": 2,
+    "alchemy": 6,
+    "amesha-spentas": 7,
+    "amun": 3,
+    "anat": 8,
+    "angra-mainyu": 7,
+    "anu": 8,
+    "apaurusheya": 6,
+    "aristotelianism": 3,
+    "aristotle-unmoved-mover": 3,
+    "ase": 5,
+    "asha": 7,
+    "attractor": 3,
+    "atum": 4,
+    "baal": 8,
+    "barbelo": 3,
+    "becoming": 2,
+    "biblical-religion": 9,
+    "blombos-mark": 10,
+    "brahma": 6,
+    "brahman": 3,
+    "buddhism": 3,
+    "canaanite": 8,
+    "chaldean-oracles": 3,
+    "christian-logos": 3,
+    "christianity": 1,
+    "complexity-science": 9,
+    "cybernetic-feedback": 2,
+    "dao": 3,
+    "demiurge": 3,
+    "devi": 6,
+    "divine-me": 10,
+    "druj": 7,
+    "dyaus": 8,
+    "early-china": 7,
+    "earth-risen": 5,
+    "egyptian-religion": 4,
+    "ein-sof": 3,
+    "el-canaanite": 8,
+    "enki": 4,
+    "enlil": 8,
+    "entropy": 2,
+    "eros": 2,
+    "escape-gnosis": 2,
+    "failed-people": 5,
+    "fallen-time": 2,
+    "fana-baqa": 6,
+    "father-of-greatness": 1,
+    "geb": 8,
+    "genesis-creator": 3,
+    "ginnungagap": 4,
+    "gnostic-demiurge": 1,
+    "gnostic-unknown-father": 3,
+    "gnosticism": 1,
+    "gobekli-tepe": 10,
+    "golden-age-cronus": 2,
+    "harmonia": 2,
+    "hayyi-rabbi": 1,
+    "heart-of-sky": 5,
+    "hegel-geist": 2,
+    "hekhalot-ascent": 9,
+    "hermetic-nous": 3,
+    "hermeticism": 9,
+    "hero-twins": 5,
+    "hinduism": 6,
+    "hokhmah": 1,
+    "horos": 1,
+    "ifa": 5,
+    "incarnation": 2,
+    "indra": 4,
+    "information": 10,
+    "information-theory": 10,
+    "intelligible-paradigm": 3,
+    "isis": 8,
+    "islamic-philosophy": 3,
+    "jungian-psychology": 6,
+    "kabbalah": 9,
+    "kaivalya": 6,
+    "kant-noumenon": 3,
+    "kenoma": 1,
+    "king-of-darkness": 1,
+    "kothar": 4,
+    "lepenski-fish-image": 10,
+    "lepenski-vir": 10,
+    "limiters-unlimiteds": 2,
+    "lion-man": 10,
+    "living-spirit": 1,
+    "maat": 7,
+    "maize-people": 5,
+    "manda-d-hayyi": 1,
+    "mandaeism": 1,
+    "manichaean-mixture": 1,
+    "manichaean-three-times": 1,
+    "manichaeism": 1,
+    "marduk": 4,
+    "masbuta": 1,
+    "maya": 6,
+    "merkabah-throne": 9,
+    "merkavah": 9,
+    "mesopotamian": 4,
+    "metatron": 9,
+    "mot": 8,
+    "mystery-ascent": 9,
+    "mystery-religions": 9,
+    "nabta-playa": 2,
+    "nammu": 4,
+    "necessary-existent": 3,
+    "negentropy": 2,
+    "neoplatonism": 9,
+    "nephthys": 8,
+    "norse-myth": 5,
+    "nous-neoplatonic": 3,
+    "nun": 4,
+    "nut": 8,
+    "nyaya-ishvara": 6,
+    "obatala": 4,
+    "oduduwa": 4,
+    "olodumare": 5,
+    "olokun": 4,
+    "ordered-time": 2,
+    "ori": 5,
+    "orphic-dionysus": 5,
+    "orphism": 5,
+    "orunmila": 5,
+    "osiris": 8,
+    "paleolithic-image": 10,
+    "paramanu": 6,
+    "physics": 9,
+    "platonism": 1,
+    "pleroma": 3,
+    "plotinus-one": 3,
+    "plumed-serpent": 5,
+    "popol-vuh": 5,
+    "ppn-ritual": 10,
+    "prajapati": 6,
+    "primal-man": 1,
+    "prithivi": 8,
+    "process-thought": 2,
+    "psyche-neoplatonic": 2,
+    "ptah": 4,
+    "ptahil": 1,
+    "purusha-prakriti": 6,
+    "pythagoreanism": 2,
+    "ragnarok": 5,
+    "re": 7,
+    "receptacle": 1,
+    "rta": 7,
+    "rudra": 6,
+    "ruha": 1,
+    "sefirot": 9,
+    "self-organization": 3,
+    "seth": 8,
+    "sethianism": 1,
+    "shevirah": 1,
+    "shiva": 6,
+    "shu": 8,
+    "sky-sea-stillness": 4,
+    "soma": 4,
+    "sons-of-burr": 4,
+    "sophia-fall": 1,
+    "spherical-humans": 2,
+    "spinoza-deus": 3,
+    "statesman-cycle": 2,
+    "stoic-logos": 3,
+    "stoicism": 3,
+    "sufism": 6,
+    "sunyata": 3,
+    "surya": 7,
+    "symmetry-breaking": 9,
+    "systems-theory": 9,
+    "tablet-of-destinies": 5,
+    "tefnut": 4,
+    "the-good": 3,
+    "theosophy": 6,
+    "theurgy": 2,
+    "third-messenger": 1,
+    "thoth": 10,
+    "tiamat": 4,
+    "tian": 7,
+    "tianming": 5,
+    "tikkun": 2,
+    "tohu-vavohu": 4,
+    "tvastr": 4,
+    "valentinian-demiurge": 1,
+    "valentinianism": 1,
+    "varuna": 7,
+    "vedic": 7,
+    "vedic-purusha": 7,
+    "vinca": 10,
+    "vinca-signs": 10,
+    "vishnu": 2,
+    "vrtra": 4,
+    "whitehead-process": 2,
+    "world-soul": 2,
+    "wyrd": 5,
+    "xibalba": 5,
+    "yam": 4,
+    "yardna": 1,
+    "yggdrasil": 5,
+    "yijing-change": 2,
+    "ymir": 4,
+    "yushamin": 1,
+    "zeus-division": 2,
+    "zoroastrian-dualism": 7,
+    "zoroastrianism": 7,
+    "zurvan": 7
+  },
+  "communityCount": 10,
+  "hidePlatonic": {
+    "components": 7,
+    "removed": 14
+  },
+  "betweenness": [
+    {
+      "id": "demiurge",
+      "label": "Demiurge",
+      "cluster": "platonic",
+      "score": 0.194613
+    },
+    {
+      "id": "the-good",
+      "label": "The Good",
+      "cluster": "platonic",
+      "score": 0.154476
+    },
+    {
+      "id": "intelligible-paradigm",
+      "label": "Intelligible Paradigm",
+      "cluster": "platonic",
+      "score": 0.137506
+    },
+    {
+      "id": "receptacle",
+      "label": "Receptacle",
+      "cluster": "platonic",
+      "score": 0.081122
+    },
+    {
+      "id": "information",
+      "label": "Information / Constraint",
+      "cluster": "scientific",
+      "score": 0.074986
+    },
+    {
+      "id": "becoming",
+      "label": "Becoming",
+      "cluster": "platonic",
+      "score": 0.065422
+    },
+    {
+      "id": "ordered-time",
+      "label": "Ordered Time",
+      "cluster": "platonic",
+      "score": 0.062938
+    },
+    {
+      "id": "eros",
+      "label": "Eros",
+      "cluster": "platonic",
+      "score": 0.054276
+    },
+    {
+      "id": "maat",
+      "label": "Ma'at",
+      "cluster": "egyptian",
+      "score": 0.04963
+    },
+    {
+      "id": "hinduism",
+      "label": "Hinduism",
+      "cluster": "hindu",
+      "score": 0.039936
+    },
+    {
+      "id": "blombos-mark",
+      "label": "Blombos mark",
+      "cluster": "preliterate",
+      "score": 0.039494
+    },
+    {
+      "id": "genesis-creator",
+      "label": "Genesis Creator",
+      "cluster": "biblical",
+      "score": 0.038355
+    }
+  ],
+  "platonicTop12": 7,
+  "slots": [
+    {
+      "id": "craftsman",
+      "label": "Craftsman",
+      "gloss": "Benevolent craftsman who looks to an eternal model, versus the archontic craftsman who fabricates a prison and does not know the Pleroma.",
+      "members": [
+        "demiurge",
+        "gnostic-demiurge"
+      ]
+    },
+    {
+      "id": "matter",
+      "label": "Matter",
+      "gloss": "Chōra as nurse, space, and necessary condition of becoming, versus matter as tomb or prison.",
+      "members": [
+        "receptacle",
+        "kenoma"
+      ]
+    },
+    {
+      "id": "time",
+      "label": "Time",
+      "gloss": "Time as the moving image of eternity, versus exile-time and irreversible fall.",
+      "members": [
+        "ordered-time",
+        "fallen-time"
+      ]
+    },
+    {
+      "id": "return",
+      "label": "Return",
+      "gloss": "Cosmic love that binds and returns the world, versus a gnosis whose end is exit.",
+      "members": [
+        "eros",
+        "escape-gnosis"
+      ]
+    },
+    {
+      "id": "summit",
+      "label": "Summit",
+      "gloss": "The highest principle as Good, One, Ein Sof, Unknown Father, Brahman, or emptiness. Structural analogy and theological inversion, not a ladder.",
+      "members": [
+        "the-good",
+        "plotinus-one",
+        "ein-sof",
+        "gnostic-unknown-father",
+        "brahman",
+        "sunyata"
+      ]
+    }
+  ],
+  "tours": [
+    {
+      "id": "v7-craftsman",
+      "title": "Demiurge against the archon",
+      "sentence": "Same craftsman slot, opposite sign. The Platonic craftsman looks to an eternal model and is without jealousy. The archontic craftsman fabricates a prison and does not know the Pleroma.",
+      "nodes": [
+        "demiurge",
+        "gnostic-demiurge"
+      ]
+    },
+    {
+      "id": "v8-matter",
+      "title": "Receptacle against prison",
+      "sentence": "Chōra is nurse, space, and a necessary condition of becoming. Kenoma is the emptiness that imprisons. Same “below,” opposite soteriology.",
+      "nodes": [
+        "receptacle",
+        "kenoma"
+      ]
+    },
+    {
+      "id": "v9-time",
+      "title": "Ordered time against fallen time",
+      "sentence": "Ordered time is the moving image of eternity, generated with the heavens. Fallen time is exile, rupture, and a clock that does not imitate the paradigm.",
+      "nodes": [
+        "ordered-time",
+        "fallen-time"
+      ]
+    },
+    {
+      "id": "v10-return",
+      "title": "Cosmic love against escape",
+      "sentence": "Eros binds and returns the cosmos. Escape gnosis aims at exit from it.",
+      "nodes": [
+        "eros",
+        "escape-gnosis"
+      ]
+    },
+    {
+      "id": "v11-summit",
+      "title": "Status of the highest principle",
+      "sentence": "Good, One, Ein Sof, Unknown Father, Brahman, emptiness. Cyan where the slot is analogous, magenta where the valuation inverts. Not a ranked summit.",
+      "nodes": [
+        "the-good",
+        "plotinus-one",
+        "ein-sof",
+        "gnostic-unknown-father",
+        "brahman",
+        "sunyata"
+      ]
+    }
+  ]
+}
