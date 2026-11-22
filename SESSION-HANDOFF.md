@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, day wrap)
 
-Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `b9dea44` and this commit.
+Stop point: **242 nodes · 628 edges.** Graph files are unchanged since `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. `mystery-religions` stays `stub`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `3c8e9ff` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -29,7 +29,8 @@ Validate warns `duplicate cyan edge mitra->avestan-mithra (2 times)` and `duplic
 | `75255cb` | Companion. Partial swap. One orange lateral |
 | `172d6d5` | Day wrap. No graph edit |
 | `b9dea44` | Ma'at · ṛta · Asha skip. Notes only. No graph edit |
-| HEAD | Roman Mithras skip. Unclassified. Notes only. No graph edit |
+| `3c8e9ff` | Roman Mithras skip. Unclassified. Notes only. No graph edit |
+| HEAD | Eleusis skip. Unclassified. Notes only. No graph edit |
 
 Edge counts at the stop: cyan 225 · gold 154 · magenta 102 · orange 68 · red 41 · green 38.
 
@@ -53,6 +54,20 @@ Side findings, not encodes:
 - *Thebaid* 1.696 and 1.716–720: the hymn addresses Phoebus and offers Mithras as one name in the closing list. The horns and the cave modify `Mithram` only. `apollo` and `roman-apollo` stay the Livy temple, not this line.
 - `helios` stays the chariot and the god who oversees and hears. These lines do not put that on Mithras.
 - `el-canaanite` stays the Baal Cycle bull. That text was not opened. A bull epithet is not these horns under this cave.
+
+## Eleusis — skip, do not reopen as unexamined
+
+Unclassified. No node. No edge. No link. The cyan interior edge `mystery-religions` → `mystery-ascent` is not rewritten. `mystery-religions` stays `stub`. `data/latest.yaml` stays `companion`. Do not merge the `mitra` duplicate-edge warnings. Isis stays pending.
+
+Line: Homeric Hymn to Demeter 480 (Evelyn-White 1914). `ὄλβιος, ὃς τάδʼ ὄπωπεν ἐπιχθονίων ἀνθρώπων`. Blessedness of the one who has seen these things. No named passage already on another node puts that attribute on that node.
+
+Side findings, not encodes:
+
+- 481–482: the uninitiate’s lot, under murky darkness.
+- 476–479: the rites and the solemn orgia, which may not be transgressed, inquired into, or uttered. The referent of `τάδε`.
+- 463–465: the daughter’s third of the year under murky darkness, and two portions with the mother. A descent. Not line 480.
+- 486–489: wealth from Plutus, for the one the goddesses readily love. A second blessedness. Not “has seen.”
+- 490: the name Eleusis. The hymn addresses the queen who holds the people of fragrant Eleusis.
 
 ## Holds — not a next cell
 
@@ -84,7 +99,7 @@ Side findings, with the passages already recorded:
 
 ## What Now already says
 
-Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. No node. No edge. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
+Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. Roman Mithras was read in Statius, Thebaid 1.719–720, and skipped as unclassified. Eleusis was read at Homeric Hymn to Demeter 480 and skipped as unclassified. No node. No edge. The cyan interior edge stays. `mystery-religions` stays `stub`. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
 
 Those are waits and finished readings. They are not a new cell.
 
@@ -106,9 +121,10 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 2. Leave Mitra · Miθra as it is. The five rows are filled.
 3. Do not encode Jesus without a sourced shared attribute.
 4. Do not reopen Roman Mithras as unexamined. The unclassified skip is recorded. No node. No edge.
-5. Leave the side findings unscored unless a later pass names one passage.
-6. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
-7. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
+5. Do not reopen Eleusis as unexamined. The unclassified skip is recorded. No node. No edge. The cyan interior edge stays.
+6. Leave the side findings unscored unless a later pass names one passage.
+7. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
+8. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens. Leave Isis pending.
 
 ## Do not
 
