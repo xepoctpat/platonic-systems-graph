@@ -5127,3 +5127,15 @@ edges:
       Partial swap. The rule is shared, and the act did not transfer:
       birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16)
       and lordship of countries (Yt. 10.145).
+
+  - from: mitra
+    to: avestan-mithra
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      Shared attribute, not descent. Mitra and Varuṇa mount the chariot in
+      the highest heaven (Ṛgveda 5.63.1), and Ṛgveda 1.122.15 names that
+      same chariot. Miθra drives a gold chariot drawn by four white stallions
+      (Yt. 10.124–125).

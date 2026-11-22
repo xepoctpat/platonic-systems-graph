@@ -6217,7 +6217,7 @@
       ],
       "counts": {
         "gold": 0,
-        "cyan": 2,
+        "cyan": 3,
         "magenta": 0,
         "green": 0,
         "red": 0,
@@ -6242,6 +6242,16 @@
           "toLabel": "Miθra",
           "type": "cyan",
           "note": "Shared attribute, not descent. Mitra sets peoples to their agreements (Ṛgveda 3.59.1), and Miθra is the contract one must not break (Yt. 10.2).\n",
+          "directed": false
+        },
+        {
+          "id": "e626",
+          "from": "mitra",
+          "to": "avestan-mithra",
+          "fromLabel": "Mitra",
+          "toLabel": "Miθra",
+          "type": "cyan",
+          "note": "Shared attribute, not descent. Mitra and Varuṇa mount the chariot in the highest heaven (Ṛgveda 5.63.1), and Ṛgveda 1.122.15 names that same chariot. Miθra drives a gold chariot drawn by four white stallions (Yt. 10.124–125).\n",
           "directed": false
         },
         {
@@ -6275,8 +6285,8 @@
           "directed": false
         }
       ],
-      "count": 5,
-      "mix": "5 · orange 3 · cyan 2"
+      "count": 6,
+      "mix": "6 · orange 3 · cyan 3"
     }
   ],
   "communities": {

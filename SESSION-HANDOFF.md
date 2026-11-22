@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, compact)
 
-Stop point: **242 nodes · 626 edges.** Validate was **OK**. Working tree is **clean** at this commit. `main` is pushed to `origin/main`, including `e6c14de` and this commit.
+Stop point: **242 nodes · 627 edges.** Validate was **OK**. Working tree is **clean** at this commit. `main` is pushed to `origin/main`, including `06b6447` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -16,21 +16,21 @@ Cursor user setting, outside this repo: `files.autoSave` is `afterDelay`, delay 
 
 ## Git
 
-`main` matches `origin/main` after this push. `e6c14de` and this commit are both on the remote.
+`main` matches `origin/main` after this push. `06b6447` and this commit are both on the remote.
 
 | Commit | What |
 |---|---|
-| `6987a71` | Mitra ~ Jesus unclassified. No node, no edge, no link. `space.js` removed |
 | `43d92ee` | Avestan Miθra. One cyan covenant lateral. New node `avestan-mithra` |
 | `e6c14de` | Unsleeping eye. Partial swap. One orange lateral. No new node |
-| HEAD | Kingship. Partial swap. One orange lateral. No new node |
+| `06b6447` | Kingship. Partial swap. One orange lateral. No new node |
+| HEAD | Chariot. Shared attribute. One cyan lateral. No new node |
 
 ## Graph now
 
 | | |
 |---|---|
-| Edges | cyan 224 · gold 154 · magenta 102 · orange 67 · red 41 · green 38 |
-| Latest pass | kingship — partial swap, Mitra and Miθra |
+| Edges | cyan 225 · gold 154 · magenta 102 · orange 67 · red 41 · green 38 |
+| Latest pass | chariot — shared attribute, Mitra and Miθra |
 | Clusters added | `hellenic`, `roman` |
 
 Greco-Roman twelve (Livy 22.10.9, plus Liber) is a **drawing check, not an origin**. Cyan where only a translated name was sourced. Orange for Mars, Venus Erycina, Mercury, Vesta, Ceres, Liber. Gold for Apollo Medicus (vowed 433, Livy 4.25.3).
@@ -43,15 +43,25 @@ Avestan Miθra: one cyan lateral to Mitra on the covenant (Ṛgveda 3.59.1 and Y
 
 Unsleeping eye: partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The watch is shared, and the work of the eyes did not transfer. Ṛgveda 3.59.1 beholds the peoples with eyes that do not close. Yt. 10.7 counts ten thousand eyes and calls him sleepless beside that count. Yt. 10.13 looks over the Aryan abode with a beneficent eye. The covenant edge is unchanged. No new node.
 
-Kingship: partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The rule is shared, and the act did not transfer: birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145). The covenant edge and the eye edge are unchanged. No new node. `data/latest.yaml` is this encode.
+Kingship: partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The rule is shared, and the act did not transfer: birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145). The covenant edge and the eye edge are unchanged. No new node.
+
+Chariot: shared attribute. One cyan lateral, undirected, between `mitra` and `avestan-mithra`. Mitra and Varuṇa mount the chariot in the highest heaven (Ṛgveda 5.63.1). Ṛgveda 1.122.15 names that same chariot. Miθra drives a gold chariot drawn by four white stallions (Yt. 10.124–125). Yt. 10.13’s before-the-sun crossing is Avestan only and does not fill the Vedic cell. The covenant, eye, and kingship edges are unchanged. No new node. `data/latest.yaml` is this encode.
 
 Side findings, seen and not scored, not encoded:
 
+- Ṛgveda 5.63.5: the Maruts yoke their easy car. Mitra-Varuṇa are the address, not the riders.
+- Ṛgveda 5.63.7: the pair set the sun in heaven as a bright chariot. That car is the sun’s.
+- Ṛgveda 5.62.1: the place where they unyoke Sūrya’s horses. The horses are Sūrya’s.
+- Ṛgveda 5.62.2: one wheel-rim rolls at their will. A felly, not a car they mount.
+- Ṛgveda 5.62.8: at dawn they mount a gold-colored high seat (`garta`), not `ratha`. Griffith’s “car” was not followed.
+- Ṛgveda 7.66.12: “ye are the charioteers of Law” in Griffith. Geldner: drivers of true speech (`ṛtasya rathyāḥ`). An epithet, not a car they ride.
+- Ṛgveda 8.25.2: they are likened to two chariot-horses. The verse does not give them a car.
 - Yt. 10.0, before §1: “Unto Mithra, the lord of wide pastures, who has a thousand ears, ten thousand eyes, a Yazata invoked by his own name, and unto Rama Hvastra.”
-- Yt. 10.15: “On Arezahi and Sawahi, on Fradadhafshu and Widadhafshu, on Wouru-bareshti and Wourujareshti, on this bright karshwar of Xwaniratha, the abode of cattle, the dwelling of cattle, the powerful Mithra looks with a health-bringing eye.”
-- Yt. 10.82: “To whom Ahura Mazda gave a thousand senses and ten thousand eyes to see. With those eyes and those senses, he watches the man who injures Mithra, the man who lies unto Mithra. Through those eyes and those senses, he is undeceivable, he, of the ten thousand spies, the powerful, all-knowing, undeceivable god.”
+- Yt. 10.15: the powerful Mithra looks with a health-bringing eye across Arezahi, Sawahi, Fradadhafshu, Widadhafshu, Wouru-bareshti, Wourujareshti, and Xwaniratha.
 - Yt. 10.65: “increase-giving, fatness-giving, cattle-giving, sovereignty-giving, son-giving, cheerfulness-giving, and bliss-giving.”
-- Yt. 10.67: he drives from Arezahi to Xwaniratha “accompanied by the wheel of sovereignty, the Glory made by Mazda, and the Victory made by Ahura.” That wheel sits on the chariot passage.
+- Yt. 10.67: “Who drives along on his high-wheeled chariot, made of a heavenly substance, from the Karshvare of Arezahi to the Karshvare of Xwaniratha, the bright one; accompanied by the wheel of sovereignty, the Glory made by Mazda, and the Victory made by Ahura.” This is not the scored chariot passage.
+- Yt. 10.68: “Whose chariot is embraced by the great Ashi Vanguhi … whom four heavenly steeds, white, shining, seen afar, beneficent, endowed with knowledge, swiftly carry along the heavenly space.” It agrees with the four white horses of §125. It was not scored.
+- Yt. 10.82: Ahura Mazda gave him a thousand senses and ten thousand eyes to see; with those eyes he watches the man who injures Mithra and the man who lies unto Mithra.
 - Yt. 10.109: “To whom shall I give in return, without his thinking of it, the awful sovereignty, beautifully arrayed, with many armies, and most perfect; the sovereignty of an all-powerful tyrant, who fells down heads…”
 - Yt. 10.111: “From whom shall I take away, without his thinking of it, the awful sovereignty,” in the same words as §109.
 
@@ -71,18 +81,18 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 
 ## Do next, only if the operator asks
 
-1. The chariot is only Yt. 10.124–125. The Vedic cell is empty.
-2. The companion does not match. Yt. 10.145 names Ahura. No Vedic verse was opened.
-3. Do not encode Jesus without a sourced shared attribute.
-4. Roman Mithras stays the pending mystery interior.
-5. Yt. 10.0, 10.15, 10.82, 10.65, 10.67, 10.109, and 10.111 stay unscored.
+1. The companion does not match. Yt. 10.145 names Ahura. No Vedic verse was opened.
+2. Do not encode Jesus without a sourced shared attribute.
+3. Roman Mithras stays the pending mystery interior.
+4. The side findings stay unscored, including Yt. 10.67 and Yt. 10.68, and Ṛgveda 5.62, 5.63.5, 5.63.7, 7.66.12, and 8.25.2.
 
 ## Do not
 
 - Treat the Greco-Roman twelve as an origin.
 - Encode Jesus without a sourced shared attribute.
-- Add a Miθra lateral from Yt. 10.0, 10.15, 10.82, 10.65, 10.67, 10.109, or 10.111 unless a later pass is asked for.
-- Change the covenant edge or the eye edge, or add a gold edge.
+- Add a lateral from the side findings, including Yt. 10.67 and Yt. 10.68, unless a later pass is asked for.
+- Change the covenant edge, the eye edge, or the kingship edge, or add a gold edge.
+- Cite Yt. 10.13 as the Vedic side of the chariot.
 - Fold Roman Mithras into `avestan-mithra`, or mark `zoroastrianism` surveyed.
 - Turn Malachi 4:2 or Luke 22:20 into an edge.
 - Encode every god, or write a school’s chronicle and call it emergence.

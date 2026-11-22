@@ -139,25 +139,28 @@ readings:
   - id: avestan-mithra
     title: "Mitra · Miθra"
     claim: >
-      Vedic Mitra and Avestan Miθra share the covenant in named passages.
-      The unsleeping eye is a partial swap, and kingship is a partial swap:
-      birth as king did not transfer into bringing sovereignty and lordship
-      of countries.
+      Vedic Mitra and Avestan Miθra share the covenant, and they share a
+      chariot. Mitra and Varuṇa mount the car in the highest heaven
+      (Ṛgveda 5.63.1). Miθra drives a gold chariot (Yt. 10.124–125).
+      The eye and kingship stay partial swaps.
     status: confirmed
     mermaid: |
       flowchart LR
         mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
         mitra ---|"orange · unsleeping eye"| avestan-mithra
         mitra ---|"orange · kingship"| avestan-mithra
+        mitra ---|"cyan · chariot"| avestan-mithra
     confirmed: >
-      Three laterals, marked both ways. Covenant: Mitra sets peoples to
-      their agreements (Ṛgveda 3.59.1) and Miθra is the contract (Yt. 10.2).
+      Four laterals, marked both ways. Covenant (Ṛgveda 3.59.1; Yt. 10.2).
       Eye: partial swap (Ṛgveda 3.59.1; Yt. 10.7; Yt. 10.13). Kingship:
-      partial swap. Birth as king (Ṛgveda 3.59.4) versus bringing
-      sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145).
+      partial swap (Ṛgveda 3.59.4; Yt. 10.16; Yt. 10.145). Chariot: Mitra
+      and Varuṇa mount the car in the highest heaven (Ṛgveda 5.63.1);
+      Ṛgveda 1.122.15 names that same chariot. Miθra drives a gold chariot
+      (Yt. 10.124–125).
     open: >
-      The chariot is only Yt. 10.124–125. The companion does not match.
-      Mills’s Gathas do not name Mithra.
+      The before-the-sun crossing (Yt. 10.13) is Avestan only. It does not
+      fill the Vedic cell. The companion does not match. Mills’s Gathas
+      do not name Mithra.
     attributes:
       columns:
         - label: Attribute
@@ -167,8 +170,8 @@ readings:
           id: avestan-mithra
       rows:
         - - Chariot or daily crossing
-          - ""
-          - "Gold chariot, four white stallions (Yt. 10.124–125). Over the Hara before the sun (Yt. 10.13)"
+          - "Mounts the chariot in the highest heaven, with Varuṇa (Ṛgveda 5.63.1). The same chariot (Ṛgveda 1.122.15)"
+          - "Gold chariot, four white stallions (Yt. 10.124–125). Before the sun over the Hara (Yt. 10.13). That crossing does not fill the Vedic cell"
         - - "Eye, or light that sees"
           - "Beholds the peoples with eyes that do not close, Ṛgveda 3.59.1"
           - "Ten thousand eyes, and sleepless, as separate epithets (Yt. 10.7). A beneficent eye over the Aryan abode (Yt. 10.13)"

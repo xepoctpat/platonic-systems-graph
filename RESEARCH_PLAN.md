@@ -222,6 +222,18 @@ flowchart LR
   mitra ---|"orange · kingship"| avestan-mithra
 ```
 
+### 8. Chariot
+
+Pass 2026-11-22. Shared attribute. Mitra and Varuṇa mount the chariot in the highest heaven (Ṛgveda 5.63.1). Ṛgveda 1.122.15 names that same chariot. Miθra drives a gold chariot drawn by four white stallions (Yt. 10.124–125). The before-the-sun clause of Yt. 10.13 is Avestan only and does not fill the Vedic cell. One cyan lateral, undirected, between `mitra` and `avestan-mithra`. The covenant, eye, and kingship edges are unchanged. No new node.
+
+```mermaid
+flowchart LR
+  mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
+  mitra ---|"orange · unsleeping eye"| avestan-mithra
+  mitra ---|"orange · kingship"| avestan-mithra
+  mitra ---|"cyan · chariot"| avestan-mithra
+```
+
 ---
 
 ## The graph as the instrument
@@ -285,6 +297,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 | 5 | Avestan Miθra | Mitra yes. Miθra added | Encoded 2026-11-22. One cyan covenant lateral. No second edge |
 | 6 | Unsleeping eye | Both nodes exist | Encoded 2026-11-22. Partial swap. One orange lateral. Covenant edge unchanged |
 | 7 | Kingship | Both nodes exist | Encoded 2026-11-22. Partial swap. One orange lateral. Covenant and eye edges unchanged |
+| 8 | Chariot | Both nodes exist | Encoded 2026-11-22. Shared attribute. One cyan lateral. Ṛgveda 5.63.1 and Yt. 10.124–125 |
 
 ---
 
@@ -300,6 +313,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 - 2026-11-22. Avestan Miθra. Shared attribute: the covenant (Ṛgveda 3.59.1 and Yt. 10.2). One cyan lateral, undirected. New node `avestan-mithra`. The chariot is only Yt. 10.124–125. The companion does not match. Mills’s Gathas do not name Mithra. No second lateral.
 - 2026-11-22. Unsleeping eye. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The watch is shared. What failed: Ṛgveda 3.59.1 beholds the peoples with eyes that do not close; Yt. 10.7 counts ten thousand eyes and calls him sleepless beside that count; Yt. 10.13 looks with a beneficent eye. Covenant edge unchanged. No new node.
 - 2026-11-22. Kingship. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The rule is shared. What failed: birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145). Covenant edge and eye edge unchanged. No new node.
+- 2026-11-22. Chariot. Shared attribute. One cyan lateral, undirected, between `mitra` and `avestan-mithra`. Ṛgveda 5.63.1 mounts the chariot in the highest heaven. Ṛgveda 1.122.15 names that same chariot. Yt. 10.124–125 is the gold chariot and four white stallions. Yt. 10.13’s before-the-sun crossing does not fill the Vedic cell. Covenant, eye, and kingship edges unchanged. No new node.
 
 ```mermaid
 flowchart LR

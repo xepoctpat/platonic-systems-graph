@@ -16,13 +16,13 @@ Walk `/researcher` → `/add-entry` → `python tools/validate.py` → `/organic
 
 | | |
 |---|---|
-| Graph | 242 nodes · 626 edges · 42 systems · 200 principles · 33 clusters |
-| Edges | cyan 224 · gold 154 · magenta 102 · orange 67 · red 41 · green 38 |
+| Graph | 242 nodes · 627 edges · 42 systems · 200 principles · 33 clusters |
+| Edges | cyan 225 · gold 154 · magenta 102 · orange 67 · red 41 · green 38 |
 | Store | `data/nodes.yaml` and `data/edges.yaml` |
 | Sheet | comparison check, in the viewer |
 | 3D | retired. Loops are planar |
 | Drawings | Mermaid only. Documented laterals are typed. Unclassified clusters are a loose subgraph with generic links |
-| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Mitra ~ Jesus was tested and stayed unclassified. No Jesus node. No edge. The drawing has no link. Avestan Miθra keeps the cyan covenant (Ṛgveda 3.59.1 and Yt. 10.2) and the orange unsleeping eye (Ṛgveda 3.59.1, Yt. 10.7, Yt. 10.13). Kingship is an orange partial swap (Ṛgveda 3.59.4, Yt. 10.16, Yt. 10.145). The chariot is only the Yašt |
+| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Mitra ~ Jesus was tested and stayed unclassified. No Jesus node. No edge. The drawing has no link. Avestan Miθra keeps the cyan covenant (Ṛgveda 3.59.1 and Yt. 10.2), the orange unsleeping eye, and the orange kingship. The chariot is a cyan shared attribute (Ṛgveda 5.63.1 and Yt. 10.124–125). Yt. 10.13’s before-the-sun crossing does not fill the Vedic cell |
 
 `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens.
 
