@@ -5139,3 +5139,15 @@ edges:
       the highest heaven (Ṛgveda 5.63.1), and Ṛgveda 1.122.15 names that
       same chariot. Miθra drives a gold chariot drawn by four white stallions
       (Yt. 10.124–125).
+
+  - from: mitra
+    to: avestan-mithra
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: []
+    note: >
+      Partial swap. The second member did not transfer: the Vedic companion
+      is Varuṇa (Ṛgveda 5.72.1 and 5.72.3), and the Avestan companion is
+      Ahura (Yt. 10.145, the pair). The sun is a separate sacrifice in
+      that verse.

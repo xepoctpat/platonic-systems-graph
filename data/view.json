@@ -6221,7 +6221,7 @@
         "magenta": 0,
         "green": 0,
         "red": 0,
-        "orange": 3
+        "orange": 4
       },
       "members": [
         {
@@ -6275,6 +6275,16 @@
           "directed": false
         },
         {
+          "id": "e627",
+          "from": "mitra",
+          "to": "avestan-mithra",
+          "fromLabel": "Mitra",
+          "toLabel": "Miθra",
+          "type": "orange",
+          "note": "Partial swap. The second member did not transfer: the Vedic companion is Varuṇa (Ṛgveda 5.72.1 and 5.72.3), and the Avestan companion is Ahura (Yt. 10.145, the pair). The sun is a separate sacrifice in that verse.\n",
+          "directed": false
+        },
+        {
           "id": "e303",
           "from": "vedic",
           "to": "zoroastrianism",
@@ -6285,8 +6295,8 @@
           "directed": false
         }
       ],
-      "count": 6,
-      "mix": "6 · orange 3 · cyan 3"
+      "count": 7,
+      "mix": "7 · orange 4 · cyan 3"
     }
   ],
   "communities": {

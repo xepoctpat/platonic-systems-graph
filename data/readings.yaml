@@ -139,10 +139,9 @@ readings:
   - id: avestan-mithra
     title: "Mitra · Miθra"
     claim: >
-      Vedic Mitra and Avestan Miθra share the covenant, and they share a
-      chariot. Mitra and Varuṇa mount the car in the highest heaven
-      (Ṛgveda 5.63.1). Miθra drives a gold chariot (Yt. 10.124–125).
-      The eye and kingship stay partial swaps.
+      Vedic Mitra and Avestan Miθra share the covenant and a chariot.
+      The companion is a partial swap: the second member did not transfer.
+      Varuṇa (Ṛgveda 5.72.1 and 5.72.3) does not arrive as Ahura (Yt. 10.145).
     status: confirmed
     mermaid: |
       flowchart LR
@@ -150,17 +149,17 @@ readings:
         mitra ---|"orange · unsleeping eye"| avestan-mithra
         mitra ---|"orange · kingship"| avestan-mithra
         mitra ---|"cyan · chariot"| avestan-mithra
+        mitra ---|"orange · companion"| avestan-mithra
     confirmed: >
-      Four laterals, marked both ways. Covenant (Ṛgveda 3.59.1; Yt. 10.2).
+      Five laterals, marked both ways. Covenant (Ṛgveda 3.59.1; Yt. 10.2).
       Eye: partial swap (Ṛgveda 3.59.1; Yt. 10.7; Yt. 10.13). Kingship:
-      partial swap (Ṛgveda 3.59.4; Yt. 10.16; Yt. 10.145). Chariot: Mitra
-      and Varuṇa mount the car in the highest heaven (Ṛgveda 5.63.1);
-      Ṛgveda 1.122.15 names that same chariot. Miθra drives a gold chariot
-      (Yt. 10.124–125).
+      partial swap (Ṛgveda 3.59.4; Yt. 10.16; Yt. 10.145). Chariot
+      (Ṛgveda 5.63.1; Ṛgveda 1.122.15; Yt. 10.124–125). Companion: the
+      second member did not transfer. Varuṇa (Ṛgveda 5.72.1 and 5.72.3);
+      Ahura (Yt. 10.145, the pair). The sun is a separate sacrifice.
     open: >
       The before-the-sun crossing (Yt. 10.13) is Avestan only. It does not
-      fill the Vedic cell. The companion does not match. Mills’s Gathas
-      do not name Mithra.
+      fill the Vedic cell. Mills’s Gathas do not name Mithra.
     attributes:
       columns:
         - label: Attribute
@@ -182,5 +181,5 @@ readings:
           - "Born as king, of good dominion, as disposer, Ṛgveda 3.59.4. The verse names no sun"
           - "Brings sovereignty while crossing every karshwar (Yt. 10.16). Lord of all countries (Yt. 10.145). The sun is a separate sacrifice"
         - - Companion who is not the sun
-          - ""
-          - "Sacrificed with Ahura (Yt. 10.145). The sun is named apart. No Vedic verse was opened"
+          - "Offered to with Varuṇa; both sit for soma (Ṛgveda 5.72.1 and 5.72.3). The sun is not named"
+          - "Sacrificed with Ahura as the two gods (Yt. 10.145, the pair). The sun is a separate sacrifice"
