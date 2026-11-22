@@ -1,16 +1,18 @@
-# Session handoff (2026-11-22, wrap)
+# Session handoff (2026-11-22, fresh session)
 
-Stop point: **213 nodes · 605 edges.** Field opens as **8 groups** of neighboring schools. A line between groups keeps every finding and its types. Click a group for the schools and every link among them. No 3D view. Local serve is **up** at http://127.0.0.1:8765/viewer/. Do not treat remaining Platonic betweenness as a proven spine.
+Stop point: **213 nodes · 605 edges.** Working tree is **clean**. Field opens as **8 groups** of neighboring schools. A line between groups keeps every finding and its types. Click a group for the schools and every link among them. **3D** is the same picture at three sizes (groups, then schools, then that school’s principles), with drag rotation and no centre. Local serve may still be **up** at http://127.0.0.1:8765/viewer/. Do not treat remaining Platonic betweenness as a proven spine.
 
 ## Git — read this first
 
-`main` is **1 commit ahead** of `origin/main` and **has not been pushed**.
+`main` is **3 commits ahead** of `origin/main` and **has not been pushed**.
 
 | Commit | What |
 |---|---|
-| `0b304d3` | Reading layer only: mix chords, `view.json`, slots, tours, vendored JS. Not pushed |
+| `0b304d3` | Reading layer: mix chords, `view.json`, slots, tours, vendored JS |
+| `caafd26` | Yogācāra, pendant laterals, grouped field, rotating canvas view |
+| HEAD | This handoff, plus the roadmap note that Field opens as groups and 3D is an extra canvas |
 
-The working tree is **dirty** on top of that commit: pendant laterals, Yogācāra, heavy-pair default, this handoff, the roadmap ahead-list. **Do not start a new encode on this dirty tree.** Commit only if the operator asks. Pages will not show any of this until a push they also ask for.
+Do not start a new encode unless the operator asks. Commit only if they ask. Do not push unless they ask. Pages will not show any of this until that push.
 
 ## How to resume
 
@@ -41,7 +43,7 @@ YAML is the source of truth. `ROADMAP.md` is leverage order. `data/research-queu
 
 Ma'at is betweenness #9. `hinduism` is #10. That is not a spine.
 
-## What this sitting added (uncommitted)
+## What `caafd26` added
 
 Pendant laterals, no new nodes, no gold to the Demiurge:
 
@@ -55,7 +57,7 @@ Pendant laterals, no new nodes, no gold to the Demiurge:
 
 Buddhist 2: `alaya-vijnana`, `vijnaptimatra`. Pratītyasamutpāda stayed inside `sunyata` (MMK 24.18). Not every nikāya.
 
-Field: **Heavy** keeps each school’s three strongest lines among pairs with at least three findings (18 chords). **All pairs** is uncapped. **Clear** and **Field** turn **New** off.
+Field opens as groups. Click a group for every typed mix among its schools. **Heavy** is the school ring capped at three lines per school among pairs with at least three findings (18 chords; Platonism keeps 3). **All pairs** is that ring uncapped. **3D** repeats the three sizes on a canvas: drag rotates, the wheel zooms, click empty space steps back. There is no common ancestor. **Clear** and **Field** turn **New** off. Hover text sits over the stage so the toolbar does not reflow. Cytoscape uses its default wheel zoom.
 
 ## Science survey (no encode)
 
@@ -96,4 +98,4 @@ No phase item is open. Do not invent a tradition to fill the sitting.
 
 Ālayavijñāna ↔ Purusha–Prakriti · Ālayavijñāna ↔ Receptacle · Vijñaptimātra ↔ Māyā · Vijñaptimātra ↔ Śūnyatā
 
-Heavy is the default ring. All pairs is the dense one. Hide Platonic should report 2 components.
+Field opens on the 8 groups. Heavy is the capped school ring. All pairs is the dense ring. 3D is the rotating canvas. Hide Platonic should report 2 components.

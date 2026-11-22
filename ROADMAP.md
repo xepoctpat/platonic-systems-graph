@@ -286,6 +286,8 @@ Reading layer (viewer pass, no new nodes): Field chords show the type mix and us
 
 Heavy pairs (2026-11-22): a pair needs at least three findings, then each school keeps at most three of those lines (18 chords on the current graph; Platonism keeps three). **All pairs** draws every pair. Cyan is on. The old “Field hides cyan” line above is the earlier hairball fix, not the current default. **Clear** and **Field** turn off **New**.
 
+Groups and the rotating view (2026-11-22): **Field** opens as about eight groups of neighboring schools. A group line keeps every cross-group finding. Click a group for its schools and every typed mix among them. Heavy and All pairs are the school ring, not the opening picture. The **3D** button is a canvas orbit of the same three sizes. Drag rotates it. It is not three.js, not the default, and not a common ancestor.
+
 ### Ahead
 
 Not a new phase. The three items below are done. Do not add an edge to `nabta-playa` to make the hide-Platonic count 1.
@@ -294,11 +296,11 @@ Not a new phase. The three items below are done. Do not add an edge to `nabta-pl
 - [x] **Cap the heavy fan.** Greedy cap: strongest pairs first, both schools must still have fewer than three lines. Seriation unchanged. All pairs and Findings stay complete.
 - [x] **Science, one survey.** No encode. The hot beginning is Penrose’s low-entropy initial state. Inflation is Guth’s false-vacuum symmetry breaking. Both slots are already in the graph.
 
-Palamite / Hermetica stay optional and only if a new slot appears. No backend, database, 3D, or timeline axis.
+Palamite / Hermetica stay optional and only if a new slot appears. No backend, database, or timeline axis. The 3D button stays the extra canvas above.
 
 ## Phase E — Productize only what the graph needs
 
-No backend, no database, no 3D, no timeline axis. Remaining items are listed under the ad-hoc viewer pass above.
+No backend, no database, no timeline axis, and no 3D engine in place of the 2D field. Remaining items are listed under the ad-hoc viewer pass above.
 
 ---
 
