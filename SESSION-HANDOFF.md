@@ -1,6 +1,6 @@
 # Session handoff (2026-11-22, day wrap)
 
-Stop point: **242 nodes · 628 edges** at `75255cb`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is the wrap only. Nodes and edges are unchanged. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `75255cb` and this commit.
+Stop point: **242 nodes · 628 edges** at `172d6d5`. Validate was **OK** (42 systems, 200 principles, 33 clusters). This commit is notes only. `data/nodes.yaml`, `data/edges.yaml`, `data/readings.yaml`, and `data/latest.yaml` are unchanged. `data/latest.yaml` stays `companion`. Working tree is **clean** after it. `main` is pushed to `origin/main`, including `172d6d5` and this commit.
 
 Read [ROADMAP.md](ROADMAP.md) and [RESEARCH_PLAN.md](RESEARCH_PLAN.md) before encoding. This file is the resume note. The older handoff (213 nodes, 3D as a view, Buddhist 2 as latest) is superseded.
 
@@ -27,9 +27,18 @@ Validate warns `duplicate cyan edge mitra->avestan-mithra (2 times)` and `duplic
 | `06b6447` | Kingship. Partial swap. One orange lateral |
 | `ad0c8e7` | Chariot. Shared attribute. One cyan lateral |
 | `75255cb` | Companion. Partial swap. One orange lateral |
-| HEAD | Day wrap. No graph edit |
+| `172d6d5` | Day wrap. No graph edit |
+| HEAD | Ma'at · ṛta · Asha skip. Notes only. No graph edit |
 
 Edge counts at the stop: cyan 225 · gold 154 · magenta 102 · orange 68 · red 41 · green 38.
+
+## Ma'at · ṛta · Asha — skip, do not reopen as unexamined
+
+Shared attribute. No fourth lateral. No YAML change. The three cyan edges stay (`rta`–`maat`, `asha`–`rta`, `asha`–`maat`). The sharing stays open. It is not a loop.
+
+Ptahhotep, Ṛgveda 5.15.2, and Yasna 28.11 each name only their own word. None of them puts the attribute on two of the three names.
+
+Restoration stays a side finding inside each tradition, not an edge among the three: the Tutankhamun restoration stela (`mAat mn.tj` — justice established in its place) and Yasna 30.5 (the holiest Spirit chose Right). Ṛta guarded by Varuṇa stays the existing gold edge `rta` → `varuna`. Do not merge the `mitra` duplicate-edge warnings.
 
 ## Holds — not a next cell
 
@@ -61,7 +70,7 @@ Side findings, with the passages already recorded:
 
 ## What Now already says
 
-Ma'at · ṛta · Asha is a confirmed open cyan sharing, not a loop. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
+Ma'at · ṛta · Asha was re-read and skipped. Shared attribute. The three cyan edges stay. The solar table is drawn for Sūrya, Helios, Re, and Mitra. `nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens. The comparison sheet stays the spine check. Do not switch the store to SQLite or Neo4j yet.
 
 Those are waits and finished readings. They are not a new cell.
 
@@ -79,12 +88,13 @@ If check prints `down`: `python tools/serve.py start` in the background. Port **
 
 ## Do next, only if the operator asks
 
-1. Leave Mitra · Miθra as it is. The five rows are filled.
-2. Do not encode Jesus without a sourced shared attribute.
-3. Leave Roman Mithras as the pending mystery interior.
-4. Leave the side findings unscored unless a later pass names one passage.
-5. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
-6. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
+1. Do not reopen Ma'at · ṛta · Asha as unexamined. The skip is recorded. The three cyan edges stay.
+2. Leave Mitra · Miθra as it is. The five rows are filled.
+3. Do not encode Jesus without a sourced shared attribute.
+4. Leave Roman Mithras as the pending mystery interior.
+5. Leave the side findings unscored unless a later pass names one passage.
+6. Leave Yt. 10.13’s before-the-sun crossing Avestan only.
+7. Leave `nabta-playa` unlinked. Leave Palamite and Hermetica until a lateral actually opens.
 
 ## Do not
 

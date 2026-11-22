@@ -329,6 +329,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 - 2026-11-22. Kingship. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The rule is shared. What failed: birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145). Covenant edge and eye edge unchanged. No new node.
 - 2026-11-22. Chariot. Shared attribute. One cyan lateral, undirected, between `mitra` and `avestan-mithra`. Ṛgveda 5.63.1 mounts the chariot in the highest heaven. Ṛgveda 1.122.15 names that same chariot. Yt. 10.124–125 is the gold chariot and four white stallions. Yt. 10.13’s before-the-sun crossing does not fill the Vedic cell. Covenant, eye, and kingship edges unchanged. No new node.
 - 2026-11-22. Companion. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The second member did not transfer: Varuṇa (Ṛgveda 5.72.1 and 5.72.3) versus Ahura (Yt. 10.145, the pair). The sun is a separate sacrifice. No edge to `varuna` or `ahura-mazda`. Covenant, eye, kingship, and chariot edges unchanged. No new node.
+- 2026-11-22. Ma'at · ṛta · Asha. Shared attribute. Skip. No fourth lateral. No YAML change. The three cyan edges stay (`rta`–`maat`, `asha`–`rta`, `asha`–`maat`). Ptahhotep, Ṛgveda 5.15.2, and Yasna 28.11 each name only their own word. Restoration (Tutankhamun stela, Yasna 30.5) stays a side finding inside each tradition. `data/latest.yaml` stays `companion`.
 
 ```mermaid
 flowchart LR
