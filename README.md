@@ -104,7 +104,7 @@ Live (GitHub Pages): <https://xepoctpat.github.io/platonic-systems-graph/>
 Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` or “start the server.” Port is 8765 on localhost only — not 8000 / 3000 / 5000 / 8080. `tools/serve.py` sends `Cache-Control: no-store` for YAML/JS/CSS so local edits show without a hard refresh.
 
 - Node colour = cluster; system nodes are larger (pale ring) than principles. **Communities** recolours the border only. Fill stays the cluster.
-- Default **Field** shows all six edge types. Schools sit on a ring ordered by shared findings (a layout, not a chronology). A line between schools is a mix: the words are counts by type, and the width is how many findings. Click the line for the edges. Gold does not stand in for the whole mix.
+- Default **Field** shows all six edge types. **Heavy** keeps each school’s three strongest lines among pairs with at least three findings. **All pairs** draws every pair. Schools sit on a ring ordered by shared findings (a layout, not a chronology). A line’s words are the mix, and its width is the count. Rest on the line or click it. **Findings** still lists every cross-cluster edge.
 - **Open interiors** shows every edge, schools in that same order. Click a node to open one school: same-cluster principles on the left, other clusters on the right, grouped by relation.
 - **Slots** lists curated collisions (`data/slots.yaml`). **Tours** lays V7–V11 left to right. A tour is an illustration, not the law of the graph.
 - **Path**: two clicks, explicit A→…→B. **Loop**: one click, a short cycle (prefers mixed green/red). Both are query overlays.

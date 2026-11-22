@@ -186,6 +186,12 @@ button.active { border-color: var(--orange); color: #fff; }
   color: var(--muted);
   font-size: 13px;
   margin-left: auto;
+  flex: 0 1 22em;
+  max-width: 22em;
+  min-height: 1.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #wrap {
@@ -414,6 +420,36 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+.hover-readout {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 3;
+  max-width: min(40em, 72%);
+  margin: 0;
+  padding: 8px 12px;
+  pointer-events: none;
+  background: rgba(16, 16, 16, 0.96);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#space-view {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  touch-action: none;
+  cursor: grab;
+}
+
+#cy.off { visibility: hidden; }
+#space-view.on { display: block; }
+#space-view.dragging { cursor: grabbing; }
 
 .overlay-note {
   position: absolute;

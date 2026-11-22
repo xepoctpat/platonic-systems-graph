@@ -10,6 +10,7 @@ import {
   showHinges,
   showLoop,
   showNode,
+  showOpenedGroup,
   showReading,
   showSlots,
   showTrajectory,
@@ -26,11 +27,23 @@ import {
   markBridges,
   paintPath,
   runViewLayout,
-  syncMetaEdges
+  syncMetaEdges,
+  syncGroups
 } from "./layout.js";
 import { state } from "./state.js";
+import { mountSpace } from "./space.js";
 
 const status = document.getElementById("status");
+let spaceView = null;
+
+function leaveSpace() {
+  state.spaceOn = false;
+  const btn = document.getElementById("space");
+  if (btn) btn.classList.remove("active");
+  const cyBox = document.getElementById("cy");
+  if (cyBox) cyBox.classList.remove("off");
+  if (spaceView) spaceView.hide();
+}
 
 function readHashId() {
   const raw = (location.hash || "").replace(/^#/, "");
@@ -43,6 +56,12 @@ function setHashId(id) {
   const next = id ? "#id=" + encodeURIComponent(id) : "#";
   if (location.hash === next || (next === "#" && !location.hash)) return;
   history.replaceState(null, "", next === "#" ? location.pathname + location.search : next);
+}
+
+function leaveNew() {
+  state.newOnly = false;
+  const nb = document.getElementById("new-findings");
+  if (nb) nb.classList.remove("active");
 }
 
 function deactivate(ids) {
@@ -118,6 +137,15 @@ function applyFilter() {
 
   const pathSet = state.pathRoute ? new Set(state.pathRoute.nodes) : null;
   const pathEdgeIds = state.pathRoute ? new Set(state.pathRoute.edges.map((e) => e.id())) : null;
+  const groupHome =
+    state.fieldMode &&
+    !state.schoolRing &&
+    !state.openGroup &&
+    !pathSet &&
+    !focusSet.size &&
+    !q;
+  const groupOpen =
+    state.fieldMode && !state.schoolRing && state.openGroup && !pathSet && !focusSet.size;
   const collapse = state.fieldMode && !focusSet.size && !pathSet;
   let vn = 0;
   let ve = 0;
@@ -134,6 +162,10 @@ function applyFilter() {
       ok = false;
     }
     if (ok && focusSet.size && !pathSet) ok = focusSet.has(d.id);
+    if (groupHome) ok = false;
+    if (groupOpen) {
+      ok = d.kind === "system" && state.openGroup.indexOf(d.cluster) >= 0 && clusters.has(d.cluster);
+    }
     if (ok && state.newOnly && collapse && d.kind === "system") {
       ok = state.newClusterSet.has(d.cluster);
     }
@@ -143,7 +175,9 @@ function applyFilter() {
     if (ok) vn += 1;
   });
 
-  syncMetaEdges(types);
+  cy.nodes('[kind = "group"]').remove();
+  if (groupHome) syncGroups(types, clusters);
+  else syncMetaEdges(types, groupOpen ? { only: state.openGroup, cap: false } : undefined);
 
   cy.edges().forEach((e) => {
     const okType = e.data("meta") ? true : types.has(e.data("type"));
@@ -174,6 +208,7 @@ function applyFilter() {
   applyLabels();
   runViewLayout();
   paintOverlayNote();
+  if (state.spaceOn && spaceView) spaceView.rebuild();
 
   if (state.loopMode && !state.pathRoute) {
     status.textContent = "Loop: click a node to paint a cycle through it";
@@ -196,7 +231,14 @@ function applyFilter() {
       state.latestMeta.pass && state.newEdgeCount
         ? " · " + state.newEdgeCount + " new (" + state.latestMeta.pass + ")"
         : "";
-    status.textContent = vn + " nodes · " + ve + " edges · " + vb + " bridges" + latestBit;
+    if (groupHome) vn = cy.nodes('[kind = "group"]').length;
+    const groupBit = groupHome ? " · groups" : groupOpen ? " · group" : "";
+    const heavyBit =
+      !groupHome && !groupOpen && state.heavyPairs && state.fieldMode && !state.focusId && !state.pathRoute
+        ? " · heavy"
+        : "";
+    status.textContent =
+      vn + " nodes · " + ve + " edges · " + vb + " bridges" + groupBit + heavyBit + latestBit;
   }
 }
 
@@ -307,6 +349,24 @@ function graphStyle() {
       }
     },
     {
+      selector: "node[kind = 'group']",
+      style: {
+        shape: "round-rectangle",
+        height: 52,
+        width: (el) => Math.min(200, Math.max(110, String(el.data("label") || "").length * 7.4 + 36)),
+        "font-size": 13,
+        "font-weight": 600,
+        "text-max-width": 170,
+        "background-color": "#2c2822",
+        "border-width": 2,
+        "border-color": "#f2e6b8",
+        label: "data(label)",
+        color: "#f4efe4",
+        "text-valign": "center",
+        "text-halign": "center"
+      }
+    },
+    {
       selector: "node.bridge-end",
       style: { "border-color": "#ece6d8", "border-width": 2 }
     },
@@ -327,7 +387,7 @@ function graphStyle() {
     { selector: "node.label-on", style: { label: "data(label)" } },
     {
       selector: "node.hovered",
-      style: { label: "data(label)", "border-color": "#fff", "border-width": 2, "z-index": 10 }
+      style: { "border-color": "#fff", "border-width": 2 }
     },
     {
       selector: "edge",
@@ -354,7 +414,7 @@ function graphStyle() {
         "source-arrow-shape": "none",
         "curve-style": "straight",
         opacity: (el) => Math.min(0.95, 0.22 + 0.045 * (el.data("count") || 1)),
-        label: "data(mix)",
+        label: "data(short)",
         color: "#f4efe4",
         "font-size": 12,
         "font-family": "Segoe UI, Georgia, serif",
@@ -427,8 +487,7 @@ async function init() {
     autoungrabify: true,
     minZoom: 0.08,
     maxZoom: 3.5,
-    wheelSensitivity: 0.28,
-    textureOnViewport: true,
+    textureOnViewport: false,
     hideEdgesOnViewport: false,
     style: graphStyle()
   });
@@ -475,6 +534,16 @@ async function init() {
       return;
     }
     if (state.routeKind === "tour" || state.routeKind === "slot") clearPath(false);
+    if (evt.target.data("kind") === "group") {
+      state.openGroup = (evt.target.data("clusters") || []).slice();
+      state.focusId = null;
+      setHashId("");
+      document.getElementById("help").classList.remove("active");
+      document.getElementById("findings").classList.remove("active");
+      showOpenedGroup(state.openGroup, evt.target.data("label"));
+      applyFilter();
+      return;
+    }
     state.focusId = id;
     document.getElementById("help").classList.remove("active");
     document.getElementById("findings").classList.remove("active");
@@ -483,18 +552,40 @@ async function init() {
     applyFilter();
   });
   cy.on("tap", "edge", (evt) => showEdge(evt.target.data()));
-  cy.on("mouseover", "edge.meta", (evt) => {
-    if (!status.dataset.hold) status.dataset.hold = status.textContent;
-    status.textContent = evt.target.data("mix") || "";
-  });
-  cy.on("mouseout", "edge.meta", () => {
-    if (status.dataset.hold) {
-      status.textContent = status.dataset.hold;
-      delete status.dataset.hold;
+  const hoverReadout = document.getElementById("hover-readout");
+  function showHover(text) {
+    if (!hoverReadout) return;
+    if (!text) {
+      hoverReadout.hidden = true;
+      hoverReadout.textContent = "";
+      return;
     }
+    hoverReadout.hidden = false;
+    hoverReadout.textContent = text;
+  }
+  cy.on("mouseover", "edge", (evt) => {
+    const d = evt.target.data();
+    if (d.meta) showHover(d.full || d.mix || "");
+    else showHover((d.type || "") + (d.note ? " · " + d.note : ""));
   });
+  cy.on("mouseout", "edge", () => showHover(""));
   cy.on("tap", (evt) => {
     if (evt.target === cy) {
+      if (state.focusId && state.openGroup && !state.pathMode && !state.loopMode) {
+        state.focusId = null;
+        setHashId("");
+        applyFilter();
+        showOpenedGroup(state.openGroup);
+        return;
+      }
+      if (state.openGroup && !state.schoolRing && !state.pathMode && !state.loopMode) {
+        state.openGroup = null;
+        state.focusId = null;
+        setHashId("");
+        applyFilter();
+        showGuide();
+        return;
+      }
       state.focusId = null;
       if (!state.pathMode && !state.loopMode) clearPath(true);
       if (state.routeKind === "tour" || state.routeKind === "slot") clearPath(false);
@@ -504,8 +595,15 @@ async function init() {
       if (!state.pathRoute) showGuide();
     }
   });
-  cy.on("mouseover", "node", (evt) => evt.target.addClass("hovered"));
-  cy.on("mouseout", "node", (evt) => evt.target.removeClass("hovered"));
+  cy.on("mouseover", "node", (evt) => {
+    evt.target.addClass("hovered");
+    const d = evt.target.data();
+    if (d.kind === "group") showHover((d.label || "") + (d.description ? " · " + d.description : ""));
+  });
+  cy.on("mouseout", "node", (evt) => {
+    evt.target.removeClass("hovered");
+    showHover("");
+  });
   cy.on("zoom pan", applyLabelsSoon);
 
   document.getElementById("help").addEventListener("click", () => {
@@ -564,17 +662,23 @@ async function init() {
   });
   document.getElementById("labels").addEventListener("change", applyLabels);
   document.getElementById("field").addEventListener("click", () => {
+    leaveSpace();
     clearPath(false);
     state.focusId = null;
+    leaveNew();
     state.fieldMode = true;
     state.lateralOnly = false;
-    if (!state.newOnly) setChecks("etype", () => true);
+    setChecks("etype", () => true);
+    state.schoolRing = false;
+    state.openGroup = null;
+    state.heavyPairs = true;
     document.getElementById("field").classList.add("active");
-    deactivate(["open-interiors", "laterals"]);
+    deactivate(["open-interiors", "laterals", "all-pairs", "heavy-pairs"]);
     applyFilter();
     showGuide();
   });
   document.getElementById("open-interiors").addEventListener("click", () => {
+    leaveSpace();
     clearPath(false);
     state.fieldMode = false;
     setChecks("etype", () => true);
@@ -635,6 +739,28 @@ async function init() {
     document.getElementById("laterals").classList.remove("active");
     applyFilter();
   });
+  document.getElementById("heavy-pairs").addEventListener("click", () => {
+    state.schoolRing = true;
+    state.openGroup = null;
+    state.fieldMode = true;
+    state.heavyPairs = true;
+    document.getElementById("heavy-pairs").classList.add("active");
+    document.getElementById("field").classList.add("active");
+    document.getElementById("all-pairs").classList.remove("active");
+    document.getElementById("open-interiors").classList.remove("active");
+    applyFilter();
+  });
+  document.getElementById("all-pairs").addEventListener("click", () => {
+    state.schoolRing = true;
+    state.openGroup = null;
+    state.fieldMode = true;
+    state.heavyPairs = false;
+    document.getElementById("all-pairs").classList.add("active");
+    document.getElementById("field").classList.add("active");
+    document.getElementById("heavy-pairs").classList.remove("active");
+    document.getElementById("open-interiors").classList.remove("active");
+    applyFilter();
+  });
   document.getElementById("slots").addEventListener("click", () => {
     state.focusId = null;
     clearPath(false);
@@ -672,6 +798,7 @@ async function init() {
   document.getElementById("clear-focus").addEventListener("click", () => {
     state.focusId = null;
     clearPath(false);
+    leaveNew();
     cy.elements().unselect();
     setHashId("");
     document.getElementById("findings").classList.remove("active");
@@ -683,6 +810,20 @@ async function init() {
   });
   document.getElementById("relayout").addEventListener("click", () => {
     runViewLayout();
+  });
+  document.getElementById("space").addEventListener("click", () => {
+    if (state.spaceOn) {
+      leaveSpace();
+      document.getElementById("field").classList.add("active");
+      return;
+    }
+    clearPath(false);
+    state.focusId = null;
+    state.spaceOn = true;
+    document.getElementById("space").classList.add("active");
+    deactivate(["field", "open-interiors", "heavy-pairs", "all-pairs"]);
+    document.getElementById("cy").classList.add("off");
+    spaceView.show();
   });
   document.getElementById("legend-toggle").addEventListener("click", () => {
     const box = document.getElementById("legend");
@@ -700,6 +841,11 @@ async function init() {
     });
   });
 
+  spaceView = mountSpace(document.getElementById("space-view"), (id) => {
+    const node = cy.getElementById(id);
+    if (node.empty()) return;
+    showNode(node.data());
+  });
   markBridges();
   setChecks("etype", () => true);
   if (!state.latestSet.size) {

@@ -74,6 +74,8 @@ class ValidateCliTests(unittest.TestCase):
             cwd=ROOT,
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             check=False,
         )
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
@@ -85,6 +87,8 @@ class ValidateCliTests(unittest.TestCase):
             cwd=ROOT,
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             check=False,
         )
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)

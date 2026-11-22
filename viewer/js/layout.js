@@ -1,9 +1,12 @@
 import {
   EDGE_TYPES,
   FINDING_ORDER,
+  HEAVY_CAP,
+  HEAVY_MIN,
   LOUD_BRIDGES,
   TYPE_PREF,
-  mixLabel
+  mixLabel,
+  shortMix
 } from "./data.js";
 import { state } from "./state.js";
 
@@ -68,6 +71,7 @@ export function applyLabels() {
     else {
       on =
         hovered ||
+        kind === "group" ||
         kind === "system" ||
         neighbourhood ||
         n.hasClass("on-path") ||
@@ -114,8 +118,125 @@ function placeArc(nodes, radius, start, end) {
   });
 }
 
+function ringChunks(allowed) {
+  const ring = ((state.view && state.view.ring) || []).filter((c) => !allowed || allowed.has(c));
+  const names = ring.length ? ring : [...(allowed || [])].sort();
+  const size = Math.max(3, Math.ceil(names.length / 8));
+  const chunks = [];
+  for (let i = 0; i < names.length; i += size) chunks.push(names.slice(i, i + size));
+  return chunks;
+}
+
+function chunkTitle(clusters) {
+  const cy = state.cy;
+  const titles = clusters.map((c) => {
+    const systems = cy.nodes().filter((n) => n.data("kind") === "system" && n.data("cluster") === c);
+    if (systems.length === 1) return systems[0].data("label") || c;
+    const first = systems.length ? systems[0].data("label") : c;
+    return (first || c) + " +" + Math.max(systems.length - 1, 0);
+  });
+  if (titles.length <= 2) return titles.join(" · ");
+  return titles[0] + " · " + titles[1] + " +" + (titles.length - 2);
+}
+
+export function syncGroups(types, allowed) {
+  const cy = state.cy;
+  cy.nodes('[kind = "group"]').remove();
+  cy.edges(".meta").remove();
+  const chunks = ringChunks(allowed);
+  const indexOf = new Map();
+  chunks.forEach((clusters, i) => clusters.forEach((c) => indexOf.set(c, i)));
+  chunks.forEach((clusters, i) => {
+    cy.add({
+      group: "nodes",
+      data: {
+        id: "group-" + i,
+        label: chunkTitle(clusters),
+        kind: "group",
+        cluster: clusters[0] || "",
+        clusters,
+        description: clusters.join(", ")
+      }
+    });
+  });
+  const pairs = new Map();
+  cy.edges().forEach((e) => {
+    if (e.data("meta") || e.data("kind") === "group") return;
+    if (!e.data("bridge")) return;
+    const t = e.data("type");
+    if (!types.has(t)) return;
+    const ia = indexOf.get(e.source().data("cluster"));
+    const ib = indexOf.get(e.target().data("cluster"));
+    if (ia == null || ib == null || ia === ib) return;
+    const key = [ia, ib].sort().join("||");
+    let cur = pairs.get(key);
+    if (!cur) {
+      cur = {
+        source: "group-" + Math.min(ia, ib),
+        target: "group-" + Math.max(ia, ib),
+        count: 0,
+        counts: Object.fromEntries(EDGE_TYPES.map((name) => [name, 0])),
+        members: []
+      };
+      pairs.set(key, cur);
+    }
+    cur.count += 1;
+    cur.counts[t] = (cur.counts[t] || 0) + 1;
+    cur.members.push({
+      id: e.id(),
+      from: e.source().id(),
+      to: e.target().id(),
+      fromLabel: e.source().data("label") || e.source().id(),
+      toLabel: e.target().data("label") || e.target().id(),
+      type: t,
+      note: e.data("note") || "",
+      directed: !!e.data("directed"),
+      isNew: !!e.data("isNew")
+    });
+  });
+  pairs.forEach((p, key) => {
+    const newCount = p.members.filter((m) => m.isNew).length;
+    if (state.newOnly && newCount === 0) return;
+    const mix = mixLabel(p.counts, p.count);
+    const short = shortMix(p.counts, p.count);
+    cy.add({
+      group: "edges",
+      classes: "meta bridge",
+      data: {
+        id: "gmeta-" + key,
+        source: p.source,
+        target: p.target,
+        type: "mix",
+        directed: false,
+        meta: true,
+        bridge: true,
+        count: p.count,
+        full: mix,
+        mix,
+        short,
+        members: p.members,
+        newCount,
+        note: mix,
+        versions: ""
+      }
+    });
+  });
+  if (state.newOnly) {
+    cy.nodes('[kind = "group"]').forEach((n) => {
+      const touches = n.connectedEdges(".meta").some((e) => (e.data("newCount") || 0) > 0);
+      if (!touches) n.remove();
+    });
+  }
+}
+
 export function layoutOverview() {
   const cy = state.cy;
+  const groupNodes = cy.nodes('[kind = "group"]:visible');
+  if (groupNodes.length) {
+    placeOnCircle(groupNodes.map((n) => n.id()), 80 + groupNodes.length * 42);
+    cy.fit(groupNodes, 90);
+    return;
+  }
   const systems = cy.nodes(":visible").filter((n) => n.data("kind") === "system");
   const groups = new Map();
   systems.forEach((n) => {
@@ -282,7 +403,29 @@ function clusterReps() {
   return reps;
 }
 
-export function syncMetaEdges(types) {
+function capSchoolChords(pairs) {
+  const ranked = [];
+  pairs.forEach((p, key) => {
+    if (p.count < HEAVY_MIN) return;
+    const name = (p.clusters || [p.source, p.target]).join("\0");
+    ranked.push({ key, count: p.count, name });
+  });
+  ranked.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  const degree = new Map();
+  const kept = new Set();
+  ranked.forEach((row) => {
+    const ends = row.key.split("||");
+    const used = ends.map((id) => degree.get(id) || 0);
+    if (used.some((n) => n >= HEAVY_CAP)) return;
+    ends.forEach((id, i) => degree.set(id, used[i] + 1));
+    kept.add(row.key);
+  });
+  return kept;
+}
+
+export function syncMetaEdges(types, opts) {
+  const only = opts && opts.only ? new Set(opts.only) : null;
+  const useCap = !opts || opts.cap !== false;
   const cy = state.cy;
   cy.edges(".meta").remove();
   const overview = state.fieldMode && !state.focusId && !state.pathRoute;
@@ -296,6 +439,7 @@ export function syncMetaEdges(types) {
     const ca = e.source().data("cluster");
     const cb = e.target().data("cluster");
     if (!ca || !cb || ca === cb) return;
+    if (only && (!only.has(ca) || !only.has(cb))) return;
     const ra = reps.get(ca);
     const rb = reps.get(cb);
     if (!ra || !rb || ra.id() === rb.id()) return;
@@ -305,6 +449,7 @@ export function syncMetaEdges(types) {
       cur = {
         source: ra.id(),
         target: rb.id(),
+        clusters: [ca, cb].sort(),
         count: 0,
         counts: Object.fromEntries(EDGE_TYPES.map((name) => [name, 0])),
         members: []
@@ -325,10 +470,14 @@ export function syncMetaEdges(types) {
       isNew: !!e.data("isNew")
     });
   });
+  const keptKeys = capSchoolChords(pairs);
   pairs.forEach((p, key) => {
     const newCount = p.members.filter((m) => m.isNew).length;
     if (state.newOnly && newCount === 0) return;
+    if (state.heavyPairs && useCap && !state.newOnly && p.count < HEAVY_MIN) return;
+    if (state.heavyPairs && useCap && !state.newOnly && !keptKeys.has(key)) return;
     const mix = mixLabel(p.counts, p.count);
+    const short = shortMix(p.counts, p.count);
     cy.add({
       group: "edges",
       classes: "meta bridge",
@@ -341,7 +490,9 @@ export function syncMetaEdges(types) {
         meta: true,
         bridge: true,
         count: p.count,
+        full: mix,
         mix,
+        short,
         members: p.members,
         newCount,
         note: mix,

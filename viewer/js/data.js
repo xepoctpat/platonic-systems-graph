@@ -61,6 +61,8 @@ export const FLOW_TYPES = ["gold", "green", "red"];
 export const MAP_TYPES = ["cyan", "magenta", "orange"];
 export const SLOT_TYPES = new Set(["gold", "cyan", "magenta"]);
 export const LATERALS = new Set(["orange", "cyan"]);
+export const HEAVY_MIN = 3;
+export const HEAVY_CAP = 3;
 export const EDGE_MEANING = {
   gold: "constitutes",
   cyan: "same slot, not the same thing",
@@ -108,6 +110,20 @@ export function mixLabel(counts, total) {
   const body = parts.map(([t, n]) => `${t} ${n}`).join(" · ");
   const sum = total == null ? parts.reduce((s, [, n]) => s + n, 0) : total;
   return body ? `${sum} · ${body}` : String(sum);
+}
+
+export function shortMix(counts, total) {
+  let best = "";
+  let n = 0;
+  EDGE_TYPES.forEach((t) => {
+    const count = counts[t] || 0;
+    if (count > n) {
+      n = count;
+      best = t;
+    }
+  });
+  const sum = total == null ? EDGE_TYPES.reduce((s, t) => s + (counts[t] || 0), 0) : total;
+  return best ? `${sum} · ${best}` : String(sum);
 }
 
 export function uniqueSorted(values) {

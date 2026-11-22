@@ -2,11 +2,8 @@
 # nodes.yaml and edges.yaml remain the source of truth.
 # Replace this file after each accepted /add-entry pass.
 
-pass: hindu-3
-label: Hindu 3 — darśana occupants
+pass: buddhist-2
+label: Buddhist 2 — Yogācāra
 nodes:
-  - maya
-  - apaurusheya
-  - paramanu
-  - kaivalya
-  - nyaya-ishvara
+  - alaya-vijnana
+  - vijnaptimatra

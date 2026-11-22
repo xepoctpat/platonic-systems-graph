@@ -225,7 +225,19 @@ Phase D stop condition is **met** (mythology gone; Popol Vuh is a named extra-Eu
 | Platonic share of top 12 betweenness | **7/12** (count moved; not a proven spine) |
 | What moved | Receptacle overtook information for #4. `hinduism` entered betweenness **#10** and degree **#5**. Genesis-creator back at #12. Tiamat still degree #4; Ma'at still betweenness #9. No gold to the Demiurge. |
 
-Next D: Buddhist 2 (pratītyasamutpāda / Yogācāra if a new slot) or science cosmology (only if distinct from entropy + ordered-time). Hinduism remains partial.
+Next content gate is science cosmology, and only if it is a new slot. Entropy, ordered time, symmetry-breaking, and information are already in the graph. Hinduism remains partial. Hiding `platonic` leaves two components: the field, and `nabta-playa` (left on purpose).
+
+### After pendant laterals and Buddhist 2 (2026-11-22)
+
+| | |
+|---|---|
+| Graph | 213 nodes · 605 edges · 42 systems · 171 principles · 31 clusters |
+| Edges | cyan 215 · gold 153 · magenta 102 · orange 56 · red 41 · green 38 |
+| Isolates | none |
+| Hide `platonic` | 2 components. The small one is `nabta-playa` only |
+| Betweenness top 5 | demiurge 0.190 · the-good 0.149 · paradigm 0.133 · receptacle 0.089 · information 0.074 |
+| Platonic share of top 12 betweenness | **7/12** (count only, not a spine) |
+| What moved | Five pendant laterals (no new nodes). Yogācāra: `alaya-vijnana`, `vijnaptimatra`. Receptacle back to betweenness #4. Ma'at #9, `hinduism` #10. No gold to the Demiurge. |
 
 ---
 
@@ -240,10 +252,14 @@ Stop when: `mythology` is gone (done in A) **and** at least one extra-Eurasian c
 | West Africa | Yoruba only with a named corpus in `refs` | a diversity flag | [x] |
 | Hindu 2 | Śiva / Viṣṇu / Devī as operators | avatāra lists | [x] |
 | Hindu 3 | darśana increment | every school | [x] |
-| Buddhist 2 | pratītyasamutpāda and/or Yogācāra if new slot | every nikāya | [ ] |
-| Science | cosmology only if distinct from entropy + ordered-time | every physicist | [ ] |
+| Buddhist 2 | Yogācāra storehouse and representation-only. Dependent origination stayed inside śūnyatā (MMK 24.18) | every nikāya | [x] |
+| Science | Surveyed. Hot beginning is the low-entropy initial state (Penrose). Inflation is symmetry breaking (Guth). No new node | every physicist | [x] |
 
 Mesopotamia leftovers (Inana, Atrahasis, netherworld) stay optional.
+
+Pendant laterals (not a new tradition): Spinoza ↔ Brahman (magenta), Kant ↔ Unknown Father (magenta), Hegel ↔ Spinoza (magenta), self-organization ↔ Dao (cyan), Chaldean Oracles → theurgy (gold). Nabta Playa was left as a time-slot stub. After those edges, hiding `platonic` leaves the field plus that one stub.
+
+Buddhist 2 did not add pratītyasamutpāda. MMK 24.18 identifies it with śūnyatā. The new slot is Yogācāra: `alaya-vijnana` and `vijnaptimatra`.
 
 ---
 
@@ -267,6 +283,18 @@ Done 2026-08-18. Compare against the old “every label + every edge at once” 
 - [x] Pin or vendor js-yaml + cytoscape if offline viewing matters
 
 Reading layer (viewer pass, no new nodes): Field chords show the type mix and use width for the count. Ring order is the seriation in `data/view.json`. Curated slots and tours read V7–V11. Community borders and the hide-Platonic component count are overlays. `python tools/validate.py` rewrites `data/view.json`.
+
+Heavy pairs (2026-11-22): a pair needs at least three findings, then each school keeps at most three of those lines (18 chords on the current graph; Platonism keeps three). **All pairs** draws every pair. Cyan is on. The old “Field hides cyan” line above is the earlier hairball fix, not the current default. **Clear** and **Field** turn off **New**.
+
+### Ahead
+
+Not a new phase. The three items below are done. Do not add an edge to `nabta-playa` to make the hide-Platonic count 1.
+
+- [x] **Clear turns off New.** Clear and Field leave the New filter.
+- [x] **Cap the heavy fan.** Greedy cap: strongest pairs first, both schools must still have fewer than three lines. Seriation unchanged. All pairs and Findings stay complete.
+- [x] **Science, one survey.** No encode. The hot beginning is Penrose’s low-entropy initial state. Inflation is Guth’s false-vacuum symmetry breaking. Both slots are already in the graph.
+
+Palamite / Hermetica stay optional and only if a new slot appears. No backend, database, 3D, or timeline axis.
 
 ## Phase E — Productize only what the graph needs
 

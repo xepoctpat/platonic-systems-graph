@@ -64,11 +64,34 @@ export function mountLegend() {
     `<span><span class="legend-name">principle</span> <span class="legend-hint">inside a school, on the left when you open it</span></span></div>`;
   edgesBox.innerHTML =
     `<div class="legend-row"><span class="legend-line bridge" style="border-top-color:#d9d3c7"></span>` +
-    `<span><span class="legend-name">between schools</span> <span class="legend-hint">one line per pair. Words are the mix. Width is the count.</span></span></div>` +
+    `<span><span class="legend-name">between schools</span> <span class="legend-hint">Heavy: three strongest lines per school, each with 3 or more findings.</span></span></div>` +
     `<div class="legend-row"><span class="legend-line interior" style="border-top-color:#ece6d8"></span>` +
     `<span><span class="legend-name">interior</span> <span class="legend-hint">same cluster · hidden in Field</span></span></div>` +
     edgeRows(FLOW_TYPES, "Flow · one arrow") +
     edgeRows(MAP_TYPES, "Map · marks both ways");
+}
+
+export function showOpenedGroup(clusters, title) {
+  const names = clusters || [];
+  const schools = [];
+  if (state.cy) {
+    state.cy.nodes().forEach((n) => {
+      if (n.data("kind") === "system" && names.indexOf(n.data("cluster")) >= 0) schools.push(n);
+    });
+  }
+  schools.sort((a, b) => String(a.data("label") || "").localeCompare(String(b.data("label") || "")));
+  const rows = schools
+    .map(
+      (n) =>
+        `<button type="button" class="jump" data-jump="${esc(n.id())}">` +
+        `<strong>${esc(n.data("label") || n.id())}</strong> ` +
+        `<span class="legend-hint">${esc(n.data("cluster"))}</span></button>`
+    )
+    .join("");
+  detail().innerHTML =
+    `<h2>${esc(title || names.join(" · "))}</h2>` +
+    `<p class="empty">Neighbors on the ring, not a rank. Every link among these schools is on the canvas. Click empty space to return to the groups.</p>` +
+    (rows || `<p class="empty">No schools in this group under the current filters.</p>`);
 }
 
 export function showGuide() {
@@ -78,7 +101,9 @@ export function showGuide() {
     `<h2>How to use this</h2>` +
     `<div class="meta">Schools on a ring · a line is a mix of findings · not a spine</div>` +
     `<ol class="guide">` +
-    `<li><strong>Field</strong> is a ring of schools, ordered by shared findings. A line’s words are the mix (magenta, gold, …). Its width is how many findings. Click the line to read them.</li>` +
+    `<li><strong>Field</strong> groups neighboring schools. A line keeps every finding between two groups. Click a group to open its schools. Click empty space to step back.</li>` +
+    `<li><strong>3D</strong> is the same picture at three sizes: peer groups, then the schools inside one group, then that school’s principles. Drag to rotate. Each link type keeps its colour. There is no centre and no common ancestor. Click empty space to step back.</li>` +
+    `<li><strong>Heavy</strong> is the whole school ring, three lines each. <strong>All pairs</strong> draws every school pair. <strong>Findings</strong> lists every cross-cluster edge.</li>` +
     `<li><strong>Click a school</strong> to open it. Same-cluster principles sit on the left. Other schools sit on the right, grouped by relation.</li>` +
     `<li><strong>Slots</strong> are peer occupants of one collision. <strong>Tours</strong> lay a named tension left to right. Tours are illustrations.</li>` +
     `<li><strong>Path</strong>, then two nodes. <strong>Loop</strong>, then one node. Both are queries.</li>` +
@@ -197,7 +222,7 @@ export function showEdge(d) {
     const nNew = d.newCount || 0;
     detail().innerHTML =
       `<h2>Between schools</h2>` +
-      `<div class="meta">${esc(d.mix || d.note || "")}` +
+      `<div class="meta">${esc(d.full || d.mix || d.note || "")}` +
       (nNew ? ` · ${nNew} new` : "") +
       `</div>` +
       `<p class="empty">Width is the count. The line is not one relation.</p>` +

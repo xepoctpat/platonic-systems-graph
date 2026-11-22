@@ -4793,3 +4793,112 @@ edges:
     strength: 0.8
     versions: []
     note: Inferred Nyāya Īśvara versus Śiva as local lord of a kalpa.
+
+  - from: spinoza-deus
+    to: brahman
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: [V11]
+    note: >
+      Same summit, opposite world. Spinoza's God is the immanent cause of
+      what is in God (Ethics I P18). Nirguṇa Brahman is not that empirical
+      all (Chāndogya 3.14.1, read as sublating the world).
+
+  - from: kant-noumenon
+    to: gnostic-unknown-father
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V11]
+    note: >
+      Same beyond-appearance slot. Kant's noumenon is only a limit
+      (Critique of Pure Reason B307, B310–311). The Unknown Father is a
+      hidden god one can know by gnosis.
+
+  - from: hegel-geist
+    to: spinoza-deus
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: >
+      The true is not only substance but subject (Phenomenology, Preface).
+      Spinoza's one substance is the summit this return refuses.
+
+  - from: self-organization
+    to: dao
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: >
+      Dao gives life and does not lord over it (Daodejing 51).
+      Self-organization is that refusal said as local interaction, not as a Way.
+
+  - from: chaldean-oracles
+    to: theurgy
+    type: gold
+    directed: true
+    strength: 0.85
+    versions: [V2]
+    note: >
+      The Oracles are the revealed theology Iamblichus comments and builds
+      theurgy from (De Mysteriis; the commentary is attested by Damascius).
+
+  - from: buddhism
+    to: alaya-vijnana
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. The school is not this storehouse alone.
+
+  - from: buddhism
+    to: vijnaptimatra
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: System-to-principle interior. Representation-only is not the whole of Buddhism.
+
+  - from: alaya-vijnana
+    to: purusha-prakriti
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      A torrent of seeds that ripens, versus a witness that stores nothing
+      (Triṃśikā 2–4; Sāṃkhya-kārikā).
+
+  - from: alaya-vijnana
+    to: receptacle
+    type: magenta
+    directed: false
+    strength: 0.75
+    versions: [V8]
+    note: >
+      Both hold what appears. Chōra is space and necessity. The storehouse is
+      a seed-stream and is given up at arhatship (Triṃśikā 3–4).
+
+  - from: vijnaptimatra
+    to: maya
+    type: magenta
+    directed: false
+    strength: 0.85
+    versions: []
+    note: >
+      Appearance with no external object (Triṃśikā 17), versus mithyā
+      name-and-form on Brahman.
+
+  - from: vijnaptimatra
+    to: sunyata
+    type: magenta
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      Representation-only still has a transformation of consciousness.
+      Emptiness, identified with dependent origination, refuses that ground
+      (MMK 24.18).

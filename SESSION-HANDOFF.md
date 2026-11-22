@@ -1,13 +1,18 @@
-# Session handoff (2026-11-22, reading layer)
+# Session handoff (2026-11-22, wrap)
 
-Stop point: **Graph still Hindu 3** (no tradition encode). The viewer now reads `data/view.json`: mix chords, seriation ring, slots, tours, community borders, hide-Platonic count, hinges list. Local serve is up at http://127.0.0.1:8765/viewer/ until stopped. Do not treat remaining Platonic betweenness as a proven spine.
+Stop point: **213 nodes · 605 edges.** Field opens as **8 groups** of neighboring schools. A line between groups keeps every finding and its types. Click a group for the schools and every link among them. No 3D view. Local serve is **up** at http://127.0.0.1:8765/viewer/. Do not treat remaining Platonic betweenness as a proven spine.
 
-This session: representation only. Vendored js-yaml 4.1.0 and cytoscape 3.30.4. Split the viewer into ES modules. Buddhist 2 was not started.
+## Git — read this first
 
-Viewer (live): https://xepoctpat.github.io/platonic-systems-graph/  
-Local: http://127.0.0.1:8765/viewer/  (no-store when up. GitHub Pages needs this commit pushed, then a hard refresh)
+`main` is **1 commit ahead** of `origin/main` and **has not been pushed**.
 
-## How to resume (next session)
+| Commit | What |
+|---|---|
+| `0b304d3` | Reading layer only: mix chords, `view.json`, slots, tours, vendored JS. Not pushed |
+
+The working tree is **dirty** on top of that commit: pendant laterals, Yogācāra, heavy-pair default, this handoff, the roadmap ahead-list. **Do not start a new encode on this dirty tree.** Commit only if the operator asks. Pages will not show any of this until a push they also ask for.
+
+## How to resume
 
 ```powershell
 cd C:\Users\xepoc\OneDrive\Grok\platonic-systems-graph
@@ -17,103 +22,78 @@ cd C:\Users\xepoc\OneDrive\Grok\platonic-systems-graph
 
 If check prints `down`: `python tools/serve.py start` in the background. Port **8765** only.
 
-This folder is in `~/.grok/trusted_folders.toml` so project workflows resolve. Do not copy them to `~/.grok/workflows/`.
-
-Then **one** pass: `/walk-roadmap` or `/walk-one {"item":"buddhist-2"}`. Or `/researcher` Buddhist 2 if you want the table in chat.
+Then there is no open phase item. Palamite / Hermetica only if a new slot appears. Do not walk science or Buddhist 2 again. Do not edge `nabta-playa` to force one component.
 
 YAML is the source of truth. `ROADMAP.md` is leverage order. `data/research-queue.yaml` is the inventory. Do not invent a third list.
 
-## Graph now (Hindu 3, audited)
-
-211 nodes · 594 edges · 42 systems · 169 principles · 31 clusters.
+## Graph now
 
 | | |
 |---|---|
-| Edges | cyan 212 · gold 152 · magenta 95 · orange 56 · red 41 · green 38 |
-| Validate | OK · **no isolates** |
-| Betweenness top 5 | demiurge 0.195 · the-Good 0.154 · paradigm 0.138 · **receptacle 0.081** · information 0.075 |
-| Platonic share of top 12 | **7/12** (count moved; not a proven spine) |
-| Degree note | Tiamat still **#4**. `hinduism` is **#5** degree / **#10** betweenness. Ma'at still #9 betweenness. |
+| Edges | cyan 215 · gold 153 · magenta 102 · orange 56 · red 41 · green 38 |
+| Validate | OK · no isolates |
+| Hide `platonic` | **2** components. The small one is `nabta-playa` only. Left on purpose |
+| Betweenness top 5 | demiurge 0.190 · the-good 0.149 · paradigm 0.133 · receptacle 0.089 · information 0.074 |
+| Platonic share of top 12 | **7/12** (count only) |
+| Heavy field | 18 chords. Each school has at most 3. Platonism keeps 3. All pairs is uncapped |
+| Science | Surveyed, not encoded. Hot beginning = low entropy (Penrose). Inflation = symmetry breaking (Guth) |
+| Latest pass | `buddhist-2` — Ālayavijñāna, vijñaptimātra |
 
-`hindu` cluster colour already existed; no `CLUSTER_COLOR` edit.
+Ma'at is betweenness #9. `hinduism` is #10. That is not a spine.
 
-## What landed (Hindu 3)
+## What this sitting added (uncommitted)
 
-Five darśana occupants, keep_ids only. No new system, no new cluster, no gold to the Demiurge.
+Pendant laterals, no new nodes, no gold to the Demiurge:
 
-| id | Slot | Laterals |
+| From | Type | To |
 |---|---|---|
-| `maya` | adhyāsa / mithyā overlay | magenta → prakṛti, Devī |
-| `apaurusheya` | authorless Vedic injunction | orange → ṛta; magenta → genesis-creator |
-| `paramanu` | Vaiśeṣika atom | magenta → receptacle, prakṛti |
-| `kaivalya` | isolation-exit | gold ← Sāṃkhya pair; magenta → escape-gnosis, fanāʾ/baqāʾ, Brahman |
-| `nyaya-ishvara` | inferred product-designer | orange → paramāṇu, apauruṣeya, Brahmā; magenta → unmoved mover, Śiva |
+| `spinoza-deus` | magenta | `brahman` |
+| `kant-noumenon` | magenta | `gnostic-unknown-father` |
+| `hegel-geist` | magenta | `spinoza-deus` |
+| `self-organization` | cyan | `dao` |
+| `chaldean-oracles` | gold | `theurgy` |
 
-Five cyan interiors from `hinduism` to those five. Edge mix this pass: cyan +5 · gold +1 · magenta +10 · orange +4.
+Buddhist 2: `alaya-vijnana`, `vijnaptimatra`. Pratītyasamutpāda stayed inside `sunyata` (MMK 24.18). Not every nikāya.
 
-## What stayed out
+Field: **Heavy** keeps each school’s three strongest lines among pairs with at least three findings (18 chords). **All pairs** is uncapped. **Clear** and **Field** turn **New** off.
 
-Avatāra lists, every Devī form, every Purāṇa, school stickers, pramāṇa/padārtha lists, person-nodes, Vedānta subschools, kalām atoms, Buddhist 2. `research-queue` `hinduism` remains **partial**.
+## Science survey (no encode)
 
-## What this calendar day encoded
+Stopped. Nothing opened a slot the graph does not already have.
 
-| Pass | Cluster | What landed | What stayed out |
-|---|---|---|---|
-| C | `mandaean` | Four Lives, Ruha, yardna, masbuta, Manda d-Hayyi | Hibil list, Ur, Seven/Twelve, John as a person |
-| D | `norse` | Völuspá cycle | dwarf catalogue, every Æsir |
-| D | `mesoamerican` | Popol Vuh cycle | Seven Macaw, every Xibalba lord, Mexica suns |
-| D | `yoruba` | Ifá cosmogony | every orisha, 256 Odù, Santería |
-| D | `hindu` + `vedic` | Brahmā, Viṣṇu, Śiva, Devī; Rudra stem | avatāra list, Kālī/Durgā/Mātṛkās, every Purāṇa |
-| D | `hindu` | Māyā, apauruṣeya, paramāṇu, kaivalya, Nyāya Īśvara | every school, pramāṇa lists, Buddhist 2 |
+- The specialness of the hot beginning is a very low gravitational entropy. Penrose’s Weyl curvature hypothesis is that claim, and it is the entropy slot.
+- Inflation in Guth’s account is a delayed symmetry-breaking transition: a Higgs field stuck in a false vacuum. That is the symmetry-breaking slot.
+- A scale factor would be ordered time under another name.
 
-Phase D stop was already met (Popol Vuh). Hindu 3 is a darśana lateral.
+No physicist nodes. `nabta-playa` was not given a connecting edge.
 
-## Phase status
+## Fixes ahead
 
-| Phase | Status |
-|---|---|
-| A Honest graph | Done (`mythology` hub gone; `validate.py` exists) |
-| B Collisions | All 9 encoded. Share is now **7/12** Platonic — count only, not a spine proof |
-| C Split interiors | Required done. Palamite / Hermetica only if a **new slot** |
-| D Parallel peers | Norse, Popol Vuh, Ifá, Hindu 2, **Hindu 3** done. **Buddhist 2 next** |
-| Viewer | Mix chords, seriation ring, slots, tours, communities, hide-Platonic, hinges. Vendored JS. `data/view.json` from validate |
-| Workflows | Project-only under `.grok/workflows/` |
+None of the Ahead list remains. Palamite / Hermetica only if a later pass finds a new slot.
 
-## Do next (one pass — after the weekly limit resets)
+## Do next
 
-Do **not** start Buddhist 2 on leftover tokens. The live Pages site updates when this commit is pushed.
-
-**Buddhist 2.** Pratītyasamutpāda and/or Yogācāra **only if a new slot**. Not every nikāya.
-
-Already in the graph (do not duplicate):
-
-- `vedic` — Ṛgvedic cycle, including Rudra
-- `hinduism` — umbrella + Purāṇic operators + ṣaḍ-darśana occupants
-- `brahman` — nirguṇa summit
-- `purusha-prakriti` — Sāṃkhya pair
-- `maya` / `apaurusheya` / `paramanu` / `kaivalya` / `nyaya-ishvara` — Hindu 3
-- `brahma` / `vishnu` / `shiva` / `devi` — Hindu 2
-
-After Buddhist 2: science cosmology only if distinct from entropy + ordered-time.
+No phase item is open. Do not invent a tradition to fill the sitting.
 
 ## Do not
 
-- Start another tradition to “use the last tokens.”
+- Start another tradition to use leftover time.
+- Redo Buddhist 2, Hindu 3, or the pendant laterals.
 - Avatāra lists, every Devī form, every Purāṇa, every darśana as a sticker.
 - Fold Vedic into Hinduism or gold new gods to the Demiurge by default.
 - Encode leftover names (Nabta, Inana, Uṣas, nomes, Mexica suns, Eshu).
-- Treat remaining Platonic betweenness as a spine. 7/12 is a count, not a proof.
+- Treat 7/12 Platonic betweenness as a spine.
 - Copy project workflows to `~/.grok/workflows/`.
 - Put CSS/JS into `viewer/index.html`.
 
-## Workflows (this repo only)
+## Earlier — Hindu 3 (do not redo)
 
-A workflow **cannot** launch another workflow. Sequential work is **inside** `/walk-one` (encode → validate → audit → snapshot). Standalone `/collision-audit` and `/spine-snapshot` are manual.
-
-`/walk-one {"encode":false}` surveys and stops.
+211 nodes · 594 edges at that snapshot. Five darśana occupants: `maya`, `apaurusheya`, `paramanu`, `kaivalya`, `nyaya-ishvara`. Phase D’s extra-Eurasian stop was already met (Popol Vuh).
 
 ## Click in the viewer
 
-**New** then a row, or permalink http://127.0.0.1:8765/viewer/#id=maya
+**New**, or http://127.0.0.1:8765/viewer/#id=alaya-vijnana
 
-Māyā ↔ prakṛti · Māyā ↔ Devī · Apauruṣeya ↔ ṛta · Apauruṣeya ↔ Genesis creator · Paramāṇu ↔ Receptacle · Kaivalya ↔ Escape Gnosis · Kaivalya ↔ fanāʾ/baqāʾ · Nyāya Īśvara ↔ Unmoved mover
+Ālayavijñāna ↔ Purusha–Prakriti · Ālayavijñāna ↔ Receptacle · Vijñaptimātra ↔ Māyā · Vijñaptimātra ↔ Śūnyatā
+
+Heavy is the default ring. All pairs is the dense one. Hide Platonic should report 2 components.

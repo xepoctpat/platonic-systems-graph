@@ -48,8 +48,8 @@ nodes:
     cluster: buddhist
     description: >
       Peer system that often refuses the craftsman and the Good-as-source. Śūnyatā
-      is the first principle-level occupant; the system is not exhausted by that
-      node.
+      is the summit refusal. Ālayavijñāna and vijñaptimātra are Yogācāra occupants,
+      not that summit. The system is not exhausted by any one of them.
     refs: ["Mūlamadhyamakakārikā"]
 
   - id: christianity
@@ -507,10 +507,31 @@ nodes:
     cluster: buddhist
     role: attractor
     description: >
-      Emptiness of inherent existence. Occupies the summit slot by refusing the
-      slot: no Good that is a source of Forms, no craftsman, no
-      receptacle-as-third-kind. Strongest V11 magenta on the religious side.
-    refs: ["Mūlamadhyamakakārikā", "Prajñāpāramitā"]
+      Emptiness of inherent existence. Nāgārjuna identifies it with dependent
+      origination (MMK 24.18), so pratītyasamutpāda is not a second node.
+      Occupies the summit slot by refusing the slot: no Good that is a source
+      of Forms, no craftsman, no receptacle-as-third-kind.
+    refs: ["Mūlamadhyamakakārikā 24.18", "Prajñāpāramitā"]
+
+  - id: alaya-vijnana
+    label: "Ālayavijñāna"
+    kind: principle
+    cluster: buddhist
+    description: >
+      Storehouse consciousness. It carries every seed and flows like a torrent;
+      it is not a self, and it is given up at arhatship. Continuity of karma,
+      not a witness and not a material nurse.
+    refs: ["Vasubandhu, Triṃśikā 2–4"]
+
+  - id: vijnaptimatra
+    label: "Vijñaptimātra"
+    kind: principle
+    cluster: buddhist
+    description: >
+      Representation-only. What is discriminated does not exist as discriminated,
+      so all this is vijñaptimātra. Not an overlay on Brahman, and not an
+      emptiness that refuses a mental ground.
+    refs: ["Vasubandhu, Triṃśikā 17"]
 
   - id: christian-logos
     label: "Johannine Logos"
@@ -2357,6 +2378,7 @@ nodes:
       - "Daodejing 1"
       - "Daodejing 25"
       - "Daodejing 42"
+      - "Daodejing 51"
 
   - id: yijing-change
     label: "Yijing Change"
