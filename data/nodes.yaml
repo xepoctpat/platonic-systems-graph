@@ -2223,8 +2223,8 @@ nodes:
     kind: principle
     cluster: vedic
     description: >
-      Guardian of ṛta, oaths, and the waters. Often paired with Mitra (not
-      a separate node). Asura of bonds, not a slain sea.
+      Guardian of ṛta, oaths, and the waters. Paired with Mitra, who is now
+      his own node. Asura of bonds, not a slain sea.
     refs: ["Ṛgveda Varuṇa hymns"]
 
   - id: surya
@@ -2233,9 +2233,10 @@ nodes:
     cluster: vedic
     role: clock
     description: >
-      Sun that travels the ṛta-path. Daily light, not a dying-and-rowed Re
+      Sun that travels the ṛta-path. Seven bay steeds draw the car
+      (Ṛgveda 1.50.8–9). Daily light, not a dying-and-rowed Re
       and not Timaean numbered heavens.
-    refs: ["Ṛgveda Sūrya / Savitṛ hymns"]
+    refs: ["Ṛgveda 1.50.8–9"]
 
   - id: tvastr
     label: "Tvaṣṭṛ"
@@ -2390,3 +2391,298 @@ nodes:
       Change (Xici I). Time as ceaseless pairing, not a moving image of eternity.
     refs:
       - "Yijing, Xici I (一陰一陽之謂道; 生生之謂易)"
+
+  - id: ares
+    label: "Ares"
+    kind: principle
+    cluster: hellenic
+    role: noise
+    description: >
+      Greek war as strife. Zeus calls him most hateful of the Olympians,
+      because strife, wars, and battles are dear to him. Not a founder and
+      not the keeper of fields.
+    refs:
+      - "Homer, Iliad 5.890–891"
+
+  - id: mars
+    label: "Mars"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Roman Mars pater. In the field lustration he is asked to keep off
+      disease and barrenness and to let grain and vines flourish. Battle
+      is only part of the function.       Father of Romulus in the grove story
+      is a separate claim and is not settled here as an older Italic origin.
+    refs:
+      - "Cato, De agri cultura 141"
+      - "Dionysius of Halicarnassus, Roman Antiquities 1.77.1"
+      - "Livy 22.10.9"
+
+  - id: zeus
+    label: "Zeus"
+    kind: principle
+    cluster: hellenic
+    role: attractor
+    description: >
+      Greek sky sovereign of the twelve. This node is the name Jupiter
+      translates. It is not the Platonic Zeus who divides the spherical humans.
+    refs: ["Livy 22.10.9 (Roman twelve; Greek name by interpretatio)"]
+
+  - id: jupiter
+    label: "Jupiter"
+    kind: principle
+    cluster: roman
+    role: attractor
+    description: >
+      Heads the Roman twelve at the lectisternium of 217, and receives the
+      vowed spring. Same sky-sovereign slot as Zeus in the sources opened
+      here. A further state-oath function is not claimed as a separate swap.
+    refs: ["Livy 22.10.2–3", "Livy 22.10.9"]
+
+  - id: hera
+    label: "Hera"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek consort in the twelve, the name Juno translates. Whether her
+      function is only marriage is not re-opened here.
+    refs: ["Livy 22.10.9 (Roman twelve; Greek name by interpretatio)"]
+
+  - id: juno
+    label: "Juno"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Shares Jupiter’s couch at the lectisternium of 217. The name-match
+      with Hera is recorded. A distinct Capitoline function is left open.
+    refs: ["Livy 22.10.9"]
+
+  - id: poseidon
+    label: "Poseidon"
+    kind: principle
+    cluster: hellenic
+    role: noise
+    description: >
+      Greek sea god of the twelve, the name Neptune translates. A Roman
+      water-versus-sea gap is not claimed in this pass.
+    refs: ["Livy 22.10.9 (Roman twelve; Greek name by interpretatio)"]
+
+  - id: neptune
+    label: "Neptune"
+    kind: principle
+    cluster: roman
+    role: noise
+    description: >
+      Named in the Roman twelve beside Minerva. Identified with Poseidon.
+      No separate freshwater function is encoded until a passage is opened.
+    refs: ["Livy 22.10.9"]
+
+  - id: athena
+    label: "Athena"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek armed city goddess and craft, the name Minerva translates.
+      The war-and-craft split is not given its own edge in this pass.
+    refs: ["Livy 22.10.9 (Roman twelve; Greek name by interpretatio)"]
+
+  - id: minerva
+    label: "Minerva"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Named in the Roman twelve beside Neptune. Identified with Athena.
+      An Etruscan Menrva origin is left open.
+    refs: ["Livy 22.10.9"]
+
+  - id: apollo
+    label: "Apollo"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek Apollo, healer and singer. The Roman temple does not translate
+      the name. It imports the cult.
+    refs: ["Livy 4.25.3"]
+
+  - id: roman-apollo
+    label: "Roman Apollo"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Apollo Medicus. Temple vowed in 433 because of a plague and dedicated
+      in 431. A foreign cult, outside the old Roman set, name untranslated.
+    refs: ["Livy 4.25.3", "Livy 4.29.7", "Livy 22.10.9"]
+
+  - id: artemis
+    label: "Artemis"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek hunt and wild, the name Diana translates. An older woodland
+      Diana is left open.
+    refs: ["Livy 22.10.9 (Roman twelve; Greek name by interpretatio)"]
+
+  - id: diana
+    label: "Diana"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Named in the Roman twelve beside Apollo. Identified with Artemis.
+      No separate Aventine or Nemorensis function is encoded in this pass.
+    refs: ["Livy 22.10.9"]
+
+  - id: aphrodite
+    label: "Aphrodite"
+    kind: principle
+    cluster: hellenic
+    role: attractor
+    description: >
+      Greek desire in the twelve. The Roman vow of 217 is not her Cyprian cult
+      under another name.
+    refs: ["Livy 22.10.10"]
+
+  - id: venus
+    label: "Venus"
+    kind: principle
+    cluster: roman
+    role: attractor
+    description: >
+      Venus Erycina. At the lectisternium of 217 a temple is vowed to her
+      from the Sibylline books. An imported Sicilian cult, not a plain
+      translation of Aphrodite.
+    refs: ["Livy 22.10.9", "Livy 22.10.10"]
+
+  - id: hephaestus
+    label: "Hephaestus"
+    kind: principle
+    cluster: hellenic
+    role: controller
+    description: >
+      Greek smith of the twelve, the name Vulcan translates. A Roman
+      fire-of-the-city gap is not claimed until the Volcanalia is opened.
+    refs: ["Livy 22.10.9 (Roman twelve; Greek name by interpretatio)"]
+
+  - id: vulcan
+    label: "Vulcan"
+    kind: principle
+    cluster: roman
+    role: controller
+    description: >
+      Named in the Roman twelve beside Vesta. Identified with Hephaestus.
+      The Volcanalia is left for a later pass.
+    refs: ["Livy 22.10.9"]
+
+  - id: hermes
+    label: "Hermes"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek herald and guide. The Roman temple is not that office.
+    refs: ["Livy 2.21.7", "Ovid, Fasti 5.669"]
+
+  - id: mercury
+    label: "Mercury"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Temple dedicated on the Ides of May, 495. The day is the merchants’
+      festival. Gain and goods, not the herald’s staff. Later identified
+      with Hermes. The fetials did not take up that staff.
+    refs: ["Livy 2.21.7", "Ovid, Fasti 5.669–670"]
+
+  - id: hestia
+    label: "Hestia"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek household hearth. The Roman public flame is a different office.
+    refs: ["Ovid, Fasti 6.295–298"]
+
+  - id: vesta
+    label: "Vesta"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Public hearth. The round temple holds an undying fire and no image
+      of Vesta. Virgin ministers keep it. Named in the twelve beside Vulcan.
+    refs: ["Ovid, Fasti 6.267–298", "Livy 22.10.9"]
+
+  - id: demeter
+    label: "Demeter"
+    kind: principle
+    cluster: hellenic
+    role: governor
+    description: >
+      Greek grain, vowed at Rome together with Dionysus and Kore and
+      dedicated under other names.
+    refs: ["Dionysius of Halicarnassus, Roman Antiquities 6.17.2"]
+
+  - id: ceres
+    label: "Ceres"
+    kind: principle
+    cluster: roman
+    role: governor
+    description: >
+      Roman grain in the plebeian temple with Liber and Libera. The vow
+      named Demeter, Dionysus, and Kore. She is also the last couch of the
+      twelve, beside Mercury.
+    refs:
+      - "Dionysius of Halicarnassus, Roman Antiquities 6.17.2"
+      - "Livy 22.10.9"
+
+  - id: dionysus
+    label: "Dionysus"
+    kind: principle
+    cluster: hellenic
+    role: noise
+    description: >
+      Greek wine and ecstasy, named in the vow that Rome paid as Liber.
+    refs: ["Dionysius of Halicarnassus, Roman Antiquities 6.17.2"]
+
+  - id: liber
+    label: "Liber"
+    kind: principle
+    cluster: roman
+    role: noise
+    description: >
+      Shares the Aventine temple with Ceres and Libera. The Greek vow said
+      Dionysus. The Roman three are a plebeian cult, not a maenadic cycle.
+    refs: ["Dionysius of Halicarnassus, Roman Antiquities 6.17.2"]
+
+  - id: helios
+    label: "Helios"
+    kind: principle
+    cluster: hellenic
+    role: clock
+    description: >
+      Greek sun who drives a golden-yoked chariot and gazes as he goes
+      (Homeric Hymn 31). He oversees all and hears all (Odyssey 12.320).
+      Not Apollo, and not a covenant god.
+    refs:
+      - "Homeric Hymn 31.8–15"
+      - "Homer, Odyssey 12.320"
+
+  - id: mitra
+    label: "Mitra"
+    kind: principle
+    cluster: vedic
+    role: governor
+    description: >
+      Covenant. Speaking, he sets peoples in their agreements, sustains
+      earth and heaven, and beholds the settlements with eyes that do not
+      close (Ṛgveda 3.59.1). Not the sun in the car. Avestan Miθra and any
+      solar parallel with Jesus stay open.
+    refs: ["Ṛgveda 3.59.1"]

@@ -22,5 +22,8 @@ export const state = {
   view: null,
   quoteHidePlatonic: false,
   communityOn: false,
+  hingesOn: false,
+  sheetOn: false,
+  parkAside: false,
   allClusters: []
 };

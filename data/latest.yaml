@@ -2,8 +2,8 @@
 # nodes.yaml and edges.yaml remain the source of truth.
 # Replace this file after each accepted /add-entry pass.
 
-pass: buddhist-2
-label: Buddhist 2 — Yogācāra
+pass: solar-attribute
+label: Solar attribute — Sūrya, Helios, Re, Mitra
 nodes:
-  - alaya-vijnana
-  - vijnaptimatra
+  - helios
+  - mitra

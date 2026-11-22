@@ -30,6 +30,7 @@ import {
   syncMetaEdges,
   syncGroups
 } from "./layout.js";
+import { renderSheet } from "./sheet.js";
 import { state } from "./state.js";
 import { mountSpace } from "./space.js";
 
@@ -41,8 +42,24 @@ function leaveSpace() {
   const btn = document.getElementById("space");
   if (btn) btn.classList.remove("active");
   const cyBox = document.getElementById("cy");
-  if (cyBox) cyBox.classList.remove("off");
+  if (cyBox && !state.sheetOn) cyBox.classList.remove("off");
   if (spaceView) spaceView.hide();
+}
+
+function leaveSheet() {
+  state.sheetOn = false;
+  const btn = document.getElementById("sheet");
+  if (btn) btn.classList.remove("active");
+  const panel = document.getElementById("sheet-view");
+  if (panel) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+  }
+  if (!state.spaceOn) {
+    const cyBox = document.getElementById("cy");
+    if (cyBox) cyBox.classList.remove("off");
+    if (state.cy) state.cy.resize();
+  }
 }
 
 function readHashId() {
@@ -79,6 +96,7 @@ export function clearPath(keepMode) {
   if (!keepMode) {
     state.pathMode = false;
     state.loopMode = false;
+    state.hingesOn = false;
     deactivate(["path", "loop", "slots", "tours", "hinges"]);
   }
 }
@@ -120,6 +138,17 @@ function paintCommunity() {
   if (btn) btn.classList.toggle("active", state.communityOn);
 }
 
+function paintHinges() {
+  if (!state.cy) return;
+  state.cy.nodes().removeClass("hinge-seed hinge-other");
+  if (!state.hingesOn || !state.view) return;
+  (state.view.betweenness || []).forEach((row) => {
+    const n = state.cy.getElementById(row.id);
+    if (n.empty()) return;
+    n.addClass(row.cluster === "platonic" ? "hinge-seed" : "hinge-other");
+  });
+}
+
 function applyFilter() {
   const cy = state.cy;
   if (!cy) return;
@@ -127,6 +156,15 @@ function applyFilter() {
   const clusters = checked("cluster");
   const types = checked("etype");
   const q = document.getElementById("search").value.trim().toLowerCase();
+  const asideIds = new Set((state.view && state.view.hidePlatonic && state.view.hidePlatonic.aside) || []);
+  state.parkAside =
+    state.quoteHidePlatonic &&
+    platonicHiddenExactly() &&
+    state.fieldMode &&
+    !state.openGroup &&
+    !state.focusId &&
+    !state.pathRoute &&
+    !q;
 
   const focusSet = new Set();
   if (state.focusId && cy.getElementById(state.focusId).nonempty()) {
@@ -166,6 +204,7 @@ function applyFilter() {
     if (groupOpen) {
       ok = d.kind === "system" && state.openGroup.indexOf(d.cluster) >= 0 && clusters.has(d.cluster);
     }
+    if (state.parkAside && asideIds.has(d.id)) ok = true;
     if (ok && state.newOnly && collapse && d.kind === "system") {
       ok = state.newClusterSet.has(d.cluster);
     }
@@ -205,6 +244,7 @@ function applyFilter() {
 
   paintPath();
   paintCommunity();
+  paintHinges();
   applyLabels();
   runViewLayout();
   paintOverlayNote();
@@ -231,7 +271,7 @@ function applyFilter() {
       state.latestMeta.pass && state.newEdgeCount
         ? " · " + state.newEdgeCount + " new (" + state.latestMeta.pass + ")"
         : "";
-    if (groupHome) vn = cy.nodes('[kind = "group"]').length;
+    if (groupHome) vn = cy.nodes('[kind = "group"]').length + cy.nodes(".aside-stub:visible").length;
     const groupBit = groupHome ? " · groups" : groupOpen ? " · group" : "";
     const heavyBit =
       !groupHome && !groupOpen && state.heavyPairs && state.fieldMode && !state.focusId && !state.pathRoute
@@ -263,6 +303,52 @@ function openJump(nodeId, edgeId) {
     }
   }
   showNode(node.data());
+}
+
+function revealNode(nodeId) {
+  const node = state.cy.getElementById(nodeId);
+  if (node.empty()) return;
+  const kind = node.data("kind");
+  const cluster = node.data("cluster");
+  document.querySelectorAll("input[data-kind]").forEach((el) => {
+    if (el.dataset.kind === "kind" && el.value === kind) el.checked = true;
+    if (el.dataset.kind === "cluster" && el.value === cluster) el.checked = true;
+  });
+  if (cluster === "platonic") {
+    state.quoteHidePlatonic = false;
+    deactivate(["hide-platonic"]);
+  }
+}
+
+function openFromSheet(nodeId) {
+  leaveSheet();
+  clearPath(false);
+  leaveNew();
+  state.fieldMode = true;
+  state.lateralOnly = false;
+  setChecks("etype", () => true);
+  state.schoolRing = false;
+  state.openGroup = null;
+  state.heavyPairs = true;
+  document.getElementById("field").classList.add("active");
+  deactivate(["open-interiors", "laterals", "all-pairs", "heavy-pairs", "space"]);
+  revealNode(nodeId);
+  openJump(nodeId);
+}
+
+function restoreGraphMode() {
+  if (state.spaceOn) return;
+  if (state.fieldMode) document.getElementById("field").classList.add("active");
+  else document.getElementById("open-interiors").classList.add("active");
+  if (state.schoolRing && state.heavyPairs) document.getElementById("heavy-pairs").classList.add("active");
+  if (state.schoolRing && !state.heavyPairs) document.getElementById("all-pairs").classList.add("active");
+}
+
+function closeSheetToGraph() {
+  leaveSheet();
+  restoreGraphMode();
+  applyFilter();
+  showGuide();
 }
 
 function edgesAmong(ids, pred) {
@@ -445,6 +531,34 @@ function graphStyle() {
       selector: "edge.on-path",
       style: { opacity: 1, width: 4, "arrow-scale": 1.6, "z-index": 20 }
     },
+    {
+      selector: "node.hinge-seed",
+      style: {
+        "outline-width": 2,
+        "outline-style": "dashed",
+        "outline-color": "#f4efe4",
+        "outline-offset": 2
+      }
+    },
+    {
+      selector: "node.hinge-other",
+      style: {
+        "outline-width": 2,
+        "outline-style": "solid",
+        "outline-color": "#ffffff",
+        "outline-offset": 2
+      }
+    },
+    {
+      selector: "node.aside-stub",
+      style: {
+        label: "data(label)",
+        "outline-width": 2,
+        "outline-style": "dashed",
+        "outline-color": "#f2e6b8",
+        "outline-offset": 3
+      }
+    },
     { selector: ":selected", style: { "border-color": "#fff", "border-width": 3, opacity: 1 } }
   ];
 }
@@ -607,6 +721,7 @@ async function init() {
   cy.on("zoom pan", applyLabelsSoon);
 
   document.getElementById("help").addEventListener("click", () => {
+    leaveSheet();
     state.focusId = null;
     clearPath(false);
     document.getElementById("findings").classList.remove("active");
@@ -614,6 +729,7 @@ async function init() {
     showGuide();
   });
   document.getElementById("findings").addEventListener("click", () => {
+    leaveSheet();
     state.focusId = null;
     clearPath(false);
     setHashId("");
@@ -621,6 +737,7 @@ async function init() {
     showFindings();
   });
   document.getElementById("new-findings").addEventListener("click", () => {
+    leaveSheet();
     if (!state.latestSet.size) return;
     state.newOnly = !state.newOnly;
     document.getElementById("new-findings").classList.toggle("active", state.newOnly);
@@ -650,6 +767,7 @@ async function init() {
     openJump(btn.getAttribute("data-jump"), btn.getAttribute("data-edge"));
   });
   window.addEventListener("hashchange", () => {
+    leaveSheet();
     if (!applyHash()) {
       state.focusId = null;
       applyFilter();
@@ -662,6 +780,7 @@ async function init() {
   });
   document.getElementById("labels").addEventListener("change", applyLabels);
   document.getElementById("field").addEventListener("click", () => {
+    leaveSheet();
     leaveSpace();
     clearPath(false);
     state.focusId = null;
@@ -678,6 +797,7 @@ async function init() {
     showGuide();
   });
   document.getElementById("open-interiors").addEventListener("click", () => {
+    leaveSheet();
     leaveSpace();
     clearPath(false);
     state.fieldMode = false;
@@ -700,6 +820,7 @@ async function init() {
     applyFilter();
   });
   document.getElementById("path").addEventListener("click", () => {
+    leaveSheet();
     if (state.pathMode) {
       clearPath(false);
       applyFilter();
@@ -714,6 +835,7 @@ async function init() {
     applyFilter();
   });
   document.getElementById("loop").addEventListener("click", () => {
+    leaveSheet();
     if (state.loopMode) {
       clearPath(false);
       applyFilter();
@@ -740,6 +862,8 @@ async function init() {
     applyFilter();
   });
   document.getElementById("heavy-pairs").addEventListener("click", () => {
+    leaveSheet();
+    leaveSpace();
     state.schoolRing = true;
     state.openGroup = null;
     state.fieldMode = true;
@@ -751,6 +875,8 @@ async function init() {
     applyFilter();
   });
   document.getElementById("all-pairs").addEventListener("click", () => {
+    leaveSheet();
+    leaveSpace();
     state.schoolRing = true;
     state.openGroup = null;
     state.fieldMode = true;
@@ -762,6 +888,7 @@ async function init() {
     applyFilter();
   });
   document.getElementById("slots").addEventListener("click", () => {
+    leaveSheet();
     state.focusId = null;
     clearPath(false);
     setHashId("");
@@ -770,6 +897,7 @@ async function init() {
     showSlots();
   });
   document.getElementById("tours").addEventListener("click", () => {
+    leaveSheet();
     state.focusId = null;
     clearPath(false);
     setHashId("");
@@ -778,24 +906,33 @@ async function init() {
     showTours();
   });
   document.getElementById("hinges").addEventListener("click", () => {
+    leaveSheet();
     state.focusId = null;
     clearPath(false);
     setHashId("");
+    state.hingesOn = true;
     document.getElementById("hinges").classList.add("active");
     applyFilter();
     showHinges();
   });
   document.getElementById("communities").addEventListener("click", () => {
+    leaveSheet();
+    leaveSpace();
+    restoreGraphMode();
     state.communityOn = !state.communityOn;
     applyFilter();
   });
   document.getElementById("hide-platonic").addEventListener("click", () => {
+    leaveSheet();
+    leaveSpace();
+    restoreGraphMode();
     setChecks("cluster", (v) => v !== "platonic");
     state.quoteHidePlatonic = true;
     document.getElementById("hide-platonic").classList.add("active");
     applyFilter();
   });
   document.getElementById("clear-focus").addEventListener("click", () => {
+    leaveSheet();
     state.focusId = null;
     clearPath(false);
     leaveNew();
@@ -806,22 +943,58 @@ async function init() {
     showGuide();
   });
   document.getElementById("fit").addEventListener("click", () => {
+    leaveSheet();
     cy.fit(cy.elements(":visible"), 30);
   });
   document.getElementById("relayout").addEventListener("click", () => {
+    leaveSheet();
     runViewLayout();
+  });
+  document.getElementById("sheet").addEventListener("click", () => {
+    if (state.sheetOn) {
+      closeSheetToGraph();
+      return;
+    }
+    leaveSpace();
+    clearPath(false);
+    state.focusId = null;
+    setHashId("");
+    state.sheetOn = true;
+    document.getElementById("sheet").classList.add("active");
+    deactivate([
+      "field",
+      "open-interiors",
+      "heavy-pairs",
+      "all-pairs",
+      "slots",
+      "tours",
+      "hinges",
+      "help",
+      "findings",
+      "space"
+    ]);
+    document.getElementById("cy").classList.add("off");
+    renderSheet(document.getElementById("sheet-view"));
+    status.textContent = "Sheet · comparison, not a spine";
+  });
+  document.getElementById("sheet-view").addEventListener("click", (ev) => {
+    const btn = ev.target.closest("[data-jump]");
+    if (!btn) return;
+    openFromSheet(btn.getAttribute("data-jump"));
   });
   document.getElementById("space").addEventListener("click", () => {
     if (state.spaceOn) {
       leaveSpace();
+      leaveSheet();
       document.getElementById("field").classList.add("active");
       return;
     }
+    leaveSheet();
     clearPath(false);
     state.focusId = null;
     state.spaceOn = true;
     document.getElementById("space").classList.add("active");
-    deactivate(["field", "open-interiors", "heavy-pairs", "all-pairs"]);
+    deactivate(["field", "open-interiors", "heavy-pairs", "all-pairs", "sheet"]);
     document.getElementById("cy").classList.add("off");
     spaceView.show();
   });

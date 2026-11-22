@@ -229,15 +229,55 @@ export function syncGroups(types, allowed) {
   }
 }
 
+function parkAside(ringNodes) {
+  const cy = state.cy;
+  const parked = cy.collection();
+  if (!state.parkAside) return parked;
+  const ids = (state.view && state.view.hidePlatonic && state.view.hidePlatonic.aside) || [];
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let midY = 0;
+  let nRing = 0;
+  ringNodes.forEach((n) => {
+    minX = Math.min(minX, n.position("x"));
+    maxX = Math.max(maxX, n.position("x"));
+    midY += n.position("y");
+    nRing += 1;
+  });
+  if (!nRing) {
+    minX = 0;
+    maxX = 0;
+    midY = 0;
+  } else {
+    midY /= nRing;
+  }
+  const gap = Math.max(280, (maxX - minX) * 0.15 + 180);
+  ids.forEach((id, i) => {
+    const node = cy.getElementById(id);
+    if (node.empty() || !node.visible()) return;
+    node.position({
+      x: maxX + gap,
+      y: midY + (i - (ids.length - 1) / 2) * 72
+    });
+    node.addClass("aside-stub");
+    parked.merge(node);
+  });
+  return parked;
+}
+
 export function layoutOverview() {
   const cy = state.cy;
   const groupNodes = cy.nodes('[kind = "group"]:visible');
   if (groupNodes.length) {
     placeOnCircle(groupNodes.map((n) => n.id()), 80 + groupNodes.length * 42);
-    cy.fit(groupNodes, 90);
+    const parked = parkAside(groupNodes);
+    cy.fit(parked.length ? groupNodes.union(parked) : groupNodes, 90);
     return;
   }
-  const systems = cy.nodes(":visible").filter((n) => n.data("kind") === "system");
+  const asideSet = new Set(
+    state.parkAside ? (state.view && state.view.hidePlatonic && state.view.hidePlatonic.aside) || [] : []
+  );
+  const systems = cy.nodes(":visible").filter((n) => n.data("kind") === "system" && !asideSet.has(n.id()));
   const groups = new Map();
   systems.forEach((n) => {
     const c = n.data("cluster") || "other";
@@ -261,7 +301,8 @@ export function layoutOverview() {
       .forEach((n) => ids.push(n.id()));
   });
   placeOnCircle(ids, 64 + ids.length * 28);
-  cy.fit(systems, 80);
+  const parked = parkAside(systems);
+  cy.fit(parked.length ? systems.union(parked) : systems, 80);
 }
 
 export function layoutRadial(rootId) {
@@ -368,6 +409,7 @@ export function layoutClusterRings() {
 export function runViewLayout() {
   const cy = state.cy;
   if (!cy) return;
+  cy.nodes().removeClass("aside-stub");
   if (state.pathRoute && state.loopMode) {
     placeOnCircle(state.pathRoute.nodes, 80 + state.pathRoute.nodes.length * 28);
     cy.fit(cy.nodes(":visible"), 80);
@@ -393,14 +435,83 @@ export function runViewLayout() {
   layoutClusterRings();
 }
 
-function clusterReps() {
+function schoolReps(visibleOnly) {
   const reps = new Map();
   state.cy.nodes().forEach((n) => {
-    if (n.data("kind") !== "system" || !n.visible()) return;
+    if (n.data("kind") !== "system") return;
+    if (visibleOnly && !n.visible()) return;
     const c = n.data("cluster");
     if (!reps.has(c)) reps.set(c, n);
   });
   return reps;
+}
+
+function collectSchoolPairs(types, opts) {
+  const only = opts && opts.only ? new Set(opts.only) : null;
+  const visibleOnly = !opts || opts.visibleOnly !== false;
+  const reps = schoolReps(visibleOnly);
+  const pairs = new Map();
+  state.cy.edges().forEach((e) => {
+    if (e.hasClass("meta") || !e.data("bridge")) return;
+    const t = e.data("type");
+    if (!types.has(t)) return;
+    const ca = e.source().data("cluster");
+    const cb = e.target().data("cluster");
+    if (!ca || !cb || ca === cb) return;
+    if (only && (!only.has(ca) || !only.has(cb))) return;
+    const ra = reps.get(ca);
+    const rb = reps.get(cb);
+    if (!ra || !rb || ra.id() === rb.id()) return;
+    const key = [ra.id(), rb.id()].sort().join("||");
+    let cur = pairs.get(key);
+    if (!cur) {
+      cur = {
+        source: ra.id(),
+        target: rb.id(),
+        sourceLabel: ra.data("label") || ra.id(),
+        targetLabel: rb.data("label") || rb.id(),
+        clusters: [ca, cb].sort(),
+        count: 0,
+        counts: Object.fromEntries(EDGE_TYPES.map((name) => [name, 0])),
+        members: []
+      };
+      pairs.set(key, cur);
+    }
+    cur.count += 1;
+    cur.counts[t] = (cur.counts[t] || 0) + 1;
+    cur.members.push({
+      id: e.id(),
+      from: e.source().id(),
+      to: e.target().id(),
+      fromLabel: e.source().data("label") || e.source().id(),
+      toLabel: e.target().data("label") || e.target().id(),
+      type: t,
+      note: e.data("note") || "",
+      directed: !!e.data("directed"),
+      isNew: !!e.data("isNew")
+    });
+  });
+  return pairs;
+}
+
+export function heavySchoolPairs() {
+  const pairs = collectSchoolPairs(new Set(EDGE_TYPES), { visibleOnly: false });
+  const kept = capSchoolChords(pairs);
+  const rows = [];
+  pairs.forEach((p, key) => {
+    if (p.count < HEAVY_MIN || !kept.has(key)) return;
+    rows.push({
+      source: p.source,
+      target: p.target,
+      sourceLabel: p.sourceLabel,
+      targetLabel: p.targetLabel,
+      count: p.count,
+      mix: mixLabel(p.counts, p.count),
+      name: (p.clusters || [p.source, p.target]).join("\0")
+    });
+  });
+  rows.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  return rows;
 }
 
 function capSchoolChords(pairs) {
@@ -424,52 +535,12 @@ function capSchoolChords(pairs) {
 }
 
 export function syncMetaEdges(types, opts) {
-  const only = opts && opts.only ? new Set(opts.only) : null;
   const useCap = !opts || opts.cap !== false;
   const cy = state.cy;
   cy.edges(".meta").remove();
   const overview = state.fieldMode && !state.focusId && !state.pathRoute;
   if (!overview) return;
-  const reps = clusterReps();
-  const pairs = new Map();
-  cy.edges().forEach((e) => {
-    if (e.hasClass("meta") || !e.data("bridge")) return;
-    const t = e.data("type");
-    if (!types.has(t)) return;
-    const ca = e.source().data("cluster");
-    const cb = e.target().data("cluster");
-    if (!ca || !cb || ca === cb) return;
-    if (only && (!only.has(ca) || !only.has(cb))) return;
-    const ra = reps.get(ca);
-    const rb = reps.get(cb);
-    if (!ra || !rb || ra.id() === rb.id()) return;
-    const key = [ra.id(), rb.id()].sort().join("||");
-    let cur = pairs.get(key);
-    if (!cur) {
-      cur = {
-        source: ra.id(),
-        target: rb.id(),
-        clusters: [ca, cb].sort(),
-        count: 0,
-        counts: Object.fromEntries(EDGE_TYPES.map((name) => [name, 0])),
-        members: []
-      };
-      pairs.set(key, cur);
-    }
-    cur.count += 1;
-    cur.counts[t] = (cur.counts[t] || 0) + 1;
-    cur.members.push({
-      id: e.id(),
-      from: e.source().id(),
-      to: e.target().id(),
-      fromLabel: e.source().data("label") || e.source().id(),
-      toLabel: e.target().data("label") || e.target().id(),
-      type: t,
-      note: e.data("note") || "",
-      directed: !!e.data("directed"),
-      isNew: !!e.data("isNew")
-    });
-  });
+  const pairs = collectSchoolPairs(types, { only: opts && opts.only, visibleOnly: true });
   const keptKeys = capSchoolChords(pairs);
   pairs.forEach((p, key) => {
     const newCount = p.members.filter((m) => m.isNew).length;

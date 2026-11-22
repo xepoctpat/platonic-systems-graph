@@ -29,6 +29,8 @@ export const CLUSTER_COLOR = {
   manichaean: "#9a3048",
   mandaean: "#1f7a88",
   orphic: "#b86b6b",
+  hellenic: "#8a6048",
+  roman: "#9a3a3a",
   "hellenic-mystery": "#9a7a4c",
   jungian: "#9b6bdb",
   theosophical: "#7a5a9a",

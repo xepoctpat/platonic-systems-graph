@@ -1,8 +1,9 @@
 """Derived reading of the graph for the viewer.
 
 YAML stays the source of truth. This writes data/view.json: bridge mixes,
-seriation order, community ids, the hide-Platonic component count, unweighted
-betweenness, and the curated slots and tours.
+seriation order, community ids, the hide-Platonic component count and the
+nodes left outside the largest remaining component, unweighted betweenness,
+and the curated slots and tours.
 
   python analysis/export_view.py
 
@@ -196,11 +197,20 @@ def _betweenness(graph: nx.Graph) -> tuple[list[dict], int]:
 
 
 def _hide_platonic(graph: nx.Graph) -> dict:
+    """Component count after the Platonic cluster is removed.
+
+    ``aside`` is every node that is not in the largest remaining component.
+    The viewer draws that list; it does not recompute connectivity.
+    """
     kept = graph.copy()
     removed = [nid for nid in list(kept) if kept.nodes[nid].get("cluster") == "platonic"]
     kept.remove_nodes_from(removed)
-    components = nx.number_connected_components(kept) if kept.order() else 0
-    return {"components": int(components), "removed": len(removed)}
+    if kept.order() == 0:
+        return {"components": 0, "removed": len(removed), "aside": []}
+    parts = [set(comp) for comp in nx.connected_components(kept)]
+    parts.sort(key=lambda comp: (-len(comp), min(comp)))
+    aside = sorted(nid for comp in parts[1:] for nid in comp)
+    return {"components": len(parts), "removed": len(removed), "aside": aside}
 
 
 def _hand_lists(node_ids: set[str]) -> tuple[list[dict], list[dict]]:

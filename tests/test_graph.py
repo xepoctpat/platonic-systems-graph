@@ -112,8 +112,16 @@ class ViewExportTests(unittest.TestCase):
         self.assertEqual(set(first["ring"]), clusters)
         self.assertEqual(len(first["ring"]), len(clusters))
         self.assertEqual(set(first["communities"]), {n["id"] for n in load_nodes()})
-        self.assertIsInstance(first["hidePlatonic"]["components"], int)
-        self.assertGreaterEqual(first["hidePlatonic"]["components"], 1)
+        hide = first["hidePlatonic"]
+        self.assertIsInstance(hide["components"], int)
+        self.assertGreaterEqual(hide["components"], 1)
+        self.assertIsInstance(hide["aside"], list)
+        self.assertEqual(hide["aside"], sorted(set(hide["aside"])))
+        self.assertEqual(hide["components"] > 1, bool(hide["aside"]))
+        by_id = {n["id"]: n for n in load_nodes()}
+        for nid in hide["aside"]:
+            self.assertIn(nid, by_id)
+            self.assertNotEqual(by_id[nid].get("cluster"), "platonic")
         self.assertEqual(len(first["betweenness"]), 12)
         self.assertEqual(
             [row["id"] for row in first["slots"]],

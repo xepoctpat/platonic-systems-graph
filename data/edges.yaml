@@ -4902,3 +4902,194 @@ edges:
       Representation-only still has a transformation of consciousness.
       Emptiness, identified with dependent origination, refuses that ground
       (MMK 24.18).
+
+  - from: ares
+    to: mars
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      Partial swap, not a copy. Dionysius, writing Greek, names the Roman
+      grove of Mars as Ares (Roman Antiquities 1.77.1). Battle is shared.
+      The field lustration is Mars (Cato, De agri cultura 141). Ares in
+      Iliad 5.890 is strife, not the farm. An older Italic Mars is left open.
+
+  - from: zeus
+    to: jupiter
+    type: cyan
+    directed: false
+    strength: 0.7
+    versions: []
+    note: >
+      Translated name inside the twelve. Jupiter heads the lectisternium
+      of 217 and takes the vowed spring (Livy 22.10.2–9). No partial swap
+      is claimed beyond that seat.
+
+  - from: hera
+    to: juno
+    type: cyan
+    directed: false
+    strength: 0.65
+    versions: []
+    note: >
+      Translated name. Juno shares Jupiter’s couch (Livy 22.10.9). A
+      Capitoline function beyond the consort is left open.
+
+  - from: poseidon
+    to: neptune
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: >
+      Translated name. Neptune is in the twelve (Livy 22.10.9). A
+      freshwater-versus-sea gap is not opened in this pass.
+
+  - from: athena
+    to: minerva
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: >
+      Translated name. Minerva is in the twelve (Livy 22.10.9). An
+      Etruscan Menrva origin, and Athena’s city-war, are left open.
+
+  - from: apollo
+    to: roman-apollo
+    type: gold
+    directed: true
+    strength: 0.9
+    versions: []
+    note: >
+      Import, not a translation. The temple of Apollo Medicus was vowed
+      in 433 because of a plague (Livy 4.25.3) and dedicated in 431
+      (Livy 4.29.7). The name stays Apollo.
+
+  - from: artemis
+    to: diana
+    type: cyan
+    directed: false
+    strength: 0.6
+    versions: []
+    note: >
+      Translated name. Diana sits with Apollo in the twelve (Livy 22.10.9).
+      An older woodland Diana is left open.
+
+  - from: aphrodite
+    to: venus
+    type: orange
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      Partial swap. The lectisternium names Venus, and Fabius Maximus vows
+      a temple to Venus Erycina from the Sibylline books (Livy 22.10.9–10).
+      That is a Sicilian cult, not Homeric Aphrodite under a Latin name.
+
+  - from: hephaestus
+    to: vulcan
+    type: cyan
+    directed: false
+    strength: 0.55
+    versions: []
+    note: >
+      Translated name. Vulcan is in the twelve beside Vesta (Livy 22.10.9).
+      The Volcanalia is not yet opened, so no fire-of-the-city swap is claimed.
+
+  - from: hermes
+    to: mercury
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: >
+      Partial swap. Mercury’s temple is dedicated in 495 on the Ides of May,
+      the merchants’ day (Livy 2.21.7; Ovid, Fasti 5.669–670). Hermes is the
+      herald and guide. The Roman office is gain.
+
+  - from: hestia
+    to: vesta
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: >
+      Partial swap. The household hearth is Hestia. Vesta’s round temple
+      holds an undying fire and no image of the goddess, kept by virgin
+      ministers (Ovid, Fasti 6.283–298).
+
+  - from: demeter
+    to: ceres
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: >
+      Partial swap. A famine vow to Demeter, Dionysus, and Kore is dedicated
+      as Ceres, Liber, and Libera (Dionysius, Roman Antiquities 6.17.2).
+      Grain matches. The Roman three, and the plebeian temple, do not.
+
+  - from: dionysus
+    to: liber
+    type: orange
+    directed: false
+    strength: 0.85
+    versions: []
+    note: >
+      Partial swap. The same vow says Dionysus and the dedication says Liber
+      (Dionysius, Roman Antiquities 6.17.2). Liber belongs to the Ceres
+      temple, not to a maenadic cycle.
+
+  - from: surya
+    to: helios
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      Same slot, not descent. Sūrya is drawn by seven bay steeds
+      (Ṛgveda 1.50.8–9). Helios rides a golden-yoked chariot and gazes
+      (Homeric Hymn 31.8–15).
+
+  - from: surya
+    to: re
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: []
+    note: >
+      Partial swap. Both are the daily sun. Sūrya is yoked to a car
+      (Ṛgveda 1.50.8–9). Re dies and is rowed in the night barque (Amduat).
+
+  - from: helios
+    to: re
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: >
+      Partial swap. Helios oversees all from the chariot (Odyssey 12.320;
+      Homeric Hymn 31). Re’s day ends in the night barque (Amduat).
+
+  - from: mitra
+    to: surya
+    type: orange
+    directed: false
+    strength: 0.7
+    versions: []
+    note: >
+      Not the same god. Mitra beholds the settlements and does not blink,
+      and he sets peoples to their agreements (Ṛgveda 3.59.1). Sūrya is
+      the far-seeing sun in the car (Ṛgveda 1.50.8).
+
+  - from: mitra
+    to: varuna
+    type: cyan
+    directed: false
+    strength: 0.75
+    versions: []
+    note: >
+      Paired keepers, not a descent. Mitra is the covenant who sees
+      without closing his eyes (Ṛgveda 3.59.1). Varuṇa guards ṛta and oaths.

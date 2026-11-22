@@ -1,311 +1,96 @@
 # Roadmap
 
-Comparison sheet, not a spine. YAML is still the source of truth.
+Living note. Replace a section when the picture changes. Date the change in **Now**. This file is not a phase ladder and not a spine.
+
+The point is emergence, and emergence means laterals. Schools and concepts that look unrelated can share an origin. Ma'at, ṛta, and Asha are the pattern: Egypt, Vedic India, and Iran, one order that must be kept, and no claim that one school descended from another. The work is finding those sharings. It is not a history of each school.
+
+The comparison sheet stays. It is the check that a reading has not collapsed into a single spine. It is not the picture of emergence.
+
 Walk `/researcher` → `/add-entry` → `python tools/validate.py` → `/organic-spine` → viewer.
 
-**Do not:** rebuild a 7-stage Platonic ladder · encode every god · treat node count as the KPI · gold-edge new traditions to the Demiurge by default.
+**Do not:** encode every god · treat node count as the KPI · write the chronicle of a school and call it emergence · draw every lateral at once · read a likeness as descent · bring the 3D view back.
 
 ---
 
-## Baseline (2026-08-18, after Zoroastrian pass)
-
-Taken before Phase A edits. Compare later runs to this row.
+## Now (2026-11-22)
 
 | | |
 |---|---|
-| Graph | 137 nodes · 330 edges · 30 systems · 107 principles · 24 clusters |
-| Edges | cyan 131 · gold 79 · orange 34 · magenta 33 · green 27 · red 26 |
-| Connectivity | 1 undirected component · 0 isolates · 0 nodes without `refs` |
-| Communities | 8 (greedy modularity) |
-| Feedback | 2207 cycles of length 2–6 · SCC 130 + 2 |
+| Graph | 241 nodes · 623 edges · 42 systems · 199 principles · 33 clusters |
+| Edges | cyan 223 · gold 154 · magenta 102 · orange 65 · red 41 · green 38 |
+| Store | `data/nodes.yaml` and `data/edges.yaml` |
+| Sheet | comparison check, in the viewer |
+| 3D | retired. Loops are planar |
+| Drawings | Mermaid only. Documented laterals are typed. Unclassified clusters are a loose subgraph with generic links |
+| Open reading | Ma'at · ṛta · Asha confirmed as an open cyan sharing. Solar table drawn for Sūrya, Helios, Re, Mitra. Jesus not encoded |
 
-Betweenness top 12 (hinge list — seed-biased):
-
-| # | id | cluster | score |
-|---|---|---|---|
-| 1 | demiurge | platonic | 0.2148 |
-| 2 | the-good | platonic | 0.1763 |
-| 3 | intelligible-paradigm | platonic | 0.1503 |
-| 4 | **mythology** | mythic | 0.0998 |
-| 5 | eros | platonic | 0.0771 |
-| 6 | becoming | platonic | 0.0767 |
-| 7 | information | scientific | 0.0706 |
-| 8 | ordered-time | platonic | 0.0688 |
-| 9 | paleolithic-image | preliterate | 0.0636 |
-| 10 | atum | egyptian | 0.0594 |
-| 11 | osiris | egyptian | 0.0581 |
-| 12 | egyptian-religion | egyptian | 0.0579 |
-
-`mythology` at #4 is a V5 leftover bag, not a tradition. Plato still dominates because the graph was seeded there.
+`nabta-playa` stays unlinked on purpose. Palamite and Hermetica wait until a lateral actually opens.
 
 ---
 
-## Decision rules
+## The pattern
 
-- A candidate must occupy a **new slot** or create a **new collision**. Otherwise skip.
-- One `/researcher` pass = one tradition, one slot-family, or one named present-day field. Corpus-complete, not culture-complete.
-- Hinduism-scale lists are several passes. Nabta / Inana / Uṣas leftovers are optional increments, not a phase.
-- Prefer orange / magenta / cyan to existing *non-Platonic* nodes.
-- Stub systems may exist. A holding **hub** that ranks as a hinge may not.
-- After each accepted batch: validate, then centrality. Paste what moved into `SESSION-HANDOFF.md`.
+One origin. A lateral to a school that did not look related. An attribute they share (order, craftsman, sun, matter, return).
 
----
+The same pattern repeats at every scale. Inside one school, between two schools, across a cluster of clusters. A smaller drawing is not a different kind of fact. That is the fractal. Do not invent a second geometry for the small scale.
 
-## Locked architecture (while the set is still small)
+A likeness is an attribute, not a genealogy. Mitra and Jesus can share a solar parallel without either being the parent of the other. Record the likeness as a lateral when a source supports the shared attribute. Do not draw an arrow of descent for it.
 
-This is a **systems-theory feedback graph**, not a tree and not a graph-DB product.
-
-| Layer | Decision | Not |
-|---|---|---|
-| Store | YAML. Binary typed edges only (`from` → `to`). | Neo4j, Kuzu, hyperedges |
-| Flow | `gold` / `green` / `red` are **directed** (constitute, return, fall). | Numbered stages |
-| Peer map | `cyan` / `magenta` / `orange` are **undirected** (same slot / inversion / hybrid). Drawn with marks both ways. | Treating laterals as ancestry |
-| Emergence | A new finding is one more binary edge between existing nodes, **or** a new principle if 3+ actors occupy a new slot. | Storing an n-ary “link object” |
-| Trajectory | A→…→B and loops are **query overlays** (Path view / `analysis/paths.py`). Same graph, painted hop-by-hop with arrows. | A second geometry or OneZoom tree packer |
-| Renderer | Cytoscape.js until ~2k nodes. Field folds interiors; Path isolates a route. | Swap renderer “just in case” |
-
-When a new edge closes a loop or a new hop appears, Path between the same two ids must change. That is the test.
+When three or more actors share an origin that has no node yet, add the principle and the laterals. That is a new slot. A gold edge that only continues one school’s own motion is not this finding.
 
 ---
 
-## Phase A — Make the existing graph honest
+## Representation
 
-Stop when: `mythology` is not in betweenness top 12, and `python tools/validate.py` fails on a dangling edge.
+Mermaid is the only drawing for a finding. Two kinds. Neither is the whole graph. No force-directed view. No 3D. Loops are planar.
 
-- [x] Write this file (comparison baseline locked)
-- [x] `tools/validate.py` (duplicate ids, dangling edges, bad type/kind/strength)
-- [x] Hook validate into `/add-entry` and the README
-- [x] Viewer: serve-script copy, not `python -m http.server`
-- [x] Viewer colours for `vedic`, `canaanite`, `preliterate`
-- [x] Remove `mythology` hub (node + 7 edges). `norse-myth` becomes an honest isolate until Phase D
-- [ ] Controlled `slot` field on principles — **optional, not started**
-- [x] Phase A stop-check: centrality re-run 2026-08-18 after the hub cut
+The reading is a tab, not a viz-heavy field. One tab is one origin. The chart carries the typed marks only. The claim, the attribute table, what is confirmed, and what is still open sit beside the chart, as in the quest cards of `wwm_toolkit`. A paragraph does not go inside a node.
 
-Non-optional Phase A work is done. Optional `slot` can wait until cyan/magenta start lying.
+### Documented laterals
 
-### After Phase A (2026-08-18)
+A lateral that already has a type. Draw it as a relation with a shape, not as a straight bar.
 
-| | |
+| Relation | Drawing |
 |---|---|
-| Graph | 136 nodes · 323 edges · 29 systems · 107 principles · 23 clusters |
-| Edges | cyan 128 · gold 78 · magenta 33 · orange 31 · green 27 · red 26 |
-| `mythology` still present? | no |
-| Isolates | `norse-myth` (expected; Phase D) |
-| Betweenness top 5 | demiurge 0.221 · the-good 0.201 · intelligible-paradigm 0.195 · **information 0.117** · eros 0.090 |
-| What moved | bag hub gone; `information` is the new #4 hinge; `blombos-mark`, `symmetry-breaking`, `mystery-ascent` entered top 12 |
-| Validate | `OK` + isolate warning. Dangling `from`/`to` is an `ERROR` (smoke-tested). |
+| Direction (constitute, fall, return) | one arrow |
+| Mutual reinforcement | double-headed arrow |
+| Reinforcing loop (positive feedback) | a cycle, arrow around the arc |
+| Balancing loop (negative feedback) | a cycle, arrow around the arc, marked balancing |
+| Recursive loop | a cycle that returns to its own start |
+| Same slot, inversion, hybrid | a lateral mark both ways, no descent arrow |
 
-Plato still dominates. That is remaining seed bias, not a leftover bag. Phase B is the next lever.
+Closed feedback is an arc. An open sharing is not forced into a circle. A documented picture shows one origin, the schools it reaches, and the typed laterals among them. Ma'at · ṛta · Asha is the first one to draw this way.
+
+### Unclassified clusters
+
+A set of schools that keep meeting and do not yet have a type. Draw a loose Mermaid subgraph with generic links. No arrow that pretends the type is known. When a cluster earns a type, it leaves this drawing and becomes a documented lateral.
+
+Field stays folded for browsing. One origin at a time is how the picture stays readable. The comparison sheet checks that the reading has not collapsed into a spine. It is not where a lateral is discovered.
 
 ---
 
-## Phase B — Collisions that can move the spine
+## Store
 
-Stop when: betweenness top 12 is no longer 8/12 Platonic principles, *or* you can name what would still have to be added to knock Plato off that list.
+YAML is the store: `data/nodes.yaml`, `data/edges.yaml`. Binary edges, `from` and `to`, one type each.
 
-One pass each, in this order unless a named target overrides:
-
-1. [x] Manichaeism — two principles, three times, three evocations, mixture
-2. [x] Early China — Tian, Tianming, Dao, Yijing change
-3. [x] Pythagoreanism — Philolaus limiters/unlimiteds + harmonia
-4. [x] Aristotelianism + Stoicism as systems (principles already existed)
-5. [x] Merkavah / Hekhalot — ascent, throne, Metatron
-6. [x] Islamic philosophy — Necessary Existent
-7. [x] Sufi interior — fanāʾ/baqāʾ (Junayd)
-8. [x] Biblical increment — Hokhmah only (exile-time would duplicate `fallen-time`)
-9. [x] Process thought as a system
-
-Skip Nabta expansion. Skip Vedic also-rans unless a comparison is blocked.
-
-### After Phase B (2026-08-18)
-
-| | |
-|---|---|
-| Graph | 163 nodes · 411 edges · 37 systems · 126 principles · 28 clusters |
-| Edges | cyan 156 · gold 104 · magenta 50 · orange 42 · green 31 · red 28 |
-| Isolates | `norse-myth` |
-| Betweenness top 5 | demiurge 0.211 · the-good 0.192 · intelligible-paradigm 0.181 · **information 0.098** · becoming 0.086 |
-| Platonic share of top 12 betweenness | **8/12** (stop condition not met) |
-| Degree newcomers | `dao`, `ahura-mazda`, `kenoma` now in total-degree top 12 |
-| Validate | `OK` + isolate warning |
-
-What would still knock Plato off the hinge list: denser non-Platonic laterals (Norse interior, Mesoamerica, Sethian/Valentinian split), not more Timaeus. `information` holding #4 is the first non-bag, non-Platonic hinge.
+That holds while a finding is one lateral or one new principle. It gets thin when a node carries many attributes, when a likeness is Mitra ~ Jesus rather than a single typed edge, and when the question is “who else shares this attribute?” across the whole graph. At that point add a queryable store, SQLite or Neo4j. YAML stays the import format. Do not keep two sources of truth. Do not switch before a real query hurts.
 
 ---
 
-## Phase C — Split collapsed interiors
+## Adding
 
-Stop when: `gnosticism` is not a single bag, and biblical/Christian increments have not duplicated creator / tohu / Logos.
+One pass is one tradition, one slot, or one likeness. Corpus-complete, not a whole culture. Hinduism-scale lists stay several passes.
 
-- [x] Sethian vs Valentinian (parent `gnosticism` kept; Barbelo / Horos / Achamoth / two craftsmen)
-- [x] Mandaeism — living baptismal peer (own cluster; not folded into Sethian)
-- [ ] Christian apophatic / Palamite / Eckhart — only if V11 needs a new summit occupant
-- [ ] Hermetica split (Poimandres vs Asclepius) only if the slot actually splits
-- [x] Kabbalah ← Merkavah orange peer link (done with B5); do not re-encode Ein Sof
+A candidate has to show a shared origin between things that do not already look related, or name a new slot they occupy. Otherwise skip.
 
-Required C work is done: `gnosticism` is no longer a single bag; Mandaeism is a peer. Optional C waits for a new summit or Hermetic slot.
-
-### After Phase C start (2026-08-18, Gnostic split)
-
-| | |
-|---|---|
-| Graph | 169 nodes · 433 edges · 39 systems · 130 principles |
-| Isolates | `norse-myth` |
-| Betweenness top 5 | demiurge 0.218 · **paradigm 0.183** · the-good 0.180 · information 0.095 · becoming 0.083 |
-| Platonic share of top 12 betweenness | still 8/12 |
-| What moved | kenoma into degree top 8; two craftsmen now a magenta pair |
-
-### After Phase C (2026-08-18, Mandaeism)
-
-| | |
-|---|---|
-| Graph | 178 nodes · 465 edges · 40 systems · 138 principles · 29 clusters |
-| Edges | cyan 168 · gold 120 · magenta 63 · orange 45 · red 35 · green 34 |
-| Isolates | `norse-myth` |
-| Betweenness top 5 | demiurge 0.211 · the-good 0.186 · intelligible-paradigm 0.174 · **information 0.090** · becoming 0.080 |
-| Platonic share of top 12 betweenness | still **8/12** |
-| What moved | Tiamat and Ma'at into degree top 10 (yardna / Abatur laterals). Mandaean interior joins the Gnostic–Manichaean community; Ruha and Yardna join the first-water / matter community. |
-
-### After Phase D start (2026-08-18, Völuspá)
-
-| | |
-|---|---|
-| Graph | 185 nodes · 493 edges · 40 systems · 145 principles · 29 clusters |
-| Edges | cyan 178 · gold 126 · magenta 69 · orange 47 · red 38 · green 35 |
-| Isolates | **none** (`norse-myth` is connected) |
-| Betweenness top 5 | demiurge 0.209 · the-good 0.180 · paradigm 0.164 · **information 0.087** · **receptacle 0.082** |
-| Platonic share of top 12 betweenness | still **8/12** |
-| What moved | Isolate gone. Tiamat into degree top 7; receptacle to betweenness #5 (gap/Ymir laterals). Norse splits: Ymir/Burr’s sons join the slain-first-being community; tree/fate/end join the time–return community. |
-
-Phase D stop (extra-Eurasian cosmogony) is not met. Next: Mesoamerica or West Africa, or Hindu 2.
-
-### After Phase D (2026-08-18, Popol Vuh)
-
-| | |
-|---|---|
-| Graph | 193 nodes · 518 edges · 41 systems · 152 principles · 30 clusters |
-| Edges | cyan 184 · gold 133 · magenta 74 · orange 50 · red 40 · green 37 |
-| Isolates | none |
-| Betweenness top 5 | demiurge 0.213 · the-good 0.170 · paradigm 0.155 · information 0.083 · receptacle 0.080 |
-| Platonic share of top 12 betweenness | still **8/12** |
-| What moved | Extra-Eurasian cosmogony on the ring. Tiamat degree #6; escape-gnosis into degree top 10; **genesis-creator** into betweenness top 12. Sky-sea stillness joins the first-water community; the rest of the book sits with Mandaean return vs Gnostic exit. |
-
-Phase D stop condition is **met** (mythology gone; Popol Vuh is a named extra-Eurasian corpus). Remaining D items are further laterals, not the stop.
-
-### After Phase D (2026-08-18, Ifá)
-
-| | |
-|---|---|
-| Graph | 201 nodes · 545 edges · 42 systems · 159 principles · 31 clusters |
-| Edges | cyan 195 · gold 141 · magenta 80 · orange 51 · red 41 · green 37 |
-| Isolates | none |
-| Betweenness top 5 | demiurge 0.213 · the-good 0.175 · paradigm 0.145 · information 0.080 · receptacle 0.077 |
-| Platonic share of top 12 betweenness | still **8/12** |
-| What moved | Tiamat to degree **#4**. Ma'at #8, Nun #10. Ifá splits: Olokun/Oduduwa with first waters; Olodumare/Obatala/Orunmila with Popol Vuh makers; ori with wyrd/tianming. |
-
-### After Phase D (2026-08-18, Hindu 2)
-
-| | |
-|---|---|
-| Graph | 206 nodes · 574 edges · 42 systems · 164 principles · 31 clusters |
-| Edges | cyan 207 · gold 151 · magenta 85 · orange 52 · red 41 · green 38 |
-| Isolates | none |
-| Betweenness top 5 | demiurge 0.199 · the-good 0.160 · paradigm 0.138 · information 0.077 · receptacle 0.074 |
-| Platonic share of top 12 betweenness | still **8/12** |
-| What moved | Ma'at into betweenness **#9**. Tiamat still degree #4. Operators sat with ṛta / Ma'at / Asha / Yijing, not with first waters. Devī split from Brahman (community 4 vs 3). |
-
-### After Phase D (2026-08-18, Hindu 3)
-
-| | |
-|---|---|
-| Graph | 211 nodes · 594 edges · 42 systems · 169 principles · 31 clusters |
-| Edges | cyan 212 · gold 152 · magenta 95 · orange 56 · red 41 · green 38 |
-| Isolates | none |
-| Betweenness top 5 | demiurge 0.195 · the-good 0.154 · paradigm 0.138 · **receptacle 0.081** · information 0.075 |
-| Platonic share of top 12 betweenness | **7/12** (count moved; not a proven spine) |
-| What moved | Receptacle overtook information for #4. `hinduism` entered betweenness **#10** and degree **#5**. Genesis-creator back at #12. Tiamat still degree #4; Ma'at still betweenness #9. No gold to the Demiurge. |
-
-Next content gate is science cosmology, and only if it is a new slot. Entropy, ordered time, symmetry-breaking, and information are already in the graph. Hinduism remains partial. Hiding `platonic` leaves two components: the field, and `nabta-playa` (left on purpose).
-
-### After pendant laterals and Buddhist 2 (2026-11-22)
-
-| | |
-|---|---|
-| Graph | 213 nodes · 605 edges · 42 systems · 171 principles · 31 clusters |
-| Edges | cyan 215 · gold 153 · magenta 102 · orange 56 · red 41 · green 38 |
-| Isolates | none |
-| Hide `platonic` | 2 components. The small one is `nabta-playa` only |
-| Betweenness top 5 | demiurge 0.190 · the-good 0.149 · paradigm 0.133 · receptacle 0.089 · information 0.074 |
-| Platonic share of top 12 betweenness | **7/12** (count only, not a spine) |
-| What moved | Five pendant laterals (no new nodes). Yogācāra: `alaya-vijnana`, `vijnaptimatra`. Receptacle back to betweenness #4. Ma'at #9, `hinduism` #10. No gold to the Demiurge. |
+After a batch: `python tools/validate.py`, then note what the new lateral changed, in **Now** and in `SESSION-HANDOFF.md`.
 
 ---
 
-## Phase D — Parallel peers and second passes
+## Open
 
-Stop when: `mythology` is gone (done in A) **and** at least one extra-Eurasian cosmogony is encoded from a named corpus.
-
-| Pass | Encode | Leave out | Done |
-|---|---|---|---|
-| Norse | Völuspá: Ginnungagap, Ymir, Yggdrasil, Ragnarök, wyrd | every named dwarf | [x] |
-| Mesoamerica | one cycle (Popol Vuh *or* Mexica suns) | a decorative “Aztec” sticker | [x] |
-| West Africa | Yoruba only with a named corpus in `refs` | a diversity flag | [x] |
-| Hindu 2 | Śiva / Viṣṇu / Devī as operators | avatāra lists | [x] |
-| Hindu 3 | darśana increment | every school | [x] |
-| Buddhist 2 | Yogācāra storehouse and representation-only. Dependent origination stayed inside śūnyatā (MMK 24.18) | every nikāya | [x] |
-| Science | Surveyed. Hot beginning is the low-entropy initial state (Penrose). Inflation is symmetry breaking (Guth). No new node | every physicist | [x] |
-
-Mesopotamia leftovers (Inana, Atrahasis, netherworld) stay optional.
-
-Pendant laterals (not a new tradition): Spinoza ↔ Brahman (magenta), Kant ↔ Unknown Father (magenta), Hegel ↔ Spinoza (magenta), self-organization ↔ Dao (cyan), Chaldean Oracles → theurgy (gold). Nabta Playa was left as a time-slot stub. After those edges, hiding `platonic` leaves the field plus that one stub.
-
-Buddhist 2 did not add pratītyasamutpāda. MMK 24.18 identifies it with śūnyatā. The new slot is Yogācāra: `alaya-vijnana` and `vijnaptimatra`.
-
----
-
-## Ad-hoc — Viewer readable at full graph
-
-Done 2026-08-18. Compare against the old “every label + every edge at once” hairball.
-
-- [x] Overlay legend (system vs principle, six edge types with meanings)
-- [x] Auto labels: systems named; principles on zoom / hover / neighbourhood
-- [x] Faint edges in the all-on view; full colour when a node is focused
-- [x] Slightly looser cose layout; text outline on labels
-- [x] Field vs Open interiors: hide same-cluster plumbing; keep cross-cluster findings labeled
-- [x] Directed arrows on flow; both-way marks on peer maps; Path view paints A→…→B trajectories
-- [x] Field hides cyan by default (the hairball); Loop paints a green/red cycle
-- [x] Larger collapsible legend
-- [x] Drop force layout. Field = school ring; click = radial mind map; Loop = circle; Path = rank. Same idea as wwm_toolkit charts: deterministic cards, not a drag-apart hairball.
-- [x] URL hash `#id=…` so notes can point at a node
-- [x] Cluster-aware layout (school ring + cluster blossoms; not cose)
-- [x] Findings list + New overlay from `data/latest.yaml` (last accepted pass)
-- [x] `analysis/report.py` → a replaceable spine snapshot
-- [x] Pin or vendor js-yaml + cytoscape if offline viewing matters
-
-Reading layer (viewer pass, no new nodes): Field chords show the type mix and use width for the count. Ring order is the seriation in `data/view.json`. Curated slots and tours read V7–V11. Community borders and the hide-Platonic component count are overlays. `python tools/validate.py` rewrites `data/view.json`.
-
-Heavy pairs (2026-11-22): a pair needs at least three findings, then each school keeps at most three of those lines (18 chords on the current graph; Platonism keeps three). **All pairs** draws every pair. Cyan is on. The old “Field hides cyan” line above is the earlier hairball fix, not the current default. **Clear** and **Field** turn off **New**.
-
-Groups and the rotating view (2026-11-22): **Field** opens as about eight groups of neighboring schools. A group line keeps every cross-group finding. Click a group for its schools and every typed mix among them. Heavy and All pairs are the school ring, not the opening picture. The **3D** button is a canvas orbit of the same three sizes. Drag rotates it. It is not three.js, not the default, and not a common ancestor.
-
-### Ahead
-
-Not a new phase. The three items below are done. Do not add an edge to `nabta-playa` to make the hide-Platonic count 1.
-
-- [x] **Clear turns off New.** Clear and Field leave the New filter.
-- [x] **Cap the heavy fan.** Greedy cap: strongest pairs first, both schools must still have fewer than three lines. Seriation unchanged. All pairs and Findings stay complete.
-- [x] **Science, one survey.** No encode. The hot beginning is Penrose’s low-entropy initial state. Inflation is Guth’s false-vacuum symmetry breaking. Both slots are already in the graph.
-
-Palamite / Hermetica stay optional and only if a new slot appears. No backend, database, or timeline axis. The 3D button stays the extra canvas above.
-
-## Phase E — Productize only what the graph needs
-
-No backend, no database, no timeline axis, and no 3D engine in place of the 2D field. Remaining items are listed under the ad-hoc viewer pass above.
-
----
-
-## Success / failure
-
-Succeeding when: hide `platonic` and the field is still connected; hinges include things like Asha, Ma'at, Tiamat, Tian, or a Manichaean mix — not a bag hub; communities disagree with `cluster` in interesting ways; empty traditions are empty on purpose.
-
-Failing when: node count is the KPI; every new tradition grows a gold edge to the Demiurge; Hinduism or Egypt becomes an epithet dump; analysis is quoted as proving Plato.
+- [x] Mermaid for Ma'at · ṛta · Asha: open cyan sharing in `RESEARCH_PLAN.md`. Not a loop. Not yet a viewer tab.
+- [ ] A second drawing for one unclassified cluster: loose Mermaid, generic links, no invented type.
+- [ ] Remove the 3D button from the viewer. Loops stay planar.
+- [ ] Keep the comparison sheet as the spine check only.
+- [ ] Revisit the store when likenesses and attributes stop fitting a single typed edge. YAML imports into SQLite or Neo4j. Not before.

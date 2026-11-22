@@ -111,6 +111,7 @@ export function showGuide() {
     `<li><strong>Findings</strong> lists every cross-cluster edge. <strong>New</strong> is the last accepted pass (` +
     esc(state.latestMeta.label || "none") +
     `).</li>` +
+    `<li><strong>Sheet</strong> draws the success test: the field without Plato, the hinges, and where communities cut across clusters. It does not prove a spine.</li>` +
     `<li><strong>Hinges</strong> is unweighted betweenness. <strong>Communities</strong> recolors the border only. <strong>Hide Platonic</strong> reports whether the field stays one component.</li>` +
     `</ol>` +
     `<p class="empty">YAML is the source of truth. A tour is not the law of the graph. Permalink: #id=node-id</p>`;
