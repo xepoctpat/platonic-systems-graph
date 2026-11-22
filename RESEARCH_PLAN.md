@@ -182,6 +182,25 @@ flowchart LR
 
 Confirmed: No shared attribute in the passages opened. No node. No edge.
 
+### 5. Avestan Miθra
+
+Pass 2026-11-22. Shared attribute. The covenant is named on both sides: Ṛgveda 3.59.1 sets peoples to their agreements, and Yt. 10.2 is the contract. One cyan lateral, undirected, from `mitra` to `avestan-mithra`. The figure is distinct because the chariot is only Yt. 10.124–125. The unsleeping eye is also named (Ṛgveda 3.59.1; Yt. 10.7 and 10.13) and is not a second edge. Kingship is named on both sides and is not the sun’s, and it is not a second edge. The companion does not match. Mills’s Gathas do not name Mithra. No Jesus, no Roman Mithras, no gold edge. `zoroastrianism` stays partial.
+
+| Attribute | Vedic Mitra | Avestan Miθra (Yt. 10) |
+|---|---|---|
+| Chariot or daily crossing | | Gold chariot, four white stallions (Yt. 10.124–125). Over the Hara before the sun (Yt. 10.13) |
+| Eye, or light that sees | Eyes that do not close, Ṛgveda 3.59.1 | Ten thousand eyes, sleepless (Yt. 10.7). A beneficent eye from the Hara (Yt. 10.13) |
+| Witness to oaths or covenants | Sets peoples to their agreements, Ṛgveda 3.59.1 | Break not the contract (Yt. 10.2) |
+| Sovereignty (the sun as king, not only as lamp) | Born a king, Ṛgveda 3.59.4. Not the sun’s sovereignty | Lord of all countries (Yt. 10.145). He brings sovereignty (Yt. 10.16). The sun is a separate sacrifice |
+| Companion who is not the sun | | Sacrificed with Ahura (Yt. 10.145). The sun is named apart |
+
+```mermaid
+flowchart LR
+  mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
+```
+
+Pages opened. James Darmesteter, Mihr Yašt, Yt. 10. L. H. Mills, Gathas (Yasna 28–34, 43–46, 47–50, 51, and 53): Mithra is not named.
+
 ---
 
 ## The graph as the instrument
@@ -242,6 +261,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 | 2 | Ma'at · ṛta · Asha | Yes (`maat`, `rta`, `asha`) | Done 2026-11-22. Three cyan edges. Open sharing, not a loop |
 | 3 | Solar table: Sūrya, Helios, Re, Mitra, then Mitra ~ Jesus | Sūrya, Re, Helios, Mitra | Done 2026-11-22 for the four. Jesus still a question. No edge |
 | 4 | Mitra ~ Jesus | Mitra yes. No Jesus node | Tested 2026-11-22. Unclassified. No edge. No link. Jesus not encoded |
+| 5 | Avestan Miθra | Mitra yes. Miθra added | Encoded 2026-11-22. One cyan covenant lateral. No second edge |
 
 ---
 
@@ -254,6 +274,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 - 2026-11-22. Ma'at · ṛta · Asha confirmed as an open cyan sharing. No new node. No loop drawn among the three.
 - 2026-11-22. Solar attribute. Helios and Mitra added. Sūrya–Helios cyan. Re joined by orange, not as a second chariot. Mitra is covenant (Ṛgveda 3.59.1), not the sun. Jesus not encoded. Avestan Miθra left open.
 - 2026-11-22. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. No link on the drawing. Malachi 3:20 (English 4:2) and Luke 22:20 do not carry Mitra’s covenant. Avestan Miθra remains open.
+- 2026-11-22. Avestan Miθra. Shared attribute: the covenant (Ṛgveda 3.59.1 and Yt. 10.2). One cyan lateral, undirected. New node `avestan-mithra`. The chariot is only Yt. 10.124–125. The companion does not match. Mills’s Gathas do not name Mithra. No second lateral.
 
 ```mermaid
 flowchart LR

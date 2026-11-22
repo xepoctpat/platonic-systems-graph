@@ -5093,3 +5093,13 @@ edges:
     note: >
       Paired keepers, not a descent. Mitra is the covenant who sees
       without closing his eyes (Ṛgveda 3.59.1). Varuṇa guards ṛta and oaths.
+
+  - from: mitra
+    to: avestan-mithra
+    type: cyan
+    directed: false
+    strength: 0.8
+    versions: []
+    note: >
+      Shared attribute, not descent. Mitra sets peoples to their agreements
+      (Ṛgveda 3.59.1), and Miθra is the contract one must not break (Yt. 10.2).

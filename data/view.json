@@ -6217,7 +6217,7 @@
       ],
       "counts": {
         "gold": 0,
-        "cyan": 1,
+        "cyan": 2,
         "magenta": 0,
         "green": 0,
         "red": 0,
@@ -6235,6 +6235,16 @@
           "directed": false
         },
         {
+          "id": "e623",
+          "from": "mitra",
+          "to": "avestan-mithra",
+          "fromLabel": "Mitra",
+          "toLabel": "Miθra",
+          "type": "cyan",
+          "note": "Shared attribute, not descent. Mitra sets peoples to their agreements (Ṛgveda 3.59.1), and Miθra is the contract one must not break (Yt. 10.2).\n",
+          "directed": false
+        },
+        {
           "id": "e303",
           "from": "vedic",
           "to": "zoroastrianism",
@@ -6245,8 +6255,8 @@
           "directed": false
         }
       ],
-      "count": 2,
-      "mix": "2 · orange 1 · cyan 1"
+      "count": 3,
+      "mix": "3 · cyan 2 · orange 1"
     }
   ],
   "communities": {
@@ -6275,6 +6285,7 @@
     "athena": 15,
     "attractor": 1,
     "atum": 4,
+    "avestan-mithra": 2,
     "baal": 6,
     "barbelo": 3,
     "becoming": 1,
@@ -6531,73 +6542,73 @@
       "id": "demiurge",
       "label": "Demiurge",
       "cluster": "platonic",
-      "score": 0.149355
+      "score": 0.148561
     },
     {
       "id": "the-good",
       "label": "The Good",
       "cluster": "platonic",
-      "score": 0.118966
+      "score": 0.119755
     },
     {
       "id": "intelligible-paradigm",
       "label": "Intelligible Paradigm",
       "cluster": "platonic",
-      "score": 0.105369
+      "score": 0.10514
     },
     {
       "id": "receptacle",
       "label": "Receptacle",
       "cluster": "platonic",
-      "score": 0.069632
+      "score": 0.069104
     },
     {
       "id": "information",
       "label": "Information / Constraint",
       "cluster": "scientific",
-      "score": 0.058503
+      "score": 0.058299
     },
     {
       "id": "ordered-time",
       "label": "Ordered Time",
       "cluster": "platonic",
-      "score": 0.052105
+      "score": 0.053134
     },
     {
       "id": "becoming",
       "label": "Becoming",
       "cluster": "platonic",
-      "score": 0.049745
+      "score": 0.049407
     },
     {
       "id": "maat",
       "label": "Ma'at",
       "cluster": "egyptian",
-      "score": 0.043437
+      "score": 0.04695
     },
     {
       "id": "eros",
       "label": "Eros",
       "cluster": "platonic",
-      "score": 0.041613
+      "score": 0.041318
     },
     {
       "id": "hinduism",
       "label": "Hinduism",
       "cluster": "hindu",
-      "score": 0.032335
+      "score": 0.032386
     },
     {
       "id": "blombos-mark",
       "label": "Blombos mark",
       "cluster": "preliterate",
-      "score": 0.030824
+      "score": 0.030718
     },
     {
       "id": "genesis-creator",
       "label": "Genesis Creator",
       "cluster": "biblical",
-      "score": 0.029391
+      "score": 0.029238
     }
   ],
   "platonicTop12": 7,

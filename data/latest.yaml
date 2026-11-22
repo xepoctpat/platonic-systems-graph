@@ -2,8 +2,7 @@
 # nodes.yaml and edges.yaml remain the source of truth.
 # Replace this file after each accepted /add-entry pass.
 
-pass: solar-attribute
-label: Solar attribute — Sūrya, Helios, Re, Mitra
+pass: avestan-mithra
+label: Avestan Miθra — covenant shared with Mitra
 nodes:
-  - helios
-  - mitra
+  - avestan-mithra

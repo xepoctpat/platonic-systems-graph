@@ -58,7 +58,8 @@ readings:
       Five laterals: Sūrya–Helios cyan (chariot), Sūrya–Re and Helios–Re orange
       (barque), Mitra–Sūrya orange (not the sun), Mitra–Varuṇa cyan (paired keepers).
     open: >
-      Jesus is not encoded. Avestan Miθra is still open. Blank cells are not edges.
+      Jesus is not encoded. Avestan Miθra shares the covenant in its own
+      reading (Ṛgveda 3.59.1 and Yt. 10.2). Blank cells are not edges.
     attributes:
       columns:
         - label: Attribute
@@ -95,7 +96,7 @@ readings:
           - ""
           - ""
           - ""
-          - "Paired with Varuṇa. Avestan Miθra is still open"
+          - "Paired with Varuṇa. Avestan Miθra is its own reading"
 
   - id: mitra-jesus
     title: "Mitra · Jesus"
@@ -134,3 +135,46 @@ readings:
         - - Companion who is not the sun
           - "Paired with Varuṇa"
           - ""
+
+  - id: avestan-mithra
+    title: "Mitra · Miθra"
+    claim: >
+      Vedic Mitra and Avestan Miθra share the covenant in named passages.
+      A shared name is not the attribute. The chariot does not match.
+    status: confirmed
+    mermaid: |
+      flowchart LR
+        mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
+    confirmed: >
+      One cyan lateral, marked both ways. Mitra sets peoples to their
+      agreements (Ṛgveda 3.59.1). Miθra is the contract (Yt. 10.2).
+      No descent.
+    open: >
+      The unsleeping eye is named on both sides (Ṛgveda 3.59.1; Yt. 10.7
+      and 10.13) and is not a second edge. Kingship is named on both sides
+      and is not the sun’s, and it is not a second edge. The chariot is
+      only Yt. 10.124–125. The companion does not match. Mills’s Gathas
+      do not name Mithra.
+    attributes:
+      columns:
+        - label: Attribute
+        - label: Mitra
+          id: mitra
+        - label: "Miθra"
+          id: avestan-mithra
+      rows:
+        - - Chariot or daily crossing
+          - ""
+          - "Gold chariot, four white stallions (Yt. 10.124–125). Over the Hara before the sun (Yt. 10.13)"
+        - - "Eye, or light that sees"
+          - "Eyes that do not close, Ṛgveda 3.59.1"
+          - "Ten thousand eyes, sleepless (Yt. 10.7). A beneficent eye from the Hara (Yt. 10.13)"
+        - - Witness to oaths or covenants
+          - "Sets peoples to their agreements, Ṛgveda 3.59.1"
+          - "Break not the contract (Yt. 10.2)"
+        - - "Sovereignty (the sun as king, not only as lamp)"
+          - "Born a king, Ṛgveda 3.59.4. Not the sun’s sovereignty"
+          - "Lord of all countries (Yt. 10.145). He brings sovereignty (Yt. 10.16). The sun is a separate sacrifice"
+        - - Companion who is not the sun
+          - ""
+          - "Sacrificed with Ahura (Yt. 10.145). The sun is named apart. No Vedic verse was opened"

@@ -2683,6 +2683,25 @@ nodes:
     description: >
       Covenant. Speaking, he sets peoples in their agreements, sustains
       earth and heaven, and beholds the settlements with eyes that do not
-      close (Ṛgveda 3.59.1). Not the sun in the car. Avestan Miθra and any
-      solar parallel with Jesus stay open.
+      close (Ṛgveda 3.59.1). Not the sun in the car. Avestan Miθra shares
+      that covenant and keeps a chariot of his own. Any solar parallel
+      with Jesus stays open.
     refs: ["Ṛgveda 3.59.1"]
+
+  - id: avestan-mithra
+    label: "Miθra"
+    kind: principle
+    cluster: zoroastrian
+    role: governor
+    description: >
+      Avestan contract, distinct from Vedic Mitra. He stands for the
+      faithful and the unfaithful, and a lie to him harms the country
+      (Yt. 10.2). He drives a gold chariot of four white stallions
+      (Yt. 10.124–125), which Vedic Mitra does not. Ten thousand eyes,
+      sleepless (Yt. 10.7), and a beneficent eye from the Hara (Yt. 10.13).
+      Mills’s Gathas do not name him.
+    refs:
+      - "James Darmesteter, Mihr Yašt 10.2"
+      - "James Darmesteter, Mihr Yašt 10.7"
+      - "James Darmesteter, Mihr Yašt 10.13"
+      - "James Darmesteter, Mihr Yašt 10.124–125"
