@@ -5116,3 +5116,14 @@ edges:
       (Ṛgveda 3.59.1), while Miθra’s ten thousand eyes and his sleeplessness
       are separate epithets (Yt. 10.7) and his look from the Hara is a
       beneficent eye (Yt. 10.13).
+
+  - from: mitra
+    to: avestan-mithra
+    type: orange
+    directed: false
+    strength: 0.75
+    versions: []
+    note: >
+      Partial swap. The rule is shared, and the act did not transfer:
+      birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16)
+      and lordship of countries (Yt. 10.145).

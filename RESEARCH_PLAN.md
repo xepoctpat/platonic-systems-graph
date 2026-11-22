@@ -211,6 +211,17 @@ flowchart LR
   mitra ---|"orange · unsleeping eye"| avestan-mithra
 ```
 
+### 7. Kingship
+
+Pass 2026-11-22. Partial swap. The rule is shared, and the act did not transfer. Ṛgveda 3.59.4 births Mitra as king, of good dominion, as disposer. Yt. 10.16 has him bring sovereignty while crossing the karshwars. Yt. 10.145 names him lord of all countries, and the sun is a separate sacrifice. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The covenant edge and the eye edge are unchanged. No new node.
+
+```mermaid
+flowchart LR
+  mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
+  mitra ---|"orange · unsleeping eye"| avestan-mithra
+  mitra ---|"orange · kingship"| avestan-mithra
+```
+
 ---
 
 ## The graph as the instrument
@@ -273,6 +284,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 | 4 | Mitra ~ Jesus | Mitra yes. No Jesus node | Tested 2026-11-22. Unclassified. No edge. No link. Jesus not encoded |
 | 5 | Avestan Miθra | Mitra yes. Miθra added | Encoded 2026-11-22. One cyan covenant lateral. No second edge |
 | 6 | Unsleeping eye | Both nodes exist | Encoded 2026-11-22. Partial swap. One orange lateral. Covenant edge unchanged |
+| 7 | Kingship | Both nodes exist | Encoded 2026-11-22. Partial swap. One orange lateral. Covenant and eye edges unchanged |
 
 ---
 
@@ -287,6 +299,7 @@ Skip when the pass would add a god, a text, or a function that the lateral does 
 - 2026-11-22. Mitra ~ Jesus stayed unclassified. No Jesus node. No edge. No link on the drawing. Malachi 3:20 (English 4:2) and Luke 22:20 do not carry Mitra’s covenant. Avestan Miθra remains open.
 - 2026-11-22. Avestan Miθra. Shared attribute: the covenant (Ṛgveda 3.59.1 and Yt. 10.2). One cyan lateral, undirected. New node `avestan-mithra`. The chariot is only Yt. 10.124–125. The companion does not match. Mills’s Gathas do not name Mithra. No second lateral.
 - 2026-11-22. Unsleeping eye. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The watch is shared. What failed: Ṛgveda 3.59.1 beholds the peoples with eyes that do not close; Yt. 10.7 counts ten thousand eyes and calls him sleepless beside that count; Yt. 10.13 looks with a beneficent eye. Covenant edge unchanged. No new node.
+- 2026-11-22. Kingship. Partial swap. One orange lateral, undirected, between `mitra` and `avestan-mithra`. The rule is shared. What failed: birth as king (Ṛgveda 3.59.4) versus bringing sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145). Covenant edge and eye edge unchanged. No new node.
 
 ```mermaid
 flowchart LR

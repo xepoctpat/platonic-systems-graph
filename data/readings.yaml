@@ -140,22 +140,24 @@ readings:
     title: "Mitra · Miθra"
     claim: >
       Vedic Mitra and Avestan Miθra share the covenant in named passages.
-      The unsleeping eye is a partial swap: the watch is shared, and the
-      work of the eyes did not transfer.
+      The unsleeping eye is a partial swap, and kingship is a partial swap:
+      birth as king did not transfer into bringing sovereignty and lordship
+      of countries.
     status: confirmed
     mermaid: |
       flowchart LR
         mitra["Mitra"] ---|"cyan · covenant"| avestan-mithra["Miθra"]
         mitra ---|"orange · unsleeping eye"| avestan-mithra
+        mitra ---|"orange · kingship"| avestan-mithra
     confirmed: >
-      Two laterals, marked both ways. Covenant: Mitra sets peoples to their
-      agreements (Ṛgveda 3.59.1) and Miθra is the contract (Yt. 10.2).
-      Eye: partial swap. The watch is shared, and the work of the eyes did
-      not transfer (Ṛgveda 3.59.1; Yt. 10.7; Yt. 10.13).
+      Three laterals, marked both ways. Covenant: Mitra sets peoples to
+      their agreements (Ṛgveda 3.59.1) and Miθra is the contract (Yt. 10.2).
+      Eye: partial swap (Ṛgveda 3.59.1; Yt. 10.7; Yt. 10.13). Kingship:
+      partial swap. Birth as king (Ṛgveda 3.59.4) versus bringing
+      sovereignty (Yt. 10.16) and lordship of countries (Yt. 10.145).
     open: >
-      Kingship is named on both sides and is not the sun’s, and it has no
-      edge. The chariot is only Yt. 10.124–125. The companion does not
-      match. Mills’s Gathas do not name Mithra.
+      The chariot is only Yt. 10.124–125. The companion does not match.
+      Mills’s Gathas do not name Mithra.
     attributes:
       columns:
         - label: Attribute
@@ -174,8 +176,8 @@ readings:
           - "Sets peoples to their agreements, Ṛgveda 3.59.1"
           - "Break not the contract (Yt. 10.2)"
         - - "Sovereignty (the sun as king, not only as lamp)"
-          - "Born a king, Ṛgveda 3.59.4. Not the sun’s sovereignty"
-          - "Lord of all countries (Yt. 10.145). He brings sovereignty (Yt. 10.16). The sun is a separate sacrifice"
+          - "Born as king, of good dominion, as disposer, Ṛgveda 3.59.4. The verse names no sun"
+          - "Brings sovereignty while crossing every karshwar (Yt. 10.16). Lord of all countries (Yt. 10.145). The sun is a separate sacrifice"
         - - Companion who is not the sun
           - ""
           - "Sacrificed with Ahura (Yt. 10.145). The sun is named apart. No Vedic verse was opened"
