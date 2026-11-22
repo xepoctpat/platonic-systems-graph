@@ -102,7 +102,6 @@ export function showGuide() {
     `<div class="meta">Schools on a ring · a line is a mix of findings · not a spine</div>` +
     `<ol class="guide">` +
     `<li><strong>Field</strong> groups neighboring schools. A line keeps every finding between two groups. Click a group to open its schools. Click empty space to step back.</li>` +
-    `<li><strong>3D</strong> is the same picture at three sizes: peer groups, then the schools inside one group, then that school’s principles. Drag to rotate. Each link type keeps its colour. There is no centre and no common ancestor. Click empty space to step back.</li>` +
     `<li><strong>Heavy</strong> is the whole school ring, three lines each. <strong>All pairs</strong> draws every school pair. <strong>Findings</strong> lists every cross-cluster edge.</li>` +
     `<li><strong>Click a school</strong> to open it. Same-cluster principles sit on the left. Other schools sit on the right, grouped by relation.</li>` +
     `<li><strong>Slots</strong> are peer occupants of one collision. <strong>Tours</strong> lay a named tension left to right. Tours are illustrations.</li>` +

@@ -437,21 +437,10 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
   line-height: 1.4;
 }
 
-#space-view {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  touch-action: none;
-  cursor: grab;
-}
-
 #cy.off { visibility: hidden; }
-#space-view.on { display: block; }
-#space-view.dragging { cursor: grabbing; }
 
-#sheet-view {
+#sheet-view,
+#reading-view {
   position: absolute;
   inset: 0;
   z-index: 4;
@@ -460,7 +449,123 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
   color: var(--ink);
 }
 
-#sheet-view[hidden] { display: none !important; }
+#sheet-view[hidden],
+#reading-view[hidden] { display: none !important; }
+
+.reading {
+  max-width: 1180px;
+  padding: 18px 22px 36px;
+}
+
+.reading-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+
+.reading-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16em, 0.95fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.reading-chart {
+  border: 1px solid var(--line);
+  background: #191919;
+  padding: 12px;
+  min-width: 0;
+  overflow: auto;
+}
+
+.reading-chart svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.reading-note h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.reading-note h3 {
+  margin: 14px 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reading-note p,
+.reading-status {
+  margin: 0 0 10px;
+  color: var(--muted);
+  max-width: 70em;
+}
+
+.reading-claim {
+  margin: 0 0 12px;
+  color: var(--ink);
+  max-width: 70em;
+}
+
+.reading-status {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reading-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 4px;
+  font-size: 13px;
+}
+
+.reading-table th,
+.reading-table td {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+  vertical-align: top;
+  text-align: left;
+  background: #191919;
+}
+
+.reading-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.reading-jump {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.reading-jump:hover { color: var(--gold); }
+
+.reading-also {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.reading-also .reading-jump {
+  border: 1px solid #3a3a3a;
+  background: #242424;
+  padding: 4px 8px;
+}
+
+#reading-view { container-type: inline-size; }
+
+@container (max-width: 720px) {
+  .reading-card { grid-template-columns: 1fr; }
+}
 
 .sheet {
   max-width: 1080px;

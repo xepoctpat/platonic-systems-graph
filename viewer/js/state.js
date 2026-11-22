@@ -5,7 +5,6 @@ export const state = {
   fieldMode: true,
   heavyPairs: true,
   schoolRing: false,
-  spaceOn: false,
   openGroup: null,
   pathMode: false,
   loopMode: false,
@@ -24,6 +23,7 @@ export const state = {
   communityOn: false,
   hingesOn: false,
   sheetOn: false,
+  readingOn: false,
   parkAside: false,
   allClusters: []
 };

@@ -1,0 +1,98 @@
+# =============================================================================
+# readings.yaml — finished findings for the Reading tab
+# =============================================================================
+#
+# Tab content, not a research queue. One reading is one origin: a Mermaid
+# chart, the claim, the attribute table, what is confirmed, and what is open.
+# The paragraph stays off the arrow. Blank cells are not edges.
+# =============================================================================
+
+readings:
+
+  - id: order-kept
+    title: "Ma'at · ṛta · Asha"
+    claim: >
+      Egypt, Vedic India, and Iran share an order that must be kept.
+      No school descended from another.
+    status: confirmed
+    mermaid: |
+      flowchart LR
+        maat["Ma'at"] ---|"cyan · order kept"| rta["Ṛta"]
+        rta ---|"cyan · cognate"| asha["Asha"]
+        maat ---|"cyan · order kept"| asha
+    confirmed: >
+      The three cyan edges are already in the graph (rta–maat, asha–rta, asha–maat).
+      The sharing is open.
+    open: >
+      Restoration stays inside each tradition (Ma'at re-established, Asha chosen
+      against Druj, ṛta guarded by Varuṇa). Those are not edges among the three names.
+    attributes:
+      columns:
+        - label: Attribute
+        - label: "Ma'at"
+          id: maat
+        - label: "Ṛta"
+          id: rta
+        - label: Asha
+          id: asha
+      rows:
+        - - order that must be kept
+          - "Order, truth, and right measure, continually re-established. Already sourced in the graph note on maat."
+          - "Order that is kept, not a person. Already sourced in the graph note on rta, and in the rta–maat edge note."
+          - "Truth and rightness that must be chosen and kept. Already sourced in the graph note on asha, and in the asha–maat edge note."
+
+  - id: solar
+    title: "Sūrya · Helios · Re · Mitra"
+    claim: >
+      The chariot is shared by Sūrya and Helios. Re crosses by barque, not car.
+      Mitra is covenant, not the sun.
+    status: confirmed
+    mermaid: |
+      flowchart LR
+        surya["Sūrya"] ---|"cyan · chariot"| helios["Helios"]
+        surya ---|"orange · barque"| re["Re"]
+        helios ---|"orange · barque"| re
+        mitra["Mitra"] ---|"orange · not the sun"| surya
+        mitra ---|"cyan · paired keepers"| varuna["Varuṇa"]
+    confirmed: >
+      Five laterals: Sūrya–Helios cyan (chariot), Sūrya–Re and Helios–Re orange
+      (barque), Mitra–Sūrya orange (not the sun), Mitra–Varuṇa cyan (paired keepers).
+    open: >
+      Jesus is not encoded. Avestan Miθra is still open. Blank cells are not edges.
+    attributes:
+      columns:
+        - label: Attribute
+        - label: "Sūrya"
+          id: surya
+        - label: Helios
+          id: helios
+        - label: Re
+          id: re
+        - label: Mitra
+          id: mitra
+      rows:
+        - - Chariot or daily crossing
+          - "RV 1.50.8–9, seven steeds"
+          - "Homeric Hymn 31, golden-yoked car"
+          - "Night barque, not a chariot (Amduat)"
+          - ""
+        - - Eye or light that sees
+          - "Far-seeing, RV 1.50.8"
+          - "Sees and hears all, Odyssey 12.320"
+          - ""
+          - "Eyes that do not close, RV 3.59.1"
+        - - Witness to oaths
+          - ""
+          - ""
+          - ""
+          - "Sets peoples to their agreements, RV 3.59.1"
+        - - Sovereignty
+          - ""
+          - ""
+          - ""
+          - "Born a king, RV 3.59.4, not the sun's sovereignty"
+        - - Companion who is not the sun
+          - ""
+          - ""
+          - ""
+          - "Paired with Varuṇa. Avestan Miθra is still open"

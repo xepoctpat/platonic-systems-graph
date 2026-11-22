@@ -30,23 +30,29 @@ import {
   syncMetaEdges,
   syncGroups
 } from "./layout.js";
+import { renderReading } from "./reading.js";
 import { renderSheet } from "./sheet.js";
 import { state } from "./state.js";
-import { mountSpace } from "./space.js";
 
 const status = document.getElementById("status");
-let spaceView = null;
 
-function leaveSpace() {
-  state.spaceOn = false;
-  const btn = document.getElementById("space");
-  if (btn) btn.classList.remove("active");
+function showGraph() {
   const cyBox = document.getElementById("cy");
-  if (cyBox && !state.sheetOn) cyBox.classList.remove("off");
-  if (spaceView) spaceView.hide();
+  if (cyBox) cyBox.classList.remove("off");
+  if (state.cy) state.cy.resize();
+}
+
+function leaveReading() {
+  state.readingOn = false;
+  const btn = document.getElementById("reading");
+  if (btn) btn.classList.remove("active");
+  const panel = document.getElementById("reading-view");
+  if (panel) panel.hidden = true;
+  if (!state.sheetOn) showGraph();
 }
 
 function leaveSheet() {
+  leaveReading();
   state.sheetOn = false;
   const btn = document.getElementById("sheet");
   if (btn) btn.classList.remove("active");
@@ -55,11 +61,7 @@ function leaveSheet() {
     panel.hidden = true;
     panel.innerHTML = "";
   }
-  if (!state.spaceOn) {
-    const cyBox = document.getElementById("cy");
-    if (cyBox) cyBox.classList.remove("off");
-    if (state.cy) state.cy.resize();
-  }
+  if (!state.readingOn) showGraph();
 }
 
 function readHashId() {
@@ -248,7 +250,6 @@ function applyFilter() {
   applyLabels();
   runViewLayout();
   paintOverlayNote();
-  if (state.spaceOn && spaceView) spaceView.rebuild();
 
   if (state.loopMode && !state.pathRoute) {
     status.textContent = "Loop: click a node to paint a cycle through it";
@@ -322,6 +323,7 @@ function revealNode(nodeId) {
 
 function openFromSheet(nodeId) {
   leaveSheet();
+  leaveReading();
   clearPath(false);
   leaveNew();
   state.fieldMode = true;
@@ -331,13 +333,13 @@ function openFromSheet(nodeId) {
   state.openGroup = null;
   state.heavyPairs = true;
   document.getElementById("field").classList.add("active");
-  deactivate(["open-interiors", "laterals", "all-pairs", "heavy-pairs", "space"]);
+  deactivate(["open-interiors", "laterals", "all-pairs", "heavy-pairs", "reading"]);
   revealNode(nodeId);
   openJump(nodeId);
 }
 
 function restoreGraphMode() {
-  if (state.spaceOn) return;
+  if (state.sheetOn || state.readingOn) return;
   if (state.fieldMode) document.getElementById("field").classList.add("active");
   else document.getElementById("open-interiors").classList.add("active");
   if (state.schoolRing && state.heavyPairs) document.getElementById("heavy-pairs").classList.add("active");
@@ -346,6 +348,7 @@ function restoreGraphMode() {
 
 function closeSheetToGraph() {
   leaveSheet();
+  leaveReading();
   restoreGraphMode();
   applyFilter();
   showGuide();
@@ -781,7 +784,7 @@ async function init() {
   document.getElementById("labels").addEventListener("change", applyLabels);
   document.getElementById("field").addEventListener("click", () => {
     leaveSheet();
-    leaveSpace();
+    leaveReading();
     clearPath(false);
     state.focusId = null;
     leaveNew();
@@ -798,7 +801,7 @@ async function init() {
   });
   document.getElementById("open-interiors").addEventListener("click", () => {
     leaveSheet();
-    leaveSpace();
+    leaveReading();
     clearPath(false);
     state.fieldMode = false;
     setChecks("etype", () => true);
@@ -863,7 +866,7 @@ async function init() {
   });
   document.getElementById("heavy-pairs").addEventListener("click", () => {
     leaveSheet();
-    leaveSpace();
+    leaveReading();
     state.schoolRing = true;
     state.openGroup = null;
     state.fieldMode = true;
@@ -876,7 +879,7 @@ async function init() {
   });
   document.getElementById("all-pairs").addEventListener("click", () => {
     leaveSheet();
-    leaveSpace();
+    leaveReading();
     state.schoolRing = true;
     state.openGroup = null;
     state.fieldMode = true;
@@ -917,14 +920,14 @@ async function init() {
   });
   document.getElementById("communities").addEventListener("click", () => {
     leaveSheet();
-    leaveSpace();
+    leaveReading();
     restoreGraphMode();
     state.communityOn = !state.communityOn;
     applyFilter();
   });
   document.getElementById("hide-platonic").addEventListener("click", () => {
     leaveSheet();
-    leaveSpace();
+    leaveReading();
     restoreGraphMode();
     setChecks("cluster", (v) => v !== "platonic");
     state.quoteHidePlatonic = true;
@@ -955,7 +958,7 @@ async function init() {
       closeSheetToGraph();
       return;
     }
-    leaveSpace();
+    leaveReading();
     clearPath(false);
     state.focusId = null;
     setHashId("");
@@ -971,7 +974,7 @@ async function init() {
       "hinges",
       "help",
       "findings",
-      "space"
+      "reading"
     ]);
     document.getElementById("cy").classList.add("off");
     renderSheet(document.getElementById("sheet-view"));
@@ -982,21 +985,41 @@ async function init() {
     if (!btn) return;
     openFromSheet(btn.getAttribute("data-jump"));
   });
-  document.getElementById("space").addEventListener("click", () => {
-    if (state.spaceOn) {
-      leaveSpace();
-      leaveSheet();
-      document.getElementById("field").classList.add("active");
+  document.getElementById("reading").addEventListener("click", () => {
+    if (state.readingOn) {
+      document.getElementById("field").click();
       return;
     }
     leaveSheet();
     clearPath(false);
     state.focusId = null;
-    state.spaceOn = true;
-    document.getElementById("space").classList.add("active");
-    deactivate(["field", "open-interiors", "heavy-pairs", "all-pairs", "sheet"]);
+    setHashId("");
+    state.readingOn = true;
+    document.getElementById("reading").classList.add("active");
+    deactivate([
+      "field",
+      "open-interiors",
+      "heavy-pairs",
+      "all-pairs",
+      "slots",
+      "tours",
+      "hinges",
+      "help",
+      "findings",
+      "sheet"
+    ]);
     document.getElementById("cy").classList.add("off");
-    spaceView.show();
+    const panel = document.getElementById("reading-view");
+    panel.hidden = false;
+    renderReading(panel);
+    status.textContent = "Reading · one origin";
+  });
+  document.getElementById("reading-view").addEventListener("click", (ev) => {
+    const tab = ev.target.closest("[data-reading]");
+    if (tab) return;
+    const btn = ev.target.closest("[data-jump]");
+    if (!btn) return;
+    openFromSheet(btn.getAttribute("data-jump"));
   });
   document.getElementById("legend-toggle").addEventListener("click", () => {
     const box = document.getElementById("legend");
@@ -1014,11 +1037,6 @@ async function init() {
     });
   });
 
-  spaceView = mountSpace(document.getElementById("space-view"), (id) => {
-    const node = cy.getElementById(id);
-    if (node.empty()) return;
-    showNode(node.data());
-  });
   markBridges();
   setChecks("etype", () => true);
   if (!state.latestSet.size) {

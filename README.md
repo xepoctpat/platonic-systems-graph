@@ -118,7 +118,7 @@ Local: open <http://127.0.0.1:8765/viewer/>. Or tell the agent `/viewer-server` 
 - Permalink: `http://127.0.0.1:8765/viewer/#id=maya`
 - Search matches label or id.
 
-`python tools/validate.py` rewrites `data/view.json` from the YAML. The viewer reads that file for the ring order, communities, hinges, slots, and tours. js-yaml and Cytoscape are vendored in `viewer/vendor/` (js-yaml 4.1.0, cytoscape 3.30.4).
+`python tools/validate.py` rewrites `data/view.json` from the YAML. The viewer reads that file for the ring order, communities, hinges, slots, and tours. js-yaml, Cytoscape, and Mermaid are vendored in `viewer/vendor/` (js-yaml 4.1.0, cytoscape 3.30.4, mermaid 12.3.0). **Reading** shows one finished finding from `data/readings.yaml`: the chart beside the claim.
 
 Keep CSS and JS out of the HTML.
 

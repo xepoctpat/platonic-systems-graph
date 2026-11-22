@@ -173,6 +173,22 @@ export async function loadLatest() {
   return { pass: "", label: "", nodes: [] };
 }
 
+export async function loadReadings() {
+  const tries = ["../data/readings.yaml", "/data/readings.yaml"];
+  let last;
+  for (const path of tries) {
+    try {
+      const doc = await loadYaml(path);
+      const readings = (doc && doc.readings) || [];
+      if (!Array.isArray(readings)) throw new Error(path + " has no readings list");
+      return readings;
+    } catch (err) {
+      last = err;
+    }
+  }
+  throw last;
+}
+
 export async function loadView() {
   const tries = ["../data/view.json", "/data/view.json"];
   let last;

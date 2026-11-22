@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <script src="vendor/js-yaml.min.js"></script>
   <script src="vendor/cytoscape.min.js"></script>
+  <script src="vendor/mermaid.min.js"></script>
 </head>
 <body>
   <header>
@@ -20,7 +21,6 @@
       </label>
       <div class="btn-group" role="group" aria-label="View">
         <button type="button" id="field" class="active">Field</button>
-        <button type="button" id="space">3D</button>
         <button type="button" id="open-interiors">Open interiors</button>
       </div>
       <div class="btn-group" role="group" aria-label="Query">
@@ -33,6 +33,7 @@
       </div>
       <div class="btn-group" role="group" aria-label="Reading">
         <button type="button" id="sheet">Sheet</button>
+        <button type="button" id="reading">Reading</button>
         <button type="button" id="slots">Slots</button>
         <button type="button" id="tours">Tours</button>
         <button type="button" id="hinges">Hinges</button>
@@ -85,8 +86,8 @@
   <div id="wrap">
     <div id="stage">
       <div id="cy"></div>
-      <canvas id="space-view" aria-label="Rotating three-dimensional view"></canvas>
       <div id="sheet-view" hidden aria-label="Comparison sheet"></div>
+      <div id="reading-view" hidden aria-label="Reading"></div>
       <p id="hover-readout" class="hover-readout" hidden></p>
       <p id="overlay-note" class="overlay-note" hidden></p>
       <aside id="legend" aria-label="Graph legend">
