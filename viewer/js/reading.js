@@ -15,7 +15,9 @@ function mermaidApi() {
     api.initialize({
       startOnLoad: false,
       securityLevel: "strict",
-      theme: "dark"
+      theme: "dark",
+      themeVariables: { fontSize: "20px" },
+      flowchart: { htmlLabels: true, padding: 16, nodeSpacing: 48, rankSpacing: 56 }
     });
     mermaidReady = true;
   }

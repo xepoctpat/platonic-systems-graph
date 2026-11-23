@@ -824,36 +824,6 @@ async function init() {
     setChecks("cluster", () => false);
     applyFilter();
   });
-  document.getElementById("path").addEventListener("click", () => {
-    leaveSheet();
-    if (state.pathMode) {
-      clearPath(false);
-      applyFilter();
-      showGuide();
-      return;
-    }
-    clearPath(false);
-    state.focusId = null;
-    state.pathMode = true;
-    state.loopMode = false;
-    document.getElementById("path").classList.add("active");
-    applyFilter();
-  });
-  document.getElementById("loop").addEventListener("click", () => {
-    leaveSheet();
-    if (state.loopMode) {
-      clearPath(false);
-      applyFilter();
-      showGuide();
-      return;
-    }
-    clearPath(false);
-    state.focusId = null;
-    state.loopMode = true;
-    state.pathMode = false;
-    document.getElementById("loop").classList.add("active");
-    applyFilter();
-  });
   document.getElementById("laterals").addEventListener("click", () => {
     state.lateralOnly = true;
     setChecks("etype", (v) => LATERALS.has(v));
@@ -950,10 +920,6 @@ async function init() {
   document.getElementById("fit").addEventListener("click", () => {
     leaveSheet();
     cy.fit(cy.elements(":visible"), 30);
-  });
-  document.getElementById("relayout").addEventListener("click", () => {
-    leaveSheet();
-    runViewLayout();
   });
   document.getElementById("sheet").addEventListener("click", () => {
     if (state.sheetOn) {

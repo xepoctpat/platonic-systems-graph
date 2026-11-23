@@ -453,65 +453,80 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
 #reading-view[hidden] { display: none !important; }
 
 .reading {
-  max-width: 1180px;
-  padding: 18px 22px 36px;
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  padding: 32px 36px 64px;
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 .reading-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 14px;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.reading-tab {
+  font-size: 16px;
+  padding: 8px 14px;
 }
 
 .reading-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(16em, 0.95fr);
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 28px;
   align-items: start;
 }
 
 .reading-chart {
   border: 1px solid var(--line);
   background: #191919;
-  padding: 12px;
+  padding: 20px 24px;
   min-width: 0;
   overflow: auto;
 }
 
 .reading-chart svg {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
 
 .reading-note h2 {
-  margin: 0 0 6px;
-  font-size: 20px;
+  margin: 0 0 12px;
+  font-size: 32px;
+  line-height: 1.25;
   font-weight: 600;
 }
 
 .reading-note h3 {
-  margin: 14px 0 6px;
-  font-size: 14px;
+  margin: 28px 0 10px;
+  font-size: 20px;
   font-weight: 600;
 }
 
-.reading-note p,
-.reading-status {
-  margin: 0 0 10px;
-  color: var(--muted);
-  max-width: 70em;
-}
-
-.reading-claim {
-  margin: 0 0 12px;
+.reading-note p {
+  margin: 0 0 16px;
   color: var(--ink);
-  max-width: 70em;
+  font-size: 18px;
+  line-height: 1.55;
+  max-width: 42em;
+}
+
+.reading-note p.reading-claim {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 40em;
 }
 
 .reading-status {
-  font-size: 12px;
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -519,14 +534,15 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
 .reading-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 0 4px;
-  font-size: 13px;
+  margin: 8px 0 12px;
+  font-size: 17px;
+  line-height: 1.45;
 }
 
 .reading-table th,
 .reading-table td {
   border: 1px solid var(--line);
-  padding: 6px 8px;
+  padding: 12px 14px;
   vertical-align: top;
   text-align: left;
   background: #191919;
@@ -558,7 +574,7 @@ code { font-family: Consolas, "Courier New", monospace; font-size: 12px; }
 .reading-also .reading-jump {
   border: 1px solid #3a3a3a;
   background: #242424;
-  padding: 4px 8px;
+  padding: 8px 12px;
 }
 
 #reading-view { container-type: inline-size; }

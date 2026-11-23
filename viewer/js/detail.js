@@ -105,7 +105,6 @@ export function showGuide() {
     `<li><strong>Heavy</strong> is the whole school ring, three lines each. <strong>All pairs</strong> draws every school pair. <strong>Findings</strong> lists every cross-cluster edge.</li>` +
     `<li><strong>Click a school</strong> to open it. Same-cluster principles sit on the left. Other schools sit on the right, grouped by relation.</li>` +
     `<li><strong>Slots</strong> are peer occupants of one collision. <strong>Tours</strong> lay a named tension left to right. Tours are illustrations.</li>` +
-    `<li><strong>Path</strong>, then two nodes. <strong>Loop</strong>, then one node. Both are queries.</li>` +
     `<li><strong>Laterals</strong> keeps only cyan and orange. Field itself shows all six types.</li>` +
     `<li><strong>Findings</strong> lists every cross-cluster edge. <strong>New</strong> is the last accepted pass (` +
     esc(state.latestMeta.label || "none") +
