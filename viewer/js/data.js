@@ -132,6 +132,10 @@ export function uniqueSorted(values) {
   return [...new Set(values)].sort();
 }
 
+function dataUrl(name) {
+  return new URL("../../data/" + name, import.meta.url).href;
+}
+
 async function loadYaml(path) {
   const res = await fetch(path);
   if (!res.ok) throw new Error(path + " → " + res.status);
@@ -139,69 +143,37 @@ async function loadYaml(path) {
 }
 
 export async function loadData() {
-  const tries = [
-    ["../data/nodes.yaml", "../data/edges.yaml"],
-    ["/data/nodes.yaml", "/data/edges.yaml"]
-  ];
-  let last;
-  for (const [n, e] of tries) {
-    try {
-      const [nodesDoc, edgesDoc] = await Promise.all([loadYaml(n), loadYaml(e)]);
-      return { nodes: nodesDoc.nodes, edges: edgesDoc.edges };
-    } catch (err) {
-      last = err;
-    }
-  }
-  throw last;
+  const nodesDoc = await loadYaml(dataUrl("nodes.yaml"));
+  const edgesDoc = await loadYaml(dataUrl("edges.yaml"));
+  return { nodes: nodesDoc.nodes, edges: edgesDoc.edges };
 }
 
 export async function loadLatest() {
-  const tries = ["../data/latest.yaml", "/data/latest.yaml"];
-  for (const path of tries) {
-    try {
-      const doc = await loadYaml(path);
-      const nodes = (doc && doc.nodes) || [];
-      return {
-        pass: (doc && doc.pass) || "",
-        label: (doc && doc.label) || "",
-        nodes: nodes.filter(Boolean)
-      };
-    } catch (err) {
-      /* overlay is optional */
-    }
+  try {
+    const doc = await loadYaml(dataUrl("latest.yaml"));
+    const nodes = (doc && doc.nodes) || [];
+    return {
+      pass: (doc && doc.pass) || "",
+      label: (doc && doc.label) || "",
+      nodes: nodes.filter(Boolean)
+    };
+  } catch (err) {
+    return { pass: "", label: "", nodes: [] };
   }
-  return { pass: "", label: "", nodes: [] };
 }
 
 export async function loadReadings() {
-  const tries = ["../data/readings.yaml", "/data/readings.yaml"];
-  let last;
-  for (const path of tries) {
-    try {
-      const doc = await loadYaml(path);
-      const readings = (doc && doc.readings) || [];
-      if (!Array.isArray(readings)) throw new Error(path + " has no readings list");
-      return readings;
-    } catch (err) {
-      last = err;
-    }
-  }
-  throw last;
+  const doc = await loadYaml(dataUrl("readings.yaml"));
+  const readings = (doc && doc.readings) || [];
+  if (!Array.isArray(readings)) throw new Error("readings.yaml has no readings list");
+  return readings;
 }
 
 export async function loadView() {
-  const tries = ["../data/view.json", "/data/view.json"];
-  let last;
-  for (const path of tries) {
-    try {
-      const res = await fetch(path);
-      if (!res.ok) throw new Error(path + " → " + res.status);
-      return await res.json();
-    } catch (err) {
-      last = err;
-    }
-  }
-  throw last;
+  const path = dataUrl("view.json");
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(path + " → " + res.status);
+  return await res.json();
 }
 
 export function toElements(nodes, edges, communities) {
