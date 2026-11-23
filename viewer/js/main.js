@@ -288,6 +288,7 @@ function openJump(nodeId, edgeId) {
   if (!cy || !nodeId) return;
   const node = cy.getElementById(nodeId);
   if (node.empty()) return;
+  revealNode(nodeId);
   clearPath(false);
   state.focusId = nodeId;
   document.getElementById("help").classList.remove("active");
@@ -322,6 +323,8 @@ function revealNode(nodeId) {
 }
 
 function openFromSheet(nodeId) {
+  const node = state.cy && state.cy.getElementById(nodeId);
+  if (!node || node.empty()) return;
   leaveSheet();
   leaveReading();
   clearPath(false);
@@ -449,7 +452,6 @@ function graphStyle() {
         "background-color": "#2c2822",
         "border-width": 2,
         "border-color": "#f2e6b8",
-        label: "data(label)",
         color: "#f4efe4",
         "text-valign": "center",
         "text-halign": "center"

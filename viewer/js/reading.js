@@ -1,4 +1,5 @@
 import { esc, loadReadings } from "./data.js";
+import { state } from "./state.js";
 
 let rows = null;
 let selected = "";
@@ -44,6 +45,155 @@ function definedNodes(src) {
   return found;
 }
 
+function nodeLive(id) {
+  const cy = state.cy;
+  if (!cy || !id) return false;
+  const node = cy.getElementById(id);
+  return !!(node && node.nonempty && node.nonempty());
+}
+
+function mermaidEscape(text) {
+  return String(text == null ? "" : text)
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/"/g, "'")
+    .replace(/[#[\]|]/g, "");
+}
+
+function noteWords(text) {
+  return String(text || "").toLowerCase().match(/[a-z0-9]+/g) || [];
+}
+
+function statedInNote(gloss, note) {
+  const need = noteWords(gloss).filter((word) => word.length > 3);
+  if (!need.length) return false;
+  const sentences = String(note || "").replace(/\s+/g, " ").trim().split(/(?<=[.!?])\s+/);
+  return sentences.some((sentence) => {
+    const have = noteWords(sentence);
+    let index = 0;
+    for (const word of have) {
+      if (word === need[index]) index += 1;
+      if (index === need.length) return true;
+    }
+    return false;
+  });
+}
+
+function parseMermaidEdges(src) {
+  const found = [];
+  const re = /([A-Za-z_][\w-]*)\s*(?:\[[^\]]*\])?\s*(?:---|-->|-\.->|==>)\s*(?:\|"([^"]*)"\|)?\s*([A-Za-z_][\w-]*)/g;
+  let match;
+  while ((match = re.exec(src))) {
+    const label = match[2] || "";
+    const gloss = label.includes("·") ? label.split("·").slice(1).join("·").trim() : "";
+    const type = label.split("·")[0].trim().toLowerCase();
+    found.push({ a: match[1], b: match[3], type, gloss, used: false });
+  }
+  return found;
+}
+
+function noteGloss(note, peerNotes) {
+  const clean = String(note || "").replace(/\s+/g, " ").trim();
+  if (!clean) return "";
+  const peers = peerNotes.map((item) => String(item || "").replace(/\s+/g, " ").trim().toLowerCase());
+  const unique = (text) => {
+    const folded = text.toLowerCase();
+    return folded.length > 2 && peers.every((peer) => !peer.includes(folded));
+  };
+  const first = clean.split(/(?<=[.!?])\s+/)[0].replace(/[.!?]+$/g, "");
+  if (unique(first)) return first.length <= 90 ? first : first.slice(0, 90).replace(/\s+\S*$/, "");
+  const words = clean.split(" ");
+  let acc = "";
+  let uniqueAt = "";
+  for (const word of words) {
+    acc = acc ? acc + " " + word : word;
+    const clipped = acc.replace(/[.,;:]+$/g, "");
+    if (clipped.length >= 12 && unique(clipped)) {
+      uniqueAt = clipped;
+      if (clipped.length >= 28 || /[.!?]$/.test(word)) break;
+    }
+    if (acc.length > 96) break;
+  }
+  const chosen = uniqueAt || first;
+  if (chosen.length <= 90) return chosen;
+  return chosen.slice(0, 90).replace(/\s+\S*$/, "");
+}
+
+function cardNodeIds(row) {
+  const ids = [];
+  const add = (id) => {
+    if (!id || ids.includes(id)) return;
+    ids.push(id);
+  };
+  const columns = (row.attributes && row.attributes.columns) || [];
+  columns.forEach((col) => add(columnId(col)));
+  definedNodes(row.mermaid || "").forEach((node) => add(node.id));
+  return ids.filter(nodeLive);
+}
+
+function edgesAmong(ids) {
+  const cy = state.cy;
+  const want = new Set(ids);
+  const found = [];
+  if (!cy) return found;
+  cy.edges().forEach((edge) => {
+    if (edge.data("meta")) return;
+    if (!want.has(edge.source().id()) || !want.has(edge.target().id())) return;
+    found.push(edge);
+  });
+  found.sort((a, b) => {
+    const na = Number(String(a.id()).replace(/^\D+/, "")) || 0;
+    const nb = Number(String(b.id()).replace(/^\D+/, "")) || 0;
+    return na - nb;
+  });
+  return found;
+}
+
+function labelFor(edge, pool) {
+  const type = String(edge.data("type") || "");
+  const note = String(edge.data("note") || "");
+  const a = edge.source().id();
+  const b = edge.target().id();
+  for (const item of pool) {
+    if (item.used) continue;
+    const sameEnds = (item.a === a && item.b === b) || (item.a === b && item.b === a);
+    if (!sameEnds || item.type !== type || !statedInNote(item.gloss, note)) continue;
+    item.used = true;
+    return item.gloss ? type + " · " + item.gloss : type;
+  }
+  const peers = [];
+  const cy = state.cy;
+  if (cy) {
+    cy.edges().forEach((other) => {
+      if (other.id() === edge.id() || other.data("meta")) return;
+      const oa = other.source().id();
+      const ob = other.target().id();
+      if ((oa === a && ob === b) || (oa === b && ob === a)) peers.push(other.data("note") || "");
+    });
+  }
+  const gloss = noteGloss(note, peers);
+  return gloss ? type + " · " + gloss : type;
+}
+
+function chartSource(row) {
+  const cy = state.cy;
+  const ids = cardNodeIds(row);
+  if (!cy || !ids.length) return "";
+  const pool = parseMermaidEdges(row.mermaid || "");
+  const lines = ["flowchart LR"];
+  ids.forEach((id) => {
+    const node = cy.getElementById(id);
+    lines.push("  " + id + '["' + mermaidEscape(node.data("label") || id) + '"]');
+  });
+  edgesAmong(ids).forEach((edge) => {
+    const arrow = edge.data("directed") ? "-->" : "---";
+    lines.push(
+      "  " + edge.source().id() + " " + arrow + '|"' + mermaidEscape(labelFor(edge, pool)) + '"| ' + edge.target().id()
+    );
+  });
+  return lines.join("\n");
+}
+
 function tableHtml(attrs) {
   if (!attrs) return "";
   const columns = attrs.columns || [];
@@ -52,7 +202,7 @@ function tableHtml(attrs) {
     .map((col) => {
       const label = columnLabel(col);
       const id = columnId(col);
-      if (!id) return `<th scope="col">${esc(label)}</th>`;
+      if (!id || !nodeLive(id)) return `<th scope="col">${esc(label)}</th>`;
       return (
         `<th scope="col">` +
         `<button type="button" class="reading-jump" data-jump="${esc(id)}">${esc(label)}</button>` +
@@ -79,7 +229,7 @@ function tableHtml(attrs) {
 function alsoHtml(row) {
   const columns = (row.attributes && row.attributes.columns) || [];
   const headed = new Set(columns.map(columnId).filter(Boolean));
-  const extra = definedNodes(row.mermaid || "").filter((node) => !headed.has(node.id));
+  const extra = definedNodes(row.mermaid || "").filter((node) => !headed.has(node.id) && nodeLive(node.id));
   if (!extra.length) return "";
   const buttons = extra
     .map(
@@ -140,8 +290,12 @@ export async function renderReading(panel) {
   });
 
   const chart = panel.querySelector("#reading-chart");
-  const src = String(row.mermaid || "").trim();
-  if (!chart || !src) return;
+  const src = chartSource(row);
+  if (!chart) return;
+  if (!src) {
+    chart.innerHTML = `<p class="sheet-note">No field figure in this reading.</p>`;
+    return;
+  }
   try {
     const api = mermaidApi();
     renderSeq += 1;

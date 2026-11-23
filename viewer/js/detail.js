@@ -281,9 +281,13 @@ function collectFindings(onlyNew) {
   return rows;
 }
 
-export function showFindings() {
+function leaveHelp() {
   const help = document.getElementById("help");
   if (help) help.classList.remove("active");
+}
+
+export function showFindings() {
+  leaveHelp();
   const findingsBtn = document.getElementById("findings");
   if (findingsBtn) findingsBtn.classList.add("active");
   const onlyNew = state.newOnly;
@@ -382,6 +386,7 @@ export function showLoop(loopKind) {
 }
 
 export function showSlots() {
+  leaveHelp();
   const slots = (state.view && state.view.slots) || [];
   const caption = (state.view && state.view.caption && state.view.caption.slots) || "";
   detail().innerHTML =
@@ -400,6 +405,7 @@ export function showSlots() {
 }
 
 export function showTours() {
+  leaveHelp();
   const tours = (state.view && state.view.tours) || [];
   const caption = (state.view && state.view.caption && state.view.caption.tours) || "";
   detail().innerHTML =
@@ -418,6 +424,7 @@ export function showTours() {
 }
 
 export function showHinges() {
+  leaveHelp();
   const rows = (state.view && state.view.betweenness) || [];
   const caption = (state.view && state.view.caption && state.view.caption.betweenness) || "";
   detail().innerHTML =
